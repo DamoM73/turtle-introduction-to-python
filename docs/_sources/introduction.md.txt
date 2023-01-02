@@ -21,7 +21,7 @@ Each of the six lessons consist of two parts. Each part should take approximatel
 
 ```{admonition} Corrections
 :class: important
-If you find any errors in this work, please inform me via a GitHub issue. There is a GitHub link at the top of each page.
+If you find any errors in this work, please **[raise an issue](https://github.com/DamoM73/turtle-introduction-to-python/issues)** via GitHub so I can remedy it.
 ```
 
 ## Teacher Resources
