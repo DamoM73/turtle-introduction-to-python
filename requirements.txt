@@ -1,6 +1,4 @@
 sphinx
 sphinx-autobuild
 myst-parser
-sphinx-book-theme
-pydata-sphinx-theme
 furo
