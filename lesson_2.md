@@ -366,7 +366,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 1
 
-Download {download}`lesson_2_ex_1.py<./python_files/lesson_2_ex_1.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_1.py<./python_files/lesson_2_ex_1.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_2_ex_1.py
 :linenos:
@@ -379,7 +379,7 @@ After `line 9`, as the comments says, write code that will create a square but o
 
 ### Exercise 2
 
-Download {download}`lesson_2_ex_2.py<./python_files/lesson_2_ex_2.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_2.py<./python_files/lesson_2_ex_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_2_ex_2.py
 :linenos:
@@ -390,7 +390,7 @@ After `line 9`, as the comments says, write code that will create a triangle but
 
 ### Exercise 3
 
-Download {download}`lesson_2_ex_3.py<./python_files/lesson_2_ex_3.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_3.py<./python_files/lesson_2_ex_3.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_2_ex_3.py
 :linenos:
@@ -401,7 +401,7 @@ After `line 9`, as the comments says, write code that will create a hexagon but 
 
 ### Exercise 4
 
-Download {download}`lesson_2_ex_4.py<./python_files/lesson_2_ex_4.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_4.py<./python_files/lesson_2_ex_4.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_2_ex_4.py
 :linenos:
@@ -412,7 +412,7 @@ After `line 9`, as the comments says, write code that will create a circle but o
 
 ### Exercise 5
 
-Download {download}`lesson_2_ex_5.py<./python_files/lesson_2_ex_5.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_5.py<./python_files/lesson_2_ex_5.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_2_ex_5.py
 :linenos:

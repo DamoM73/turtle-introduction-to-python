@@ -1,6 +1,6 @@
 # A Turtle Introduction to Python
 
-This website provides a simple introduction to Python using the Turtle learning tool.
+This website provides a simple introduction to Python using the Turtle module.
 
 ```{toctree}
 :maxdepth: 2

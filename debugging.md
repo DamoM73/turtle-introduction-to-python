@@ -121,7 +121,7 @@ Since this is a for loop, the next **Step into** reads the first element of the 
 Clicking **Step into** highlights `line 4`. `michelle` is now stored in the `name` variable as displayed in the **Variables panel**.
 
 ```{admonition} Note
-:class: attention
+:class: warning
 
 Do not confuse `name` with `names`. They're very close, but Python is very precise.
 ```
@@ -191,7 +191,6 @@ Click the **Step over** button and you will see the results below. Notice the va
 Clicking **Step over** again executes `line 5`. The highlight then returns to the `line 3` for statement.
 
 ```{admonition} When to use Step over
-:class: attention
 
 Use **Step over** when you know that the highlighted code is bug free. Executing working code helps find the bug location quicker.
 ```
@@ -232,7 +231,7 @@ The next **Resume** click will restart the program. The debugger will pause at t
 
 ```{admonition} Hint
 :class: hint
-Notice the changed values in the variables.
+Notice the changed values in the variables panel.
 ```
 
 Now that we know how to control Thonny's debugger, let's go back and debug `buggy_code.py`.
@@ -316,7 +315,6 @@ Click the **Debug** button to launch Thonny's debugger. Thonny will run the code
     - `line 3` of the add_underscores function section.
 
 ```{admonition} Stack timeline
-:class: attention
 
 1. `line 8` in the main module called the `add_underscores` function
 2. Python pauses the main section at `line 8` at wait for the `add_underscores` function to finish
@@ -342,7 +340,7 @@ Notice the local variable index is storing 0. This is correct for the first iter
 
 ```{admonition} Hint
 :class: hint
-If you can't see the index variable, you may need to resize the *Local variables* panel.
+If you can't see the index variable, you may need to resize the **Local variables** panel.
 ```
 
 Now click **Step over** to execute `new_word = word[index] + "_"` and have a look at the results.

@@ -36,6 +36,7 @@ html_theme = 'furo'
 html_static_path = ['_static']
 html_logo = 'logo.png'
 html_title = "A Turtle Introduction to Python"
+html_favicon = "logo.ico"
 
 html_theme_options = {
     "footer_icons": [

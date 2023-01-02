@@ -220,7 +220,7 @@ To reinforce our understanding of Boolean logic, we are going to do something ne
 
 We are going to use the code below for our Boolean exercise, but we will have to explore it first.
 
-Download {download}`lesson_6_pt_2.py<./python_files/lesson_6_pt_2.py>` file and save it to your lesson folder.
+Download **{download}`lesson_6_pt_2.py<./python_files/lesson_6_pt_2.py>`** file and save it to your lesson folder.
 
 ```{literalinclude} ./python_files/lesson_6_pt_2.py
 :linenos:
@@ -275,7 +275,7 @@ You will also need to remember how coordinates work in Turtle.
 
 ### Exercise 1
 
-Download {download}`lesson_6_ex_1.py<./python_files/lesson_6_ex_1.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_6_ex_1.py<./python_files/lesson_6_ex_1.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_6_ex_1.py
 :linenos:
@@ -290,7 +290,7 @@ To help, here is the flowchart for the `draw_dot` function:
 
 ### Exercise 2
 
-Download {download}`lesson_6_ex_2.py<./python_files/lesson_6_ex_2.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_6_ex_2.py<./python_files/lesson_6_ex_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_6_ex_2.py
 :linenos:
@@ -301,7 +301,7 @@ Follow the instructions in the comments from `line 24` to `line 35`.
 
 ### Exercise 3
 
-Download {download}`lesson_6_ex_3.py<./python_files/lesson_6_ex_3.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_6_ex_3.py<./python_files/lesson_6_ex_3.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_6_ex_3.py
 :linenos:

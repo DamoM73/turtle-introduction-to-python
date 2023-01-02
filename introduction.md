@@ -30,8 +30,8 @@ The source code for this site can be found on [Github](https://github.com/DamoM7
 
 To use these resources without using the website:
 
-- Download a zip file of {download}`slide decks and pdfs <teacher_resources/pdf_files.zip>` for all lessons here.
-- Download a zip file of {download}`all Python files <teacher_resources/python_file.zip>` here.
+- Download a zip file of **{download}`slide decks and pdfs <teacher_resources/pdf_files.zip>`** for all lessons here.
+- Download a zip file of **{download}`all Python files <teacher_resources/python_file.zip>`** here.
 
 ```{admonition} Videos vs Website
 :class: warning

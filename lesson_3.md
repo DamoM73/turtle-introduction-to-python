@@ -325,7 +325,7 @@ In this course, the exercises are the **make** component of the PRIMM model. Wor
 
 ### Exercise 1
 
-Download {download}`lesson_3_ex_1.py<./python_files/lesson_3_ex_1.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_3_ex_1.py<./python_files/lesson_3_ex_1.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_3_ex_1.py
 :linenos:
@@ -336,7 +336,7 @@ Follow the instructions in the comments and change the code so it draws a square
 
 ### Exercise 2 
 
-Download {download}`lesson_3_ex_2.py<./python_files/lesson_3_ex_2.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_3_ex_2.py<./python_files/lesson_3_ex_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_3_ex_2.py
 :linenos:
@@ -347,7 +347,7 @@ Follow the instructions in the comments and change the code so it draws a circle
 
 ### Exercise 3
 
-Download {download}`lesson_3_ex_3.py<./python_files/lesson_3_ex_3.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_3_ex_3.py<./python_files/lesson_3_ex_3.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_3_ex_3.py
 :linenos:
@@ -599,7 +599,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 4
 
-Download {download}`lesson_3_ex_4.py<./python_files/lesson_3_ex_4.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_3_ex_4.py<./python_files/lesson_3_ex_4.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_3_ex_4.py
 :linenos:

@@ -391,7 +391,7 @@ In this course, the exercises are the **make** component of the **PRIMM** model.
 
 ### Exercise 1
 
-Download {download}`lesson_1_ex_1.py<./python_files/lesson_1_ex_1.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_1_ex_1.py<./python_files/lesson_1_ex_1.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_1_ex_1.py
 :linenos:
@@ -402,7 +402,7 @@ After `line 10`, as the comments says, write code that will create a square.
 
 ### Exercise 2
 
-Download {download}`lesson_1_ex_2.py<./python_files/lesson_1_ex_2.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_1_ex_2.py<./python_files/lesson_1_ex_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_1_ex_2.py
 :linenos:
@@ -413,7 +413,7 @@ After `line 10`, as the comments says, write code that will create a triangle.
 
 ### Exercise 3
 
-Download {download}`lesson_1_ex_3.py<./python_files/lesson_1_ex_3.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_1_ex_3.py<./python_files/lesson_1_ex_3.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_1_ex_3.py
 :linenos:

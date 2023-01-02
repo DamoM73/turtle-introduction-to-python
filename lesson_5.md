@@ -20,7 +20,7 @@
 
 The branching control structure allows the program's flow it take alternative paths. Let's use a practical example to better understand this. 
 
-We're going to use the **lesson_4_pt_2.py** file. You can either save it as **lesson_5_pt_1a.py** or download and use the {download}`lesson_5_pt_1a.py<./python_files/lesson_5_pt_1a.py>` file.
+We're going to use the **lesson_4_pt_2.py** file. You can either save it as **lesson_5_pt_1a.py** or download and use the **{download}`lesson_5_pt_1a.py<./python_files/lesson_5_pt_1a.py>`** file.
 
 ```{literalinclude} ./python_files/lesson_5_pt_1a.py
 :linenos:
@@ -654,7 +654,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 1
 
-Download {download}`lesson_5_ex_1.py<./python_files/lesson_5_ex_1.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_1.py<./python_files/lesson_5_ex_1.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_1.py
 :linenos:
@@ -665,7 +665,7 @@ Follow the instructions in the comments and use your Python knowledge to create 
 
 ### Exercise 2
 
-Download {download}`lesson_5_ex_2.py<./python_files/lesson_5_ex_2.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_2.py<./python_files/lesson_5_ex_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_2.py
 :linenos:
@@ -676,7 +676,7 @@ Follow the instructions in the comments and use your Python knowledge to create 
 
 ### Exercise 3
 
-Download {download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_3.py
 :linenos:
@@ -723,7 +723,7 @@ To understand `while` loops, let's look at a number guessing game.
 
 ### Number guessing game
 
-Download the {download}`lesson_5_pt_2.py<./python_files/lesson_5_pt_2.py>` file and save it to your lesson folder. Below is its code.
+Download the **{download}`lesson_5_pt_2.py<./python_files/lesson_5_pt_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_pt_2.py
 :linenos:
@@ -737,7 +737,6 @@ PRIMM
 - Let's **investigate** that code.
 
 ```{admonition} What is the random module?
-:class: attention
 
 The **random** module gives us access to a range of functions that produce random results.
 
@@ -764,7 +763,6 @@ Code breakdown:
 - `Line 19`: `else:` &rarr; if the user's guess and the random number are not the same &rarr; run the code block on `line 18`.
 
 ```{admonition} Comparison operators
-:class: attention
 
 A **comparison operator** compares two values and returns either `True` or `False`.
 
@@ -1035,7 +1033,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 4
 
-Download {download}`lesson_5_ex_4.py<./python_files/lesson_5_ex_4.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_4.py<./python_files/lesson_5_ex_4.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_4.py
 :linenos:

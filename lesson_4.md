@@ -27,7 +27,7 @@ Here is the flowchart for the solution:
 
 ![flow chart lesson 4 1](assets/flowchart_lesson_4_1.png)
 
-Below is the code. You could type it into a new document, or you could just download the {download}`lesson_4_pt_1.py<./python_files/lesson_4_pt_1.py>` file.
+Below is the code. You could type it into a new document, or you could just download the **{download}`lesson_4_pt_1.py<./python_files/lesson_4_pt_1.py>`** file.
 
 ```{literalinclude} ./python_files/lesson_4_pt_1.py
 :linenos:
@@ -598,7 +598,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 1
 
-Download {download}`lesson_4_ex_1.py<./python_files/lesson_4_ex_1.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_4_ex_1.py<./python_files/lesson_4_ex_1.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_4_ex_1.py
 :linenos:
@@ -609,7 +609,7 @@ Follow the instructions in the comments and adapt the code so it uses functions.
 
 ### Exercise 2
 
-Download {download}`lesson_4_ex_2.py<./python_files/lesson_4_ex_2.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_4_ex_2.py<./python_files/lesson_4_ex_2.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_4_ex_2.py
 :linenos:
@@ -626,7 +626,7 @@ Follow the instructions in the comments and write a program that draws a car.
 
 ### Introduction
 
-Download the {download}`lesson_4_pt_2.py<./python_files/lesson_4_pt_2.py>` file and save it to your lesson folder.
+Download the **{download}`lesson_4_pt_2.py<./python_files/lesson_4_pt_2.py>`** file and save it to your lesson folder.
 
 ```{literalinclude} ./python_files/lesson_4_pt_2.py
 :linenos:
@@ -821,7 +821,7 @@ In this course, the exercises are the **make** component of the PRIMM model. Wor
 
 ### Exercise 3
 
-Download {download}`lesson_4_ex_3.py<./python_files/lesson_4_ex_3.py>` file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_4_ex_3.py<./python_files/lesson_4_ex_3.py>`** file and save it to your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_4_ex_3.py
 :linenos:
