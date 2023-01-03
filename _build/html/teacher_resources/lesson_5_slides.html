@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Python Turtle &#8212; A Turtle Introduction to Python  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="python-turtle">
+<h1>Python Turtle<a class="headerlink" href="#python-turtle" title="Permalink to this heading">¶</a></h1>
+<p>Lesson 5</p>
+<hr class="docutils" />
+<p>Topics</p>
+<ul class="simple">
+<li><p>how to capturing errors</p></li>
+<li><p>what are branching control structures (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)</p></li>
+<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> in Python</p></li>
+<li><p>the difference between definite and indefinite iteration</p></li>
+<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">where</span></code> loops in Python</p></li>
+<li><p>how to generate random numbers in Python</p></li>
+</ul>
+<hr class="docutils" />
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this heading">¶</a></h2>
+<p><em>Branching</em></p>
+<hr class="docutils" />
+<section id="branching-control-structure">
+<h3>Branching control structure<a class="headerlink" href="#branching-control-structure" title="Permalink to this heading">¶</a></h3>
+<p>Allows program flow to take alternative paths.</p>
+<p>Open <strong>lesson_4_pt_2.py</strong> file → Save as <strong>lesson_5_pt_1a.py</strong>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+
+<span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+
+
+<span class="c1"># setup window</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+
+<span class="c1"># create instance of turtle</span>
+<span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+
+<span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">))</span>
+<span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">))</span>
+
+<span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Run</strong> the program, → enter <code class="docutils literal notranslate"><span class="pre">dog</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">19</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">int(input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;))</span></code></p>
+<ul class="simple">
+<li><p>trying to convert <code class="docutils literal notranslate"><span class="pre">dog</span></code> in integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dog</span></code> is not a whole number → error</p></li>
+</ul>
+<p>Need to checkuser has entered a whole number</p>
+<hr class="docutils" />
+<p>New file → Save as <strong>lesson_5_pt_1b.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predict</strong> for two runs of the code:</p>
+<ul>
+<li><p>first → enter <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second → enter <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="investigate-the-code">
+<h3>Investigate the code<a class="headerlink" href="#investigate-the-code" title="Permalink to this heading">¶</a></h3>
+<p>Python inputs are strings</p>
+<p>Strings special operations (<strong>methods</strong>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">isdigit</span></code> method → <code class="docutils literal notranslate"><span class="pre">True</span></code> when <strong>all</strong> characters are digits</p>
+<blockquote>
+<div><p>Many string methods → <a class="reference external" href="https://www.w3schools.com/python/ref_string_isdigit.asp"><strong>W3Schools’ Python String Methods</strong></a></p>
+</div></blockquote>
+<p>Can tell input is a number → make computer respond</p>
+</section>
+<hr class="docutils" />
+<section id="the-if-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#the-if-statement" title="Permalink to this heading">¶</a></h3>
+<p>Adjusts <strong>lesson_5_pt_1b.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predict</strong> for two runs of the code:</p>
+<ul>
+<li><p>first → enter <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second → enter <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="investigate-code-flowchart">
+<h3>Investigate code - Flowchart<a class="headerlink" href="#investigate-code-flowchart" title="Permalink to this heading">¶</a></h3>
+<p>Condition symbol (diamond) also used for <code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p>
+<p><img alt="flowchart lesson 5 1" src="../_images/flowchart_lesson_5_1.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="investigate-code-breakdown">
+<h3>Investigate code - Breakdown<a class="headerlink" href="#investigate-code-breakdown" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">user_value.isdigit():</span></code> → defines the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> → keyword</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> → <strong>conditional</strong></p>
+<ul>
+<li><p>return <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> → indented code block coming</p></li>
+<li><p>indented code block → only run when conditional returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;That's</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code></p>
+<ul>
+<li><p>will run when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="the-if-else-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#the-if-else-statement" title="Permalink to this heading">¶</a></h3>
+<p>How to respond when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
+<p>Adjust <strong>lesson_5_pt_1b.py</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a number&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s not a number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predict</strong> for two runs of the code:</p>
+<ul>
+<li><p>first → enter <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second → enter <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>Investigate code - Flowchart<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p><img alt="flowchart lesson 5 2" src="../_images/flowchart_lesson_5_2.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h3>Investigate code - Breakdown<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
+<ul>
+<li><p>uses <code class="docutils literal notranslate"><span class="pre">if</span></code> statement condition</p></li>
+<li><p>when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> → run indented code block</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> → indented code block coming</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;That's</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code></p>
+<ul>
+<li><p>will run when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Use the <strong>debugger</strong> with inputs of <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">dog</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="using-if-else-to-capture-errors">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> to capture errors<a class="headerlink" href="#using-if-else-to-capture-errors" title="Permalink to this heading">¶</a></h3>
+<p><strong>lesson_5_pt_1a.py</strong> → adjust <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> section</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get user input</span>
+<span class="n">num_sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">num_sides</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_sides</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">()</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">size</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+
+<span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+
+
+<span class="c1"># setup window</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+
+<span class="c1"># create instance of turtle</span>
+<span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+
+<span class="c1"># get user input</span>
+<span class="n">num_sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">num_sides</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_sides</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">()</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">size</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">()</span>
+
+<span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Predict</strong> for these scenarios:</p>
+<ul>
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+</ul>
+<p>More testing tips</p>
+<ul class="simple">
+<li><p>Testing branching code → test all possible paths</p></li>
+<li><p>Test <code class="docutils literal notranslate"><span class="pre">if</span></code> statements for <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> conditions</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>Investigate code - Flowchart<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p><img alt="flowchart lesson 5 3" src="../_images/flowchart_lesson_5_3.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h3>Investigate code - Breakdown<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> → code structure comment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → user input assigned to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num_sides.isdigit():</span></code> → if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> only contains numbers execute:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">int(size)</span></code>:</p>
+<ul>
+<li><p>converts <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> value to integer</p></li>
+<li><p>reassigns integer to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">num_sides.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code> execute:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user of mistake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="refactor-code-dry">
+<h3>Refactor Code - DRY<a class="headerlink" href="#refactor-code-dry" title="Permalink to this heading">¶</a></h3>
+<p>Does the code pass DRY test?</p>
+<p>Definite repetition.</p>
+<ol class="arabic simple">
+<li><p>asks the user for input</p></li>
+<li><p>checks if that input is all numbers</p></li>
+<li><p>either converts or quits the program depending on the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+</ol>
+<p>Prefect opportunity to <strong>refactor</strong> code with a function.</p>
+<p>Refactoring → changing code <strong>without changing the way it works</strong></p>
+<ul class="simple">
+<li><p>efficiency → uses less computing resources</p></li>
+<li><p>maintainability → easier to understand, fix, update and enhance</p></li>
+</ul>
+<hr class="docutils" />
+<p>Add function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Replace code in <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> section with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get user input</span>
+<span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+
+<span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+
+
+<span class="c1"># setup window</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+
+<span class="c1"># create instance of turtle</span>
+<span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+
+<span class="c1"># get user input</span>
+<span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+
+<span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Refactoring code → test that code still works the same</p>
+<p><strong>Run</strong> code → test all possible branches:</p>
+<ul class="simple">
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h3>Investigate code - Flowchart<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p><img alt="flowchart lesson 5 4" src="../_images/flowchart_lesson_5_4.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h3>Investigate code - Breakdown<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">get_number(prompt):</span></code> → defines function with argument <code class="docutils literal notranslate"><span class="pre">prompt</span></code>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">input(prompt)</span></code></p>
+<ul>
+<li><p>displays <code class="docutils literal notranslate"><span class="pre">prompt</span></code></p></li>
+<li><p>assigns user input to <code class="docutils literal notranslate"><span class="pre">num</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num.isdigit():</span></code> → when <code class="docutils literal notranslate"><span class="pre">num</span></code> only contains numbers execute</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">int(num)</span></code></p>
+<ul>
+<li><p>converts <code class="docutils literal notranslate"><span class="pre">num</span></code> value to integer</p></li>
+<li><p>sends value to main program</p></li>
+<li><p>ends the function</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">num</span></code> does not contain only numbers execute:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs user of error</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exit program</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="investigate-code-breakdown-cont">
+<h3>Investigate code - Breakdown (cont.)<a class="headerlink" href="#investigate-code-breakdown-cont" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">get_number(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → calls <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → calls function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → provides prompt string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span></code> assigns returned value to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → calls the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → provides prompt string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span></code> assigns returned value to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="playing-with-colour">
+<h3>Playing with colour<a class="headerlink" href="#playing-with-colour" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">color</span></code> method → change line and fill colours</p>
+<p><code class="docutils literal notranslate"><span class="pre">color</span></code> accepts two arguments:</p>
+<ul class="simple">
+<li><p>first argument → line colour</p></li>
+<li><p>second argument → fill colour</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predict</strong> and <strong>run</strong> the code</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h3>Investigate code - breakdown<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">draw_poly(length,</span> <span class="pre">sides,</span> <span class="pre">color):</span></code> → accept third argument <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.color(&quot;black&quot;,color)</span></code> → sets the turtle colour</p>
+<ul>
+<li><p>line colour → <code class="docutils literal notranslate"><span class="pre">&quot;black&quot;</span></code></p></li>
+<li><p>fill colour → the value in the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">draw_poly(size,</span> <span class="pre">num_sides,</span> <span class="pre">&quot;red&quot;)</span></code> → provide fill colour</p></li>
+</ul>
+<p>Turtle colours → named, RBG and Hexadecimal colours</p>
+<p><strong><a class="reference external" href="https://cs111.wellesley.edu/labs/lab02/colors">List of all the named colours</a></strong></p>
+<hr class="docutils" />
+<p>Let the user choose fill colour → <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code> or <code class="docutils literal notranslate"><span class="pre">green</span></code></p>
+<p>Need to capture the error → <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</p>
+<p>But <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> → only allows two branches → we need four</p>
+</section>
+<hr class="docutils" />
+<section id="the-if-elif-else-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#the-if-elif-else-statement" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> statement → <code class="docutils literal notranslate"><span class="pre">else</span></code> + <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</p>
+<p>Allows branching between multiple blocks of code</p>
+<p>Create function to choose between <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fill colour (red, blue, green)?&gt; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">color</span>
+    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">color</span>
+    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">color</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+
+<span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fill colour (red, blue, green)?&gt; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">color</span>
+    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">color</span>
+    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">color</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup window</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+
+<span class="c1"># create instance of turtle</span>
+<span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+
+<span class="c1"># get user input</span>
+<span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="n">fill</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">()</span>
+
+<span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predict</strong> what will happen then <strong>run</strong> code</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="investigate-code">
+<h3>Investigate code<a class="headerlink" href="#investigate-code" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> <span class="pre">input(&quot;Fill</span> <span class="pre">colour</span> <span class="pre">(red,</span> <span class="pre">blue,</span> <span class="pre">green)?&gt;</span> <span class="pre">&quot;).lower()</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code> → string method → converts all letters to lowercase</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;:</span></code> → tests if user input <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;:</span></code></p>
+<ul>
+<li><p>executed when <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>then checks if user input <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">28</span></code>: <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;green&quot;:</span></code></p>
+<ul>
+<li><p>executed when <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;</span></code> both return <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>checks if the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
+<ul>
+<li><p>executed when <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;green&quot;</span></code> all return <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><img alt="flowchart lesson5 5" src="../_images/flowchart_lesson_5_5.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="if-elif-else-structure">
+<h3>if…elif…else structure<a class="headerlink" href="#if-elif-else-structure" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> component</p>
+<ul>
+<li><p>always at <strong>beginning</strong></p></li>
+<li><p>only <strong>compulsory</strong> component</p></li>
+<li><p><strong>only be one</strong> <code class="docutils literal notranslate"><span class="pre">if</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code> component</p>
+<ul>
+<li><p>after <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and before <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+<li><p>is <strong>optional</strong></p></li>
+<li><p>as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> components as needed</p></li>
+<li><p>executed when <strong>all</strong> the prior conditions are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="if-elif-else-structure-cont">
+<h3>if…elif…else structure (cont.)<a class="headerlink" href="#if-elif-else-structure-cont" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code> component</p>
+<ul>
+<li><p>always at <strong>the end</strong></p></li>
+<li><p>is <strong>optional</strong></p></li>
+<li><p><strong>only be one</strong> <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p>executed when <strong>all</strong> the prior conditions are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">¶</a></h2>
+<p>Exercises are the <strong>make</strong> component of the PRIMM model</p>
+<p>Complete exercises 1 to 3</p>
+</section>
+<hr class="docutils" />
+<section id="tutorial-2">
+<h2>Tutorial 2:<a class="headerlink" href="#tutorial-2" title="Permalink to this heading">¶</a></h2>
+<p><em>While Loop</em></p>
+<hr class="docutils" />
+<p>Two types of loops → different types of iteration</p>
+<ul class="simple">
+<li><p><strong>definite iteration</strong> → count controlled</p>
+<ul>
+<li><p><strong>do know</strong> how many times it will loop</p></li>
+<li><p>uses <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+</ul>
+</li>
+<li><p><strong>indefinite iteration</strong> → condition controlled</p>
+<ul>
+<li><p><strong>don’t know</strong> how many it will loop</p></li>
+<li><p>uses <code class="docutils literal notranslate"><span class="pre">while</span></code> loops</p></li>
+</ul>
+</li>
+</ul>
+<p>Card dealing analogy:</p>
+<ul class="simple">
+<li><p>Dealing for Uno → <strong>definite</strong> iteration</p></li>
+<li><p>Dealing for Snap → <strong>indefinite</strong> iteration</p></li>
+</ul>
+<hr class="docutils" />
+<section id="number-guessing-game">
+<h3>Number guessing game<a class="headerlink" href="#number-guessing-game" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect. The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predict</strong> and <strong>run</strong> the code</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-is-the-random-module">
+<h3>What is the random module?<a class="headerlink" href="#what-is-the-random-module" title="Permalink to this heading">¶</a></h3>
+<p><strong>Random</strong> module → functions that produce random results</p>
+<p><a class="reference external" href="https://www.w3schools.com/python/module_random.asp"><strong>W3Schools Python Random Module page</strong></a>.</p>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h3>Investigate code - Breakdown<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> → needed to access <code class="docutils literal notranslate"><span class="pre">random</span></code> functions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number</span></code> function → same as previous</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">random.randint(1,100)</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.randint(1,100)</span></code> → random integer between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span></code> → assign random integer to <code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Guess</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">between</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">100&gt;</span> <span class="pre">&quot;)</span></code> → same as previous</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">17</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">guess</span> <span class="pre">==</span> <span class="pre">number:</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> symbol → <strong>comparison operator</strong> → checks if values the same</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="comparison-operators">
+<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">¶</a></h3>
+<p><strong>Comparison operator</strong> → compare two values → returns Boolean</p>
+<p>Python’s condition testing uses many comparison operators:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>checks if two values are the same (equal to)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>checks if two values are not the same (not equal to)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>checks if the left value is greater than the right value</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>checks if the left value is less than the right value</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>checks if the left value is greater than or equal to the right value</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>checks if the left value is less than or equal to the right value</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>Not a good game → one-in-one-hundred chance of winning.</p>
+<p>Adjust code to allow ten guesses → sounds like iteration.</p>
+<p>What kind?</p>
+<p>Know how many times it needs to loop (10) → definite iteration</p>
+<p>Definite iteration → <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have 10 turns to guess a number between 1 and 100&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect. Try again&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Predict</strong> and <strong>run</strong> the code</p>
+<hr class="docutils" />
+<p>Better but not great</p>
+<p>One-in-ten chance and each guess is a stab in the dark.</p>
+<p>Give the user hints → guess is too high or too low</p>
+<p>Change <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too high&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too low&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>A lot of coding without testing → time to test</p>
+<p>Ensure testing cover all branches</p>
+<ol class="arabic simple">
+<li><p>guess is too high</p></li>
+<li><p>guess is too low</p></li>
+<li><p>guess is correct</p></li>
+<li><p>all 10 guess used up without guessing the number</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Predict</strong> and <strong>run</strong> for all four branches</p></li>
+</ul>
+<hr class="docutils" />
+<p>Problem when correct before ten guesses?</p>
+<ul class="simple">
+<li><p>prints <code class="docutils literal notranslate"><span class="pre">Correct!</span></code></p></li>
+<li><p>continues to ask for guesses</p></li>
+</ul>
+<p><strong>Definite</strong> iteration → has to run ten times</p>
+<p>Need <strong>indefinite</strong> iteration → loops until the user is correct</p>
+</section>
+<hr class="docutils" />
+<section id="using-a-while-loop">
+<h3>Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#using-a-while-loop" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too high&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too low&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Predict</strong> and <strong>run</strong> code for all branches:</p>
+<ol class="arabic simple">
+<li><p>guess is too high</p></li>
+<li><p>guess is too low</p></li>
+<li><p>guess is correct</p></li>
+<li><p>all 10 guess used up without guessing the number</p></li>
+</ol>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number:</span></code> → create <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> → loop condition</p>
+<ul>
+<li><p>when <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> <strong>not</strong> the same → return <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> statement uses <code class="docutils literal notranslate"><span class="pre">guess</span></code> before user input → error</p></li>
+<li><p>need to assign <code class="docutils literal notranslate"><span class="pre">guess</span></code> a value before <code class="docutils literal notranslate"><span class="pre">while</span></code> statement
+condition is tested</p></li>
+<li><p>why <code class="docutils literal notranslate"><span class="pre">0</span></code>?</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><img alt="flowchart lesson 5 6" src="../_images/flowchart_lesson_5_6.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="using-while-to-enhance-our-error-capture">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">while</span></code> to enhance our error capture<a class="headerlink" href="#using-while-to-enhance-our-error-capture" title="Permalink to this heading">¶</a></h3>
+<p>User provides non-integer input → game ends</p>
+<p>Loop until user provide valid input</p>
+<p>Adjust your <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too high&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too low&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Predict</strong> and <strong>run</strong> code for all branches:</p>
+<ol class="arabic simple">
+<li><p>guess is too high</p></li>
+<li><p>guess is too low</p></li>
+<li><p>guess is correct</p></li>
+<li><p>all 10 guess used up without guessing the number</p></li>
+</ol>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code> → <strong>infinite loop</strong></p>
+<ul>
+<li><p>can be cause by errors</p></li>
+<li><p>can be ‘broken out’ of → <code class="docutils literal notranslate"><span class="pre">break</span></code> or <code class="docutils literal notranslate"><span class="pre">return</span></code> statement</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">int(num)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop infinite &amp; within a function</p>
+<ul>
+<li><p>keep asking for input until it executes <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> ends the function → exits <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><img alt="flowchart lesson 5 7" src="../_images/flowchart_lesson_5_7.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h2>Exercises<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<p>Exercises are the <strong>make</strong> component of the PRIMM model</p>
+<p>Complete exercise 4</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">A Turtle Introduction to Python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson_1.html">Python Turtle - Lesson 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson_2.html">Python Turtle - Lesson 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson_3.html">Python Turtle - Lesson 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson_4.html">Python Turtle - Lesson 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson_5.html">Python Turtle - Lesson 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lesson_6.html">Python Turtle - Lesson 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugging.html">Debugging with Thonny</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Damien Murtagh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/teacher_resources/lesson_5_slides.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
