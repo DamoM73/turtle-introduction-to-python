@@ -15,4 +15,5 @@ lesson_5
 lesson_6
 extention
 debugging
+licencing
 ```

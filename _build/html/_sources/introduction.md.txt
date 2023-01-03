@@ -1,4 +1,4 @@
-# Introduction
+# Introduction for Teachers
 
 I created this site for use with my secondary school students. It started with resources and examples from other teachers, so I also present this for other teachers to use.
 
@@ -33,11 +33,17 @@ To use these resources without using the website:
 - Download a zip file of **{download}`slide decks and pdfs <teacher_resources/pdf_files.zip>`** for all lessons here.
 - Download a zip file of **{download}`all Python files <teacher_resources/python_file.zip>`** here.
 
+### Website Blocked
+
+If your school blocks GitHub and your students cannot access the website, a portable version of the website can be found in the repository under `_build/html`.
+
+## Acknowledgements
+
 ```{admonition} Videos vs Website
 :class: warning
 The videos linked from this site where created prior to developing this site. Although follow similar content, this site provides more detail.
 ```
 
-## Acknowledgements
+
 
 The lessons that formed the backbone of this site were developed and generously shared by a community of Digital Technologies teachers from Queensland, Australia. I was first introduced to this work in a workshop by Steven Tucker.
