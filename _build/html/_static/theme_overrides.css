@@ -1,0 +1,8 @@
+.copyright {
+    visibility: hidden;
+}
+
+.copyright:before {
+    content: 'Text is available under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0';
+    visibility: visible;
+}
