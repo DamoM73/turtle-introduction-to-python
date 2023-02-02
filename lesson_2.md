@@ -5,7 +5,7 @@
 - about iteration and how to it to reduce your code length
 - about flowcharts and how to use them to represent program algorithms
 - how to write Python programs using `for` loops
-- how to use a Thonny's debugger to trace `for` loops
+- how to use Thonny's debugger to trace `for` loops
 - how to use the `range` function to generate lists of numbers
 ```
 
