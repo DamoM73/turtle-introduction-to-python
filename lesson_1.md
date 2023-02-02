@@ -74,7 +74,7 @@ print("Hello World")
 
 Throughout this course we will use the **PRIMM** process to reinforce our learning.  **PRIMM** stands for **Predict**, **Run**, **Investigate**, **Modify**, and **Make**. It reflects effective programming practices and encourages curiosity in programming.
 
-Let run through the **PRIMM** process now
+Let's run through the **PRIMM** process now
 
 ##### Predict
 
