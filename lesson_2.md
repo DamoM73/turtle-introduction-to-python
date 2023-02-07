@@ -239,7 +239,7 @@ Change your code by adding `print("Come in and sit down")` to the end. Make sure
 
 ```{code-block} python
 :linenos:
-:emphasize-lines: 8
+:emphasize-lines: 9
 # our iteration program
 
 names = ["Hunter", "Jordi", "Adam", "Bryce", "Ben"]
