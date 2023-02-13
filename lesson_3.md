@@ -24,7 +24,7 @@ Previously, we would use the following code to print four numbers.
 ```{code-block} python
 :linenos:
 for index in range(1, 5):
-    print(number)
+    print(index)
 ```
 
 ```{admonition} What is index?
@@ -436,7 +436,7 @@ For our Turtle window of `(500,500)` we have `x` values ranging from `-250` to `
 
 It looks like this:
 
-<img style="border:1px solid black" align="left" src="./assets/coordinates.png)
+![Coordinates](./assets/coordinates.png)
 
 Important to note:
 

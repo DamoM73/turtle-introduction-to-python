@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Turtle - Lesson 5" href="lesson_5.html" /><link rel="prev" title="Python Turtle - Lesson 3" href="lesson_3.html" />
 
-    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 4.5.0 and Furo 2022.12.07 -->
         <title>Python Turtle - Lesson 4 - A Turtle Introduction to Python</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -205,9 +205,9 @@
           </label>
         </div>
         <article role="main">
-          <section id="python-turtle-lesson-4">
-<h1>Python Turtle - Lesson 4<a class="headerlink" href="#python-turtle-lesson-4" title="Permalink to this heading">#</a></h1>
-<aside class="topic">
+          <section class="tex2jax_ignore mathjax_ignore" id="python-turtle-lesson-4">
+<h1>Python Turtle - Lesson 4<a class="headerlink" href="#python-turtle-lesson-4" title="Permalink to this headline">#</a></h1>
+<div class="topic">
 <p class="topic-title">In this lesson you will learn:</p>
 <ul class="simple">
 <li><p>about coding modularisation</p></li>
@@ -216,13 +216,13 @@
 <li><p>about data types</p></li>
 <li><p>how to convert between data types</p></li>
 </ul>
-</aside>
+</div>
 <section id="part-1-functions">
-<h2>Part 1: Functions<a class="headerlink" href="#part-1-functions" title="Permalink to this heading">#</a></h2>
+<h2>Part 1: Functions<a class="headerlink" href="#part-1-functions" title="Permalink to this headline">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZQNU29m5pHY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/ZQNU29m5pHY">Video link</a></p>
 <section id="what-are-functions">
-<h3>What are functions?<a class="headerlink" href="#what-are-functions" title="Permalink to this heading">#</a></h3>
+<h3>What are functions?<a class="headerlink" href="#what-are-functions" title="Permalink to this headline">#</a></h3>
 <p><strong>Functions</strong> are blocks of code that we can run several times in our program. So far in our programming, all our blocks of code are only run once. Even loop blocks are only run once. They repeat the code inside the block, but once the program has passed the loop, it won’t go back and run it gain.</p>
 <p>With functions, we move a block of code outside of the main program sequence, then give it a name. The program can use that block as many times. To use it, the program <strong>calls</strong> the function name from within the main program sequence.</p>
 <p>To understand this more clearly, we will start with my solution for <strong>lesson_3_ex_4.py</strong>.</p>
@@ -391,9 +391,9 @@
 <p>When I wrote this code, I didn’t type it straight out, I copied and pasted a lot of the code and changed the magic numbers’ values. Copying and pasting is a clear indicator that you need to use a function. Why? Because functions are one of the main tools we can use to enforce the DRY Principle.</p>
 </section>
 <section id="creating-functions">
-<h3>Creating functions<a class="headerlink" href="#creating-functions" title="Permalink to this heading">#</a></h3>
+<h3>Creating functions<a class="headerlink" href="#creating-functions" title="Permalink to this headline">#</a></h3>
 <p>Let’s look at how this works.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Take all the <strong>move pen code</strong> and consolidate that in one spot.</p>
 <ul class="simple">
 <li><p>Below I have copied the first move pen action (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">20</span></code> in the previous code)</p></li>
@@ -524,7 +524,7 @@
 </ul>
 </section>
 <section id="passing-arguments">
-<h3>Passing arguments<a class="headerlink" href="#passing-arguments" title="Permalink to this heading">#</a></h3>
+<h3>Passing arguments<a class="headerlink" href="#passing-arguments" title="Permalink to this headline">#</a></h3>
 <p>This works for our first pen movement. Since the coordinates are magic numbers, it won’t work for the rest. I would have to create a function for each movement of the pen. This defeats the purpose of functions. What we need is a way to send the coordinates to the function when we call it. We can. Python uses <strong>arguments</strong> to pass values to a function.</p>
 <p>Looking back at our <code class="docutils literal notranslate"><span class="pre">move_pen</span></code> function in the code, we need to get rid of those magic numbers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">4</span><span class="k">def</span> <span class="nf">move_pen</span><span class="p">():</span>
@@ -541,7 +541,7 @@
 </pre></div>
 </div>
 <p>But how do we assign values to <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>? We use <strong>arguments.</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Change the function definition to <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">move_pen(x,</span> <span class="pre">y):</span></code> so it will <strong>accept</strong> two values.</p></li>
 <li><p>Change the function call in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">move_pen(-100,0)</span></code> passing two values to the function.</p></li>
 </ol>
@@ -736,7 +736,7 @@
 </div>
 </section>
 <section id="functions-in-flowcharts">
-<h3>Functions in Flowcharts<a class="headerlink" href="#functions-in-flowcharts" title="Permalink to this heading">#</a></h3>
+<h3>Functions in Flowcharts<a class="headerlink" href="#functions-in-flowcharts" title="Permalink to this headline">#</a></h3>
 <p>Flowcharts don’t represent whole programs, they represent algorithms.</p>
 <div class="admonition-what-are-algorithms admonition">
 <p class="admonition-title">What are algorithms?</p>
@@ -748,7 +748,7 @@
 <p><img alt="flowchart lesson 4 2" src="_images/flowchart_lesson_4_2.png" /></p>
 </section>
 <section id="shape-functions">
-<h3>Shape functions<a class="headerlink" href="#shape-functions" title="Permalink to this heading">#</a></h3>
+<h3>Shape functions<a class="headerlink" href="#shape-functions" title="Permalink to this headline">#</a></h3>
 <p>When we first looked for repetition, we also identified the drawing shapes repetition. Lets make a function to draw squares.</p>
 <p>From the current code:</p>
 <ul class="simple">
@@ -906,10 +906,10 @@
 </section>
 </section>
 <section id="part-1-exercises">
-<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Permalink to this headline">#</a></h2>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercises and make your own code.</p>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/7de5cfc3ec517c8a0d7ec5591a26d14d/lesson_4_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -980,7 +980,7 @@
 <p>Follow the instructions in the comments and adapt the code so it uses functions.</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/9eef5ae2c0c596dd12319e5e54973c56/lesson_4_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -1004,11 +1004,11 @@
 </section>
 </section>
 <section id="part-2-user-input">
-<h2>Part 2: User Input<a class="headerlink" href="#part-2-user-input" title="Permalink to this heading">#</a></h2>
+<h2>Part 2: User Input<a class="headerlink" href="#part-2-user-input" title="Permalink to this headline">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HUEgYhYAuB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/HUEgYhYAuB0">Video link</a></p>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h3>
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h3>
 <p>Download the <strong><a class="reference download internal" download="" href="_downloads/a6b72e22ebd58845931f63bc8f016297/lesson_4_pt_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_pt_2.py</span></code></a></strong> file and save it to your lesson folder.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -1044,7 +1044,7 @@
 <p>How do we make our programs interactive by getting input from users who cannot code?</p>
 </section>
 <section id="making-your-program-interactive">
-<h3>Making your program interactive<a class="headerlink" href="#making-your-program-interactive" title="Permalink to this heading">#</a></h3>
+<h3>Making your program interactive<a class="headerlink" href="#making-your-program-interactive" title="Permalink to this headline">#</a></h3>
 <p>The simplest way to make your program interactive is to use the <code class="docutils literal notranslate"><span class="pre">input</span></code> command. It will use the <strong>Shell</strong> to ask the user for their input.</p>
 <p>To do this change:</p>
 <ul class="simple">
@@ -1114,7 +1114,7 @@
 <p>Now for the error. This is a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> and to understand it we need to learn about <strong>data types</strong>.</p>
 </section>
 <section id="data-types">
-<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h3>
+<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h3>
 <p>Variables in Python can hold different types of data. The four types of data we will use are:</p>
 <ul class="simple">
 <li><p><strong>integer numbers</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</p>
@@ -1181,7 +1181,7 @@
 <p>How do we fix this? Luckily, we can convert a variable’s data type.</p>
 </section>
 <section id="converting-data-types">
-<h3>Converting data types<a class="headerlink" href="#converting-data-types" title="Permalink to this heading">#</a></h3>
+<h3>Converting data types<a class="headerlink" href="#converting-data-types" title="Permalink to this headline">#</a></h3>
 <p>There is a function to convert any data type into each other data type (other than Boolean).</p>
 <p>If we had a variable called <code class="docutils literal notranslate"><span class="pre">var</span></code>:</p>
 <ul class="simple">
@@ -1234,10 +1234,10 @@
 </section>
 </section>
 <section id="part-2-exercise">
-<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Permalink to this heading">#</a></h2>
+<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Permalink to this headline">#</a></h2>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. Work through the following exercises and make your own code.</p>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/634a7e421249dfa06953e905f4ff9428/lesson_4_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="c1">###############################################</span>
 </span><span class="hll"><span class="linenos">2</span><span class="c1">## write a program that askes the user for a ##</span>
@@ -1351,9 +1351,7 @@
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>
