@@ -288,7 +288,7 @@ my_ttl = turtle.Turtle()
 
 for index in range(sides):
     my_ttl.forward(length)
-    my_ttl.left(DEGREES_IN_CIRCLE / sides)
+    my_ttl.left(CIRCLE_DEG / sides)
 ```
 
 The flowchart for this code now looks like:
