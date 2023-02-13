@@ -546,7 +546,7 @@ PRIMM:
 
 Now we have a border around our drawing. There is an annoying line where the turtle moves from the centre of the window to the border. Luckily, we can get rid of it.
 
-<img style="border:1px solid black" align="left" src="./assets/penup.png)
+![annoying line](./assets/penup.png)
 
 When we write, we do not leave trailing lines because we lift our pen up to move. We then put our pen back down to keep writing. Turtle can do the same this with its `penup` and `pendown` functions.
 
