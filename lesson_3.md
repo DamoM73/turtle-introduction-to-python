@@ -573,9 +573,9 @@ my_ttl.pendown()
 my_ttl.goto(-240, 240)
 my_ttl.goto(-240, -240)
 my_ttl.goto(240, -240)
-my_ttl.pen(up)
+my_ttl.penup()
 my_ttl.goto(0, 0)
-my_ttle.pendown()
+my_ttl.pendown()
 
 # shape parameters
 sides = 6
