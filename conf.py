@@ -24,7 +24,8 @@ exclude_patterns = ['_build',
                     '.venv',
                     'README.md',
                     'teacher_resources',
-                    'notes.md'
+                    'notes.md',
+                    'todo.md'
                     ]
 
 
