@@ -38,8 +38,8 @@ def get_color():
 
 
 def move_pen():
-    # write your code here to get coordinates from user #
-    
+    # replace 'pass' with your code to get coordinates from user #
+    pass
 
 # setup window
 screen = 500
