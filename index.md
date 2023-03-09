@@ -3,7 +3,7 @@
 This website provides a simple introduction to Python using the Turtle module.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: "Contents:"
 
 introduction
