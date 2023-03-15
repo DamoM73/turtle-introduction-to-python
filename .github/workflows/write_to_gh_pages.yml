@@ -26,6 +26,7 @@ jobs:
           python -m pip install -U sphinx
           python -m pip install myst-parser
           python -m pip install furo
+          python -m pip install sphinx-copybutton
 
       - name: make the sphinx docs
         run: |
