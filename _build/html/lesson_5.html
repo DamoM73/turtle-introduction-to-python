@@ -9,6 +9,7 @@
         <title>Python Turtle - Lesson 5 - A Turtle Introduction to Python</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -280,7 +281,7 @@
 <p>Remember that Python inputs are strings. Strings have special operations called <strong>methods</strong>. One of those is the <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> method. <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> returns the Boolean value of <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters in a string are digits.</p>
 <div class="seealso admonition">
 <p class="admonition-title">String Methods</p>
-<p>Python has many useful string methods. If you want to explore them <a class="reference external" href="https://www.w3schools.com/python/ref_string_isdigit.asp"><strong>W3Schools’ Python String Methods</strong></a> is a good place to start.</p>
+<p>Python has many useful string methods. If you want to explore them <a class="reference external" href="https://www.w3schools.com/python/python_ref_string.asp"><strong>W3Schools’ Python String Methods</strong></a> is a good place to start.</p>
 </div>
 <p>We can tell if the user’s input is a number or not. Now we need to tell the computer how to respond to this information.</p>
 </section>
@@ -688,14 +689,14 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
-<span class="hll"><span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="hll"><span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 </span><span class="hll"><span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
 </span><span class="linenos"> 7</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
 <span class="linenos"> 8</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
 <span class="linenos"> 9</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
-<span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
-<span class="linenos">11</span>
+<span class="hll"><span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</span><span class="linenos">11</span>
 <span class="linenos">12</span>
 <span class="linenos">13</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
 <span class="linenos">14</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
@@ -901,11 +902,11 @@
 <section id="exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/7c0e4f487820551b8eef8d66be6133fa/lesson_5_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Almy_ttl&#39;s security guard program</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Amy&#39;s security guard program</span>
 <span class="linenos">2</span>
 <span class="hll"><span class="linenos">3</span><span class="c1">######################################################</span>
 </span><span class="hll"><span class="linenos">4</span><span class="c1">## Write a program that asks for a person&#39;s name    ##</span>
-</span><span class="hll"><span class="linenos">5</span><span class="c1">## and then grants entry of that person is Almy_ttl ##</span>
+</span><span class="hll"><span class="linenos">5</span><span class="c1">## and then grants entry of that person is Amy      ##</span>
 </span><span class="hll"><span class="linenos">6</span><span class="c1">## everyone else is told, politely, to go away      ##</span>
 </span><span class="hll"><span class="linenos">7</span><span class="c1">######################################################</span>
 </span></pre></div>
@@ -915,14 +916,14 @@
 <section id="exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/31a6ef53ac0d32cdaaff2686c30998b4/lesson_5_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Almy_ttl&#39;s security guard program</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Amy&#39;s security guard program</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="n">friends</span> <span class="o">=</span> <span class="s2">&quot;Bruce&quot;</span>
 <span class="linenos"> 4</span>
 <span class="hll"><span class="linenos"> 5</span><span class="c1">######################################################</span>
 </span><span class="hll"><span class="linenos"> 6</span><span class="c1">## Write a program that asks for a person&#39;s name    ##</span>
-</span><span class="hll"><span class="linenos"> 7</span><span class="c1">## and then grants entry of that person is Almy_ttl ##</span>
-</span><span class="hll"><span class="linenos"> 8</span><span class="c1">## or a friend of Almy_ttl.                         ##</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="c1">## and then grants entry of that person is Amy      ##</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="c1">## or a friend of Amy.                              ##</span>
 </span><span class="hll"><span class="linenos"> 9</span><span class="c1">## Everyone else is told, politely, to go away      ##</span>
 </span><span class="hll"><span class="linenos">10</span><span class="c1">######################################################</span>
 </span></pre></div>
@@ -972,8 +973,8 @@
 <span class="linenos">38</span>
 <span class="linenos">39</span>
 <span class="linenos">40</span><span class="k">def</span> <span class="nf">move_pen</span><span class="p">():</span>
-<span class="hll"><span class="linenos">41</span>    <span class="c1"># write your code here to get coordinates from user #</span>
-</span><span class="linenos">42</span>    
+<span class="hll"><span class="linenos">41</span>    <span class="c1"># replace &#39;pass&#39; with your code to get coordinates from user #</span>
+</span><span class="linenos">42</span>    <span class="k">pass</span>
 <span class="linenos">43</span>
 <span class="linenos">44</span><span class="c1"># setup window</span>
 <span class="linenos">45</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
@@ -1576,5 +1577,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
     </body>
 </html>

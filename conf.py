@@ -15,6 +15,7 @@ author = 'Damien Murtagh'
 
 extensions = [
     "myst_parser",
+    "sphinx_copybutton"
 ]
 
 templates_path = ['_templates']

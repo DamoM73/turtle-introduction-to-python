@@ -64,7 +64,7 @@ Remember that Python inputs are strings. Strings have special operations called 
 
 ```{admonition} String Methods
 :class: seealso
-Python has many useful string methods. If you want to explore them [**W3Schools' Python String Methods**](https://www.w3schools.com/python/ref_string_isdigit.asp) is a good place to start.
+Python has many useful string methods. If you want to explore them [**W3Schools' Python String Methods**](https://www.w3schools.com/python/python_ref_string.asp) is a good place to start.
 ```
 
 We can tell if the user's input is a number or not. Now we need to tell the computer how to respond to this information.
@@ -459,7 +459,7 @@ Make the changes in code the code below to:
 
 ```{code-block} python
 :linenos:
-:emphasize-lines: 5-6, 35
+:emphasize-lines: 4-6, 10, 35
 import turtle
 
 
