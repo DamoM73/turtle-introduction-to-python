@@ -14,6 +14,7 @@ lesson_4
 lesson_5
 lesson_6
 extention
+flowcharts
 debugging
 licencing
 ```
