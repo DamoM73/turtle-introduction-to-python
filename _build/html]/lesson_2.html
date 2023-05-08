@@ -1,0 +1,719 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Turtle - Lesson 3" href="lesson_3.html" /><link rel="prev" title="Python Turtle - Lesson 1" href="lesson_1.html" />
+
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Python Turtle - Lesson 2 - A Turtle Introduction to Python</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --font-stack: gill sans, sans-serif;
+  --font-stack--monospace: monaco, monospace;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">A Turtle Introduction to Python</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">A Turtle Introduction to Python</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction for Teachers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_1.html">Python Turtle - Lesson 1</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Turtle - Lesson 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_3.html">Python Turtle - Lesson 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_4.html">Python Turtle - Lesson 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_5.html">Python Turtle - Lesson 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licencing.html">Licencing</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python-turtle-lesson-2">
+<h1>Python Turtle - Lesson 2<a class="headerlink" href="#python-turtle-lesson-2" title="Permalink to this heading">#</a></h1>
+<aside class="topic">
+<p class="topic-title">In this lesson you will learn:</p>
+<ul class="simple">
+<li><p>about iteration and how to it to reduce your code length</p></li>
+<li><p>about flowcharts and how to use them to represent program algorithms</p></li>
+<li><p>how to write Python programs using <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+<li><p>how to use Thonny’s debugger to trace <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+<li><p>how to use the <code class="docutils literal notranslate"><span class="pre">range</span></code> function to generate lists of numbers</p></li>
+</ul>
+</aside>
+<section id="part-1-iteration-introduction">
+<h2>Part 1: Iteration introduction<a class="headerlink" href="#part-1-iteration-introduction" title="Permalink to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_qZzz4lSckk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/_qZzz4lSckk">Video link</a></p>
+<p>So far with our programming Python has been executing each line of our code one after another. This is called <strong>sequential</strong> and is the default way programs work. They start at the top and move through the code one line after another. The movement is called <strong>the flow</strong> of the program (like water, or electricity).</p>
+<section id="introduction-to-flowcharts">
+<h3>Introduction to flowcharts<a class="headerlink" href="#introduction-to-flowcharts" title="Permalink to this heading">#</a></h3>
+<p>There is a special diagram used to show the flow of computer program. It’s called a <strong>flowchart</strong>. Flowcharts show each process in a program and how the program moves from one process to the next. We use:</p>
+<ul class="simple">
+<li><p>rectangles symbolise processes</p></li>
+<li><p>parallelograms symbolise inputs or outputs</p></li>
+<li><p>arrows represent the flow</p></li>
+</ul>
+<p><img alt="Flowchart symbols 1" src="_images/flow_chart_symbol_1.png" /></p>
+<p>If we wanted a program to say hello to six people, you would show it in a flowchart like this:</p>
+<p><img alt="Flowchart 1" src="_images/flow_chart_1.png" /></p>
+<p>Create a new file in Thonny and call it <strong>lesson_2_pt_1.py</strong>. Transfer this flowchart code to Python by entering the following code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Hunter&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Jordi&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Adam&quot;</span><span class="p">)</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Jesse&quot;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Bryce&quot;</span><span class="p">)</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Ben&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since the flow is sequential, Python will start at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">1</span></code> and work its way down to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code>.</p>
+<p>Run it and see. The following should print to your <strong>Shell</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span> <span class="n">Hunter</span>
+<span class="n">Hello</span> <span class="n">Jordi</span>
+<span class="n">Hello</span> <span class="n">Adam</span>
+<span class="n">Hello</span> <span class="n">Jesse</span>
+<span class="n">Hello</span> <span class="n">Bryce</span>
+<span class="n">Hello</span> <span class="n">Ben</span>
+</pre></div>
+</div>
+<p>If you change the order of the code the program will run differently.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Jesse&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Bryce&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Ben&quot;</span><span class="p">)</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Hunter&quot;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Jordi&quot;</span><span class="p">)</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Adam&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This code will produce the following results.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span> <span class="n">Jesse</span>
+<span class="n">Hello</span> <span class="n">Bryce</span>
+<span class="n">Hello</span> <span class="n">Ben</span>
+<span class="n">Hello</span> <span class="n">Hunter</span>
+<span class="n">Hello</span> <span class="n">Jordi</span>
+<span class="n">Hello</span> <span class="n">Adam</span>
+</pre></div>
+</div>
+<p>Sequential programming is ok. It starts to become a problem when you deal with bigger programs. You don’t want to have to type everything out.</p>
+<p>Imagine if I want to say hello to 500 people, or 1,000 people or more, how tedious will it be to type each line out? There is also other limitations.</p>
+<p>What if I decided to say <code class="docutils literal notranslate"><span class="pre">&quot;good</span> <span class="pre">morning&quot;</span></code> rather than <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code>? I would have to change every single line of code.</p>
+<p>This might be ok for a small program, but it starts to become a problem in dealing with larger and larger programs. In Digital Technologies we would say that his is not <strong>scalable</strong>.</p>
+</section>
+<section id="iteration">
+<h3>Iteration<a class="headerlink" href="#iteration" title="Permalink to this heading">#</a></h3>
+<p>If you look at the code you will notice that there is a lot of repetition. <code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">3</span></code> to <code class="docutils literal notranslate"><span class="pre">8</span></code> are almost the same, with only the name changing each time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
+<span class="linenos">2</span>
+<span class="hll"><span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Jesse&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Bryce&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Ben&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Hunter&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Jordi&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Adam&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>This clashes with the DRY programming principle.</p>
+<p><img alt="DRY Principle" src="_images/dry.png" /></p>
+<p>One method for not repeating yourself, is to use <strong>iteration</strong> (often called <strong>loops</strong>). They repeat the same code with a slight change each time. This would be perfect for our use, as we want to repeat the code <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello&quot;,</span> <span class="pre">name)</span></code> with a different name each time.</p>
+</section>
+<section id="for-loops">
+<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
+<p>The first loop we will use is the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. This is the first <strong>control structure</strong> we have used. Control structures cause the program to deviate from the default sequential flow.</p>
+<p>Change your code, so it is the same as the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hunter&quot;</span><span class="p">,</span> <span class="s2">&quot;Jordi&quot;</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="s2">&quot;Jesse&quot;</span><span class="p">,</span> <span class="s2">&quot;Bryce&quot;</span><span class="p">,</span> <span class="s2">&quot;Ben&quot;</span><span class="p">]</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ok, let’s run the code, but don’t forget PRIMM, and make sure you <strong>predict</strong> what you think will happen before you <strong>run</strong> the code.</p>
+<p>So let’s <strong>investigate</strong> by unpacking the code:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code> is something we haven’t seen before.</p>
+<ul>
+<li><p>Called a <strong>list</strong> and it works like a real world list.</p>
+<ul>
+<li><p>Consist of a number of items.</p></li>
+<li><p>Items are in a specific order.</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code> indicate the beginning and the end of the list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hunter&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Jordi&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Adam&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Jesse&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Bryce&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Ben&quot;</span></code> are the items in the list. Items are called <strong>elements</strong>.</p></li>
+<li><p>The elements are separated with commas (<code class="docutils literal notranslate"><span class="pre">,</span></code>).</p></li>
+<li><p>A list needs a name (like our turtle and window).</p>
+<ul>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span></code> to call the list <code class="docutils literal notranslate"><span class="pre">names</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code> is also new, and it is the how we create <code class="docutils literal notranslate"><span class="pre">for</span></code> loops in Python.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> is a keyword identifying this as the beginning of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">names</span></code> tells Python to repeat the code below using each element of the <code class="docutils literal notranslate"><span class="pre">names</span></code> list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> refers to the current <code class="docutils literal notranslate"><span class="pre">names</span></code> element in use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> tells Python that an indented code block follows.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code> is a bit changed as well, it’s indented.</p>
+<ul>
+<li><p>The indentation below the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop identifies the code that needs to repeat.</p>
+<ul>
+<li><p>Indentations can be many lines.</p></li>
+<li><p>Multi-line indented code is called a <strong>code block</strong>.</p></li>
+<li><p>Indents should be four spaces.</p>
+<ul>
+<li><p>Note, in Thonny you can use the <code class="docutils literal notranslate"><span class="pre">tab</span></code> key because Thonny inserts four spaces instead of a <code class="docutils literal notranslate"><span class="pre">tab</span></code> character.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Hello&quot;,</span> <span class="pre">name)</span></code> tells Python to:</p>
+<ul>
+<li><p>print <code class="docutils literal notranslate"><span class="pre">Hello</span></code> to the <strong>Shell</strong></p></li>
+<li><p>followed by current <code class="docutils literal notranslate"><span class="pre">names</span></code> element in use.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="for-loop-flowchart">
+<h4>For loop flowchart<a class="headerlink" href="#for-loop-flowchart" title="Permalink to this heading">#</a></h4>
+<p>A bit confusing? Let’s try looking at it in a flowchart.</p>
+<p>Before we do, we need to learn about two more flowchart symbols:</p>
+<ul class="simple">
+<li><p><strong>Terminators</strong>: these represent the beginning and end of your code</p></li>
+<li><p><strong>Decisions</strong>: these are questions the program need to answer. This will result in the flow splitting into multiple branches.</p></li>
+</ul>
+<p><img alt="Flow Chart Symbols 2" src="_images/flow_charts_symbol_2.png" /></p>
+<p>Now let’s look at the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop flowchart. The symbols within the dotted box are the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="hint admonition">
+<p class="admonition-title">Dotted box</p>
+<p>The dotted box has is to help you identify the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop structure. It is not a normal flowchart symbol.</p>
+</div>
+<p><img alt="Flowchart for loop" src="_images/flowcharts_for_loop.png" /></p>
+</section>
+<section id="tracing-with-debugger">
+<h4>Tracing with debugger<a class="headerlink" href="#tracing-with-debugger" title="Permalink to this heading">#</a></h4>
+<p>One last way we can see how the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop works is to use Thonny’s debugger.</p>
+<div class="admonition-what-are-debuggers admonition">
+<p class="admonition-title">What are debuggers?</p>
+<p>Debuggers are powerful tools for understanding what happens when you run your code, and Thonny’s debugger is not exception. The <a class="reference internal" href="debugging.html"><span class="doc std std-doc">Debugging with Thonny</span></a> tutorial goes into it’s features in greater detail.</p>
+</div>
+<p>Launch the debugger by clicking the bug beside the play button.</p>
+<p><img alt="Flowchart debugger" src="_images/debugger.png" /></p>
+<p>Keep pressing <strong>F7</strong> on your keyboard and Thonny will take you step by step through the code. Take note of the values in the <strong>Variables</strong> panel.</p>
+<p>We’ll learn more about how to use the debugger later in the course.</p>
+</section>
+</section>
+<section id="code-blocks">
+<h3>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this heading">#</a></h3>
+<p>Earlier we said that multi-line indented code is called a code block. Let’s have a look at how that works.</p>
+<p>Change your code so it is the same as below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hunter&quot;</span><span class="p">,</span> <span class="s2">&quot;Jordi&quot;</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="s2">&quot;Bryce&quot;</span><span class="p">,</span> <span class="s2">&quot;Ben&quot;</span><span class="p">]</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="hll"><span class="linenos">7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How are you?&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p><strong>Predict</strong> what you think the code will do and then <strong>run</strong> it.</p>
+<p>In your <strong>Shell</strong> you should have.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello Hunter
+How are you?
+Hello Jordi
+How are you?
+Hello Adam
+How are you?
+Hello Jesse
+How are you?
+Hello Bryce
+How are you?
+Hello Ben
+How are you?
+</pre></div>
+</div>
+<p>Notice <strong>all</strong> the code block is repeated. That means all the lines of code, at the same level of indentation, are repeated with the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. It is important to ensure that the whole code block uses the same number of spaces to indent.</p>
+<p>What happens if we remove the indentation?</p>
+<p>Change your code by adding <code class="docutils literal notranslate"><span class="pre">print(&quot;Come</span> <span class="pre">in</span> <span class="pre">and</span> <span class="pre">sit</span> <span class="pre">down&quot;)</span></code> to the end. Make sure you remove the indentation, so you code looks like the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hunter&quot;</span><span class="p">,</span> <span class="s2">&quot;Jordi&quot;</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="s2">&quot;Bryce&quot;</span><span class="p">,</span> <span class="s2">&quot;Ben&quot;</span><span class="p">]</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="linenos">7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How are you?&quot;</span><span class="p">)</span>
+<span class="linenos">8</span>
+<span class="hll"><span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Come in and sit down&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p><strong>Predict</strong> and <strong>run</strong> your code.</p>
+<p>Your <strong>Shell</strong> should show.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello Hunter
+How are you?
+Hello Jordi
+How are you?
+Hello Adam
+How are you?
+Hello Jesse
+How are you?
+Hello Bryce
+How are you?
+Hello Ben
+How are you?
+Come in and sit down
+</pre></div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">print(&quot;Come</span> <span class="pre">in</span> <span class="pre">and</span> <span class="pre">sit</span> <span class="pre">down&quot;)</span></code> is not repeated. Since it is not indented, it is not considered part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and is run after the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is finished.</p>
+<p>The flowchart for your latest code would look like:</p>
+<p><img alt="Flowchart for loop 2" src="_images/flowcharts_for_loop_2.png" /></p>
+</section>
+</section>
+<section id="part-2-list-numbers-and-range">
+<h2>Part 2: List numbers and Range<a class="headerlink" href="#part-2-list-numbers-and-range" title="Permalink to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SpyHWIDWY5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/SpyHWIDWY5M">Video link</a></p>
+<section id="introducing-range">
+<h3>Introducing <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#introducing-range" title="Permalink to this heading">#</a></h3>
+<p>You can also run loops over lists of numbers.</p>
+<p>Create a new file and call it <strong>lesson_2_pt_2a.py</strong> then try the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">number_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">number_list</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But what if we want <code class="docutils literal notranslate"><span class="pre">print</span></code> the numbers between 1 and 100? Do you want to type all those numbers out?</p>
+<p>Luckily, Python has a function called <code class="docutils literal notranslate"><span class="pre">range</span></code>. It makes list between two given numbers.</p>
+<p>Change your code to the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="n">number_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+</span><span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">number_list</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen</p></li>
+<li><p><strong>Run</strong> the code an see how close your prediction was</p></li>
+<li><p>Let’s <strong>investigate</strong> the code.</p></li>
+</ul>
+<p>Unpacking the code:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range</span></code> tells Python to create a list of numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> is the first number in that list</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">101</span></code> is the first number <strong>not</strong> in that list. This can be confusing but we will learn why later on.</p></li>
+</ul>
+<p>We can make our code a bit shorter by using the <code class="docutils literal notranslate"><span class="pre">range</span></code> function directly inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop statement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="use-for-turtle">
+<h3>Use for Turtle<a class="headerlink" href="#use-for-turtle" title="Permalink to this heading">#</a></h3>
+<p>Code blocks can contain any code, including Turtle code. So let try it.</p>
+<p>Create a new file called <strong>lesson_2_pt_2b.py</strong> and type in the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 4</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+<span class="linenos"> 9</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">11</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PRIMM:</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen, and then <strong>run</strong> the code. Did it do what you predicted?</p></li>
+<li><p><strong>Investigate</strong> the code by changing aspect of the code.</p></li>
+<li><p><strong>Modify</strong> the code so that is makes a complete circle.</p></li>
+</ul>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercise and make your own code.</p>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/fe9068628aad777bea055be70bcb16d3/lesson_2_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">4</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">6</span>
+<span class="hll"><span class="linenos">7</span><span class="c1">##############################</span>
+</span><span class="hll"><span class="linenos">8</span><span class="c1">## Draw a square in 3 lines ##</span>
+</span><span class="hll"><span class="linenos">9</span><span class="c1">##############################</span>
+</span></pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a square but only use 3 lines to do this (hint: try a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop). The following flowchart should assist.</p>
+<p><img alt="Flowchart lesson 2 exercise 1" src="_images/flowchart_lesson_2_ex_1.png" /></p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/5c72017ba7ec5d4e24d08a57e83e9f8d/lesson_2_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">4</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">6</span>
+<span class="hll"><span class="linenos">7</span><span class="c1">################################</span>
+</span><span class="hll"><span class="linenos">8</span><span class="c1">## Draw a Triangle in 3 lines ##</span>
+</span><span class="hll"><span class="linenos">9</span><span class="c1">################################</span>
+</span></pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a triangle but only use 3 lines to do this.</p>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/27a04ee3fcacb7e691a6529ef4956cbc/lesson_2_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">4</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">6</span>
+<span class="hll"><span class="linenos">7</span><span class="c1">###############################</span>
+</span><span class="hll"><span class="linenos">8</span><span class="c1">## Draw a Hexagon in 3 lines ##</span>
+</span><span class="hll"><span class="linenos">9</span><span class="c1">###############################</span>
+</span></pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a hexagon but only use 3 lines to do this.</p>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/5bc2d63b23eed184be65b9e567909bc8/lesson_2_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_4.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">4</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">6</span>
+<span class="hll"><span class="linenos">7</span><span class="c1">#################################################</span>
+</span><span class="hll"><span class="linenos">8</span><span class="c1">## Draw a circle (hint - you only need 3 lines ##</span>
+</span><span class="hll"><span class="linenos">9</span><span class="c1">#################################################</span>
+</span></pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a circle but only use 3 lines to do this.</p>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/8c3dde2b52e00d74b882f49c69db85a9/lesson_2_ex_5.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_5.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">4</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">6</span>
+<span class="hll"><span class="linenos">7</span><span class="c1">######################################################</span>
+</span><span class="hll"><span class="linenos">8</span><span class="c1">## Go Crazy and make something amazing with loops!! ##</span>
+</span><span class="hll"><span class="linenos">9</span><span class="c1">######################################################</span>
+</span></pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code> write some code to draw something cool using <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="lesson_3.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Python Turtle - Lesson 3</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="lesson_1.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python Turtle - Lesson 1</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Damien Murtagh
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/DamoM73/turtle-introduction-to-python" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Turtle - Lesson 2</a><ul>
+<li><a class="reference internal" href="#part-1-iteration-introduction">Part 1: Iteration introduction</a><ul>
+<li><a class="reference internal" href="#introduction-to-flowcharts">Introduction to flowcharts</a></li>
+<li><a class="reference internal" href="#iteration">Iteration</a></li>
+<li><a class="reference internal" href="#for-loops">For loops</a><ul>
+<li><a class="reference internal" href="#for-loop-flowchart">For loop flowchart</a></li>
+<li><a class="reference internal" href="#tracing-with-debugger">Tracing with debugger</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code-blocks">Code blocks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-2-list-numbers-and-range">Part 2: List numbers and Range</a><ul>
+<li><a class="reference internal" href="#introducing-range">Introducing <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li><a class="reference internal" href="#use-for-turtle">Use for Turtle</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercises">Exercises</a><ul>
+<li><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
+<li><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
+<li><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+<li><a class="reference internal" href="#exercise-4">Exercise 4</a></li>
+<li><a class="reference internal" href="#exercise-5">Exercise 5</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    </body>
+</html>

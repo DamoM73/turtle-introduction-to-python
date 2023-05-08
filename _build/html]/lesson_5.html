@@ -1,0 +1,1586 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Turtle - Lesson 6" href="lesson_6.html" /><link rel="prev" title="Python Turtle - Lesson 4" href="lesson_4.html" />
+
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Python Turtle - Lesson 5 - A Turtle Introduction to Python</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --font-stack: gill sans, sans-serif;
+  --font-stack--monospace: monaco, monospace;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">A Turtle Introduction to Python</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">A Turtle Introduction to Python</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction for Teachers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_1.html">Python Turtle - Lesson 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_2.html">Python Turtle - Lesson 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_3.html">Python Turtle - Lesson 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_4.html">Python Turtle - Lesson 4</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Turtle - Lesson 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licencing.html">Licencing</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python-turtle-lesson-5">
+<h1>Python Turtle - Lesson 5<a class="headerlink" href="#python-turtle-lesson-5" title="Permalink to this heading">#</a></h1>
+<aside class="topic">
+<p class="topic-title">In this lesson you will learn:</p>
+<ul class="simple">
+<li><p>how to capturing errors</p></li>
+<li><p>what are branching control structures (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)</p></li>
+<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> in Python</p></li>
+<li><p>the difference between definite and indefinite iteration</p></li>
+<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">where</span></code> loops in Python</p></li>
+<li><p>how to generate random numbers in Python</p></li>
+</ul>
+</aside>
+<section id="part-1-branching">
+<h2>Part 1: Branching<a class="headerlink" href="#part-1-branching" title="Permalink to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fGEz4QNXpEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/fGEz4QNXpEE">Video link</a></p>
+<section id="branching-control-structure">
+<h3>Branching control structure<a class="headerlink" href="#branching-control-structure" title="Permalink to this heading">#</a></h3>
+<p>The branching control structure allows the program’s flow it take alternative paths. Let’s use a practical example to better understand this.</p>
+<p>We’re going to use the <strong>lesson_4_pt_2.py</strong> file. You can either save it as <strong>lesson_5_pt_1a.py</strong> or download and use the <strong><a class="reference download internal" download="" href="_downloads/6129689decc0fe8446eafd62e71394aa/lesson_5_pt_1a.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_pt_1a.py</span></code></a></strong> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># setup window</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">))</span>
+<span class="linenos">20</span><span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">))</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the program, and at the prompt, instead of providing a number, provide a word, for example <code class="docutils literal notranslate"><span class="pre">dog</span></code>.</p>
+<p>This will raise the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="linenos">2</span>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">19</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="linenos">3</span><span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span>
+</pre></div>
+</div>
+<p>This error occurs because in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> we are trying to convert the literal (string) <code class="docutils literal notranslate"><span class="pre">dog</span></code> into an integer. Since <code class="docutils literal notranslate"><span class="pre">dog</span></code> is not a whole number, it causes an error.</p>
+<p>What we need to do is check that user has entered a whole number before converting it into an integer.</p>
+<hr class="docutils" />
+<p>Create a new file in, enter the code below then save it as <strong>lesson_5_pt_1b.py</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>PRIMM:</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code twice:</p>
+<ul>
+<li><p>first time enter the value <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second time enter the value <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<p>Remember that Python inputs are strings. Strings have special operations called <strong>methods</strong>. One of those is the <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> method. <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> returns the Boolean value of <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters in a string are digits.</p>
+<div class="seealso admonition">
+<p class="admonition-title">String Methods</p>
+<p>Python has many useful string methods. If you want to explore them <a class="reference external" href="https://www.w3schools.com/python/python_ref_string.asp"><strong>W3Schools’ Python String Methods</strong></a> is a good place to start.</p>
+</div>
+<p>We can tell if the user’s input is a number or not. Now we need to tell the computer how to respond to this information.</p>
+</section>
+<section id="the-if-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#the-if-statement" title="Permalink to this heading">#</a></h3>
+<p>Adjusts your  <strong>lesson_5_pt_1b.py</strong> code so it is the same as the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+<span class="linenos">2</span>
+<span class="hll"><span class="linenos">3</span><span class="k">if</span> <span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a number&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code twice:</p>
+<ul>
+<li><p>first time enter the value <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second time enter the value <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<section id="flowcharts">
+<h4>Flowcharts<a class="headerlink" href="#flowcharts" title="Permalink to this heading">#</a></h4>
+<p>Flowcharts are great at demonstrating how selection works. We have already used the condition symbol (diamond) in our <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. They are also used for the conditions in <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson 5 1" src="_images/flowchart_lesson_5_1.png" /></p>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">user_value.isdigit():</span></code></p>
+<ul>
+<li><p>This defines the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> tells Python that this is an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+<li><p>The next part is called a <strong>conditional</strong>.</p>
+<ul>
+<li><p>Conditionals are operations that return a Boolean value (<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p>This specific <strong>conditional</strong> is <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code></p></li>
+<li><p>We already know the results from our previous work:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dog</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Ends with <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
+<ul>
+<li><p>This has the same use as <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and functions. It indicates that an indented code block follows.</p></li>
+</ul>
+</li>
+<li><p>The indented code block, will only run if the condition returns <code class="docutils literal notranslate"><span class="pre">True</span></code>. In our example:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code> → <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> → run indented code block</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dog</span></code> → <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code> → don’t run indented code block</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;That's</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code></p>
+<ul>
+<li><p>This is the indented code block that will run if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>We can now respond to a digit being entered. But what if we want to provide a different response when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
+</section>
+</section>
+<section id="the-if-else-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#the-if-else-statement" title="Permalink to this heading">#</a></h3>
+<p>Adjust your <strong>lesson_5_pt_1b.py</strong> code by adding <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> in the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a number&quot;</span><span class="p">)</span>
+<span class="hll"><span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s not a number&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code twice:</p>
+<ul>
+<li><p>first time enter the value <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second time enter the value <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson 5 2" src="_images/flowchart_lesson_5_2.png" /></p>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> operate the same as the previous code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code> - <code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement uses the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement’s condition.</p></li>
+<li><p>In this case, it says: if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> then run the following indented code block.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:</span></code> tells Python that an indented code block follows.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code> - <code class="docutils literal notranslate"><span class="pre">print(&quot;That's</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code></p>
+<ul>
+<li><p>This is the indented code block that will run if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>To check out what is happening in detail stepping through the code with the <strong>debugger</strong>. Use the inputs of <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">dog</span></code>.</p>
+</section>
+<section id="using-if-else-to-capture-errors">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> to capture errors<a class="headerlink" href="#using-if-else-to-capture-errors" title="Permalink to this heading">#</a></h3>
+<p>Go back to <strong>lesson_5_pt_1a.py</strong> and adjust the code by replacing <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> with the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># get user input</span>
+<span class="linenos">2</span><span class="n">num_sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">num_sides</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">4</span>    <span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_sides</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">7</span>    <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Your code should look like the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># setup window</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="hll"><span class="linenos">19</span><span class="c1"># get user input</span>
+</span><span class="hll"><span class="linenos">20</span><span class="n">num_sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">21</span><span class="k">if</span> <span class="n">num_sides</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos">22</span>    <span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_sides</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">23</span><span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">25</span>    <span class="n">quit</span><span class="p">()</span>
+</span><span class="linenos">26</span>
+<span class="linenos">27</span><span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Then replace <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">27</span></code> with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">size</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">3</span>    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="linenos">4</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Your code should look like the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># setup window</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c1"># get user input</span>
+<span class="linenos">20</span><span class="n">num_sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">21</span><span class="k">if</span> <span class="n">num_sides</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">22</span>    <span class="n">num_sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_sides</span><span class="p">)</span>
+<span class="linenos">23</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">25</span>    <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">26</span>
+<span class="hll"><span class="linenos">27</span><span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">28</span><span class="k">if</span> <span class="n">size</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos">29</span>    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">30</span><span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">31</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">32</span>    <span class="n">quit</span><span class="p">()</span>
+</span><span class="linenos">33</span>
+<span class="linenos">34</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s test this code to see if it works.</p>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code in the following scenarios:</p>
+<ul>
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+</ul>
+</li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">More testing tips</p>
+<ul class="simple">
+<li><p>When testing branching code you need to test all possible paths.</p></li>
+<li><p>Test <code class="docutils literal notranslate"><span class="pre">if</span></code> statements for both <code class="docutils literal notranslate"><span class="pre">True</span></code> conditions and <code class="docutils literal notranslate"><span class="pre">False</span></code> conditions.</p></li>
+<li><p>This code had four possible branches so we needed to test all four of them</p></li>
+</ul>
+</div>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson 5 3" src="_images/flowchart_lesson_5_3.png" /></p>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> → a comment used to structure the code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → accepts user input and assigns it to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">21</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num_sides.isdigit():</span></code> → tests if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> only contains numbers</p>
+<ul>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">num_sides.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then run the code block from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">20</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">22</span></code>: <code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">int(size)</span></code> takes the value assigned to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> converts it to an integer, then reassigns it to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> is not all numbers execute following code block (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">22</span></code> to <code class="docutils literal notranslate"><span class="pre">23</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user of their mistake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code>: <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">input(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → accepts user input and assigns it to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">28</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">size.isdigit():</span></code> → tests if <code class="docutils literal notranslate"><span class="pre">size</span></code> only contains numbers</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">size.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then run the code block from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">27</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">int(size)</span></code> takes the value assigned to <code class="docutils literal notranslate"><span class="pre">size</span></code> converts it to an integer, then reassigns it to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">size</span></code> is not all numbers execute following code block (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">29</span></code> to <code class="docutils literal notranslate"><span class="pre">30</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user of their mistake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">32</span></code>: <code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
+</ul>
+</section>
+<section id="refactor-code-dry">
+<h3>Refactor Code - DRY<a class="headerlink" href="#refactor-code-dry" title="Permalink to this heading">#</a></h3>
+<p>Looking at our code, does it pass the DRY test?</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> section from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">30</span></code> definitely has repetition in it. Twice the code:</p>
+<ol class="arabic simple">
+<li><p>asks the user for input</p></li>
+<li><p>checks if that input is all numbers</p></li>
+<li><p>either converts or quits the program depending on the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+</ol>
+<p>During all this, the only parts of the code that differs are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">27</span></code> the <code class="docutils literal notranslate"><span class="pre">input</span></code> prompt is different:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>in their respective sections different variable names are used:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code> → <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">27</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code> → <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>This looks like a prefect opportunity to <strong>refactor</strong> the code using a function.</p>
+<div class="admonition-what-is-refactoring admonition">
+<p class="admonition-title">What is refactoring?</p>
+<p>Refactoring is changing your code <strong>without changing the way it works</strong>. This is normally done to make code more efficient or more maintainable.</p>
+<ul class="simple">
+<li><p>Efficient code uses less computing resources (processing power, storage, internet bandwidth etc.).</p></li>
+<li><p>Maintainable code is easier for programmers to understand, fix, update and enhance.</p></li>
+</ul>
+</div>
+<p>To refactor our code we need to add the following function at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code> of your code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+        <span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then remove the code under <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> from <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">19</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code>, and replace it with two calls to the function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get user input</span>
+<span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the end your code should look like the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="hll"><span class="linenos">10</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">11</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">12</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos">13</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">14</span>    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">15</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">16</span>        <span class="n">quit</span><span class="p">()</span>
+</span><span class="linenos">17</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c1"># setup window</span>
+<span class="linenos">20</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">21</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">22</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">25</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">26</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">27</span>
+<span class="hll"><span class="linenos">28</span><span class="c1"># get user input</span>
+</span><span class="hll"><span class="linenos">29</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">30</span><span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+</span><span class="linenos">31</span>
+<span class="linenos">32</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When you refactor code, it is important to ensure the code still works the same. So <strong>run</strong> the code to ensure that it still works the same way.</p>
+<p>Remember to test all 4 possible branches:</p>
+<ul class="simple">
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
+</ul>
+<p>If your code still works the same, let’s <strong>investigate</strong> the code we added.</p>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson 5 4" src="_images/flowchart_lesson_5_4.png" /></p>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">get_number(prompt):</span></code> → defines our new function with one argument <code class="docutils literal notranslate"><span class="pre">prompt</span></code>:</p>
+<ul>
+<li><p>we observed that the prompt was one of the differences between our two blocks of similar code</p></li>
+<li><p>using this argument means we can provide a different prompt each time we call the function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">input(prompt)</span></code> → uses the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> argument and assigns the user input to <code class="docutils literal notranslate"><span class="pre">num</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num.isdigit():</span></code> → checks if <code class="docutils literal notranslate"><span class="pre">num</span></code> only contains numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">int(num)</span></code> → converts the value assigned to <code class="docutils literal notranslate"><span class="pre">num</span></code> then sends it to the main program:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> is new</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> sends a value back to the main program and then ends the function.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">num</span></code> does not contain only numbers, run the following code block</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user their input is not correct</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">get_number(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → calls the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → provides the prompt string to the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span></code> takes the value returned by the function and assigns it to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → calls the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → provides the prompt string to the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span></code> takes the value returned by the function and assigns it to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="playing-with-colour">
+<h3>Playing with colour<a class="headerlink" href="#playing-with-colour" title="Permalink to this heading">#</a></h3>
+<p>Let’s keep adding features to our program. Turtle allows you to also change the colour of your shapes and lines using the method <code class="docutils literal notranslate"><span class="pre">color</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">color</span></code> accepts two arguments:</p>
+<ul class="simple">
+<li><p>first argument → line colour</p></li>
+<li><p>second argument → fill colour</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Spelling colour / color</p>
+<p>Like most programming languages, Python uses US spelling. Using Australian spelling (eg. colour) will generate an error.</p>
+<p>It up to the programmer to decide what spelling to follow in their naming of variables and functions. I choose to use the US spelling. The consistent spelling reduces the likelihood of errors.</p>
+</div>
+<p>Now let’s change the colour of our shape.</p>
+<p>Make the changes in code the code below to:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">35</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="hll"><span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+</span><span class="linenos"> 7</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="hll"><span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</span><span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos">14</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">16</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">18</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c1"># setup window</span>
+<span class="linenos">23</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">24</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">25</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">28</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">29</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1"># get user input</span>
+<span class="linenos">32</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">33</span><span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">34</span>
+<span class="hll"><span class="linenos">35</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">draw_poly(length,</span> <span class="pre">sides,</span> <span class="pre">color):</span></code> → accepts a third argument <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.color(&quot;black&quot;,color)</span></code> → sets the turtle colour</p>
+<ul>
+<li><p>line colour → <code class="docutils literal notranslate"><span class="pre">&quot;black&quot;</span></code></p></li>
+<li><p>fill colour → the value in the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument</p></li>
+</ul>
+</li>
+</ul>
+<div class="seealso admonition">
+<p class="admonition-title">Turtle colours</p>
+<p>Turtle allows the use of named colours. It also allows RBG and Hexadecimal colours, but named colours are enough for our needs.</p>
+<p><strong><a class="reference external" href="https://cs111.wellesley.edu/labs/lab02/colors">Here is a list of all the named colours</a></strong>.</p>
+</div>
+<p>Now that we can change colour, can we let the user choose between <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code> for the fill colour?</p>
+<p>We will need to capture the error when the user enters anything other than <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code>. That means using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, but the <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement only allows two branches. We need to have four.</p>
+<p>To choose between three or more branches we need to learn about the last part of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement: <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+</section>
+<section id="the-if-elif-else-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#the-if-elif-else-statement" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is effectively a <code class="docutils literal notranslate"><span class="pre">else</span></code> + <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It allows branching between multiple blocks of code. The best way to explore this is by using it in our code.</p>
+<p>Create a function so the user can choose between <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code> for the fill colour.</p>
+<p>Adjust your code so it is the same as the code below.</p>
+<p>Changes are in:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">22</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">47</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">49</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos"> 7</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos">14</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">16</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">18</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>
+<span class="hll"><span class="linenos">22</span><span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos">23</span>    <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fill colour (red, blue, green)?&gt; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span class="hll"><span class="linenos">24</span>    <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">25</span>        <span class="k">return</span> <span class="n">color</span>
+</span><span class="hll"><span class="linenos">26</span>    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">27</span>        <span class="k">return</span> <span class="n">color</span>
+</span><span class="hll"><span class="linenos">28</span>    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">29</span>        <span class="k">return</span> <span class="n">color</span>
+</span><span class="hll"><span class="linenos">30</span>    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">31</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">32</span>        <span class="n">quit</span><span class="p">()</span>
+</span><span class="linenos">33</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="c1"># setup window</span>
+<span class="linenos">36</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">37</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">38</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">41</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">42</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="c1"># get user input</span>
+<span class="linenos">45</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">46</span><span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="hll"><span class="linenos">47</span><span class="n">fill</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">()</span>
+</span><span class="linenos">48</span>
+<span class="hll"><span class="linenos">49</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<p>There are a few new concepts for us to breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> <span class="pre">input(&quot;Fill</span> <span class="pre">colour</span> <span class="pre">(red,</span> <span class="pre">blue,</span> <span class="pre">green)?&gt;</span> <span class="pre">&quot;).lower()</span></code> → <code class="docutils literal notranslate"><span class="pre">lower()</span></code> is new</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code> is another string method</p></li>
+<li><p>it converts all the letters in a string to their lowercase version</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;:</span></code> → tests if the user inputted <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">color</span></code></p>
+<ul>
+<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (in this case <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code> back to the main program)</p></li>
+<li><p>ends the function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">26</span></code>: <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;:</span></code></p>
+<ul>
+<li><p>is only executed when the condition in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">21</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>checks if the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">color</span></code></p>
+<ul>
+<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (in this case <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code> back to the main program)</p></li>
+<li><p>ends the function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">28</span></code>: <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;green&quot;:</span></code></p>
+<ul>
+<li><p>is only executed if the conditions in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">21</span></code> and <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> are both <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>checks if the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">color</span></code></p>
+<ul>
+<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (in this case <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code> back to the main program)</p></li>
+<li><p>ends the function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
+<ul>
+<li><p>is only executed if the conditions in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">21</span></code>, <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> and <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> are all <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code> and <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">32</span></code> are the same as the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p></li>
+</ul>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson5 5" src="_images/flowchart_lesson_5_5.png" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is very useful and flexible. You will use it in various configurations, so let look at it’s rules.</p>
+<div class="admonition-if-elif-else-structure admonition">
+<p class="admonition-title">if…elif…else structure</p>
+<p>The structure of a full <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">if</span></code> component</p>
+<ul>
+<li><p>always at the beginning of an <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+<li><p>the only compulsory component</p></li>
+<li><p>there can only be one <code class="docutils literal notranslate"><span class="pre">if</span></code> per <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+</ul>
+</li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">elif</span></code> component</p>
+<ul>
+<li><p>must come after the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and before the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+<li><p>is optional</p></li>
+<li><p>there can be as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> components as needed</p></li>
+<li><p>it is only used when all the conditions before it are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">else</span></code> component</p>
+<ul>
+<li><p>must be at the end of an an <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+<li><p>it is optional</p></li>
+<li><p>there can only be one per <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
+<li><p>it is only used when all the conditions before it are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="part-1-exercises">
+<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Permalink to this heading">#</a></h2>
+<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercises and make your own code.</p>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/7c0e4f487820551b8eef8d66be6133fa/lesson_5_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Amy&#39;s security guard program</span>
+<span class="linenos">2</span>
+<span class="hll"><span class="linenos">3</span><span class="c1">######################################################</span>
+</span><span class="hll"><span class="linenos">4</span><span class="c1">## Write a program that asks for a person&#39;s name    ##</span>
+</span><span class="hll"><span class="linenos">5</span><span class="c1">## and then grants entry of that person is Amy      ##</span>
+</span><span class="hll"><span class="linenos">6</span><span class="c1">## everyone else is told, politely, to go away      ##</span>
+</span><span class="hll"><span class="linenos">7</span><span class="c1">######################################################</span>
+</span></pre></div>
+</div>
+<p>Follow the instructions in the comments and use your Python knowledge to create a password checker. Remember to apply the DRY principle</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/31a6ef53ac0d32cdaaff2686c30998b4/lesson_5_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Amy&#39;s security guard program</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">friends</span> <span class="o">=</span> <span class="s2">&quot;Bruce&quot;</span>
+<span class="linenos"> 4</span>
+<span class="hll"><span class="linenos"> 5</span><span class="c1">######################################################</span>
+</span><span class="hll"><span class="linenos"> 6</span><span class="c1">## Write a program that asks for a person&#39;s name    ##</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="c1">## and then grants entry of that person is Amy      ##</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="c1">## or a friend of Amy.                              ##</span>
+</span><span class="hll"><span class="linenos"> 9</span><span class="c1">## Everyone else is told, politely, to go away      ##</span>
+</span><span class="hll"><span class="linenos">10</span><span class="c1">######################################################</span>
+</span></pre></div>
+</div>
+<p>Follow the instructions in the comments and use your Python knowledge to create an enhanced password checker. Remember to apply the DRY principle</p>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/ffa7c2e617b5d1711711cd7e0e2bec69/lesson_5_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1">#####################################################</span>
+<span class="linenos"> 4</span><span class="c1">## Adjust the code below to allow the user to      ##</span>
+<span class="linenos"> 5</span><span class="c1">## choose the coordinates where the shape is drawn ##</span>
+<span class="linenos"> 6</span><span class="c1">#####################################################</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="linenos">11</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos">12</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos">13</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos">19</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">21</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">24</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
+<span class="linenos">28</span>    <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fill colour (red, blue, green)?&gt; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="linenos">29</span>    <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+<span class="linenos">30</span>        <span class="k">return</span> <span class="n">color</span>
+<span class="linenos">31</span>    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">:</span>
+<span class="linenos">32</span>        <span class="k">return</span> <span class="n">color</span>
+<span class="linenos">33</span>    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+<span class="linenos">34</span>        <span class="k">return</span> <span class="n">color</span>
+<span class="linenos">35</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">36</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">37</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="k">def</span> <span class="nf">move_pen</span><span class="p">():</span>
+<span class="hll"><span class="linenos">41</span>    <span class="c1"># replace &#39;pass&#39; with your code to get coordinates from user #</span>
+</span><span class="linenos">42</span>    <span class="k">pass</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="c1"># setup window</span>
+<span class="linenos">45</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">46</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">47</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">50</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">51</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="c1"># get user input</span>
+<span class="linenos">54</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">55</span><span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">56</span><span class="n">fill</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">()</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Follow the instructions in the comments (check <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">41</span></code>) and use your Python knowledge to enhance our shape drawing code. Remember to apply the DRY principle.</p>
+</section>
+</section>
+<section id="tutorial-2-while-loop">
+<h2>Tutorial 2: While Loop<a class="headerlink" href="#tutorial-2-while-loop" title="Permalink to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A9j7N6kLL1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/A9j7N6kLL1U">Video link</a></p>
+<p>In Python we have two forms of iteration. We have already looked at the for loop. In the section we will look at the other iteration control structure, the while loop.</p>
+<p>The two types of loops map to two different types of iteration:</p>
+<ul class="simple">
+<li><p><strong>definite iteration</strong></p>
+<ul>
+<li><p>Is used when you <strong>do know</strong> how many times the loop will need to run.</p></li>
+<li><p>definite iteration uses <code class="docutils literal notranslate"><span class="pre">for</span></code> loops since they loop for a set number of times.</p></li>
+</ul>
+</li>
+<li><p><strong>indefinite iteration</strong></p>
+<ul>
+<li><p>Is used when you <strong>don’t know</strong> how many times the loop will need to run.</p></li>
+<li><p>indefinite iteration uses <code class="docutils literal notranslate"><span class="pre">while</span></code> loops since they will loop as long as the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Card dealing is a good analogy of the definite and indefinite loops distinction:</p>
+<ul class="simple">
+<li><p>Dealing for Uno:</p>
+<ul>
+<li><p>How many cards does each player get?</p></li>
+<li><p>The rules say seven.</p></li>
+<li><p>So, we need to deal around the players seven times.</p></li>
+<li><p>This is <strong>definite</strong> iteration as you know how many times you have to go around the group.</p></li>
+</ul>
+</li>
+<li><p>Dealing for Snap:</p>
+<ul>
+<li><p>How many cards does each player get?</p></li>
+<li><p>Depends on how many players, you need to keep going until you have dealt the whole deck.</p></li>
+<li><p>This <strong>indefinite</strong> iteration as you will need to go around the group While there are still cards left in the deck.</p></li>
+</ul>
+</li>
+</ul>
+<p>In summary:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop is count controlled → we know how many times to run it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop is condition controlled → we don’t know how many times to run it.</p></li>
+</ul>
+<p>To understand <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, let’s look at a number guessing game.</p>
+<section id="number-guessing-game">
+<h3>Number guessing game<a class="headerlink" href="#number-guessing-game" title="Permalink to this heading">#</a></h3>
+<p>Download the <strong><a class="reference download internal" download="" href="_downloads/65125b7873bd896113b2ee33849a46f7/lesson_5_pt_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_pt_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+<span class="linenos">18</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+<span class="linenos">19</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect. The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</ul>
+<div class="admonition-what-is-the-random-module admonition">
+<p class="admonition-title">What is the random module?</p>
+<p>The <strong>random</strong> module gives us access to a range of functions that produce random results.</p>
+<p>To see all the commands, you can go the <a class="reference external" href="https://www.w3schools.com/python/module_random.asp"><strong>W3Schools Python Random Module page</strong></a>.</p>
+</div>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>:</p>
+<ul>
+<li><p>We will be using the random function called <code class="docutils literal notranslate"><span class="pre">randint</span></code>, so we need to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code> are the same <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function we have used previously.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">13</span></code>: <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">random.randint(1,100)</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.randint(1,100)</span></code></p>
+<ul>
+<li><p>use the <code class="docutils literal notranslate"><span class="pre">randint</span></code> function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module</p></li>
+<li><p>generate a random integer between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code> (inclusive)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span></code> → assign the returned integer to the variable <code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">15</span></code>: <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Guess</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">between</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">100&gt;</span> <span class="pre">&quot;)</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number(&quot;Guess</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">between</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">100&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function to ask the user for a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span></code> → assigns the returned integer to the variable <code class="docutils literal notranslate"><span class="pre">guess</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">17</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">guess</span> <span class="pre">==</span> <span class="pre">number:</span></code></p>
+<ul>
+<li><p>checks if the user’s guess and the random number are the same</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">==</span></code> symbol is a <strong>comparison operator</strong> (see below). It checks if two values are the same</p></li>
+<li><p>if the two values are the same → run the code block on <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">16</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → if the user’s guess and the random number are not the same → run the code block on <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">18</span></code>.</p></li>
+</ul>
+<div class="admonition-comparison-operators admonition">
+<p class="admonition-title">Comparison operators</p>
+<p>A <strong>comparison operator</strong> compares two values and returns either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Python’s condition testing uses many comparison operators:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>checks if two values are the same (equal to)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>checks if two values are not the same (not equal to)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>checks if the left value is greater than the right value</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>checks if the left value is less than the right value</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>checks if the left value is greater than or equal to the right value</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>checks if the left value is less than or equal to the right value</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<p>So, we’ve made a simple game, but it is not a good one. A one-in-one-hundred chance of guessing a number is not going to keep the user entertained for too long. How about we adjust the code to allow the user to have ten guesses?</p>
+<p>Now that sounds like iteration, but what kind? Since we know how many times this will need to loop (10), it’s definite iteration. Definite iteration requires a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>Change your code so it looks like the code below. Specifically:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">15</span></code> → provide user instructions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">23</span></code> → place the guessing process within a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> → make sure you remove the number reveal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">25</span></code> → reveal the number after all 10 guesses have finished</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have 10 turns to guess a number between 1 and 100&quot;</span><span class="p">)</span>
+</span><span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span><span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">18</span>    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">19</span>
+</span><span class="hll"><span class="linenos">20</span>    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">21</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">22</span>    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect. Try again&quot;</span><span class="p">)</span>
+</span><span class="linenos">24</span>
+<span class="hll"><span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+<li><p>We won’t worry about <strong>investigating</strong> as there is nothing new in this code.</p></li>
+</ul>
+<hr class="docutils" />
+<p>This is better, but still isn’t great. There is a one-in-ten chance of getting the right number. Each guess is a stab in the dark with no knowledge gained from the previous guesses. How about we give the user hints and let them know that their guess is too high or too low?</p>
+<p>Change the <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement into the <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement on <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code> in the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have 10 turns to guess a number between 1 and 100&quot;</span><span class="p">)</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="linenos">18</span>    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="hll"><span class="linenos">20</span>    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">21</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too high&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">22</span>    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too low&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">24</span>    <span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+</span><span class="linenos">26</span>
+<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We’ve done a fair bit of coding without any serious testing. So this time lets keep running our code until we cover all four branches:</p>
+<ol class="arabic simple">
+<li><p>guess is too high</p></li>
+<li><p>guess is too low</p></li>
+<li><p>guess is correct</p></li>
+<li><p>all 10 guess used up without guessing the number</p></li>
+</ol>
+<p>This might be easier to do if we know the random number. Feel free to add a line that prints the random number, but make sure you comment it out after testing.</p>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+<li><p>We won’t worry about <strong>investigating</strong> as there is nothing new in this code.</p></li>
+</ul>
+<p>Did you identify a problem when the user guesses the number before using all ten guesses? The game prints <code class="docutils literal notranslate"><span class="pre">Correct!</span></code> but then continues to ask them to guess numbers. This is because we created a definite iteration using <code class="docutils literal notranslate"><span class="pre">for</span></code> which is set to always give ten guesses.</p>
+<p>What we want is an indefinite iteration that loops until the user guesses the number. To do this we will use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+</section>
+<section id="using-a-while-loop">
+<h3>Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#using-a-while-loop" title="Permalink to this heading">#</a></h3>
+<p>Change your code so it is the same as the code below. Specifically:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">15</span></code> → add <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">17</span></code> → change the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement to <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number:</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span><span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
+</span><span class="linenos">18</span>    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+<span class="linenos">21</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too high&quot;</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+<span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too low&quot;</span><span class="p">)</span>
+<span class="linenos">24</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Again you want to run this code enough time that you have covered all four possible branches:</p>
+<ol class="arabic simple">
+<li><p>guess is too high</p></li>
+<li><p>guess is too low</p></li>
+<li><p>guess is correct</p></li>
+<li><p>all 10 guess used up without guessing the number</p></li>
+</ol>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+<li><p>Let’s <strong>investigating</strong> the new code to see how a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works.</p></li>
+</ul>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">17</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number:</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> → this is the loop condition</p></li>
+<li><p>It tests if <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> are the same:</p>
+<ul>
+<li><p>It will return <code class="docutils literal notranslate"><span class="pre">True</span></code> when <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> are <strong>not</strong> the same.</p></li>
+<li><p>It will return <code class="docutils literal notranslate"><span class="pre">False</span></code> when <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> are the same.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> tells Python to loop the following code block if the loop condition returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">15</span></code>: <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
+<ul>
+<li><p>In our <code class="docutils literal notranslate"><span class="pre">while</span></code> statement we use the variable <code class="docutils literal notranslate"><span class="pre">guess</span></code> before getting an input from the user → this will raise an error.</p></li>
+<li><p>We need to assign value to <code class="docutils literal notranslate"><span class="pre">guess</span></code> before the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement</p>
+<ul>
+<li><p>The problem is the value we assign to <code class="docutils literal notranslate"><span class="pre">guess</span></code> cannot be the same as the value assigned to <code class="docutils literal notranslate"><span class="pre">number</span></code>. If it is, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will not run at all, and the user will not provide input.</p></li>
+<li><p>To solve this, we assign <code class="docutils literal notranslate"><span class="pre">0</span></code> because it is outside the range of <code class="docutils literal notranslate"><span class="pre">random.randint</span></code> (1-100).</p></li>
+<li><p>This way, <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> will always return <code class="docutils literal notranslate"><span class="pre">True</span></code> the first time the condition is tested.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson 5 6" src="_images/flowchart_lesson_5_6.png" /></p>
+</section>
+<section id="using-while-to-enhance-our-error-capture">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">while</span></code> to enhance our error capture<a class="headerlink" href="#using-while-to-enhance-our-error-capture" title="Permalink to this heading">#</a></h3>
+<p>We now have a somewhat fun game where the user has a good chance of guessing the number. We can also use <code class="docutils literal notranslate"><span class="pre">while</span></code> to improve our error capture in the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function.</p>
+<p>At the moment, if the user provides an input which isn’t an integer, the game ends. This is a bit harsh, especially if they have already made three or four guesses.</p>
+<p>Adjust your <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function so that it is the same as in the code below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="hll"><span class="linenos"> 5</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos"> 6</span>        <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 7</span>        <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos"> 8</span>            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 9</span>        <span class="k">else</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">10</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+</span><span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">number</span><span class="p">:</span>
+<span class="linenos">18</span>    <span class="n">guess</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Guess a number between 1 and 100&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+<span class="linenos">21</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too high&quot;</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+<span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess is too low&quot;</span><span class="p">)</span>
+<span class="linenos">24</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Again you want to run this code enough time that you have covered all four possible branches:</p>
+<ol class="arabic simple">
+<li><p>guess is too high</p></li>
+<li><p>guess is too low</p></li>
+<li><p>guess is correct</p></li>
+<li><p>all 10 guess used up without guessing the number</p></li>
+</ol>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
+<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
+<li><p>Let’s <strong>investigating</strong> the new code to see how this use of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works</p></li>
+</ul>
+<p>Code breakdown:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code></p>
+<ul>
+<li><p>This is called an <strong>infinite loop</strong>, since the condition will always be <code class="docutils literal notranslate"><span class="pre">True</span></code>, the loop will always run.</p></li>
+<li><p>Infinite loops are frequently cause by errors, although not in this case.</p></li>
+<li><p>Infinite loops can be ‘broken out’ of by using the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement.</p></li>
+<li><p>If the Infinite loop is in a function, it can also be ‘broken out’ of by using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">6</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code> are the same as before, except they form a code block inside of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p></li>
+<li><p>It is worth noting the importance of <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code>.</p>
+<ul>
+<li><p>Since the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is infinite, the program will keep asking for input until it executes <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> the value assigned to <code class="docutils literal notranslate"><span class="pre">num</span></code> is converted into an integer and then returned to the main program</p></li>
+<li><p>In this situation the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement ends the function. In ending the function, it also exits the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p></li>
+</ul>
+</li>
+</ul>
+<p>Code flowchart:</p>
+<p><img alt="flowchart lesson 5 7" src="_images/flowchart_lesson_5_7.png" /></p>
+<p>The end effect of these changes is the program that will ask the user for a number until the user enters an integer.</p>
+</section>
+</section>
+<section id="part-2-exercise">
+<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Permalink to this heading">#</a></h2>
+<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercises and make your own code.</p>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/81947805ed120eb1aa3acb4f391158c2/lesson_5_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_4.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos"> 7</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="hll"><span class="linenos">13</span><span class="c1">############################################</span>
+</span><span class="hll"><span class="linenos">14</span><span class="c1">## adjust the get_number code so it loops ##</span>
+</span><span class="hll"><span class="linenos">15</span><span class="c1">## until the user provides a valid input  ##</span>
+</span><span class="hll"><span class="linenos">16</span><span class="c1">############################################</span>
+</span><span class="linenos">17</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<span class="linenos">20</span>    <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos">21</span>    <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="linenos">22</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos">23</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">24</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">25</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>
+<span class="hll"><span class="linenos">28</span><span class="c1">###########################################</span>
+</span><span class="hll"><span class="linenos">29</span><span class="c1">## adjust the get_color code so it loops ##</span>
+</span><span class="hll"><span class="linenos">30</span><span class="c1">## until the user provides a valid input ##</span>
+</span><span class="hll"><span class="linenos">31</span><span class="c1">###########################################</span>
+</span><span class="linenos">32</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
+<span class="linenos">35</span>    <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fill colour (red, blue, green)?&gt; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="linenos">36</span>    <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+<span class="linenos">37</span>        <span class="k">return</span> <span class="n">color</span>
+<span class="linenos">38</span>    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">:</span>
+<span class="linenos">39</span>        <span class="k">return</span> <span class="n">color</span>
+<span class="linenos">40</span>    <span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+<span class="linenos">41</span>        <span class="k">return</span> <span class="n">color</span>
+<span class="linenos">42</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">43</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input&quot;</span><span class="p">)</span>
+<span class="linenos">44</span>        <span class="n">quit</span><span class="p">()</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="k">def</span> <span class="nf">move_pen</span><span class="p">():</span>
+<span class="linenos">48</span>    <span class="n">x_val</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;x axis position?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">49</span>    <span class="n">y_val</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;y axis position?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">50</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">51</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
+<span class="linenos">52</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="c1"># setup window</span>
+<span class="linenos">56</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">57</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">58</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">61</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">62</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="c1"># get user input</span>
+<span class="linenos">65</span><span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">66</span><span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
+<span class="linenos">67</span><span class="n">fill</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">()</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="n">move_pen</span><span class="p">()</span>
+<span class="linenos">70</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Follow the instructions in comments and make changes to the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> and <code class="docutils literal notranslate"><span class="pre">get_colour</span></code> functions so they capture user input errors.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="lesson_6.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Python Turtle - Lesson 6</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="lesson_4.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python Turtle - Lesson 4</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Damien Murtagh
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/DamoM73/turtle-introduction-to-python" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Turtle - Lesson 5</a><ul>
+<li><a class="reference internal" href="#part-1-branching">Part 1: Branching</a><ul>
+<li><a class="reference internal" href="#branching-control-structure">Branching control structure</a></li>
+<li><a class="reference internal" href="#the-if-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a><ul>
+<li><a class="reference internal" href="#flowcharts">Flowcharts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-if-else-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</a></li>
+<li><a class="reference internal" href="#using-if-else-to-capture-errors">Using <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> to capture errors</a></li>
+<li><a class="reference internal" href="#refactor-code-dry">Refactor Code - DRY</a></li>
+<li><a class="reference internal" href="#playing-with-colour">Playing with colour</a></li>
+<li><a class="reference internal" href="#the-if-elif-else-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-1-exercises">Part 1 Exercises</a><ul>
+<li><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
+<li><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
+<li><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tutorial-2-while-loop">Tutorial 2: While Loop</a><ul>
+<li><a class="reference internal" href="#number-guessing-game">Number guessing game</a></li>
+<li><a class="reference internal" href="#using-a-while-loop">Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+<li><a class="reference internal" href="#using-while-to-enhance-our-error-capture">Using <code class="docutils literal notranslate"><span class="pre">while</span></code> to enhance our error capture</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-2-exercise">Part 2 Exercise</a><ul>
+<li><a class="reference internal" href="#exercise-4">Exercise 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    </body>
+</html>
