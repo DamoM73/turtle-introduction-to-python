@@ -10,7 +10,7 @@ my_ttl = turtle.Turtle()
 my_ttl.shape("arrow")
 
 ##################################
-## Using the tutrle command you ##
+## Using the turtle command you ##
 ## have learnt, draw a house.   ##
 ##################################
 

@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Turtle - Lesson 4" href="lesson_4.html" /><link rel="prev" title="Python Turtle - Lesson 2" href="lesson_2.html" />
 
-    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 4.5.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>Python Turtle - Lesson 3 - A Turtle Introduction to Python</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -146,7 +146,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
@@ -170,6 +170,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lesson_5.html">Python Turtle - Lesson 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licencing.html">Licencing</a></li>
 </ul>
@@ -206,9 +207,9 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="python-turtle-lesson-3">
-<h1>Python Turtle - Lesson 3<a class="headerlink" href="#python-turtle-lesson-3" title="Permalink to this headline">#</a></h1>
-<div class="topic">
+          <section id="python-turtle-lesson-3">
+<h1>Python Turtle - Lesson 3<a class="headerlink" href="#python-turtle-lesson-3" title="Permalink to this heading">#</a></h1>
+<aside class="topic">
 <p class="topic-title">In this lesson you will learn:</p>
 <ul class="simple">
 <li><p>about storing values in variables</p></li>
@@ -217,13 +218,13 @@
 <li><p>how to use coordinates to move the turtle</p></li>
 <li><p>how to move the turtle without drawing a line</p></li>
 </ul>
-</div>
+</aside>
 <section id="part-1-variables">
-<h2>Part 1: Variables<a class="headerlink" href="#part-1-variables" title="Permalink to this headline">#</a></h2>
+<h2>Part 1: Variables<a class="headerlink" href="#part-1-variables" title="Permalink to this heading">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mG1O_JamxjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/mG1O_JamxjQ">Video link</a></p>
 <section id="conventional-range">
-<h3>Conventional range<a class="headerlink" href="#conventional-range" title="Permalink to this headline">#</a></h3>
+<h3>Conventional range<a class="headerlink" href="#conventional-range" title="Permalink to this heading">#</a></h3>
 <p>Before we start looking at variables, we need to use <code class="docutils literal notranslate"><span class="pre">range</span></code> in a more conventual way.</p>
 <p>Previously, we would use the following code to print four numbers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
@@ -263,7 +264,7 @@
 <p>This is the way that <code class="docutils literal notranslate"><span class="pre">range</span></code> is conventionally used in Python.</p>
 </section>
 <section id="replace-magic-numbers">
-<h3>Replace magic numbers<a class="headerlink" href="#replace-magic-numbers" title="Permalink to this headline">#</a></h3>
+<h3>Replace magic numbers<a class="headerlink" href="#replace-magic-numbers" title="Permalink to this heading">#</a></h3>
 <p>Below is <strong>a</strong> solution for lesson 2 exercise 1 (there are many possible solutions).</p>
 <p>Create a new file named <strong>lesson_3_pt_1.py</strong> and enter this code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
@@ -366,7 +367,7 @@
 </div>
 </section>
 <section id="no-meat-space-calculations">
-<h3>No ‘meat space’ calculations<a class="headerlink" href="#no-meat-space-calculations" title="Permalink to this headline">#</a></h3>
+<h3>No ‘meat space’ calculations<a class="headerlink" href="#no-meat-space-calculations" title="Permalink to this heading">#</a></h3>
 <p>In creating our hexagon, how did we know that degrees needed to be 60?</p>
 <p>You may have worked it out in your head or used a calculator. There are flaws on both approaches.</p>
 <ul class="simple">
@@ -398,7 +399,7 @@
 </div>
 </section>
 <section id="remove-unnecessary-variables">
-<h3>Remove unnecessary variables<a class="headerlink" href="#remove-unnecessary-variables" title="Permalink to this headline">#</a></h3>
+<h3>Remove unnecessary variables<a class="headerlink" href="#remove-unnecessary-variables" title="Permalink to this heading">#</a></h3>
 <p>Another good programming practice is to remove unnecessary variables.</p>
 <p>Do we need the <code class="docutils literal notranslate"><span class="pre">degrees</span></code> variable? Could we place the calculation inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop instead?</p>
 <p>If we remove <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code> by moving the calculation to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code>, our code will look like the following.</p>
@@ -463,10 +464,10 @@
 </section>
 </section>
 <section id="part-1-exercises">
-<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Permalink to this headline">#</a></h2>
+<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Permalink to this heading">#</a></h2>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. Work through the following exercises and make your own code.</p>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/e058b317f48e0f79b7e9a00d50ebf093/lesson_3_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -490,7 +491,7 @@
 <p>Follow the instructions in the comments and change the code so it draws a square</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/47c09db8855ef906ed14b9545f1f807f/lesson_3_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -514,7 +515,7 @@
 <p>Follow the instructions in the comments and change the code so it draws a circle</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/621563839d2990821bca5149550b89d7/lesson_3_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -539,11 +540,11 @@
 </section>
 </section>
 <section id="part-2-coordinates">
-<h2>Part 2: Coordinates<a class="headerlink" href="#part-2-coordinates" title="Permalink to this headline">#</a></h2>
+<h2>Part 2: Coordinates<a class="headerlink" href="#part-2-coordinates" title="Permalink to this heading">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F4ajxJwXH58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/F4ajxJwXH58">Video link</a></p>
 <section id="maintainability">
-<h3>Maintainability<a class="headerlink" href="#maintainability" title="Permalink to this headline">#</a></h3>
+<h3>Maintainability<a class="headerlink" href="#maintainability" title="Permalink to this heading">#</a></h3>
 <p><img alt="XKCD Code Quality" src="https://imgs.xkcd.com/comics/code_quality.png" /></p>
 <p><strong>Maintainability</strong> refers to how easy your code is to understand for other programmers. This is important. The other programmer may be:</p>
 <ul class="simple">
@@ -590,7 +591,7 @@
 <p>Save the file as <strong>lesson_3_pt_2.py</strong> (<strong>File</strong> → <strong>Save as…</strong>).</p>
 </section>
 <section id="how-turtle-coordinates-work">
-<h3>How Turtle coordinates work<a class="headerlink" href="#how-turtle-coordinates-work" title="Permalink to this headline">#</a></h3>
+<h3>How Turtle coordinates work<a class="headerlink" href="#how-turtle-coordinates-work" title="Permalink to this heading">#</a></h3>
 <p>Imagine the Turtle window as a piece of graph paper that measured in pixels. Our screen is set to 500px wide and 500px high (px is the recognised abbreviation for pixels). Turtle uses x to represent horizontal values, and y to represent vertical values. So, we could instead say the window’s <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">500</span></code> and its <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">500</span></code></p>
 <p>In computing, we would represent these coordinates as <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code> where the first value is <code class="docutils literal notranslate"><span class="pre">x</span></code> and the second values is <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <div class="admonition-what-s-an-immutable-tuple admonition">
@@ -621,7 +622,7 @@
 <p>Now that we know coordinates we can tell our turtle to go to a specific coordinates.</p>
 </section>
 <section id="using-goto-to-draw">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">goto()</span></code> to draw<a class="headerlink" href="#using-goto-to-draw" title="Permalink to this headline">#</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">goto()</span></code> to draw<a class="headerlink" href="#using-goto-to-draw" title="Permalink to this heading">#</a></h3>
 <p>Make the following adjustments in <strong>lesson_3_pt_2.py</strong>:</p>
 <ul class="simple">
 <li><p>add <code class="docutils literal notranslate"><span class="pre">my_ttl.goto(0,125)</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">16</span></code></p></li>
@@ -700,7 +701,7 @@
 </ul>
 </section>
 <section id="using-penup-and-pendown">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">penup</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown</span></code><a class="headerlink" href="#using-penup-and-pendown" title="Permalink to this headline">#</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">penup</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown</span></code><a class="headerlink" href="#using-penup-and-pendown" title="Permalink to this heading">#</a></h3>
 <p>Now we have a border around our drawing. There is an annoying line where the turtle moves from the centre of the window to the border. Luckily, we can get rid of it.</p>
 <p><img alt="annoying line" src="_images/penup.png" /></p>
 <p>When we write, we do not leave trailing lines because we lift our pen up to move. We then put our pen back down to keep writing. Turtle can do the same this with its <code class="docutils literal notranslate"><span class="pre">penup</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown</span></code> functions.</p>
@@ -743,10 +744,10 @@
 </section>
 </section>
 <section id="part-2-exercise">
-<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Permalink to this headline">#</a></h2>
+<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Permalink to this heading">#</a></h2>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercise and make your own code.</p>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/5388c5044253d943ca70154b573cd163/lesson_3_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_4.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -868,12 +869,11 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

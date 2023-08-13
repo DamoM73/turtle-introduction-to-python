@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Licencing" href="licencing.html" /><link rel="prev" title="Extension Activities" href="extention.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Licencing" href="licencing.html" /><link rel="prev" title="Flowcharts" href="flowcharts.html" />
 
-    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 4.5.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>Debugging with Thonny - A Turtle Introduction to Python</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -146,7 +146,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
@@ -170,6 +170,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lesson_5.html">Python Turtle - Lesson 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Debugging with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licencing.html">Licencing</a></li>
 </ul>
@@ -206,10 +207,10 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="debugging-with-thonny">
-<h1>Debugging with Thonny<a class="headerlink" href="#debugging-with-thonny" title="Permalink to this headline">#</a></h1>
+          <section id="debugging-with-thonny">
+<h1>Debugging with Thonny<a class="headerlink" href="#debugging-with-thonny" title="Permalink to this heading">#</a></h1>
 <section id="programming-mistakes">
-<h2>Programming mistakes<a class="headerlink" href="#programming-mistakes" title="Permalink to this headline">#</a></h2>
+<h2>Programming mistakes<a class="headerlink" href="#programming-mistakes" title="Permalink to this heading">#</a></h2>
 <p>Everyone makes mistakes—even seasoned professional developers!</p>
 <p>Python is good at catching mistakes like syntax errors and run-time errors. Unfortunately, there is a third type of error that you may have already experienced. <strong>Logic errors</strong> occur when a valid program doesn’t do what the programmer intended.</p>
 <p>For example, type the code below and save it has <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>.</p>
@@ -229,14 +230,14 @@
 <p>Knowing how to find and fix bugs in your code is a skill that you will use for your entire coding career!</p>
 </section>
 <section id="using-thonny-s-debugger">
-<h2>Using Thonny’s Debugger<a class="headerlink" href="#using-thonny-s-debugger" title="Permalink to this headline">#</a></h2>
+<h2>Using Thonny’s Debugger<a class="headerlink" href="#using-thonny-s-debugger" title="Permalink to this heading">#</a></h2>
 <p>To debug <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code> we need to understand the debugging tools we have at our disposal. Thonny has a debugger built-in, but before we explore it, we need to make sure you have the correct setup.</p>
 <p>Open the <strong>View</strong> menu and ensure there is a tick beside both <strong>Stack</strong> and <strong>Variables</strong>.</p>
 <p><img alt="image" src="_images/debugging_1.png" /></p>
 <p>To enter into Thonny’s Debugger click on the <strong>Debug</strong> button.</p>
 <p><img alt="image" src="_images/debugging_2.png" /></p>
 <section id="controlling-the-debugger">
-<h3>Controlling the debugger<a class="headerlink" href="#controlling-the-debugger" title="Permalink to this headline">#</a></h3>
+<h3>Controlling the debugger<a class="headerlink" href="#controlling-the-debugger" title="Permalink to this heading">#</a></h3>
 <p>To see how the debugger works, let’s start by writing a simple program without any bugs.</p>
 <p>Type the following into Thonny and save it as <code class="docutils literal notranslate"><span class="pre">debug_a.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;michelle&quot;</span><span class="p">,</span> <span class="s2">&quot;nicole&quot;</span><span class="p">,</span> <span class="s2">&quot;simone&quot;</span><span class="p">,</span> <span class="s2">&quot;emma&quot;</span><span class="p">]</span>
@@ -260,7 +261,7 @@
 <p>Lets see how they work.</p>
 </section>
 <section id="step-into-button">
-<h3>Step into button<a class="headerlink" href="#step-into-button" title="Permalink to this headline">#</a></h3>
+<h3>Step into button<a class="headerlink" href="#step-into-button" title="Permalink to this heading">#</a></h3>
 <p>Click the <strong>Step into</strong> button. Thonny will now execute the previous highlighted code block. The new highlighted code indicates the part of the code to Python will execute next.  In this case it is the list <code class="docutils literal notranslate"><span class="pre">[&quot;michelle&quot;,</span> <span class="pre">&quot;nicole&quot;,</span> <span class="pre">&quot;simone&quot;,</span> <span class="pre">&quot;emma&quot;]</span></code>.</p>
 <p><img alt="image" src="_images/debugging_5.png" /></p>
 <p>Clicking <strong>Step into</strong> again highlights <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code>. This shows that Python will now evaluating this item.</p>
@@ -295,7 +296,7 @@
 <p><img alt="image" src="_images/debugging_13.png" /></p>
 <hr class="docutils" />
 <p>The next three <strong>Step into</strong> clicks:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>highlights the <code class="docutils literal notranslate"><span class="pre">name.capitalize()</span></code></p></li>
 <li><p>highlights <code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
 <li><p>replaces <code class="docutils literal notranslate"><span class="pre">name</span></code> with <code class="docutils literal notranslate"><span class="pre">'michelle'</span></code></p></li>
@@ -303,7 +304,7 @@
 <p><img alt="image" src="_images/debugging_14.png" /></p>
 <hr class="docutils" />
 <p>The next three <strong>Step into</strong> clicks:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>applies the <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> method to <code class="docutils literal notranslate"><span class="pre">'michelle'</span></code></p></li>
 <li><p>changes <code class="docutils literal notranslate"><span class="pre">'michelle'</span></code> to <code class="docutils literal notranslate"><span class="pre">'Michelle'</span></code></p></li>
 <li><p>overwrites the value in <code class="docutils literal notranslate"><span class="pre">name</span></code> with <code class="docutils literal notranslate"><span class="pre">'Michelle'</span></code></p></li>
@@ -321,9 +322,9 @@
 <p>We will use the next iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop investigate how <strong>Step over</strong> works.</p>
 </section>
 <section id="step-over-button">
-<h3>Step over button<a class="headerlink" href="#step-over-button" title="Permalink to this headline">#</a></h3>
+<h3>Step over button<a class="headerlink" href="#step-over-button" title="Permalink to this heading">#</a></h3>
 <p>The <strong>Step over</strong> function processes the highlighted code without going into the details. The next click of <strong>Step over:</strong></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>takes the value stored in name (‘nicole’)</p></li>
 <li><p>capitalizes it to ‘Nicole’</p></li>
 <li><p>writes it back to name.</p></li>
@@ -342,13 +343,13 @@
 <p><img alt="image" src="_images/debugging_20.png" /></p>
 </section>
 <section id="step-out-button">
-<h3>Step out button<a class="headerlink" href="#step-out-button" title="Permalink to this headline">#</a></h3>
+<h3>Step out button<a class="headerlink" href="#step-out-button" title="Permalink to this heading">#</a></h3>
 <p>The <strong>Step out</strong> completes the rest of the currently highlighted code. Look back at the last example, and notice the grey box around <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code>? This box indicates that we have stepped into <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code> and are processing it. Click <strong>Step out</strong> and Thonny will move back up a level to highlight all <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code>.</p>
 <p><img alt="image" src="_images/debugging_21.png" /></p>
 <p>Clicking <strong>Step out</strong> again will move back up one level. The debugger is now to outside the for loop and the program will finish.</p>
 </section>
 <section id="resume-button-and-breakpoints">
-<h3>Resume button and breakpoints<a class="headerlink" href="#resume-button-and-breakpoints" title="Permalink to this headline">#</a></h3>
+<h3>Resume button and breakpoints<a class="headerlink" href="#resume-button-and-breakpoints" title="Permalink to this heading">#</a></h3>
 <p>The last button we need to look at is the <strong>Resume</strong> button. This works in conjunction with <strong>breakpoints</strong>. The <strong>Resume</strong> button will execute the code until it finds a <strong>breakpoint</strong>, then it will pause**.**</p>
 <p>To add a <strong>breakpoint</strong> to your code, click on the line number that you wish to pause the program on.</p>
 <p>Let’s try this out. Click on the line number 4. A red dot should appear between the number and the code panel (as below):</p>
@@ -367,7 +368,7 @@
 </section>
 </section>
 <section id="debugging-a-logic-error">
-<h2>Debugging a Logic Error<a class="headerlink" href="#debugging-a-logic-error" title="Permalink to this headline">#</a></h2>
+<h2>Debugging a Logic Error<a class="headerlink" href="#debugging-a-logic-error" title="Permalink to this heading">#</a></h2>
 <p>First let’s look closely at <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">def</span> <span class="nf">add_underscores</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
 </span><span class="hll"><span class="linenos">2</span>    <span class="n">new_word</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
@@ -380,7 +381,7 @@
 </span></pre></div>
 </div>
 <section id="guess-the-bug-is-location">
-<h3>Guess the bug is location<a class="headerlink" href="#guess-the-bug-is-location" title="Permalink to this headline">#</a></h3>
+<h3>Guess the bug is location<a class="headerlink" href="#guess-the-bug-is-location" title="Permalink to this heading">#</a></h3>
 <p>The first step is to identify the section of code that is likely to contain the bug. You may not be able to identify exactly where the bug. So, make a reasonable guess about which section of your code has an error.</p>
 <p>Notice that there are two distinct sections of the program:</p>
 <ul class="simple">
@@ -408,7 +409,7 @@
 <p>The first line of code inside the function creates a variable <code class="docutils literal notranslate"><span class="pre">new_word</span></code> with the value <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code>. You’re all good there, so you can conclude that the problem is somewhere in the body of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </section>
 <section id="set-a-breakpoint-to-inspect-code">
-<h3>Set a breakpoint to inspect code<a class="headerlink" href="#set-a-breakpoint-to-inspect-code" title="Permalink to this headline">#</a></h3>
+<h3>Set a breakpoint to inspect code<a class="headerlink" href="#set-a-breakpoint-to-inspect-code" title="Permalink to this heading">#</a></h3>
 <p>Now that we’ve identified where the bug must be, set a breakpoint at the start of the for loop. This way we can trace out exactly what’s happening inside the loop with the debugging tool:</p>
 <p><img alt="image" src="_images/debugging_25.png" /></p>
 <p>Click the <strong>Debug</strong> button to launch Thonny’s debugger. Thonny will run the code until it hits the breakpoint. Your IDE should look like the image below. There are some new features we haven’t seen before.</p>
@@ -441,7 +442,7 @@
 </ul>
 <div class="admonition-stack-timeline admonition">
 <p class="admonition-title">Stack timeline</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> in the main module called the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> function</p></li>
 <li><p>Python pauses the main section at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> at wait for the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> function to finish</p></li>
 <li><p>When the function finishes, the main section will continue from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> onwards.</p></li>
@@ -516,14 +517,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="extention.html">
+          <a class="prev-page" href="flowcharts.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Extension Activities</div>
+                <div class="title">Flowcharts</div>
                 
               </div>
             </a>
@@ -590,12 +591,11 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

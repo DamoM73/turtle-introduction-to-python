@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Turtle - Lesson 3" href="lesson_3.html" /><link rel="prev" title="Python Turtle - Lesson 1" href="lesson_1.html" />
 
-    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 4.5.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>Python Turtle - Lesson 2 - A Turtle Introduction to Python</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -146,7 +146,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
@@ -170,6 +170,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lesson_5.html">Python Turtle - Lesson 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging with Thonny</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licencing.html">Licencing</a></li>
 </ul>
@@ -206,9 +207,9 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="python-turtle-lesson-2">
-<h1>Python Turtle - Lesson 2<a class="headerlink" href="#python-turtle-lesson-2" title="Permalink to this headline">#</a></h1>
-<div class="topic">
+          <section id="python-turtle-lesson-2">
+<h1>Python Turtle - Lesson 2<a class="headerlink" href="#python-turtle-lesson-2" title="Permalink to this heading">#</a></h1>
+<aside class="topic">
 <p class="topic-title">In this lesson you will learn:</p>
 <ul class="simple">
 <li><p>about iteration and how to it to reduce your code length</p></li>
@@ -217,14 +218,14 @@
 <li><p>how to use Thonny’s debugger to trace <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
 <li><p>how to use the <code class="docutils literal notranslate"><span class="pre">range</span></code> function to generate lists of numbers</p></li>
 </ul>
-</div>
+</aside>
 <section id="part-1-iteration-introduction">
-<h2>Part 1: Iteration introduction<a class="headerlink" href="#part-1-iteration-introduction" title="Permalink to this headline">#</a></h2>
+<h2>Part 1: Iteration introduction<a class="headerlink" href="#part-1-iteration-introduction" title="Permalink to this heading">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_qZzz4lSckk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/_qZzz4lSckk">Video link</a></p>
 <p>So far with our programming Python has been executing each line of our code one after another. This is called <strong>sequential</strong> and is the default way programs work. They start at the top and move through the code one line after another. The movement is called <strong>the flow</strong> of the program (like water, or electricity).</p>
 <section id="introduction-to-flowcharts">
-<h3>Introduction to flowcharts<a class="headerlink" href="#introduction-to-flowcharts" title="Permalink to this headline">#</a></h3>
+<h3>Introduction to flowcharts<a class="headerlink" href="#introduction-to-flowcharts" title="Permalink to this heading">#</a></h3>
 <p>There is a special diagram used to show the flow of computer program. It’s called a <strong>flowchart</strong>. Flowcharts show each process in a program and how the program moves from one process to the next. We use:</p>
 <ul class="simple">
 <li><p>rectangles symbolise processes</p></li>
@@ -281,7 +282,7 @@
 <p>This might be ok for a small program, but it starts to become a problem in dealing with larger and larger programs. In Digital Technologies we would say that his is not <strong>scalable</strong>.</p>
 </section>
 <section id="iteration">
-<h3>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h3>
+<h3>Iteration<a class="headerlink" href="#iteration" title="Permalink to this heading">#</a></h3>
 <p>If you look at the code you will notice that there is a lot of repetition. <code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">3</span></code> to <code class="docutils literal notranslate"><span class="pre">8</span></code> are almost the same, with only the name changing each time.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
 <span class="linenos">2</span>
@@ -298,7 +299,7 @@
 <p>One method for not repeating yourself, is to use <strong>iteration</strong> (often called <strong>loops</strong>). They repeat the same code with a slight change each time. This would be perfect for our use, as we want to repeat the code <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello&quot;,</span> <span class="pre">name)</span></code> with a different name each time.</p>
 </section>
 <section id="for-loops">
-<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
+<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
 <p>The first loop we will use is the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. This is the first <strong>control structure</strong> we have used. Control structures cause the program to deviate from the default sequential flow.</p>
 <p>Change your code, so it is the same as the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
@@ -361,7 +362,7 @@
 </li>
 </ul>
 <section id="for-loop-flowchart">
-<h4>For loop flowchart<a class="headerlink" href="#for-loop-flowchart" title="Permalink to this headline">#</a></h4>
+<h4>For loop flowchart<a class="headerlink" href="#for-loop-flowchart" title="Permalink to this heading">#</a></h4>
 <p>A bit confusing? Let’s try looking at it in a flowchart.</p>
 <p>Before we do, we need to learn about two more flowchart symbols:</p>
 <ul class="simple">
@@ -377,11 +378,11 @@
 <p><img alt="Flowchart for loop" src="_images/flowcharts_for_loop.png" /></p>
 </section>
 <section id="tracing-with-debugger">
-<h4>Tracing with debugger<a class="headerlink" href="#tracing-with-debugger" title="Permalink to this headline">#</a></h4>
+<h4>Tracing with debugger<a class="headerlink" href="#tracing-with-debugger" title="Permalink to this heading">#</a></h4>
 <p>One last way we can see how the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop works is to use Thonny’s debugger.</p>
 <div class="admonition-what-are-debuggers admonition">
 <p class="admonition-title">What are debuggers?</p>
-<p>Debuggers are powerful tools for understanding what happens when you run your code, and Thonny’s debugger is not exception. The <a class="reference internal" href="debugging.html"><span class="doc std std-doc">Debugging with Thonny</span></a> tutorial goes into it’s features in greater detail.</p>
+<p>Debuggers are powerful tools for understanding what happens when you run your code, and Thonny’s debugger is not exception. The <a class="reference internal" href="debugging.html"><span class="std std-doc">Debugging with Thonny</span></a> tutorial goes into it’s features in greater detail.</p>
 </div>
 <p>Launch the debugger by clicking the bug beside the play button.</p>
 <p><img alt="Flowchart debugger" src="_images/debugger.png" /></p>
@@ -390,7 +391,7 @@
 </section>
 </section>
 <section id="code-blocks">
-<h3>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h3>
+<h3>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this heading">#</a></h3>
 <p>Earlier we said that multi-line indented code is called a code block. Let’s have a look at how that works.</p>
 <p>Change your code so it is the same as below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># our iteration program</span>
@@ -455,11 +456,11 @@ Come in and sit down
 </section>
 </section>
 <section id="part-2-list-numbers-and-range">
-<h2>Part 2: List numbers and Range<a class="headerlink" href="#part-2-list-numbers-and-range" title="Permalink to this headline">#</a></h2>
+<h2>Part 2: List numbers and Range<a class="headerlink" href="#part-2-list-numbers-and-range" title="Permalink to this heading">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SpyHWIDWY5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/SpyHWIDWY5M">Video link</a></p>
 <section id="introducing-range">
-<h3>Introducing <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#introducing-range" title="Permalink to this headline">#</a></h3>
+<h3>Introducing <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#introducing-range" title="Permalink to this heading">#</a></h3>
 <p>You can also run loops over lists of numbers.</p>
 <p>Create a new file and call it <strong>lesson_2_pt_2a.py</strong> then try the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">number_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
@@ -496,7 +497,7 @@ Come in and sit down
 </div>
 </section>
 <section id="use-for-turtle">
-<h3>Use for Turtle<a class="headerlink" href="#use-for-turtle" title="Permalink to this headline">#</a></h3>
+<h3>Use for Turtle<a class="headerlink" href="#use-for-turtle" title="Permalink to this heading">#</a></h3>
 <p>Code blocks can contain any code, including Turtle code. So let try it.</p>
 <p>Create a new file called <strong>lesson_2_pt_2b.py</strong> and type in the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">turtle</span>
@@ -521,10 +522,10 @@ Come in and sit down
 </section>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercise and make your own code.</p>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/fe9068628aad777bea055be70bcb16d3/lesson_2_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos">2</span>
@@ -541,7 +542,7 @@ Come in and sit down
 <p><img alt="Flowchart lesson 2 exercise 1" src="_images/flowchart_lesson_2_ex_1.png" /></p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/5c72017ba7ec5d4e24d08a57e83e9f8d/lesson_2_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos">2</span>
@@ -557,7 +558,7 @@ Come in and sit down
 <p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a triangle but only use 3 lines to do this.</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/27a04ee3fcacb7e691a6529ef4956cbc/lesson_2_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos">2</span>
@@ -573,7 +574,7 @@ Come in and sit down
 <p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a hexagon but only use 3 lines to do this.</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/5bc2d63b23eed184be65b9e567909bc8/lesson_2_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_4.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos">2</span>
@@ -589,7 +590,7 @@ Come in and sit down
 <p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">9</span></code>, as the comments says, write code that will create a circle but only use 3 lines to do this.</p>
 </section>
 <section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/8c3dde2b52e00d74b882f49c69db85a9/lesson_2_ex_5.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_2_ex_5.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="linenos">2</span>
@@ -705,12 +706,11 @@ Come in and sit down
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

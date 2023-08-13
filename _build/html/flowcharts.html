@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Debugging with Thonny" href="debugging.html" /><link rel="prev" title="Extension Activities" href="extention.html" />
 
-    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 4.5.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
         <title>Flowcharts - A Turtle Introduction to Python</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -146,7 +146,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
@@ -207,33 +207,39 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="flowcharts">
-<h1>Flowcharts<a class="headerlink" href="#flowcharts" title="Permalink to this headline">#</a></h1>
+          <section id="flowcharts">
+<h1>Flowcharts<a class="headerlink" href="#flowcharts" title="Permalink to this heading">#</a></h1>
 <p>A flowchart is a type of diagram that uses different types of boxes and arrows to show the steps in a process or how to solve a problem. In programming we use flowcharts to map out algorithms.</p>
 <section id="symbols">
-<h2>Symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">#</a></h2>
+<h2>Symbols<a class="headerlink" href="#symbols" title="Permalink to this heading">#</a></h2>
 <p>The different boxes have meanings in a flowchart. Each represent different processes in our program.</p>
-<section id="process">
-<h3>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h3>
-<p><img alt="process symbol" src="_images/flowchart_symbols_process.png" /></p>
+<section id="flow-arrows">
+<h3>Flow arrows<a class="headerlink" href="#flow-arrows" title="Permalink to this heading">#</a></h3>
+<p><img alt="Flow symbol" src="_images/flowchart_symbols_flow.png" /></p>
+<p>Flow arrows represent the path the program take through the flowchart. Flows only go in one direction, as indicated by the arrow head.</p>
+</section>
+<section id="process-blocks">
+<h3>Process blocks<a class="headerlink" href="#process-blocks" title="Permalink to this heading">#</a></h3>
+<p><img alt="Process symbol" src="_images/flowchart_symbols_process.png" /></p>
 <p>Process blocks contain all the internal sequential commands of your code.</p>
 <p>For example:</p>
 <ul class="simple">
-<li><p>variable assignments</p></li>
-<li><p>calculations</p></li>
-<li><p>function calls</p></li>
+<li><p>assigning variables</p></li>
+<li><p>performing calculations</p></li>
+<li><p>calling functions</p></li>
 </ul>
-<p>They are reprented using a rectangle with with the description inside.</p>
+<p>They are represented using a rectangle with with the description inside.</p>
 <p>Flows:</p>
 <ul class="simple">
-<li><p><strong>inflow arrows</strong> - must have at least one, but can have many</p></li>
-<li><p><strong>outflow arrows</strong> - must have one and can only have one</p></li>
+<li><p><strong>inflow arrows</strong> - must have at least one, but can have many.</p></li>
+<li><p><strong>outflow arrows</strong> - must have one and can only have one.</p></li>
 </ul>
 </section>
-<section id="terminal">
-<h3>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">#</a></h3>
+<section id="terminal-blocks">
+<h3>Terminal blocks<a class="headerlink" href="#terminal-blocks" title="Permalink to this heading">#</a></h3>
 <p><img alt="Terminal symbol" src="_images/flowchart_symbols_terminator.png" /></p>
-<p>Terminal blocks start and end a process. If starting or ending a main program, they contain the words “Start” or “End”. If starting or ending a function, they contain the name of the funtions or the return value.</p>
+<p>Terminal blocks start and end a process.</p>
+<p>They are represented using a rounded rectangle. If starting or ending a main program, they contain the words “Start” or “End”. If starting or ending a function, they contain the name of the functions or the return value.</p>
 <p>Flows:</p>
 <ul class="simple">
 <li><p><strong>start terminal inflow arrows</strong> - can only have none</p></li>
@@ -242,6 +248,78 @@
 <li><p><strong>end terminal outflow arrows</strong> - can only have none</p></li>
 </ul>
 </section>
+<section id="input-output-io-blocks">
+<h3>Input/Output (IO) blocks<a class="headerlink" href="#input-output-io-blocks" title="Permalink to this heading">#</a></h3>
+<p><img alt="Input Output Symbol" src="_images/flowchart_symbols_input.png" /></p>
+<p>IO blocks involved the transfer of information between the real world and the program.</p>
+<p><strong>Input</strong> is when information is entered into the program and can involve:</p>
+<ul class="simple">
+<li><p>typing</p></li>
+<li><p>mouse actions</p></li>
+<li><p>gamepad or joystick actions</p></li>
+<li><p>camera recording</p></li>
+<li><p>microphones recording</p></li>
+</ul>
+<p><strong>Output</strong> is when the computer renders information for the outside world and can involved:</p>
+<ul class="simple">
+<li><p>displaying images and text on screen</p></li>
+<li><p>creating sound</p></li>
+<li><p>haptic vibrations</p></li>
+<li><p>printing on paper</p></li>
+</ul>
+<p>Input / output blocks are represented using parallelograms, with text explaining what is being inputted or outputted.</p>
+<p>Flows:</p>
+<ul class="simple">
+<li><p><strong>inflow arrows</strong> - must have at least one, but can have many.</p></li>
+<li><p><strong>outflow arrows</strong> - must have one and can only have one.</p></li>
+</ul>
+</section>
+<section id="decision-blocks">
+<h3>Decision blocks<a class="headerlink" href="#decision-blocks" title="Permalink to this heading">#</a></h3>
+<p><img alt="Decision Symbol" src="_images/flowchart_symbols_decision.png" /></p>
+<p>Decision blocks ask a question and then split the flow according to the answer.</p>
+<p>They are represented with a diamond, with the question being tested.</p>
+<p>Decision blocks are the only block that can have multiple outflow arrows. Each outflow arrow should be labelled with the answer that will lead down it’s path.</p>
+<p>Flows:</p>
+<ul class="simple">
+<li><p><strong>inflows</strong> - must have one and can only have one</p></li>
+<li><p><strong>outflows</strong> - must have one, but can have many</p></li>
+</ul>
+</section>
+</section>
+<section id="additional-symbols">
+<h2>Additional symbols<a class="headerlink" href="#additional-symbols" title="Permalink to this heading">#</a></h2>
+<p>Throughout this course we have used two additional symbols to help visualise how the flowcharts run:</p>
+<ul class="simple">
+<li><p>Loop indicator</p></li>
+<li><p>Function indicator</p></li>
+</ul>
+<p>You are not expected to use these symbols, but you are welcomed to use them to make your flowcharts more readable.</p>
+<section id="loop-indicator">
+<h3>Loop indicator<a class="headerlink" href="#loop-indicator" title="Permalink to this heading">#</a></h3>
+<p><img alt="loop symbol" src="_images/flowchart_symbols_loop.png" /></p>
+<p>The loop indicator is a grey box with dashed lines. It surrounds a loop, and will either start or end with the loop condition’s decision block.</p>
+</section>
+<section id="function-indicator">
+<h3>Function indicator<a class="headerlink" href="#function-indicator" title="Permalink to this heading">#</a></h3>
+<p><img alt="function symbol" src="_images/flowchart_symbols_function.png" /></p>
+<p>The function indicator is a red box with dashed lines. It surrounds a function, with the functions starting terminal at the top and end terminal at the bottom. No flow arrows should enter or exit the function indicator.</p>
+</section>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>Below is a flowchart for a number guessing game.</p>
+<p>The game requirements are:</p>
+<ul class="simple">
+<li><p>Generate a random number between 1 and 100</p></li>
+<li><p>Ask the user to guess the number</p></li>
+<li><p>If the number is incorrect, it tells the user if they guessed too high or two low</p></li>
+<li><p>If the number is correct, it tells the user how many guesses they had.</p></li>
+<li><p>Validate user input to ensure incorrect types cannot be entered</p></li>
+<li><p>Only accept numbers between 1 and 100</p></li>
+<li><p>Ask the user to play again</p></li>
+</ul>
+<p><img alt="flowchart example" src="_images/flowchart_example.png" /></p>
 </section>
 </section>
 
@@ -309,10 +387,19 @@
             <ul>
 <li><a class="reference internal" href="#">Flowcharts</a><ul>
 <li><a class="reference internal" href="#symbols">Symbols</a><ul>
-<li><a class="reference internal" href="#process">Process</a></li>
-<li><a class="reference internal" href="#terminal">Terminal</a></li>
+<li><a class="reference internal" href="#flow-arrows">Flow arrows</a></li>
+<li><a class="reference internal" href="#process-blocks">Process blocks</a></li>
+<li><a class="reference internal" href="#terminal-blocks">Terminal blocks</a></li>
+<li><a class="reference internal" href="#input-output-io-blocks">Input/Output (IO) blocks</a></li>
+<li><a class="reference internal" href="#decision-blocks">Decision blocks</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#additional-symbols">Additional symbols</a><ul>
+<li><a class="reference internal" href="#loop-indicator">Loop indicator</a></li>
+<li><a class="reference internal" href="#function-indicator">Function indicator</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -324,12 +411,11 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>
