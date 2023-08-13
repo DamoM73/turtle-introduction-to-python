@@ -32,6 +32,7 @@ To use these resources without using the website:
 
 - Download a zip file of **{download}`slide decks and pdfs <teacher_resources/pdf_files.zip>`** for all lessons here.
 - Download a zip file of **{download}`all Python files <teacher_resources/python_file.zip>`** here.
+- Download a zip file of **{download}`all Exercise solutions files <teacher_resources/solution_file.zip>`** here.
 
 ```{admonition} Videos vs Website
 :class: warning
