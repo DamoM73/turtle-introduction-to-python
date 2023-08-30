@@ -685,7 +685,7 @@ Download **{download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>`** file 
 
 Follow the instructions in the comments (check `line 41`) and use your Python knowledge to enhance our shape drawing code. Remember to apply the DRY principle.
 
-## Tutorial 2: While Loop
+## Part 2: While Loop
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A9j7N6kLL1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
