@@ -11,5 +11,6 @@ my_ttl.shape("arrow")
 
 ###################################
 ## Using the turtle commands you ##
-## have learnt, draw a house.    ##
+## have learnt, draw a house     ##
+## made up of several shapes.    ##
 ###################################
