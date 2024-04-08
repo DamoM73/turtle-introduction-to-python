@@ -4,7 +4,7 @@ Ignore the Copyright notice on all pages of this website. This is automatically 
 
 ## Repository
 
-![GPLv3 Icon](https://www.gnu.org/graphics/gplv3-with-text-84x42.png) A Turtle Introduction to Python code is licenced under [GPLv3 licence](https://www.gnu.org/licenses/gpl-3.0.en.html).
+![GPLv3 Icon](https://www.gnu.org/graphics/gplv3-with-text-84x42.png) A Turtle Introduction to Python code is licensed under [GPLv3 licence](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Content
 
