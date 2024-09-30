@@ -47,7 +47,7 @@ If we were only concerned about the number of times a loop iterates, we could us
 :linenos:
 :emphasize-lines: 1
 for index in range(0, 4):
-    print(number)
+    print(index)
 ```
 
 This will produce:
@@ -69,7 +69,7 @@ So we could just use the following.
 :linenos:
 :emphasize-lines: 1
 for index in range(4):
-    print(number)
+    print(index)
 ```
 
 This is the way that `range` is conventionally used in Python.
