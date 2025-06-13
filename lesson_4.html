@@ -1,0 +1,1410 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Turtle - Lesson 5" href="lesson_5.html" /><link rel="prev" title="Python Turtle - Lesson 3" href="lesson_3.html" />
+
+    <link rel="shortcut icon" href="_static/logo.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
+        <title>Python Turtle - Lesson 4 - A Turtle Introduction to Python</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --font-stack: gill sans, sans-serif;
+  --font-stack--monospace: monaco, monospace;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">A Turtle Introduction to Python</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">A Turtle Introduction to Python</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction for Teachers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_1.html">Python Turtle - Lesson 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_2.html">Python Turtle - Lesson 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_3.html">Python Turtle - Lesson 3</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Turtle - Lesson 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_5.html">Python Turtle - Lesson 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licencing.html">Licensing</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/lesson_4.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="python-turtle-lesson-4">
+<h1>Python Turtle - Lesson 4<a class="headerlink" href="#python-turtle-lesson-4" title="Link to this heading">¶</a></h1>
+<aside class="topic">
+<p class="topic-title">In this lesson you will learn:</p>
+<ul class="simple">
+<li><p>about coding modularisation</p></li>
+<li><p>when and how to use functions in Python</p></li>
+<li><p>how to accept user’s input into your code</p></li>
+<li><p>about data types</p></li>
+<li><p>how to convert between data types</p></li>
+</ul>
+</aside>
+<section id="part-1-functions">
+<h2>Part 1: Functions<a class="headerlink" href="#part-1-functions" title="Link to this heading">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZQNU29m5pHY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/ZQNU29m5pHY">Video link</a></p>
+<section id="what-are-functions">
+<h3>What are functions?<a class="headerlink" href="#what-are-functions" title="Link to this heading">¶</a></h3>
+<p><strong>Functions</strong> are blocks of code that we can run several times in our program. So far in our programming, all our blocks of code are only run once. Even loop blocks are only run once. They repeat the code inside the block, but once the program has passed the loop, it won’t go back and run it gain.</p>
+<p>With functions, we move a block of code outside of the main program sequence, then give it a name. The program can use that block as many times. To use it, the program <strong>calls</strong> the function name from within the main program sequence.</p>
+<p>To understand this more clearly, we will start with my solution for <strong>lesson_3_ex_4.py</strong>.</p>
+<p>Here is the flowchart for the solution:</p>
+<p><img alt="flow chart lesson 4 1" src="_images/flowchart_lesson_4_1.png" /></p>
+<p>Below is the code. You could type it into a new document, or you could just download the <strong><a class="reference download internal" download="" href="_downloads/90b8081765455107264ec9a8d2ebed5f/lesson_4_pt_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_pt_1.py</span></code></a></strong> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># set up screen</span>
+<span class="linenos"> 4</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># create turtle instance</span>
+<span class="linenos"> 9</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">10</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1">##################################</span>
+<span class="linenos">13</span><span class="c1">## Using the turtle command you ##</span>
+<span class="linenos">14</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">15</span><span class="c1">##################################</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="c1"># move pen</span>
+<span class="linenos">18</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">19</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">20</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c1"># draw square</span>
+<span class="linenos">23</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">24</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">25</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1"># draw triangle</span>
+<span class="linenos">28</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">29</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">30</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="c1"># move pen</span>
+<span class="linenos">33</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">34</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">35</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="c1"># draw rectangle</span>
+<span class="linenos">38</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">39</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">40</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">42</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="c1"># move pen</span>
+<span class="linenos">45</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">46</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">47</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="c1"># draw square</span>
+<span class="linenos">50</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">51</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">52</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="c1"># move pen</span>
+<span class="linenos">55</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">56</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">57</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="c1"># draw square</span>
+<span class="linenos">60</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">61</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">62</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="c1"># move pen</span>
+<span class="linenos">65</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">66</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="linenos">67</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="c1"># draw circle</span>
+<span class="linenos">70</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">71</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>PRIMM:</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> the type of house that the code will draw</p></li>
+<li><p><strong>Run</strong> the code and see if it resembles your prediction.</p></li>
+</ul>
+<p>Remember the DRY principle (<strong>Don’t Repeat Yourself</strong>)? Look at the code. How well does it go in relation to DRY?</p>
+<p>Can you identify any repetition?</p>
+<p>Look at the comments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># set up screen</span>
+<span class="linenos"> 4</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># create turtle instance</span>
+<span class="linenos"> 9</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">10</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1">##################################</span>
+<span class="linenos">13</span><span class="c1">## Using the turtle command you ##</span>
+<span class="linenos">14</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">15</span><span class="c1">##################################</span>
+<span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span><span class="c1"># move pen</span>
+</span><span class="linenos">18</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">19</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">20</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">21</span>
+<span class="hll"><span class="linenos">22</span><span class="c1"># draw square</span>
+</span><span class="linenos">23</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">24</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">25</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="hll"><span class="linenos">27</span><span class="c1"># draw triangle</span>
+</span><span class="linenos">28</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">29</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">30</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="linenos">31</span>
+<span class="hll"><span class="linenos">32</span><span class="c1"># move pen</span>
+</span><span class="linenos">33</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">34</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">35</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">36</span>
+<span class="hll"><span class="linenos">37</span><span class="c1"># draw rectangle</span>
+</span><span class="linenos">38</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">39</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">40</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">42</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="hll"><span class="linenos">44</span><span class="c1"># move pen</span>
+</span><span class="linenos">45</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">46</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">47</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">48</span>
+<span class="hll"><span class="linenos">49</span><span class="c1"># draw square</span>
+</span><span class="linenos">50</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">51</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">52</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">53</span>
+<span class="hll"><span class="linenos">54</span><span class="c1"># move pen</span>
+</span><span class="linenos">55</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">56</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">57</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">58</span>
+<span class="hll"><span class="linenos">59</span><span class="c1"># draw square</span>
+</span><span class="linenos">60</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">61</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">62</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">63</span>
+<span class="hll"><span class="linenos">64</span><span class="c1"># move pen</span>
+</span><span class="linenos">65</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">66</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="linenos">67</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">68</span>
+<span class="hll"><span class="linenos">69</span><span class="c1"># draw circle</span>
+</span><span class="linenos">70</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">71</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In summary we have two main types of repetition:</p>
+<ul class="simple">
+<li><p>moving the pen</p></li>
+<li><p>drawing the shape</p></li>
+</ul>
+<p>When I wrote this code, I didn’t type it straight out, I copied and pasted a lot of the code and changed the magic numbers’ values. Copying and pasting is a clear indicator that you need to use a function. Why? Because functions are one of the main tools we can use to enforce the DRY Principle.</p>
+</section>
+<section id="creating-functions">
+<h3>Creating functions<a class="headerlink" href="#creating-functions" title="Link to this heading">¶</a></h3>
+<p>Let’s look at how this works.</p>
+<ol class="arabic simple">
+<li><p>Take all the <strong>move pen code</strong> and consolidate that in one spot.</p>
+<ul class="simple">
+<li><p>Below I have copied the first move pen action (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">20</span></code> in the previous code)</p></li>
+<li><p>I have pasted them up to the top (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">7</span></code>)</p></li>
+<li><p>I then turned them into a function</p></li>
+</ul>
+</li>
+<li><p>Replace the original code with a <strong>call</strong> to the function (<code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code>).</p></li>
+</ol>
+<p>Adjust your code so that it looks the same as below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="hll"><span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">():</span>
+</span><span class="hll"><span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+</span><span class="hll"><span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+</span><span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># set up screen</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create turtle instance</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c1">##################################</span>
+<span class="linenos">20</span><span class="c1">## Using the tutrle command you ##</span>
+<span class="linenos">21</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">22</span><span class="c1">##################################</span>
+<span class="linenos">23</span>
+<span class="hll"><span class="linenos">24</span><span class="n">move_pen</span><span class="p">()</span>
+</span><span class="linenos">25</span>
+<span class="linenos">26</span><span class="c1"># draw square</span>
+<span class="linenos">27</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">28</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1"># draw triangle</span>
+<span class="linenos">32</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">33</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">34</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="c1"># move pen</span>
+<span class="linenos">37</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">38</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">39</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="c1"># draw rectangle</span>
+<span class="linenos">42</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">43</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">44</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">45</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">46</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="c1"># move pen</span>
+<span class="linenos">49</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">50</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">51</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="c1"># draw square</span>
+<span class="linenos">54</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">55</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">56</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="c1"># move pen</span>
+<span class="linenos">59</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">60</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">61</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">62</span>
+<span class="linenos">63</span><span class="c1"># draw square</span>
+<span class="linenos">64</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">65</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">66</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="c1"># move pen</span>
+<span class="linenos">69</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">70</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="linenos">71</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">72</span>
+<span class="linenos">73</span><span class="c1"># draw circle</span>
+<span class="linenos">74</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">75</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>PRIMM:</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen</p></li>
+<li><p><strong>Run</strong> the code and check you prediction</p></li>
+</ul>
+<p>Now lets <strong>investigate</strong> the code by unpacking it:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">move_pen():</span></code> create the function:</p>
+<ul>
+<li><p>In programming we call this <strong>defining</strong> a function.</p></li>
+<li><p>The program reads and bookmarks the code, but does not execute it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> is the key word for defining a function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_pen</span></code> is the name we are giving the function.</p>
+<ul>
+<li><p>This name is how the program calls the function. It follows the same rules as variable names.</p></li>
+<li><p>By using a descriptive name, we also remove the need for comments, as the code explains itself.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> is where we can put values. We’ll deal with this soon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code> tells Python that an indented code block follows (the same as a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">7</span></code> are indented:</p>
+<ul>
+<li><p>This is the code that Python executes with a function call</p></li>
+<li><p>The indentation rules are the same as the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
+<ul>
+<li><p>indentations can be many lines</p></li>
+<li><p>multi-line indented code is called a <strong>block</strong></p></li>
+<li><p>indents should be four spaces</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">move_pen()</span></code> calls the function:</p>
+<ul>
+<li><p>At this point the program will go to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code> run the code in the function.</p></li>
+<li><p>When Python finishes the function code, it returns to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> and continues with the rest of the code.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="passing-arguments">
+<h3>Passing arguments<a class="headerlink" href="#passing-arguments" title="Link to this heading">¶</a></h3>
+<p>This works for our first pen movement. Since the coordinates are magic numbers, it won’t work for the rest. I would have to create a function for each movement of the pen. This defeats the purpose of functions. What we need is a way to send the coordinates to the function when we call it. We can. Python uses <strong>arguments</strong> to pass values to a function.</p>
+<p>Looking back at our <code class="docutils literal notranslate"><span class="pre">move_pen</span></code> function in the code, we need to get rid of those magic numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">():</span>
+<span class="linenos">5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="hll"><span class="linenos">6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="linenos">7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>What do the two magic numbers in <code class="docutils literal notranslate"><span class="pre">my_ttl.goto(-100,0)</span></code> represent? The <code class="docutils literal notranslate"><span class="pre">x</span></code> and the <code class="docutils literal notranslate"><span class="pre">y</span></code> of the coordinates. So let’s replace them with variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">():</span>
+<span class="linenos">5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="hll"><span class="linenos">6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span class="linenos">7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>But how do we assign values to <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>? We use <strong>arguments.</strong></p>
+<ol class="arabic simple">
+<li><p>Change the function definition to <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">move_pen(x,</span> <span class="pre">y):</span></code> so it will <strong>accept</strong> two values.</p></li>
+<li><p>Change the function call in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">move_pen(-100,0)</span></code> passing two values to the function.</p></li>
+</ol>
+<p>Let’s unpack that:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">move_pen(x,</span> <span class="pre">y):</span></code> says:</p>
+<ul>
+<li><p>When you call the <code class="docutils literal notranslate"><span class="pre">move_pen</span></code> function, you need to provide two values.</p></li>
+<li><p>First value is assigned to the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Second value is assigned to the variable <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_pen(-100,0)</span></code> says:</p>
+<ul>
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">move_pen</span></code> function.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">-100</span></code> as the first value (the <code class="docutils literal notranslate"><span class="pre">x</span></code> value).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">0</span></code> as the second value (the <code class="docutils literal notranslate"><span class="pre">y</span></code> value).</p></li>
+</ul>
+</li>
+</ul>
+<p>Your code should now look like the code below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="hll"><span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># set up screen</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create turtle instance</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c1">##################################</span>
+<span class="linenos">20</span><span class="c1">## Using the tutrle command you ##</span>
+<span class="linenos">21</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">22</span><span class="c1">##################################</span>
+<span class="linenos">23</span>
+<span class="hll"><span class="linenos">24</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="linenos">25</span>
+<span class="linenos">26</span><span class="c1"># draw square</span>
+<span class="linenos">27</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">28</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1"># draw triangle</span>
+<span class="linenos">32</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">33</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">34</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="c1"># move pen</span>
+<span class="linenos">37</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">38</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">39</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="c1"># draw rectangle</span>
+<span class="linenos">42</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">43</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">44</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">45</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">46</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="c1"># move pen</span>
+<span class="linenos">49</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">50</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">51</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="c1"># draw square</span>
+<span class="linenos">54</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">55</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">56</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="c1"># move pen</span>
+<span class="linenos">59</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">60</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">61</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">62</span>
+<span class="linenos">63</span><span class="c1"># draw square</span>
+<span class="linenos">64</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">65</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">66</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="c1"># move pen</span>
+<span class="linenos">69</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">70</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="linenos">71</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">72</span>
+<span class="linenos">73</span><span class="c1"># draw circle</span>
+<span class="linenos">74</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">75</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what this code will now do.</p></li>
+<li><p><strong>Run</strong> the code to check if your prediction was correct.</p></li>
+<li><p><strong>Investigate</strong> the code by using the debugger and stepping your way through the program.</p></li>
+</ul>
+<div class="admonition-arguments-vs-parameters admonition">
+<p class="admonition-title">Arguments vs Parameters</p>
+<p>In programming discussions the terms <strong>arguments</strong> and <strong>parameters</strong> are often swapped around. It is safe to use either term, but they do have distinct meanings:</p>
+<ul class="simple">
+<li><p>arguments are the values the main program passes to a function</p></li>
+<li><p>parameters are the variables named in the function definition</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<p>Go through the code and replace the remaining <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">move</span> <span class="pre">pen</span></code> blocks with a <code class="docutils literal notranslate"><span class="pre">move_pen()</span></code> call.</p>
+<p>Your code should now look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># set up screen</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create turtle instance</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c1">##################################</span>
+<span class="linenos">20</span><span class="c1">## Using the tutrle command you ##</span>
+<span class="linenos">21</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">22</span><span class="c1">##################################</span>
+<span class="linenos">23</span>
+<span class="hll"><span class="linenos">24</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="linenos">25</span>
+<span class="linenos">26</span><span class="c1"># draw square</span>
+<span class="linenos">27</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">28</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1"># draw triangle</span>
+<span class="linenos">32</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">33</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">34</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="hll"><span class="linenos">36</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+</span><span class="linenos">37</span>
+<span class="linenos">38</span><span class="c1"># draw rectangle</span>
+<span class="linenos">39</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">40</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">42</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">43</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">44</span>
+<span class="hll"><span class="linenos">45</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+</span><span class="linenos">46</span>
+<span class="linenos">47</span><span class="c1"># draw square</span>
+<span class="linenos">48</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">49</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">50</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">51</span>
+<span class="hll"><span class="linenos">52</span><span class="n">move_pen</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+</span><span class="linenos">53</span>
+<span class="linenos">54</span><span class="c1"># draw square</span>
+<span class="linenos">55</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">56</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">57</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">58</span>
+<span class="hll"><span class="linenos">59</span><span class="n">move_pen</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+</span><span class="linenos">60</span>
+<span class="linenos">61</span><span class="c1"># draw circle</span>
+<span class="linenos">62</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">63</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Run</strong> the code to make sure the house is still drawn.</p>
+<p>Notice that our line count is down from the original <code class="docutils literal notranslate"><span class="pre">71</span></code> to <code class="docutils literal notranslate"><span class="pre">63</span></code>.</p>
+<div class="hint admonition">
+<p class="admonition-title">Testing tips</p>
+<ul class="simple">
+<li><p>It is good to frequently test your code.</p></li>
+<li><p>Each time you change your code, test it.</p></li>
+<li><p>Try not to make too many changes between testing, it makes it harder to identify your errors.</p></li>
+<li><p>If function passes its test, you don’t have to testing it again, unless your change the function.</p></li>
+<li><p>If your functions passed their tests, then you know the error is elsewhere in the code.</p></li>
+</ul>
+</div>
+</section>
+<section id="functions-in-flowcharts">
+<h3>Functions in Flowcharts<a class="headerlink" href="#functions-in-flowcharts" title="Link to this heading">¶</a></h3>
+<p>Flowcharts don’t represent whole programs, they represent algorithms.</p>
+<div class="admonition-what-are-algorithms admonition">
+<p class="admonition-title">What are algorithms?</p>
+<p>Algorithms are a set of rules to follow to solve a problem. A cake recipe is an algorithm to bake a cake. You follow an algorithm to perform long division in maths. In computers, you code instructions are the algorithms.</p>
+</div>
+<p>When a program consists of smaller algorithms (eg. functions), create a flowchart for each algorithm. Then show where algorithms call other algorithms.</p>
+<p>We show the name of the function in the terminator symbol. <strong>Main</strong> is the name of the starting algorithm.</p>
+<p>Here is the flowchart of the code with the <code class="docutils literal notranslate"><span class="pre">move_pen</span></code> function. The function calls use the procedure symbol (I have coloured them red to make them stand out).</p>
+<p><img alt="flowchart lesson 4 2" src="_images/flowchart_lesson_4_2.png" /></p>
+</section>
+<section id="shape-functions">
+<h3>Shape functions<a class="headerlink" href="#shape-functions" title="Link to this heading">¶</a></h3>
+<p>When we first looked for repetition, we also identified the drawing shapes repetition. Lets make a function to draw squares.</p>
+<p>From the current code:</p>
+<ul class="simple">
+<li><p>copy one of the <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">draw</span> <span class="pre">square</span></code> blocks to the top of the code</p></li>
+<li><p>change it into a function that draws a square called <code class="docutils literal notranslate"><span class="pre">draw_square</span></code></p></li>
+<li><p>the function will need to accept a value for the <code class="docutils literal notranslate"><span class="pre">length</span></code> of the square’s side</p></li>
+<li><p>then replace all the <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">draw</span> <span class="pre">square</span></code> blocks with an appropriate <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> call</p></li>
+</ul>
+<div class="admonition-where-should-i-place-functions admonition">
+<p class="admonition-title">Where should I place functions?</p>
+<p>Function definitions are place at the top of the code, right after the <code class="docutils literal notranslate"><span class="pre">import</span></code> statements.</p>
+<p>This has two reasons:</p>
+<ul class="simple">
+<li><p>If the function is not defined before you call it, your code will generate a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p></li>
+<li><p>Placing all your functions at the start improves makes them easier to find them. This improves your code’s maintainability</p></li>
+</ul>
+</div>
+<p>Once you have made <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function changes, you code should look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="hll"><span class="linenos">10</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_square</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">11</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">12</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">13</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</span><span class="linenos">14</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="c1"># set up screen</span>
+<span class="linenos">17</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">18</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">19</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="c1"># create turtle instance</span>
+<span class="linenos">22</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">23</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="c1">##################################</span>
+<span class="linenos">26</span><span class="c1">## Using the tutrle command you ##</span>
+<span class="linenos">27</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">28</span><span class="c1">##################################</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="hll"><span class="linenos">31</span><span class="n">draw_square</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</span><span class="linenos">32</span>
+<span class="linenos">33</span><span class="c1"># draw triangle</span>
+<span class="linenos">34</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">35</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">36</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c1"># draw rectangle</span>
+<span class="linenos">41</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">42</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">43</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">44</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">45</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="hll"><span class="linenos">48</span><span class="n">draw_square</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+</span><span class="linenos">49</span><span class="n">move_pen</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="hll"><span class="linenos">50</span><span class="n">draw_square</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+</span><span class="linenos">51</span><span class="n">move_pen</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="c1"># draw circle</span>
+<span class="linenos">54</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">55</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We are now down to 55 lines of code.</p>
+<hr class="docutils" />
+<p>There is no more repetition in the main code, but there is still three code blocks remaining. Notice how the rest of the code is easier to read? Therefore, we will transform the <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">draw</span> <span class="pre">triangle</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">draw</span> <span class="pre">rectangle</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">draw</span> <span class="pre">circle</span></code> code blocks into functions.</p>
+<p>This will provide two benefits:</p>
+<ul class="simple">
+<li><p>It will improve maintainability by making the code more readable.</p></li>
+<li><p>If we want to extend the drawing we can easily add more rectangles, triangle and circles.</p></li>
+</ul>
+<p>See if you can change all three blocks into functions. Remember to test each function when you create it.</p>
+<p>When you finish your code should look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">move_pen</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos"> 6</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_square</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+<span class="linenos">11</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">12</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>
+<span class="hll"><span class="linenos">16</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_triangle</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">17</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">18</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">19</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</span><span class="linenos">20</span>
+<span class="linenos">21</span>
+<span class="hll"><span class="linenos">22</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">short</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">23</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">24</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">short</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">25</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">26</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">27</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</span><span class="linenos">28</span>
+<span class="linenos">29</span>
+<span class="hll"><span class="linenos">30</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_circle</span><span class="p">(</span><span class="n">rad</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">31</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span>
+</span><span class="linenos">32</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="c1"># set up screen</span>
+<span class="linenos">35</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">36</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">37</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="c1"># create turtle instance</span>
+<span class="linenos">40</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">41</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c1">##################################</span>
+<span class="linenos">44</span><span class="c1">## Using the tutrle command you ##</span>
+<span class="linenos">45</span><span class="c1">## have learnt, draw a house.   ##</span>
+<span class="linenos">46</span><span class="c1">##################################</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">49</span><span class="n">draw_square</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="hll"><span class="linenos">50</span><span class="n">draw_triangle</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</span><span class="linenos">51</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="hll"><span class="linenos">52</span><span class="n">draw_rectangle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</span><span class="linenos">53</span><span class="n">move_pen</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">54</span><span class="n">draw_square</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">55</span><span class="n">move_pen</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">56</span><span class="n">draw_square</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="linenos">57</span><span class="n">move_pen</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="hll"><span class="linenos">58</span><span class="n">draw_circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class="linenos">59</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>That’s our final code:</p>
+<ul class="simple">
+<li><p>Down from <code class="docutils literal notranslate"><span class="pre">71</span></code> lines to <code class="docutils literal notranslate"><span class="pre">59</span></code> lines.</p></li>
+<li><p>Easier to read.</p></li>
+<li><p>Easier to test and troubleshoot errors.</p></li>
+</ul>
+<p>Maybe the easiest way to see the improvement in our code is to look at the flowchart.</p>
+<p><img alt="flowchart lesson 4 3" src="_images/flowchart_lesson_4_3.png" /></p>
+</section>
+</section>
+<section id="part-1-exercises">
+<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Link to this heading">¶</a></h2>
+<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercises and make your own code.</p>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">¶</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/7de5cfc3ec517c8a0d7ec5591a26d14d/lesson_4_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># set up screen</span>
+<span class="linenos"> 4</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># create turtle instance</span>
+<span class="linenos"> 9</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">10</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="hll"><span class="linenos">12</span><span class="c1">############################################</span>
+</span><span class="hll"><span class="linenos">13</span><span class="c1">## Convert the code below using functions ##</span>
+</span><span class="hll"><span class="linenos">14</span><span class="c1">############################################</span>
+</span><span class="linenos">15</span>
+<span class="linenos">16</span><span class="c1"># move pen</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">18</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">19</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="c1"># draw head</span>
+<span class="linenos">22</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+<span class="linenos">23</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos">24</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">25</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1"># move pen</span>
+<span class="linenos">28</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">29</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">30</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="c1"># draw eye</span>
+<span class="linenos">33</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="linenos">34</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos">35</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">36</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="c1"># move pen</span>
+<span class="linenos">39</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">40</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">41</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c1"># draw eye</span>
+<span class="linenos">44</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="linenos">45</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos">46</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos">47</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="c1"># move pen</span>
+<span class="linenos">50</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="linenos">51</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">75</span><span class="p">)</span>
+<span class="linenos">52</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="c1"># draw mouth</span>
+<span class="linenos">55</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="linenos">56</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="linenos">57</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">58</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos">59</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">60</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="linenos">61</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">62</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Follow the instructions in the comments and adapt the code so it uses functions.</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">¶</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/9eef5ae2c0c596dd12319e5e54973c56/lesson_4_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># set up screen</span>
+<span class="linenos"> 4</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># create turtle instance</span>
+<span class="linenos"> 9</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">10</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;arrow&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="hll"><span class="linenos">12</span><span class="c1">############################################</span>
+</span><span class="hll"><span class="linenos">13</span><span class="c1">## Use you knowledge of Python and Turtle ##</span>
+</span><span class="hll"><span class="linenos">14</span><span class="c1">## to draw a car. Use functions to ensure ##</span>
+</span><span class="hll"><span class="linenos">15</span><span class="c1">## that you Do not Repeat Yourself.       ##</span>
+</span><span class="hll"><span class="linenos">16</span><span class="c1">############################################</span>
+</span></pre></div>
+</div>
+<p>Follow the instructions in the comments and write a program that draws a car.</p>
+</section>
+</section>
+<section id="part-2-user-input">
+<h2>Part 2: User Input<a class="headerlink" href="#part-2-user-input" title="Link to this heading">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HUEgYhYAuB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/HUEgYhYAuB0">Video link</a></p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h3>
+<p>Download the <strong><a class="reference download internal" download="" href="_downloads/a6b72e22ebd58845931f63bc8f016297/lesson_4_pt_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_pt_2.py</span></code></a></strong> file and save it to your lesson folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># setup window</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">sides</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="linenos">20</span><span class="n">length</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen.</p></li>
+<li><p><strong>Run</strong> the code and see how close your prediction is.</p></li>
+<li><p><strong>Modify</strong> the code so the shape fits within the window.</p></li>
+</ul>
+<p>When we run the code, part of the shape is off the screen. This is not a big problem. Change the length from <code class="docutils literal notranslate"><span class="pre">100</span></code> to <code class="docutils literal notranslate"><span class="pre">80</span></code>. This is something quite simple for you because you have learnt how to code. What about people who haven’t?</p>
+<p>How do we make our programs interactive by getting input from users who cannot code?</p>
+</section>
+<section id="making-your-program-interactive">
+<h3>Making your program interactive<a class="headerlink" href="#making-your-program-interactive" title="Link to this heading">¶</a></h3>
+<p>The simplest way to make your program interactive is to use the <code class="docutils literal notranslate"><span class="pre">input</span></code> command. It will use the <strong>Shell</strong> to ask the user for their input.</p>
+<p>To do this change:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> to <code class="docutils literal notranslate"><span class="pre">sides</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">long</span> <span class="pre">are</span> <span class="pre">the</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code></p></li>
+</ul>
+<p>Your code should look like the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># setup window</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="hll"><span class="linenos">19</span><span class="n">sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">20</span><span class="n">length</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How long are the sides?&gt; &quot;</span><span class="p">)</span>
+</span><span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen.</p></li>
+<li><p><strong>Run</strong> the code. Did it do what you thought?</p>
+<ul>
+<li><p>Did you predict:</p>
+<ul>
+<li><p>a <strong>prompt</strong> appearing in the <strong>Shell</strong> like the image below?</p></li>
+<li><p>the program raising an error.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="input image" src="_images/input.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="linenos">2</span>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">22</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="linenos">3</span>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">draw_poly</span>
+<span class="linenos">4</span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">interpreted</span> <span class="k">as</span> <span class="n">an</span> <span class="n">integer</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Let’s <strong>investigate</strong> by:</p>
+<ul>
+<li><p>unpacking the code we changed</p></li>
+<li><p>explaining the error</p></li>
+</ul>
+</li>
+</ul>
+<p>Unpacking <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> (note <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">20</span></code> is virtually the same):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input</span></code>: is the keyword that tells Python to wait for an input from the user from the <strong>Shell</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> tells Python what <strong>prompt</strong> to write to the <strong>Shell</strong> before it waits for a response.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sides</span> <span class="pre">=</span></code> takes whatever the user enters and assigns it to the variable <code class="docutils literal notranslate"><span class="pre">sides</span></code></p></li>
+</ul>
+<p>Now for the error. This is a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> and to understand it we need to learn about <strong>data types</strong>.</p>
+</section>
+<section id="data-types">
+<h3>Data types<a class="headerlink" href="#data-types" title="Link to this heading">¶</a></h3>
+<p>Variables in Python can hold different types of data. The four types of data we will use are:</p>
+<ul class="simple">
+<li><p><strong>integer numbers</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</p>
+<ul>
+<li><p>stores whole numbers</p></li>
+<li><p>identified by a whole number</p></li>
+</ul>
+</li>
+<li><p><strong>floating point numbers</strong> (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</p>
+<ul>
+<li><p>stores numbers that have a decimal points</p></li>
+<li><p>identified by having a decimal point with at least one number after it. For example, <code class="docutils literal notranslate"><span class="pre">1</span></code> is and integer, <code class="docutils literal notranslate"><span class="pre">1.0</span></code> is a float</p></li>
+</ul>
+</li>
+<li><p><strong>strings</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
+<ul>
+<li><p>stores characters like letters, numbers and special characters</p></li>
+<li><p>start and end with <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'</span></code> (just make sure they are the same the at beginning or end)</p></li>
+<li><p>numbers can be a string. For example, a phone number like <code class="docutils literal notranslate"><span class="pre">0432</span> <span class="pre">789</span> <span class="pre">367</span></code> is a string not and integer or float. It contains spaces and you would never do a calculation with it.</p></li>
+</ul>
+</li>
+<li><p><strong>Booleans</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</p>
+<ul>
+<li><p>store either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Using data types helps Python work out what kind of operations it can do with the variable. For example, it wouldn’t make much sense to divide a string. Python also has special operations called <strong>methods</strong>. Each data type has its own collection of methods. You will learn more about data types throughout your programming journey.</p>
+<p>Now, lets look at the error again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="linenos">2</span>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">22</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="linenos">3</span>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">draw_poly</span>
+<span class="linenos">4</span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">interpreted</span> <span class="k">as</span> <span class="n">an</span> <span class="n">integer</span>
+</pre></div>
+</div>
+<p>Breaking the error down:</p>
+<ul class="simple">
+<li><p>Error <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">'str'</span> <span class="pre">object</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">interpreted</span> <span class="pre">as</span> <span class="pre">an</span> <span class="pre">integer</span></code>:</p>
+<ul>
+<li><p>This tells us that this involves two data types (string and integer).</p></li>
+<li><p>It says we are trying to use a string when Python is expecting an integer.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Traceback</span></code>:</p>
+<ul>
+<li><p>When looking at a <code class="docutils literal notranslate"><span class="pre">Traceback</span></code> always check the last line first</p></li>
+<li><p>Error <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">3</span></code> tells us that the error occurred at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code> in the code: <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">index</span> <span class="pre">in</span> <span class="pre">range(sides):</span></code></p>
+<ul>
+<li><p>Here we are trying to use the values in <code class="docutils literal notranslate"><span class="pre">sides</span></code> in a <code class="docutils literal notranslate"><span class="pre">range</span></code> function, but Python thinks it is a string.</p></li>
+<li><p>let’s look at where we got the value for <code class="docutils literal notranslate"><span class="pre">sides</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">sides</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code></p>
+<ul>
+<li><p>We took the value the user entered and assigned it to <code class="docutils literal notranslate"><span class="pre">sides</span></code>.</p></li>
+<li><p>I entered <code class="docutils literal notranslate"><span class="pre">3</span></code> which is an integer.</p></li>
+<li><p>Why does Python think it’s a string?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>When Python accepts a value using the <code class="docutils literal notranslate"><span class="pre">input</span></code> function, it is always accepted it as a string. This is because strings can contain all characters.</p>
+<p>How do we fix this? Luckily, we can convert a variable’s data type.</p>
+</section>
+<section id="converting-data-types">
+<h3>Converting data types<a class="headerlink" href="#converting-data-types" title="Link to this heading">¶</a></h3>
+<p>There is a function to convert any data type into each other data type (other than Boolean).</p>
+<p>If we had a variable called <code class="docutils literal notranslate"><span class="pre">var</span></code>:</p>
+<ul class="simple">
+<li><p>convert <code class="docutils literal notranslate"><span class="pre">var</span></code> → string, use <code class="docutils literal notranslate"><span class="pre">str(var)</span></code></p></li>
+<li><p>convert <code class="docutils literal notranslate"><span class="pre">var</span></code> → integer, use <code class="docutils literal notranslate"><span class="pre">int(var)</span></code></p></li>
+<li><p>convert <code class="docutils literal notranslate"><span class="pre">var</span></code> → a float, use <code class="docutils literal notranslate"><span class="pre">float(var)</span></code></p></li>
+</ul>
+<p>There is a great deal more to this, but at the moment this is all you need to know.</p>
+<p>Let’s change our code. Take the strings returned by the <code class="docutils literal notranslate"><span class="pre">input</span></code> function and convert them into integers.</p>
+<p>Here is the finished code as a flowchart. Note that we use the same symbol for input as we do for output, with different wording.</p>
+<p><img alt="flowchart lesson 4 4" src="_images/flowchart_lesson_4_4.png" /></p>
+<p>Below is the finished code, with the changes on <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">19</span></code> and <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span><span class="w"> </span><span class="nf">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sides</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">my_ttl</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># setup window</span>
+<span class="linenos">11</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="linenos">12</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">screen</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># create instance of turtle</span>
+<span class="linenos">16</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="hll"><span class="linenos">19</span><span class="n">sides</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">))</span>
+</span><span class="hll"><span class="linenos">20</span><span class="n">length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">))</span>
+</span><span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">sides</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PRIMM</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen</p></li>
+<li><p><strong>Run</strong> you code and see if your predictions were correct</p></li>
+<li><p><strong>Investigate</strong> by trying to enter different values for sides and length:</p>
+<ul>
+<li><p>draw different shapes</p></li>
+<li><p>what are the correct values to make your turtle draw a circle?</p></li>
+<li><p>what happens when you enter a float or a string?</p></li>
+</ul>
+</li>
+<li><p><strong>Modify</strong> your code to use different prompts</p></li>
+</ul>
+</section>
+</section>
+<section id="part-2-exercise">
+<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Link to this heading">¶</a></h2>
+<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. Work through the following exercises and make your own code.</p>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">¶</a></h3>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/634a7e421249dfa06953e905f4ff9428/lesson_4_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_4_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="c1">###############################################</span>
+</span><span class="hll"><span class="linenos">2</span><span class="c1">## write a program that askes the user for a ##</span>
+</span><span class="hll"><span class="linenos">3</span><span class="c1">## number and then counts up to that number. ##</span>
+</span><span class="hll"><span class="linenos">4</span><span class="c1">###############################################</span>
+</span></pre></div>
+</div>
+<p>Follow the instructions in the comments and use your Python knowledge to create a count up app. Remember to apply the DRY principle</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="lesson_5.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Python Turtle - Lesson 5</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="lesson_3.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python Turtle - Lesson 3</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Damien Murtagh
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/DamoM73/turtle-introduction-to-python" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Turtle - Lesson 4</a><ul>
+<li><a class="reference internal" href="#part-1-functions">Part 1: Functions</a><ul>
+<li><a class="reference internal" href="#what-are-functions">What are functions?</a></li>
+<li><a class="reference internal" href="#creating-functions">Creating functions</a></li>
+<li><a class="reference internal" href="#passing-arguments">Passing arguments</a></li>
+<li><a class="reference internal" href="#functions-in-flowcharts">Functions in Flowcharts</a></li>
+<li><a class="reference internal" href="#shape-functions">Shape functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-1-exercises">Part 1 Exercises</a><ul>
+<li><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
+<li><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-2-user-input">Part 2: User Input</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#making-your-program-interactive">Making your program interactive</a></li>
+<li><a class="reference internal" href="#data-types">Data types</a></li>
+<li><a class="reference internal" href="#converting-data-types">Converting data types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-2-exercise">Part 2 Exercise</a><ul>
+<li><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
