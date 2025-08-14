@@ -398,7 +398,7 @@ Download **{download}`lesson_1_ex_1.py<./python_files/lesson_1_ex_1.py>`** file 
 :emphasize-lines: 10
 ```
 
-After `line 10`, as the comments says, write code that will create a square.
+After `line 10`, write code that will create a square.
 
 ### Exercise 2
 
@@ -409,7 +409,7 @@ Download **{download}`lesson_1_ex_2.py<./python_files/lesson_1_ex_2.py>`** file 
 :emphasize-lines: 10
 ```
 
-After `line 10`, as the comments says, write code that will create a triangle.
+After `line 10`, write code that will create an equlateral triangle.
 
 ### Exercise 3
 
@@ -420,4 +420,4 @@ Download **{download}`lesson_1_ex_3.py<./python_files/lesson_1_ex_3.py>`** file 
 :emphasize-lines: 10
 ```
 
-After `line 10`, as the comments says, write code that will create a hexagon.
+After `line 10` write code that will create a hexagon.
