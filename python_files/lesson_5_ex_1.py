@@ -2,6 +2,6 @@
 
 ######################################################
 ## Write a program that asks for a person's name    ##
-## and then grants entry of that person is Amy      ##
-## everyone else is told, politely, to go away      ##
+## if that person is Amy they are granted entry     ##
+## other wise they are politely told to go away     ##
 ######################################################
