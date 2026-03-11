@@ -54,7 +54,11 @@ html_theme_options = {
         },
     ],
     "light_css_variables": {
-        "font-stack": "gill sans, sans-serif",
-        "font-stack--monospace": "monaco, monospace",
+        "font-stack": "Verdana, sans-serif",
+        "font-stack--monospace": "'Courier New', monospace",
+    },
+    "dark_css_variables": {
+        "font-stack": "Verdana, sans-serif",
+        "font-stack--monospace": "'Courier New', monospace",
     },
 }
