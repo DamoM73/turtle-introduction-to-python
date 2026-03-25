@@ -1,0 +1,47 @@
+code.literal,
+.sig-inline {
+  font-size: 100%;
+}
+
+div.highlight-error,
+div.highlight-error .highlight,
+.highlight-error .highlighttable td.linenos,
+.highlight-error .highlighttable .linenodiv,
+.highlight-error .code-block-caption {
+  border: 1px solid #FF0000;
+  border-color: #FF0000;
+  border-radius: 0.2rem;
+}
+
+div.highlight-error pre,
+.highlight-error .highlighttable,
+.highlight-error .highlighttable pre,
+.highlight-error .highlighttable .linenodiv,
+.highlight-error .highlighttable td.linenos {
+  color: #FF0000;
+}
+
+.highlight-error .gp,
+.highlight-error .go,
+.highlight-error .w,
+.highlight-error span {
+  color: #FF0000 !important;
+}
+
+.highlight-error button.copybtn,
+.highlight-error:hover button.copybtn {
+  display: none;
+}
+
+.admonition.question,
+div.question,
+.question > .admonition-title {
+  --color-admonition-title--question: #9F00BF;
+  --color-admonition-title-background--question: rgba(159, 0, 191, 0.2);
+}
+
+.admonition.question > .admonition-title,
+div.question > .admonition-title {
+  color: var(--color-admonition-title--question);
+  background-color: var(--color-admonition-title-background--question);
+}

@@ -1,0 +1,864 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Python Turtle - Lesson 2" href="lesson_2.html"><link rel="prev" title="Introduction for Teachers" href="introduction.html">
+        <link rel="prefetch" href="_static/logo.png" as="image">
+
+    <link rel="shortcut icon" href="_static/logo.ico"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Python Turtle - Lesson 1 - A Turtle Introduction to Python</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=27e667b7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --font-stack: Verdana, sans-serif;
+  --font-stack--monospace: 'Courier New', monospace;
+  --code-font-size: 100%;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --font-stack: Verdana, sans-serif;
+  --font-stack--monospace: 'Courier New', monospace;
+  --code-font-size: 100%;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --font-stack: Verdana, sans-serif;
+  --font-stack--monospace: 'Courier New', monospace;
+  --code-font-size: 100%;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">A Turtle Introduction to Python</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">A Turtle Introduction to Python</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction for Teachers</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Turtle - Lesson 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_2.html">Python Turtle - Lesson 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_3.html">Python Turtle - Lesson 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_4.html">Python Turtle - Lesson 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_5.html">Python Turtle - Lesson 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_6.html">Python Turtle - Lesson 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extention.html">Extension Activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">Flowcharts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging with Thonny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licencing.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admonitions.html">Admonitions</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/lesson_1.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="python-turtle-lesson-1">
+<h1>Python Turtle - Lesson 1<a class="headerlink" href="#python-turtle-lesson-1" title="Link to this heading">¶</a></h1>
+<aside class="topic">
+<p class="topic-title">In this lesson you will learn:</p>
+<ul class="simple">
+<li><p>how to set up your coding workspace</p></li>
+<li><p>how to run your first program</p></li>
+<li><p>how to write comments in Python</p></li>
+<li><p>how to understand and fix error messages</p></li>
+<li><p>how to use modules in your code</p></li>
+<li><p>how to make a simple turtle program</p></li>
+</ul>
+</aside>
+<section id="part-1-thonny-introduction">
+<h2>Part 1: Thonny Introduction<a class="headerlink" href="#part-1-thonny-introduction" title="Link to this heading">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/90T-NE_a50E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/90T-NE_a50E">Video link</a></p>
+<section id="what-is-thonny">
+<h3>What is Thonny<a class="headerlink" href="#what-is-thonny" title="Link to this heading">¶</a></h3>
+<p>Welcome to your first Python Turtle lesson. In this lesson, you will learn how to use Thonny, the program we’ll use to write and run our code. You will also explore some basic Python code and how it is written.</p>
+<div class="hint admonition">
+<p class="admonition-title">Thonny</p>
+<p>We will use <strong>Thonny</strong> to write our code.</p>
+<p>Thonny is a program made for beginners to help you learn Python. It already includes Python, so it’s easy to set up.</p>
+<p>You can download it from <a class="reference external" href="https://thonny.org/"><strong>thonny.org</strong></a>.</p>
+</div>
+<p>Python is the programming language we will use, and <strong>Thonny</strong> is the program we use to write it.</p>
+<p>Think of it like this:</p>
+<ul class="simple">
+<li><p>You use Microsoft Word to write English</p></li>
+<li><p>You use Thonny to write Python</p></li>
+</ul>
+<p>Python programs are written as text files called <strong>scripts</strong>. You could write them in any basic text editor.</p>
+<p>However, programs like Thonny have extra tools that make coding easier, such as:</p>
+<ul class="simple">
+<li><p>Colouring different parts of your code so it’s easier to read</p></li>
+<li><p>Helping you find and fix mistakes</p></li>
+</ul>
+<p>For now, just think of Thonny as a text editor with helpful extras built in.</p>
+</section>
+<hr class="docutils" />
+<section id="setting-up-thonny">
+<h3>Setting up Thonny<a class="headerlink" href="#setting-up-thonny" title="Link to this heading">¶</a></h3>
+<p>Before we look at Thonny’s screen (called the User Interface or <strong>UI</strong>), we need to turn on a few settings so everyone’s program looks the same.</p>
+<section id="view-menu">
+<h4>View Menu<a class="headerlink" href="#view-menu" title="Link to this heading">¶</a></h4>
+<p>First, go to the <strong>View</strong> menu and make sure there is a tick beside <strong>Assistant</strong>, <strong>Shell</strong> and <strong>Variable</strong>.</p>
+<p><img alt="View Settings" src="_images/thonny_view_settings.png" /></p>
+</section>
+<section id="option-menu">
+<h4>Option Menu<a class="headerlink" href="#option-menu" title="Link to this heading">¶</a></h4>
+<p>Next go to <strong>Tools</strong> → <strong>Options</strong></p>
+<p><img alt="Options" src="_images/thonny_tools_options.png" /></p>
+<p>On the <strong>Editor</strong> tab make sure that your check-boxes are the same as the image below.</p>
+<p><img alt="Options editor" src="_images/thonny_options_editor.png" /></p>
+<p>Finally, go to the <strong>Theme and Font</strong> tab and make sure the <strong>Syntax theme</strong> is set to <strong>IDLE Classic</strong>.</p>
+<p>This setting changes the colours of your code based on what each part does.</p>
+<p>This makes your code easier to read and helps you write it correctly.</p>
+<p><img alt="Options theme" src="_images/thonny_options_theme.png" /></p>
+<p>Now click <strong>OK</strong> and your Thonny should look the same as the one in the videos.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-user-interface">
+<h3>The User Interface<a class="headerlink" href="#the-user-interface" title="Link to this heading">¶</a></h3>
+<p>The image below shows the main parts of Thonny that you need to know for now. We will learn more about it later.</p>
+<p><img alt="UI" src="_images/thonny_ui.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="first-program">
+<h3>First Program<a class="headerlink" href="#first-program" title="Link to this heading">¶</a></h3>
+<p>For your first program, you will make a simple program called <em>hello world</em>.</p>
+<p>This is the first program most people write when learning to code.</p>
+<p>Type the following code into the Code panel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Our First Program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="primm">
+<h4>PRIMM<a class="headerlink" href="#primm" title="Link to this heading">¶</a></h4>
+<p>Throughout this course, you will use the <strong>PRIMM</strong> process to help you learn.</p>
+<p><strong>PRIMM</strong> stands for:</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> – guess what the code will do</p></li>
+<li><p><strong>Run</strong> – run the code and see what happens</p></li>
+<li><p><strong>Investigate</strong> – explore how the code works</p></li>
+<li><p><strong>Modify</strong> – change the code to see what happens</p></li>
+<li><p><strong>Make</strong> – create your own program</p></li>
+</ul>
+<p>This process helps you learn step by step and encourages you to be curious about how code works.</p>
+<p>Let’s run through the <strong>PRIMM</strong> process now</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p>Before you run the code, you need to <strong>predict</strong> what will happen.</p>
+<p>Have a guess about what you think the code will do before you run it.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p>Now <strong>run</strong> the code by clicking the <strong>Play button</strong> (or press <em>F5</em> on your keyboard).</p>
+<p>Your <strong>Shell</strong> should now show <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code>.</p>
+<p>Did this match what you predicted?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> what happened.</p>
+<p>First, notice that only <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> appears in the terminal.
+The program skips the first line: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Our</span> <span class="pre">First</span> <span class="pre">Program</span></code>. Why?</p>
+<ul class="simple">
+<li><p>When a line starts with <code class="docutils literal notranslate"><span class="pre">#</span></code>, Python treats it as a <strong>comment</strong></p></li>
+<li><p>Comments are ignored by the computer</p></li>
+<li><p>Comments are there to help humans understand the code</p></li>
+</ul>
+<p>Now look at <strong>line 3</strong>. The word <code class="docutils literal notranslate"><span class="pre">print</span></code> is in purple.</p>
+<ul class="simple">
+<li><p>This shows that <code class="docutils literal notranslate"><span class="pre">print</span></code> is a special word in Python</p></li>
+<li><p>A special word (called a keyword) is like a command that tells the computer what to do</p></li>
+</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Modify</p>
+<p>Now you are going to <strong>modify</strong> the code and create some errors on purpose. This will help you learn how to read and understand error messages.</p>
+<ul class="simple">
+<li><p>Remove the <code class="docutils literal notranslate"><span class="pre">n</span></code> from <code class="docutils literal notranslate"><span class="pre">print</span></code> so it says <code class="docutils literal notranslate"><span class="pre">prit(&quot;Hello</span> <span class="pre">World&quot;)</span></code></p></li>
+<li><p>Run the code again and see what happens</p></li>
+</ul>
+<p>You should now see an error message in your <strong>Shell</strong>:</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Traceback (most recent call last):
+<span class="linenos">2</span>  File &quot;&lt;string&gt;&quot;, line 3, in &lt;module&gt;
+<span class="linenos">3</span>NameError: name &#39;prnt&#39; is not defined
+</pre></div>
+</div>
+<p>Let’s break down that error message:</p>
+<ul class="simple">
+<li><p><strong>Line 1</strong>: <code class="docutils literal notranslate"><span class="pre">Traceback</span> <span class="pre">(most</span> <span class="pre">recent</span> <span class="pre">call</span> <span class="pre">last):</span></code>
+This means “this is what Python just tried to do.”</p></li>
+<li><p><strong>Line 2</strong>: <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&quot;&lt;string&gt;&quot;,</span> <span class="pre">line</span> <span class="pre">3,</span> <span class="pre">in</span> <span class="pre">&lt;module&gt;</span></code>
+This tells you where the error is.
+In this case, the mistake is on <strong>line 3</strong>.</p></li>
+<li><p><strong>Line 3</strong>: <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'prnt'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>
+This tells you what went wrong.</p>
+<ul>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">NameError</span></code> means Python found a word it doesn’t recognise</p></li>
+<li><p>It also shows the word it doesn’t understand: <code class="docutils literal notranslate"><span class="pre">prnt</span></code></p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Go back to <strong>line 3</strong> and fix it so it says <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;)</span></code> again.
+Notice that <code class="docutils literal notranslate"><span class="pre">print</span></code> turns purple again.</p>
+<p>Now keep investigating:</p>
+<ul class="simple">
+<li><p>Remove the two <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> so it says <code class="docutils literal notranslate"><span class="pre">print(Hello</span> <span class="pre">World)</span></code></p></li>
+<li><p>Run the program again</p></li>
+</ul>
+<p>Your <strong>Shell</strong> will now show a different error:</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Traceback (most recent call last):
+<span class="linenos">2</span>  File &quot;&lt;string&gt;&quot;, line 3
+<span class="linenos">3</span>    print(Hello World)
+<span class="linenos">4</span>          ^^^^^^^^^^^
+<span class="linenos">5</span>SyntaxError: invalid syntax. Perhaps you forgot a comma?
+</pre></div>
+</div>
+<p>Let’s break down this error message:</p>
+<ul class="simple">
+<li><p><strong>Line 3</strong>: shows the line with the mistake: <code class="docutils literal notranslate"><span class="pre">print(Hello</span> <span class="pre">World)</span></code></p></li>
+<li><p><strong>Line 4</strong>: the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbols point to where the problem is in the line</p></li>
+<li><p><strong>Line 5</strong>: <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax.</span> <span class="pre">Perhaps</span> <span class="pre">you</span> <span class="pre">forgot</span> <span class="pre">a</span> <span class="pre">comma?</span></code></p>
+<ul>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> means your code does not follow Python’s rules</p></li>
+<li><p>Python tries to guess what went wrong, but its suggestion can be incorrect</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Change <strong>line 3</strong> back to <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;)</span></code>.</p>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code> turns green. This is called <strong>syntax highlighting</strong>.
+It shows that <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> is a type of value called a <strong>string</strong>.</p>
+<p>For now, think of a string as a group of characters (like letters, numbers, or symbols). You will learn more about strings later.</p>
+<p>Now continue the <strong>investigation</strong>:</p>
+<ul class="simple">
+<li><p>Remove the <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code> so it says <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">Hello</span> <span class="pre">World</span></code></p></li>
+<li><p>Run the program again</p></li>
+</ul>
+<p>Your <strong>Shell</strong> will show another error:</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Traceback (most recent call last):
+<span class="linenos">2</span>  File &quot;&lt;string&gt;&quot;, line 3
+<span class="linenos">3</span>    print &quot;Hello World&quot;
+<span class="linenos">4</span>    ^^^^^^^^^^^^^^^^^^^
+<span class="linenos">5</span>SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(...)?
+</pre></div>
+</div>
+<p>Let’s break down this error message:</p>
+<ul class="simple">
+<li><p>This is a different type of <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> called <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">parentheses</span> <span class="pre">in</span> <span class="pre">call</span> <span class="pre">to</span> <span class="pre">'print'</span></code></p></li>
+<li><p>Parentheses are the curved brackets <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code> that you removed</p></li>
+<li><p>This time, Python’s hint is helpful: <code class="docutils literal notranslate"><span class="pre">Did</span> <span class="pre">you</span> <span class="pre">mean</span> <span class="pre">print(...)?</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<p>Next, add back the opening bracket <code class="docutils literal notranslate"><span class="pre">(</span></code> so the line now says <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;</span></code>.</p>
+<p>Run the program again and you will see a different error message.</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Traceback (most recent call last):
+<span class="linenos">2</span>  File &quot;&lt;string&gt;&quot;, line 3
+<span class="linenos">3</span>    print (&quot;Hello World&quot;
+<span class="linenos">4</span>          ^
+<span class="linenos">5</span>SyntaxError: &#39;(&#39; was never closed
+</pre></div>
+</div>
+<p>Let’s break down this error message:</p>
+<ul class="simple">
+<li><p>The error tells you that you did not close your bracket</p>
+<ul>
+<li><p>In Python, every opening bracket <code class="docutils literal notranslate"><span class="pre">(</span></code> must have a matching closing bracket <code class="docutils literal notranslate"><span class="pre">)</span></code></p></li>
+</ul>
+</li>
+<li><p>Before fixing <strong>line 3</strong>, look at Thonny:</p>
+<ul>
+<li><p>You should see a grey highlight starting from the <code class="docutils literal notranslate"><span class="pre">(</span></code></p></li>
+<li><p>This shows that the bracket was not closed</p></li>
+<li><p>This can help you find mistakes before you run your code</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Fix <strong>line 3</strong> so it says <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;)</span></code> again.</p>
+<p>You have now finished modifying the code and have seen some error messages.</p>
+<p>As you keep learning to code, you will see many more error messages. That is normal.</p>
+<p>Even experienced programmers get errors. There is a common idea in programming: <strong>error messages are your friend</strong>.
+They help you understand what went wrong so you can fix it.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="part-2-introducing-turtle">
+<h2>Part 2: Introducing turtle<a class="headerlink" href="#part-2-introducing-turtle" title="Link to this heading">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CBrm4-ECyMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a class="reference external" href="https://youtu.be/CBrm4-ECyMI">Video link</a></p>
+<section id="first-turtle-program">
+<h3>First turtle program<a class="headerlink" href="#first-turtle-program" title="Link to this heading">¶</a></h3>
+<p>Now start your first Turtle program.</p>
+<ul class="simple">
+<li><p>Click the <strong>New</strong> button</p></li>
+<li><p>Type the code into the new file</p></li>
+<li><p>Save the file as <strong><code class="docutils literal notranslate"><span class="pre">lesson_1_pt_1.py</span></code></strong></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Our first turtle program</span>
+</pre></div>
+</div>
+<p>Python starts with a small set of built-in commands (called <strong>functions</strong>).
+It can also use extra groups of commands called <strong>modules</strong>.</p>
+<p>One of these modules is <strong>Turtle</strong>.</p>
+<p>To use a module, you need to tell Python by using the <code class="docutils literal notranslate"><span class="pre">import</span></code> command.</p>
+<ul class="simple">
+<li><p>Always put <code class="docutils literal notranslate"><span class="pre">import</span></code> lines at the very top of your program</p></li>
+</ul>
+<p>Your code should look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Our first turtle program</span>
+<span class="linenos">2</span>
+<span class="hll"><span class="linenos">3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="create-a-turtle">
+<h3>Create a turtle<a class="headerlink" href="#create-a-turtle" title="Link to this heading">¶</a></h3>
+<p>What is a turtle? A turtle is a small arrow on the screen that you can control and move around.</p>
+<p>Before you can use the turtle, you need to create one.</p>
+<p>On <strong>line 5</strong>, type:
+<code class="docutils literal notranslate"><span class="pre">my_ttl</span> <span class="pre">=</span> <span class="pre">turtle.Turtle()</span></code></p>
+<p>Here’s what that code means:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">turtle.Turtle()</span></code> tells Python:</p>
+<ul>
+<li><p>use the <strong>turtle</strong> module you imported</p></li>
+<li><p>run the <code class="docutils literal notranslate"><span class="pre">Turtle()</span></code> command to create a turtle</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl</span> <span class="pre">=</span></code> gives your turtle a name</p></li>
+</ul>
+<p>You can choose any name you like. The name <code class="docutils literal notranslate"><span class="pre">my_ttl</span></code> is just an example.</p>
+<ul class="simple">
+<li><p>Your name must be one word (no spaces)</p></li>
+<li><p>If you change the name, you must use that same name everywhere in your code</p></li>
+</ul>
+<p>Your code should now look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Our first turtle program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos">4</span>
+<span class="hll"><span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="make-your-turtle-move">
+<h3>Make your turtle move<a class="headerlink" href="#make-your-turtle-move" title="Link to this heading">¶</a></h3>
+<p>Now you are going to make the turtle move.</p>
+<p>On <strong>line 7</strong>, type:
+<code class="docutils literal notranslate"><span class="pre">my_ttl.forward(100)</span></code></p>
+<p>This tells the turtle to move forward 100 steps.</p>
+<p>Your code should now look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Our first turtle program</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos">6</span>
+<span class="hll"><span class="linenos">7</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p>You are about to run your first turtle program.</p>
+<p>Before you do, <strong>predict</strong> what you think will happen.</p>
+<p>Have a guess about what the turtle will do.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p>Now run the program and see if it matches your prediction.</p>
+<p>You might have guessed that the turtle would move to the right, but did you expect it to leave a line behind it?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Just like with <em>Hello World</em>, <strong>investigate</strong> the code.</p>
+<p>Change parts of the code and see what happens.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Modify</p>
+<p>Finally, <strong>modify</strong> the code so the turtle draws lines of different lengths.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="changing-the-turtle-environment">
+<h3>Changing the turtle environment<a class="headerlink" href="#changing-the-turtle-environment" title="Link to this heading">¶</a></h3>
+<p>Now change the Turtle setup so it looks the same on every computer.</p>
+<p>First, make the Turtle window the same size.</p>
+<p>Update your code so it matches the example, especially <strong>lines 5 and 6</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Our first turtle program</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="hll"><span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+</span><span class="hll"><span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</span><span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s look at these changes.</p>
+<p>In the turtle module, the window is called a <strong>Screen</strong>.
+<strong>Line 5</strong> creates a screen, just like you created a turtle:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">turtle.Screen()</span></code> tells Python:</p>
+<ul>
+<li><p>use the <strong>turtle</strong> module</p></li>
+<li><p>run the <code class="docutils literal notranslate"><span class="pre">Screen()</span></code> command to create a screen</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">=</span></code> gives the screen the name <code class="docutils literal notranslate"><span class="pre">window</span></code></p></li>
+</ul>
+<p>On <strong>line 6</strong>, this code sets the size of the window:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window.setup(500,</span> <span class="pre">500)</span></code> makes the window 500 pixels wide and 500 pixels high</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">What are pixels?</p>
+<p>Your screen is made up of lots of tiny dots. If you look very closely, you might be able to see them. These are called <strong>pixels</strong>.</p>
+<p>You might also see screen sizes written like 1920 × 1080.
+This means:</p>
+<ul class="simple">
+<li><p>1,920 pixels wide</p></li>
+<li><p>1,080 pixels high</p></li>
+</ul>
+<p>You will learn more about pixels later in the course.</p>
+</div>
+<p>Think of pixels as how we measure movement on the screen.
+When you write <code class="docutils literal notranslate"><span class="pre">forward(100)</span></code>, it means move forward <strong>100 pixels</strong>.</p>
+<p>Now you will make another change to how the turtle looks.</p>
+<p>Add <strong>line 9</strong> from the code below to your program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Our first turtle program</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="hll"><span class="linenos"> 9</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+</span><span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Do you want to <strong>predict</strong> what this change will do?</p>
+<p>Run the code and check if your guess was correct.</p>
+</section>
+<hr class="docutils" />
+<section id="change-direction">
+<h3>Change direction<a class="headerlink" href="#change-direction" title="Link to this heading">¶</a></h3>
+<p>Now that your window size is set and your turtle is ready, it’s time to do more drawing.</p>
+<p>At the bottom of your code, add these two lines:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.left(90)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.forward(100)</span></code></p></li>
+</ul>
+<p>Your code should now look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Our first turtle program</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 9</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="hll"><span class="linenos">12</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">13</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p>What do you think this code will do?</p>
+<ul class="simple">
+<li><p>Be as specific as you can</p></li>
+<li><p>Draw what you think will happen on a piece of paper</p></li>
+</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p>Now run the program and check if it matches your prediction.</p>
+<p>Did the turtle draw the same thing as your picture?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Try changing the numbers inside the brackets and see what happens.</p>
+</div>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">¶</a></h2>
+<p>In this course, the exercises are the <strong>make</strong> component of the <strong>PRIMM</strong> model. So work through the following exercises to <strong>make</strong> your own code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Download the <strong><a class="reference download internal" download="" href="_downloads/4f44f3877dc16baad42b323bf0a8fb32/lesson_1_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_1_ex_1.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code>, write code that will create a square.</p>
+<p>The starting code is shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">## Draw a square with the Turtle ##</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 9</span>
+<span class="hll"><span class="linenos">10</span><span class="c1">## Write your code below this line ##</span>
+</span></pre></div>
+</div>
+</div>
+<div class="question admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Download the <strong><a class="reference download internal" download="" href="_downloads/90be88e198d64493f53621864a04f48d/lesson_1_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_1_ex_2.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code>, write code that will create an equlateral triangle.</p>
+<p>The starting code is shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">## Draw a Triangle with the Turtle ##</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 9</span>
+<span class="hll"><span class="linenos">10</span><span class="c1">## Write your code below this line ##</span>
+</span></pre></div>
+</div>
+</div>
+<div class="question admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Download the <strong><a class="reference download internal" download="" href="_downloads/0f42e33ffc89465ae5df3c355ee893be/lesson_1_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_1_ex_3.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code> write code that will create a hexagon.</p>
+<p>The starting code is shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">## Draw a hexagon with the Turtle ##</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="n">window</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">my_ttl</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 9</span>
+<span class="hll"><span class="linenos">10</span><span class="c1">## Write your code below this line ##</span>
+</span></pre></div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="lesson_2.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Python Turtle - Lesson 2</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="introduction.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction for Teachers</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Damien Murtagh
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/DamoM73/turtle-introduction-to-python" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Turtle - Lesson 1</a><ul>
+<li><a class="reference internal" href="#part-1-thonny-introduction">Part 1: Thonny Introduction</a><ul>
+<li><a class="reference internal" href="#what-is-thonny">What is Thonny</a></li>
+<li><a class="reference internal" href="#setting-up-thonny">Setting up Thonny</a><ul>
+<li><a class="reference internal" href="#view-menu">View Menu</a></li>
+<li><a class="reference internal" href="#option-menu">Option Menu</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-user-interface">The User Interface</a></li>
+<li><a class="reference internal" href="#first-program">First Program</a><ul>
+<li><a class="reference internal" href="#primm">PRIMM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#part-2-introducing-turtle">Part 2: Introducing turtle</a><ul>
+<li><a class="reference internal" href="#first-turtle-program">First turtle program</a></li>
+<li><a class="reference internal" href="#create-a-turtle">Create a turtle</a></li>
+<li><a class="reference internal" href="#make-your-turtle-move">Make your turtle move</a></li>
+<li><a class="reference internal" href="#changing-the-turtle-environment">Changing the turtle environment</a></li>
+<li><a class="reference internal" href="#change-direction">Change direction</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

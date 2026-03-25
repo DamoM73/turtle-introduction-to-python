@@ -6,6 +6,11 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import os
+import sys
+
+sys.path.append(os.path.abspath("_ext"))
+
 project = 'A Turtle Introduction to Python'
 copyright = '2023, Damien Murtagh'
 author = 'Damien Murtagh'
@@ -15,7 +20,10 @@ author = 'Damien Murtagh'
 
 extensions = [
     "myst_parser",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    "error_lexer",
+    "question_admonition",
+    "custom_titled_admonitions",
 ]
 
 templates_path = ['_templates']
@@ -36,6 +44,7 @@ exclude_patterns = ['_build',
 
 html_theme = 'furo'
 html_static_path = ['_static']
+html_css_files = ['custom.css']
 html_logo = 'logo.png'
 html_title = "A Turtle Introduction to Python"
 html_favicon = "logo.ico"
@@ -56,9 +65,15 @@ html_theme_options = {
     "light_css_variables": {
         "font-stack": "Verdana, sans-serif",
         "font-stack--monospace": "'Courier New', monospace",
+        "code-font-size": "100%",
     },
     "dark_css_variables": {
         "font-stack": "Verdana, sans-serif",
         "font-stack--monospace": "'Courier New', monospace",
+        "code-font-size": "100%",
     },
 }
+
+
+
+
