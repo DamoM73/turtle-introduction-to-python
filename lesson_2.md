@@ -1,12 +1,11 @@
 # Python Turtle - Lesson 2
 
 ```{topic} In this lesson you will learn:
-
-- about iteration and how to it to reduce your code length
-- about flowcharts and how to use them to represent program algorithms
-- how to write Python programs using `for` loops
-- how to use Thonny's debugger to trace `for` loops
-- how to use the `range` function to generate lists of numbers
+* learn what repetition (iteration) is and how it can make your code shorter and easier
+* learn what flowcharts are and how they help show how a program works step by step
+* learn how to write Python programs using `for` loops to repeat actions
+* learn how to use Thonny’s debugger to step through a `for` loop and see what happens
+* learn how to use the `range` function to create a list of numbers
 ```
 
 ## Part 1: Iteration introduction
@@ -15,15 +14,25 @@
 
 [Video link](https://youtu.be/_qZzz4lSckk)
 
-So far with our programming Python has been executing each line of our code one after another. This is called **sequential** and is the default way programs work. They start at the top and move through the code one line after another. The movement is called **the flow** of the program (like water, or electricity).
+So far, when we write Python code, each line runs one after the other.
+
+This is called **sequential** execution. It is the normal way programs run.
+
+The program starts at the top and works its way down, one line at a time.
+
+This movement through the code is called the **flow** of the program (like water flowing through a pipe or electricity moving through a wire).
 
 ### Introduction to flowcharts
 
-There is a special diagram used to show the flow of computer program. It's called a **flowchart**. Flowcharts show each process in a program and how the program moves from one process to the next. We use:
+There is a special type of diagram used to show how a program works. It is called a **flowchart**.
 
-- rectangles symbolise processes
-- parallelograms symbolise inputs or outputs
-- arrows represent the flow
+A flowchart shows each step in a program and how the program moves from one step to the next.
+
+We use different shapes to represent different parts of the program:
+
+* rectangles show a process (something the program does)
+* parallelograms show input or output (getting or showing information)
+* arrows show the flow (the direction the program moves)
 
 ![Flowchart symbols 1](./assets/flow_chart_symbol_1.png)
 
@@ -31,7 +40,13 @@ If we wanted a program to say hello to six people, you would show it in a flowch
 
 ![Flowchart 1](./assets/flow_chart_1.png)
 
-Create a new file in Thonny and call it **lesson_2_pt_1.py**. Transfer this flowchart code to Python by entering the following code.
+If we wanted a program to say hello to six people, we could show it using a flowchart like this:
+
+The flowchart would have six steps, each one telling the program to say “Hello”.
+
+Each step would be in a rectangle (a process), and arrows would connect them to show the order.
+
+So the flow would go from one “say Hello” step to the next, six times in total.
 
 ```{code-block} python
 :linenos:
@@ -45,9 +60,11 @@ print("Hello Bryce")
 print("Hello Ben")
 ```
 
-Since the flow is sequential, Python will start at `line 1` and work its way down to `line 8`. 
+Because the program runs in order (sequential), Python will start at `line 1` and go down to `line 8`, one line at a time.
 
-Run it and see. The following should print to your **Shell**.
+Run the program and see what happens.
+
+You should see the output appear in the **Shell**.
 
 ```
 Hello Hunter
@@ -58,7 +75,9 @@ Hello Bryce
 Hello Ben
 ```
 
-If you change the order of the code the program will run differently.
+If you change the order of the code, the program will behave differently.
+
+This is because Python runs each line from top to bottom, so the order of the lines matters.
 
 ```{code-block} python
 :linenos:
@@ -72,7 +91,7 @@ print("Hello Jordi")
 print("Hello Adam")
 ```
 
-This code will produce the following results.
+This code will give the following output.
 
 ```
 Hello Jesse
@@ -83,19 +102,25 @@ Hello Jordi
 Hello Adam
 ```
 
-Sequential programming is ok. It starts to become a problem when you deal with bigger programs. You don't want to have to type everything out.
+Sequential programming is fine for small programs, but it becomes a problem with bigger ones.
 
-Imagine if I want to say hello to 500 people, or 1,000 people or more, how tedious will it be to type each line out? There is also other limitations.
+You don’t want to type every line again and again.
 
-What if I decided to say `"good morning"` rather than `"hello"`? I would have to change every single line of code.
+Imagine if you had to say hello to 500 people, or even 1,000 people. That would take a long time to type. There are other problems too.
 
-This might be ok for a small program, but it starts to become a problem in dealing with larger and larger programs. In Digital Technologies we would say that his is not **scalable**.
+What if you wanted to change `"hello"` to `"good morning"`? You would have to change every single line of code.
+
+This might be okay for small programs, but it becomes difficult with bigger programs.
+
+In Digital Technologies, we say this is not **scalable** (it does not work well as the program gets bigger).
 
 ---
 
 ### Iteration
 
-If you look at the code you will notice that there is a lot of repetition. `Lines 3` to `8` are almost the same, with only the name changing each time.
+If you look at the code, you will see that a lot of it repeats.
+
+`Lines 3` to `8` are almost the same. The only thing that changes is the name each time.
 
 ```{code-block} python
 :linenos:
@@ -110,19 +135,33 @@ print("Hello Jordi")
 print("Hello Adam")
 ```
 
-This clashes with the DRY programming principle.
+This breaks the **DRY** programming principle.
+
+DRY stands for **Don’t Repeat Yourself**.
+
+It means you should not write the same code over and over again.
 
 ![DRY Principle](./assets/dry.png)
 
-One method for not repeating yourself, is to use **iteration** (often called **loops**). They repeat the same code with a slight change each time. This would be perfect for our use, as we want to repeat the code `print("Hello", name)` with a different name each time.
+One way to avoid repeating yourself is to use iteration (also called loops).
+
+Loops repeat the same code again and again, with a small change each time.
+
+This is perfect for our example, because we want to repeat the line
+print("Hello", name)
+but use a different name each time.
 
 ---
 
 ### For loops
 
-The first loop we will use is the `for` loop. This is the first **control structure** we have used. Control structures cause the program to deviate from the default sequential flow.
+The first loop we will use is called a `for` loop.
 
-Change your code, so it is the same as the code below.
+This is the first **control structure** we have used.
+
+A control structure changes how the program flows, instead of just running from top to bottom in order.
+
+Update your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -134,46 +173,71 @@ for name in names:
     print("Hello", name)
 ```
 
-Ok, let's run the code, but don't forget PRIMM, and make sure you **predict** what you think will happen before you **run** the code.
+```{note} Predict and Run
+Now run the code.
 
-So let's **investigate** by unpacking the code:
+But remember to use PRIMM:
 
-- `Line 3` is something we haven't seen before.
-  - Called a **list** and it works like a real world list.
-    - Consist of a number of items.
-    - Items are in a specific order.
-  - The `[` and `]` indicate the beginning and the end of the list.
-  - `"Hunter"`, `"Jordi"`, `"Adam"`, `"Jesse"`, `"Bryce"`, `"Ben"` are the items in the list. Items are called **elements**.
-  - The elements are separated with commas (`,`).
-  - A list needs a name (like our turtle and window). 
-    - We use `names =` to call the list `names`.
-- `Line 5` is also new, and it is the how we create `for` loops in Python.
-  - `for` is a keyword identifying this as the beginning of a `for` loop.
-  - `in names` tells Python to repeat the code below using each element of the `names` list.
-  - `name` refers to the current `names` element in use.
-  - `:` tells Python that an indented code block follows.
-- `Line 6` is a bit changed as well, it's indented.
-  - The indentation below the `for` loop identifies the code that needs to repeat.
-    - Indentations can be many lines.
-    - Multi-line indented code is called a **code block**.
-    - Indents should be four spaces.
-      - Note, in Thonny you can use the `tab` key because Thonny inserts four spaces instead of a `tab` character.
-  - `print("Hello", name)` tells Python to:
-    - print `Hello` to the **Shell** 
-    - followed by current `names` element in use.
+Predict what you think will happen
+then Run the code to check your ideas.
+```
+
+```{note} Investigate
+Let’s **investigate** the code step by step:
+
+* `Line 3` is something new.
+
+  * It is called a **list**, and it works like a real-life list.
+
+    * It has a number of items.
+    * The items are in a specific order.
+  * The `[` and `]` show where the list starts and ends.
+  * `"Hunter"`, `"Jordi"`, `"Adam"`, `"Jesse"`, `"Bryce"`, `"Ben"` are the items in the list. These items are called **elements**.
+  * Each element is separated by a comma (`,`).
+  * A list needs a name, just like our turtle or window.
+
+    * We use `names =` to give the list the name `names`.
+
+* `Line 5` is also new. This is how we make a `for` loop in Python.
+
+  * `for` is a special word that starts the loop.
+  * `in names` tells Python to go through each item in the `names` list.
+  * `name` is the current item the loop is using.
+  * `:` tells Python that the next lines (which are indented) belong to the loop.
+
+* `Line 6` looks a bit different because it is indented.
+
+  * The indentation shows which code will repeat in the loop.
+
+    * There can be more than one indented line.
+    * These lines together are called a **code block**.
+    * Indents should be four spaces.
+
+      * In Thonny, pressing the `Tab` key will add four spaces for you.
+  * `print("Hello", name)` tells Python to:
+
+    * print `Hello` to the **Shell**
+    * then print the current name from the list
+```
 
 #### For loop flowchart
 
-A bit confusing? Let's try looking at it in a flowchart.
+Feeling a bit confusing? Let’s look at it using a flowchart.
 
-Before we do, we need to learn about two more flowchart symbols:
+Before that, we need to learn two more symbols:
 
-- **Terminators**: these represent the beginning and end of your code
-- **Decisions**: these are questions the program need to answer. This will result in the flow splitting into multiple branches.
+* **Terminators**: these show the start and end of the program
+* **Decisions**: these are questions the program asks
+
+  * The answer will change the path the program takes (it can go in different directions)
 
 ![Flow Chart Symbols 2](./assets/flow_charts_symbol_2.png)
 
-Now let's look at the `for` loop flowchart. The symbols within the dotted box are the `for` loop.
+Now let’s look at the flowchart for the `for` loop.
+
+The shapes inside the dotted box show the `for` loop.
+
+These steps repeat again and again, once for each item in the list.
 
 ```{hint} Dotted box
 The dotted box has is to help you identify the `for` loop structure. It is not a normal flowchart symbol.
@@ -183,27 +247,33 @@ The dotted box has is to help you identify the `for` loop structure. It is not a
 
 #### Tracing with debugger
 
-One last way we can see how the `for` loop works is to use Thonny's debugger.
+One last way to understand how a `for` loop works is to use Thonny’s debugger.
 
 ```{hint} What are debuggers?
-Debuggers are powerful tools for understanding what happens when you run your code, and Thonny's debugger is not exception. The [](debugging.md) tutorial goes into it's features in greater detail.
+Debuggers are powerful tools that help you see what happens when your code runs. Thonny’s debugger is one of these tools.
+
+The [](debugging.md) tutorial explains its features in more detail.
 ```
 
-Launch the debugger by clicking the bug beside the play button.
+Start the debugger by clicking the bug icon next to the play button.
 
 ![Flowchart debugger](./assets/debugger.png)
 
-Keep pressing **F7** on your keyboard and Thonny will take you step by step through the code. Take note of the values in the **Variables** panel.
+Keep pressing **F7** on your keyboard, and Thonny will move through the code one step at a time.
 
-We'll learn more about how to use the debugger later in the course.
+Watch the values in the **Variables** panel as you do this.
+
+We will learn more about using the debugger later in the course.
 
 ---
 
 ### Code blocks
 
-Earlier we said that multi-line indented code is called a code block. Let's have a look at how that works.
+Earlier, we said that indented code over multiple lines is called a code block.
 
-Change your code so it is the same as below.
+Let’s see how that works.
+
+Change your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -217,9 +287,9 @@ for name in names:
     print("How are you?")
 ```
 
-**Predict** what you think the code will do and then **run** it.
+**Predict** what you think the code will do, then **run** it to check.
 
-In your **Shell** you should have.
+In your **Shell**, you should see:
 
 ```
 Hello Hunter
@@ -236,11 +306,19 @@ Hello Ben
 How are you?
 ```
 
-Notice **all** the code block is repeated. That means all the lines of code, at the same level of indentation, are repeated with the `for` loop. It is important to ensure that the whole code block uses the same number of spaces to indent.
+Notice that **all** of the code in the code block repeats.
 
-What happens if we remove the indentation?
+This means every line that is indented the same amount will run again in the `for` loop.
 
-Change your code by adding `print("Come in and sit down")` to the end. Make sure you remove the indentation, so you code looks like the code below.
+It is important that all lines in the code block use the same number of spaces for indentation.
+
+What do you think will happen if we remove the indentation?
+
+Change your code by adding
+`print("Come in and sit down")`
+to the end.
+
+Make sure this new line is **not indented**, so your code looks like the example below.
 
 ```{code-block} python
 :linenos:
@@ -255,10 +333,9 @@ for name in names:
 
 print("Come in and sit down")
 ```
+**Predict** what will happen, then **run** your code.
 
-**Predict** and **run** your code.
-
-Your **Shell** should show.
+Your **Shell** should show:
 
 ```
 Hello Hunter
@@ -276,12 +353,15 @@ How are you?
 Come in and sit down
 ```
 
-Notice that `print("Come in and sit down")` is not repeated. Since it is not indented, it is not considered part of the `for` loop and is run after the `for` loop is finished.
+Notice that `print("Come in and sit down")` does **not** repeat.
 
-The flowchart for your latest code would look like:
+Because it is not indented, it is not part of the `for` loop.
+
+This means it runs **after** the loop has finished.
+
+The flowchart for your updated code would look like this:
 
 ![Flowchart for loop 2](./assets/flowcharts_for_loop_2.png)
-
 
 ## Part 2: List numbers and Range
 
@@ -291,9 +371,9 @@ The flowchart for your latest code would look like:
 
 ### Introducing `range`
 
-You can also run loops over lists of numbers.
+You can also use loops with lists of numbers.
 
-Create a new file and call it **lesson_2_pt_2a.py** then try the code below.
+Create a new file and name it **lesson_2_pt_2a.py**, then try the code below.
 
 ```{code-block} python
 :linenos:
@@ -302,12 +382,11 @@ number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for number in number_list:
     print(number)
 ```
+But what if you want to `print` all the numbers from 1 to 100? Do you really want to type all of them?
 
-But what if we want `print` the numbers between 1 and 100? Do you want to type all those numbers out?
+Luckily, Python has something called the `range` function. It creates a list of numbers for you between two values.
 
-Luckily, Python has a function called `range`. It makes list between two given numbers.
-
-Change your code to the code below.
+Change your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -318,31 +397,41 @@ for number in number_list:
     print(number)
 ```
 
-PRIMM
+```{note} Predict
+**Predict** what you think will happen
+```
 
-- **Predict** what you think will happen
-- **Run** the code an see how close your prediction was
-- Let's **investigate** the code.
+```{note} Run
+**Run** the code to check your ideas.
+```
+
+```{note} Investigate
+* Let’s **investigate** the code.
 
 Unpacking the code:
 
-- `range` tells Python to create a list of numbers
-- `1` is the first number in that list
-- `101` is the first number **not** in that list. This can be confusing but we will learn why later on.
+* `range` tells Python to create a list of numbers
+* `1` is the first number in the list
+* `101` is the first number **not included** in the list
 
-We can make our code a bit shorter by using the `range` function directly inside the `for` loop statement.
+  * This might seem confusing, but we will learn why later
+```
+
+````{note} Modify
+We can make our code shorter by using the `range` function directly inside the `for` loop.
 
 ```{code-block} python
 :linenos:
 for number in range(1, 101):
     print(number)
 ```
+````
 
 ---
 
 ### Use for Turtle
 
-Code blocks can contain any code, including Turtle code. So let try it.
+Code blocks can include any type of code, including Turtle code. So let’s try it.
 
 Create a new file called **lesson_2_pt_2b.py** and type in the code below.
 
@@ -361,77 +450,149 @@ for number in range(1, 101):
     my_ttl.left(3)
 ```
 
-PRIMM:
+```{note} Predict and Run
+**Predict** what you think will happen, then **run** the code.
 
-- **Predict** what you think will happen, and then **run** the code. Did it do what you predicted?
-- **Investigate** the code by changing aspect of the code.
-- **Modify** the code so that is makes a complete circle.
+Did it do what you expected?
+```
+
+```{note} Investigate 
+Investigate the code by changing different parts of it.
+
+Try changing one thing at a time so you can clearly see what each change does.
+```
+
+```{note} Modify
+Change the code so the turtle turns a little each time and repeats enough times to go all the way around.
+
+A full circle is `360` degrees, so your repeated turns need to add up to `360`.
+
+For example, you could use:
+
+* `36` repeats of `10` degrees
+* `72` repeats of `5` degrees
+* `120` repeats of `3` degrees
+
+Test different values until the turtle draws a complete circle.
+```
 
 ## Exercises
 
 In this course, the exercises are the **make** component of the PRIMM model. So work through the following exercise and make your own code.
 
-### Exercise 1
+````{question} Exercise 1
 
-Download **{download}`lesson_2_ex_1.py<./python_files/lesson_2_ex_1.py>`** file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_1.py<./python_files/lesson_2_ex_1.py>`** file and save it in your lesson folder. Below is its code.
+
+After `line 9`, follow the comment and write code to draw a square, but only use **3 lines**.
+
+Hint: use a `for` loop to repeat the same steps.
+
+A square has 4 sides, so your loop should repeat 4 times.
+
+Use the flowchart to help guide your thinking.
+
+![Flowchart lesson 2 exercise 1](assets/flowchart_lesson_2_ex_1.png)
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_2_ex_1.py
 :linenos:
 :emphasize-lines: 7-9
 ```
-
-After `line 9`, as the comments says, write code that will create a square but only use 3 lines to do this (hint: try a `for` loop). The following flowchart should assist.
-
-![Flowchart lesson 2 exercise 1](assets/flowchart_lesson_2_ex_1.png)
+````
 
 ---
 
-### Exercise 2
+````{question} Exercise 2
+Download **{download}`lesson_2_ex_2.py<./python_files/lesson_2_ex_2.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_2_ex_2.py<./python_files/lesson_2_ex_2.py>`** file and save it to your lesson folder. Below is its code.
+After `line 9`, follow the comment and write code to draw a triangle using only **3 lines**.
+
+A triangle has 3 sides, so your loop should repeat 3 times.
+
+This will make the turtle draw a complete triangle.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_2_ex_2.py
 :linenos:
 :emphasize-lines: 7-9
 ```
-
-After `line 9`, as the comments says, write code that will create a triangle but only use 3 lines to do this.
+````
 
 ---
 
-### Exercise 3
+````{question} Exercise 3
 
-Download **{download}`lesson_2_ex_3.py<./python_files/lesson_2_ex_3.py>`** file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_3.py<./python_files/lesson_2_ex_3.py>`** file and save in to your lesson folder. 
+
+After `line 9`, follow the comment and write code to draw a hexagon using only **3 lines**.
+
+A hexagon has 6 sides.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_2_ex_3.py
 :linenos:
 :emphasize-lines: 7-9
 ```
+````
 
-After `line 9`, as the comments says, write code that will create a hexagon but only use 3 lines to do this.
 
 ---
 
-### Exercise 4
+````{question} Exercise 4
+Download **{download}`lesson_2_ex_4.py<./python_files/lesson_2_ex_4.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_2_ex_4.py<./python_files/lesson_2_ex_4.py>`** file and save it to your lesson folder. Below is its code.
+After `line 9`, follow the comment and write code to draw a circle using only **3 lines**.
+
+A circle can be made by drawing lots of small lines and turning a little each time.
+
+Your loop should repeat many times.
+Each time, the turtle should:
+
+* move forward a small amount
+* turn a small angle
+
+This will make the turtle draw a shape that looks like a circle.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_2_ex_4.py
 :linenos:
 :emphasize-lines: 7-9
 ```
-
-After `line 9`, as the comments says, write code that will create a circle but only use 3 lines to do this.
+````
 
 ---
 
-### Exercise 5
+````{question} Exercise 5
+Download **{download}`lesson_2_ex_5.py<./python_files/lesson_2_ex_5.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_2_ex_5.py<./python_files/lesson_2_ex_5.py>`** file and save it to your lesson folder. Below is its code.
+After `line 9`, write your own code to draw something interesting using `for` loops.
+
+You could try ideas like:
+
+* a spiral (keep turning a little more each time)
+* a star pattern
+* multiple shapes repeated in a pattern
+* shapes that grow bigger each time
+
+Experiment by changing:
+
+* how far the turtle moves
+* how much it turns
+* how many times the loop runs
+
+Try different ideas and see what you can create.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_2_ex_5.py
 :linenos:
 :emphasize-lines: 7-9
 ```
+````
 
-After `line 9` write some code to draw something cool using `for` loops.
+

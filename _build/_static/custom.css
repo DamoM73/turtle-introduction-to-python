@@ -3,6 +3,22 @@ code.literal,
   font-size: 100%;
 }
 
+/* Keep documentation headings consistent across pages and theme modes. */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.article-container h1,
+.article-container h2,
+.article-container h3,
+.article-container h4,
+.article-container h5,
+.article-container h6 {
+  color: #ff00a1;
+}
+
 div.highlight-error,
 div.highlight-error .highlight,
 .highlight-error .highlighttable td.linenos,
