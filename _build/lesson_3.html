@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=27e667b7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=864cd1cb" />
     
     
 
@@ -262,11 +262,11 @@
 <aside class="topic">
 <p class="topic-title">In this lesson you will learn:</p>
 <ul class="simple">
-<li><p>about storing values in variables</p></li>
-<li><p>when and how to use variables</p></li>
-<li><p>about screen coordinates</p></li>
-<li><p>how to use coordinates to move the turtle</p></li>
-<li><p>how to move the turtle without drawing a line</p></li>
+<li><p>how to store information in variables (like saving a value in a named box)</p></li>
+<li><p>when to use variables and how they help your code</p></li>
+<li><p>what screen coordinates are (how we describe positions on the screen)</p></li>
+<li><p>how to use coordinates to move the turtle to a specific spot</p></li>
+<li><p>how to move the turtle without drawing a line (lifting the pen up)</p></li>
 </ul>
 </aside>
 <section id="part-1-variables">
@@ -275,8 +275,8 @@
 <p><a class="reference external" href="https://youtu.be/mG1O_JamxjQ">Video link</a></p>
 <section id="conventional-range">
 <h3>Conventional range<a class="headerlink" href="#conventional-range" title="Link to this heading">¶</a></h3>
-<p>Before we start looking at variables, we need to use <code class="docutils literal notranslate"><span class="pre">range</span></code> in a more conventual way.</p>
-<p>Previously, we would use the following code to print four numbers.</p>
+<p>Before we start learning about variables, we need to use <code class="docutils literal notranslate"><span class="pre">range</span></code> in a more common way.</p>
+<p>Earlier, we used code like this to print four numbers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
 <span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
@@ -285,39 +285,39 @@
 <p class="admonition-title">What is index?</p>
 <p><code class="docutils literal notranslate"><span class="pre">index</span></code> is a programming convention that represents a counter in a loop. You can call it anything you want, but the convention is to call it <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 </div>
-<p>If you run the code you get the following.</p>
+<p>When you run the code, this is what you will see.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
 <span class="mi">2</span>
 <span class="mi">3</span>
 <span class="mi">4</span>
 </pre></div>
 </div>
-<p>If we were only concerned about the number of times a loop iterates, we could use the following.</p>
+<p>If we only care about how many times the loop repeats, we can use this instead.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
 </span><span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will produce:</p>
+<p>This will give you:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
 <span class="mi">1</span>
 <span class="mi">2</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
-<p>The loop still has four iterations. The difference is, it starts counting at <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p>If the <code class="docutils literal notranslate"><span class="pre">range</span></code> function is not given a starting number, it will start at <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p>So we could just use the following.</p>
+<p>The loop still runs four times. The difference is that it starts counting from <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>If we don’t tell the <code class="docutils literal notranslate"><span class="pre">range</span></code> function where to start, it will automatically start at <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>So we can just use this instead.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
 </span><span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This is the way that <code class="docutils literal notranslate"><span class="pre">range</span></code> is conventionally used in Python.</p>
+<p>This is the most common way to use <code class="docutils literal notranslate"><span class="pre">range</span></code> in Python.</p>
 </section>
 <hr class="docutils" />
 <section id="replace-magic-numbers">
 <h3>Replace magic numbers<a class="headerlink" href="#replace-magic-numbers" title="Link to this heading">¶</a></h3>
-<p>Below is <strong>a</strong> solution for lesson 2 exercise 1 (there are many possible solutions).</p>
-<p>Create a new file named <strong>lesson_3_pt_1.py</strong> and enter this code.</p>
+<p>Here is one possible solution for Lesson 2 Exercise 1 (there are many correct answers).</p>
+<p>Create a new file called <strong>lesson_3_pt_1.py</strong> and type in this code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
@@ -329,8 +329,8 @@
 <span class="linenos">9</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>What do we need to change in the code sot the turtle draws a triangle with a length of <code class="docutils literal notranslate"><span class="pre">200</span></code> for each side?</p>
-<p>Try and work it out before looking at the code below.</p>
+<p>What do we need to change in the code so the turtle draws a triangle with each side being <code class="docutils literal notranslate"><span class="pre">200</span></code> long?</p>
+<p>Try to figure it out yourself before looking at the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
@@ -342,18 +342,19 @@
 </span><span class="hll"><span class="linenos">9</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>What values did we change and what do those numbers represent?</p>
+<p>What numbers did we change, and what do they mean?</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code> → <code class="docutils literal notranslate"><span class="pre">3</span></code> representing the number sides.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code> → <code class="docutils literal notranslate"><span class="pre">200</span></code> representing the length of the sides.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">90</span></code> → <code class="docutils literal notranslate"><span class="pre">120</span></code> representing the degrees the Turtle has to turn.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code> → <code class="docutils literal notranslate"><span class="pre">3</span></code> means the number of sides</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code> → <code class="docutils literal notranslate"><span class="pre">200</span></code> means how long each side is</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">90</span></code> → <code class="docutils literal notranslate"><span class="pre">120</span></code> means how many degrees the turtle turns</p></li>
 </ul>
-<p>If I wanted to make a hexagon, or any other shape, I would need to change these values each time.</p>
-<p>In programming these are called <strong>magic numbers</strong>. A magic number is a <strong>hard coded</strong> value that appears in a program.</p>
-<p>Magic numbers are not good. If someone else were to look at my code, they would need to work out what the <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">200</span></code> and <code class="docutils literal notranslate"><span class="pre">120</span></code> meant. Additionally, imagine my program drew 1000 squares. If I wanted to change these to triangles, I would have to make 3000 edits.</p>
-<hr class="docutils" />
-<p>To write better code we remove magic numbers by giving them labels called <strong>variables</strong>.</p>
-<p>Adjust your code in <strong>lesson_3_pt_1.py</strong> to match the code below.</p>
+<p>If you wanted to draw a hexagon, or any other shape, you would have to keep changing these numbers every time.</p>
+<p>In programming, these numbers are called <strong>magic numbers</strong>. A magic number is a value written directly into the code.</p>
+<p>Magic numbers are not a good idea. If someone else reads your code, they won’t know what <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">200</span></code>, or <code class="docutils literal notranslate"><span class="pre">120</span></code> are for without figuring it out.</p>
+<p>Also, imagine your program draws 1000 squares. If you wanted to change them all to triangles, you would have to change numbers 3000 times.</p>
+<p>To write better code, we replace magic numbers with names called <strong>variables</strong>.</p>
+<p>A variable is like a labelled box where you store a value, so your code is easier to read and change.</p>
+<p>Update your code in <strong>lesson_3_pt_1.py</strong> so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="hll"><span class="linenos"> 3</span><span class="n">sides</span> <span class="o">=</span> <span class="mi">3</span>
@@ -369,37 +370,45 @@
 </span><span class="hll"><span class="linenos">13</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
-<ul class="simple">
-<li><p><strong>Predict</strong> what will happen when you run the code</p></li>
-<li><p><strong>Run</strong> the code and see if your predictions were correct.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sides</span></code>, <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">degrees</span></code> are all <strong>variables</strong>. Let’s <strong>investigate</strong> their use in the code.</p></li>
-</ul>
-<p>First, the flowchart for our adjusted program:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p>Try to guess what will happen when you run the code.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p><strong>Run</strong> the code and check if your prediction was correct.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sides</span></code>, <code class="docutils literal notranslate"><span class="pre">length</span></code>, and <code class="docutils literal notranslate"><span class="pre">degrees</span></code> are all <strong>variables</strong>. Let’s explore how they are used in the code.</p>
+<p>First, here is the flowchart for our updated program:</p>
 <p><img alt="flowchart lesson 3 1" src="_images/flowchart_lesson_3_1.png" /></p>
-<p>Code breakdown:</p>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sides</span> <span class="pre">=</span> <span class="pre">3</span></code> creates the variable <code class="docutils literal notranslate"><span class="pre">sides</span></code> and assigns the value of <code class="docutils literal notranslate"><span class="pre">3</span></code> to it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">=</span> <span class="pre">200</span></code> creates the variable <code class="docutils literal notranslate"><span class="pre">length</span></code> and assigns the value of <code class="docutils literal notranslate"><span class="pre">200</span></code> to it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">degress</span> <span class="pre">=</span> <span class="pre">120</span></code> creates the variable <code class="docutils literal notranslate"><span class="pre">degrees</span></code> and assigns the value of <code class="docutils literal notranslate"><span class="pre">120</span></code> to it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(sides):</span></code> substitutes <code class="docutils literal notranslate"><span class="pre">sides</span></code> with the value assigned to it so that the line becomes <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">index</span> <span class="pre">in</span> <span class="pre">range(3)</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.forward(length)</span></code> substitutes <code class="docutils literal notranslate"><span class="pre">length</span></code> with the value assigned to it. The line becomes <code class="docutils literal notranslate"><span class="pre">my_ttl.forward(200)</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.left(degrees)</span></code> substitutes <code class="docutils literal notranslate"><span class="pre">degrees</span></code> with the value assigned to it. The line becomes <code class="docutils literal notranslate"><span class="pre">my_ttl.left(120)</span></code>.</p></li>
-</ul>
-<div class="hint admonition">
-<p class="admonition-title">Naming rules</p>
-<p>Python has very specific rules for what names you can use for variables:</p>
-<ul class="simple">
-<li><p>names can only contain letters, numbers and the <code class="docutils literal notranslate"><span class="pre">_</span></code> character</p></li>
-<li><p>names cannot contain spaces</p></li>
-<li><p>names cannot start with a number</p></li>
-<li><p>names are case sensitive (eg. <code class="docutils literal notranslate"><span class="pre">age</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">Age</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sides</span> <span class="pre">=</span> <span class="pre">3</span></code> creates a variable called <code class="docutils literal notranslate"><span class="pre">sides</span></code> and stores the value <code class="docutils literal notranslate"><span class="pre">3</span></code> in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">=</span> <span class="pre">200</span></code> creates a variable called <code class="docutils literal notranslate"><span class="pre">length</span></code> and stores the value <code class="docutils literal notranslate"><span class="pre">200</span></code> in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">degrees</span> <span class="pre">=</span> <span class="pre">120</span></code> creates a variable called <code class="docutils literal notranslate"><span class="pre">degrees</span></code> and stores the value <code class="docutils literal notranslate"><span class="pre">120</span></code> in it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(sides):</span></code> uses the value in <code class="docutils literal notranslate"><span class="pre">sides</span></code>, so it works the same as <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(3):</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.forward(length)</span></code> uses the value in <code class="docutils literal notranslate"><span class="pre">length</span></code>, so it becomes <code class="docutils literal notranslate"><span class="pre">my_ttl.forward(200)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.left(degrees)</span></code> uses the value in <code class="docutils literal notranslate"><span class="pre">degrees</span></code>, so it becomes <code class="docutils literal notranslate"><span class="pre">my_ttl.left(120)</span></code></p></li>
 </ul>
 </div>
-<p>Now that we are using variables, we can copy the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and use it as many times as we want. The values for <code class="docutils literal notranslate"><span class="pre">sides</span></code>, <code class="docutils literal notranslate"><span class="pre">length</span></code>, and <code class="docutils literal notranslate"><span class="pre">degrees</span></code> will always use the values we assigned to the at the beginning.</p>
-<p>In programming this is called a <strong>single point of truth</strong>. This means, if we change the value assigned to <code class="docutils literal notranslate"><span class="pre">sides</span></code>, we can change the value for uses of the variable <code class="docutils literal notranslate"><span class="pre">sides</span></code>. Same for <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">degrees</span></code>.</p>
+<div class="hint admonition">
+<p class="admonition-title">Naming rules</p>
+<p>Python has some clear rules for naming variables:</p>
+<ul class="simple">
+<li><p>names can only use letters, numbers, and <code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore)</p></li>
+<li><p>names cannot have spaces</p></li>
+<li><p>names cannot start with a number</p></li>
+<li><p>names are case sensitive (for example, <code class="docutils literal notranslate"><span class="pre">age</span></code> is different from <code class="docutils literal notranslate"><span class="pre">Age</span></code>)</p></li>
+</ul>
+</div>
+</section>
 <hr class="docutils" />
-<p>Change <strong>lesson_3_pt_1.py</strong>  so it draws a hexagon with a side length of 100.</p>
+<section id="single-point-of-truth">
+<h3>Single point of truth<a class="headerlink" href="#single-point-of-truth" title="Link to this heading">¶</a></h3>
+<p>Now that we are using variables, we can copy the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and use it as many times as we want. The values for <code class="docutils literal notranslate"><span class="pre">sides</span></code>, <code class="docutils literal notranslate"><span class="pre">length</span></code>, and <code class="docutils literal notranslate"><span class="pre">degrees</span></code> will always come from what we set at the start.</p>
+<p>In programming, this is called a <strong>single point of truth</strong>. This means if we change the value of <code class="docutils literal notranslate"><span class="pre">sides</span></code>, it updates everywhere <code class="docutils literal notranslate"><span class="pre">sides</span></code> is used. The same is true for <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">degrees</span></code>.</p>
+<p>Change <strong>lesson_3_pt_1.py</strong> so it draws a hexagon with each side being 100 long.</p>
 <p>Your code should look like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -420,20 +429,22 @@
 <hr class="docutils" />
 <section id="no-meat-space-calculations">
 <h3>No ‘meat space’ calculations<a class="headerlink" href="#no-meat-space-calculations" title="Link to this heading">¶</a></h3>
-<p>In creating our hexagon, how did we know that degrees needed to be 60?</p>
-<p>You may have worked it out in your head or used a calculator. There are flaws on both approaches.</p>
+<p>When we made our hexagon, how did we know the turtle needed to turn <code class="docutils literal notranslate"><span class="pre">60</span></code> degrees?</p>
+<p>You might have worked it out in your head or used a calculator. Both of these have problems:</p>
 <ul class="simple">
-<li><p>head calculations can be incorrect</p></li>
-<li><p>getting a calculator is a waste of time</p></li>
+<li><p>you might make a mistake doing it in your head</p></li>
+<li><p>using a calculator takes extra time</p></li>
 </ul>
-<p>We can use Python to do the calculations.</p>
+<p>Instead, we can get Python to do the calculation for us.</p>
 <div class="hint admonition">
 <p class="admonition-title">Python calculations</p>
-<p>Python has a wide range of arithmetic operations.</p>
+<p>Python can do lots of different maths calculations for you.</p>
 <p>To see them all, check out <strong><a class="reference external" href="https://www.w3schools.com/python/gloss_python_arithmetic_operators.asp">W3Schools’s Python Arithmetic Operators page</a></strong></p>
 </div>
-<p>The value assigned to <code class="docutils literal notranslate"><span class="pre">degrees</span></code> is <code class="docutils literal notranslate"><span class="pre">360</span></code> divided by the number assigned to <code class="docutils literal notranslate"><span class="pre">sides</span></code>. In code we would write that as <code class="docutils literal notranslate"><span class="pre">degrees</span> <span class="pre">=</span> <span class="pre">360</span> <span class="pre">/</span> <span class="pre">sides</span></code></p>
-<p>Let’s put that into our code at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code>:</p>
+<p>The value for <code class="docutils literal notranslate"><span class="pre">degrees</span></code> is worked out by dividing <code class="docutils literal notranslate"><span class="pre">360</span></code> by the number of <code class="docutils literal notranslate"><span class="pre">sides</span></code>.</p>
+<p>In Python, we write this as:
+<code class="docutils literal notranslate"><span class="pre">degrees</span> <span class="pre">=</span> <span class="pre">360</span> <span class="pre">/</span> <span class="pre">sides</span></code></p>
+<p>Let’s add this into our code on <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="n">sides</span> <span class="o">=</span> <span class="mi">6</span>
@@ -453,9 +464,9 @@
 <hr class="docutils" />
 <section id="remove-unnecessary-variables">
 <h3>Remove unnecessary variables<a class="headerlink" href="#remove-unnecessary-variables" title="Link to this heading">¶</a></h3>
-<p>Another good programming practice is to remove unnecessary variables.</p>
-<p>Do we need the <code class="docutils literal notranslate"><span class="pre">degrees</span></code> variable? Could we place the calculation inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop instead?</p>
-<p>If we remove <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code> by moving the calculation to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code>, our code will look like the following.</p>
+<p>Another good habit in programming is to remove variables that we don’t really need.</p>
+<p>Do we actually need the <code class="docutils literal notranslate"><span class="pre">degrees</span></code> variable? Could we just do the calculation inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop instead?</p>
+<p>If we remove <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code> and move the calculation to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code>, our code would look like this.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="n">sides</span> <span class="o">=</span> <span class="mi">6</span>
@@ -471,7 +482,8 @@
 <span class="linenos">13</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Are there any more <strong>magic numbers</strong>? See if you can find any more.</p>
+<p>Are there any more <strong>magic numbers</strong> in the code?</p>
+<p>Look carefully and see if you can spot any.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="hll"><span class="linenos"> 3</span><span class="n">screen</span> <span class="o">=</span> <span class="mi">500</span>
@@ -488,41 +500,49 @@
 <span class="hll"><span class="linenos">14</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">CIRCLE_DEG</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>The flowchart for this code now looks like:</p>
+<p>The flowchart for this code now looks like this:</p>
 <p><img alt="flowchart lesson 3 2" src="_images/flowchart_lesson_3_2.png" /></p>
-<p>In <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">6</span></code> we have created another variable called <code class="docutils literal notranslate"><span class="pre">CIRCLE_DEG</span></code> and assigned it <code class="docutils literal notranslate"><span class="pre">360</span></code>. We have capitalised the name because the value of <code class="docutils literal notranslate"><span class="pre">360</span></code> will never change, no matter what shape we wish to draw. We call variables whose values doesn’t change <strong>constants</strong>. In Python’s naming conventions we capitalise constants.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">6</span></code>, we created a new variable called <code class="docutils literal notranslate"><span class="pre">CIRCLE_DEG</span></code> and gave it the value <code class="docutils literal notranslate"><span class="pre">360</span></code>.</p>
+<p>We wrote the name in capital letters because this value will never change, no matter what shape we draw.</p>
+<p>Variables like this are called <strong>constants</strong> (values that stay the same).</p>
+<p>In Python, we use capital letters to name constants.</p>
 <div class="hint admonition">
 <p class="admonition-title">Naming conventions</p>
-<p>Python’s naming conventions are different from the naming rules. If you break a naming rule, your program will cause a <strong>syntax error</strong>. If you break naming convention your program will still work.</p>
-<p>In programming we use naming conventions to make your code easier to read and understand.</p>
-<p>Variable naming conventions:</p>
+<p>Python has <strong>naming rules</strong> and <strong>naming conventions</strong>, and they are not the same.</p>
 <ul class="simple">
-<li><p>Use descriptive names that explains the value stored in them</p>
+<li><p>If you break a naming <strong>rule</strong>, your program will crash with a <strong>syntax error</strong></p></li>
+<li><p>If you break a naming <strong>convention</strong>, your program will still work, but your code may be harder to read</p></li>
+</ul>
+<p>We use naming conventions to make code easier for people to understand.</p>
+<p class="rubric" id="variable-naming-conventions">Variable naming conventions</p>
+<ul class="simple">
+<li><p>Use clear names that explain what the value is</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">30</span></code> → bad</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">degrees</span> <span class="pre">=</span> <span class="pre">30</span></code> → better</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">degrees_celsius</span> <span class="pre">=</span> <span class="pre">30</span></code> → best</p></li>
 </ul>
 </li>
-<li><p>Use snake case for multiple word names:</p>
+<li><p>Use <strong>snake case</strong> for names with more than one word</p>
 <ul>
-<li><p>replace the spaces with the <code class="docutils literal notranslate"><span class="pre">_</span></code> character</p></li>
-<li><p>only use lower case letters</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">this_is_snake_case</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">_</span></code> instead of spaces</p></li>
+<li><p>only use lowercase letters</p></li>
+<li><p>example: <code class="docutils literal notranslate"><span class="pre">this_is_snake_case</span></code></p></li>
 </ul>
 </li>
-<li><p>CAPTIALIZE names of constants (variables whose value will not change)</p></li>
-<li><p>Do not use the names of keywords (eg. <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, etc)</p></li>
+<li><p>Use <strong>ALL CAPITAL LETTERS</strong> for constants (values that do not change)</p></li>
+<li><p>Do not use Python keywords as variable names (like <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span></code>)</p></li>
 </ul>
 </div>
 </section>
-</section>
 <section id="part-1-exercises">
-<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Link to this heading">¶</a></h2>
-<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. Work through the following exercises and make your own code.</p>
-<section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/e058b317f48e0f79b7e9a00d50ebf093/lesson_3_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_1.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<h3>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Link to this heading">¶</a></h3>
+<p>In this course, the exercises are the <strong>make</strong> part of the PRIMM model. Work through the exercises and write your own code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/e058b317f48e0f79b7e9a00d50ebf093/lesson_3_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_1.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Read the comments in the code and change it so the turtle draws a square.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="hll"><span class="linenos"> 3</span><span class="c1">#################################################</span>
@@ -542,12 +562,13 @@
 <span class="linenos">17</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments and change the code so it draws a square</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/47c09db8855ef906ed14b9545f1f807f/lesson_3_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_2.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/47c09db8855ef906ed14b9545f1f807f/lesson_3_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_2.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Read the comments in the code and change it so the turtle draws a circle.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="hll"><span class="linenos"> 3</span><span class="c1">#################################################</span>
@@ -567,12 +588,13 @@
 <span class="linenos">17</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments and change the code so it draws a circle</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/621563839d2990821bca5149550b89d7/lesson_3_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_3.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/621563839d2990821bca5149550b89d7/lesson_3_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_3.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Read the comments in the code and change it so the turtle draws a <strong>pentagon</strong>.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="hll"><span class="linenos"> 3</span><span class="c1">###################################################</span>
@@ -592,7 +614,7 @@
 <span class="linenos">17</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments and change the code so it draws a pentagon.</p>
+</div>
 </section>
 </section>
 <section id="part-2-coordinates">
@@ -602,19 +624,19 @@
 <section id="maintainability">
 <h3>Maintainability<a class="headerlink" href="#maintainability" title="Link to this heading">¶</a></h3>
 <p><img alt="XKCD Code Quality" src="https://imgs.xkcd.com/comics/code_quality.png" /></p>
-<p><strong>Maintainability</strong> refers to how easy your code is to understand for other programmers. This is important. The other programmer may be:</p>
+<p><strong>Maintainability</strong> means how easy your code is for other people to read and understand. This matters because the other person could be:</p>
 <ul class="simple">
-<li><p>someone trying to help you</p></li>
-<li><p>your teacher trying to mark your work</p></li>
-<li><p>even your future self in six months’ time</p></li>
+<li><p>someone helping you fix your code</p></li>
+<li><p>your teacher marking your work</p></li>
+<li><p>even you, coming back to it six months later</p></li>
 </ul>
-<p>Before we keep going, we should tidy the code up by implementing some good coding principles.</p>
+<p>Before we continue, we should tidy up the code by using some good coding habits.</p>
 <p>We will:</p>
 <ul class="simple">
-<li><p>group code under their functionality (what they do)</p></li>
-<li><p>use comments to signpost this functionality</p></li>
+<li><p>group code based on what it does</p></li>
+<li><p>use comments to show what each part is for</p></li>
 </ul>
-<p>Adjust your code in <strong>lesson_3_pt_1.py</strong> so it looks like the code below</p>
+<p>Change your code in <strong>lesson_3_pt_1.py</strong> so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1"># set up screen</span>
@@ -637,54 +659,85 @@
 <span class="linenos">20</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">DEGREES_IN_CIRCLE</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Anyone who reads the program will know where the code is that deals with the functionality of:</p>
+<p>Anyone reading the program will be able to quickly find the code for:</p>
 <ul class="simple">
 <li><p>setting up the screen</p></li>
-<li><p>creating the turtle instance</p></li>
-<li><p>defining the shape parameters</p></li>
+<li><p>creating the turtle</p></li>
+<li><p>setting the shape values</p></li>
 <li><p>drawing the shape</p></li>
 </ul>
-<p>Save the file as <strong>lesson_3_pt_2.py</strong> (<strong>File</strong> → <strong>Save as…</strong>).</p>
+<p>Save the file as <strong>lesson_3_pt_2.py</strong> (<strong>File</strong> → <strong>Save as…</strong>).</p>
 </section>
 <hr class="docutils" />
 <section id="how-turtle-coordinates-work">
 <h3>How Turtle coordinates work<a class="headerlink" href="#how-turtle-coordinates-work" title="Link to this heading">¶</a></h3>
-<p>Imagine the Turtle window as a piece of graph paper that measured in pixels. Our screen is set to 500px wide and 500px high (px is the recognised abbreviation for pixels). Turtle uses x to represent horizontal values, and y to represent vertical values. So, we could instead say the window’s <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">500</span></code> and its <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">500</span></code></p>
-<p>In computing, we would represent these coordinates as <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code> where the first value is <code class="docutils literal notranslate"><span class="pre">x</span></code> and the second values is <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>Think of the Turtle window like a piece of graph paper made of pixels.</p>
+<p>Our screen is 500 pixels wide and 500 pixels high (<code class="docutils literal notranslate"><span class="pre">px</span></code> means pixels).
+Turtle uses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> for left and right (horizontal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> for up and down (vertical)</p></li>
+</ul>
+<p>So we can say the window size is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">500</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">500</span></code></p></li>
+</ul>
+<p>In computing, we write this as a coordinate like this: <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code>
+The first number is <code class="docutils literal notranslate"><span class="pre">x</span></code>, and the second number is <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <div class="hint admonition">
 <p class="admonition-title">What’s an immutable tuple?</p>
-<p>Values like <code class="docutils literal notranslate"><span class="pre">(500,500)</span></code> are called <strong>tuples</strong>. Tuples are like a list that we learnt about in lesson 2. The main difference is that you can change the values in a list, but you can’t change the values in a tuple.</p>
-<p>In computer science, if you can’t change a value of something, it is called <strong>immutable</strong>. We would say that tuples are immutable.</p>
-<p>Tuples start with <code class="docutils literal notranslate"><span class="pre">(</span></code>, end with <code class="docutils literal notranslate"><span class="pre">)</span></code> and a <code class="docutils literal notranslate"><span class="pre">,</span></code> separates the elements.</p>
+<p>Values like <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code> are called <strong>tuples</strong>.</p>
+<p>A tuple is similar to a <strong>list</strong> you learnt about earlier, but there is one big difference:</p>
+<ul class="simple">
+<li><p>you can change a list</p></li>
+<li><p>you <strong>cannot</strong> change a tuple</p></li>
+</ul>
+<p>In computer science, something that cannot be changed is called <strong>immutable</strong>.
+So, tuples are <strong>immutable</strong>.</p>
+<p>Tuples:</p>
+<ul class="simple">
+<li><p>start with <code class="docutils literal notranslate"><span class="pre">(</span></code></p></li>
+<li><p>end with <code class="docutils literal notranslate"><span class="pre">)</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">,</span></code> to separate each value</p></li>
+</ul>
 </div>
-<p>For our Turtle window of <code class="docutils literal notranslate"><span class="pre">(500,500)</span></code> we have <code class="docutils literal notranslate"><span class="pre">x</span></code> values ranging from <code class="docutils literal notranslate"><span class="pre">-250</span></code> to <code class="docutils literal notranslate"><span class="pre">250</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> values also ranging from <code class="docutils literal notranslate"><span class="pre">-250</span></code> to <code class="docutils literal notranslate"><span class="pre">250</span></code>.</p>
+<p>For our Turtle window <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code>, the coordinates are centred in the middle of the screen.</p>
+<p>This means:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> values go from <code class="docutils literal notranslate"><span class="pre">-250</span></code> to <code class="docutils literal notranslate"><span class="pre">250</span></code> (left to right)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> values go from <code class="docutils literal notranslate"><span class="pre">-250</span></code> to <code class="docutils literal notranslate"><span class="pre">250</span></code> (down to up)</p></li>
+</ul>
+<p>So the centre of the screen is <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>.</p>
 <p>It looks like this:</p>
 <p><img alt="Coordinates" src="_images/coordinates.png" /></p>
-<p>Important to note:</p>
+<p>Important things to know:</p>
 <ul class="simple">
-<li><p>the centre of the screen is the origin of <code class="docutils literal notranslate"><span class="pre">(0,0)</span></code></p></li>
-<li><p>moving up from the centre, the <code class="docutils literal notranslate"><span class="pre">y</span></code> value increases to a maximum of <code class="docutils literal notranslate"><span class="pre">250</span></code> which is <code class="docutils literal notranslate"><span class="pre">500</span> <span class="pre">/</span> <span class="pre">2</span></code></p></li>
-<li><p>moving down from the centre, the <code class="docutils literal notranslate"><span class="pre">y</span></code> value decreases to a minimum of <code class="docutils literal notranslate"><span class="pre">-250</span></code></p></li>
-<li><p>starting from the centre and moving left <code class="docutils literal notranslate"><span class="pre">x</span></code> increases in value to a maximum of <code class="docutils literal notranslate"><span class="pre">250</span></code></p></li>
-<li><p>starting from the centre and moving right <code class="docutils literal notranslate"><span class="pre">x</span></code> decreases to a minimum of <code class="docutils literal notranslate"><span class="pre">-250</span></code></p></li>
-<li><p>every pixel in the window can be referred to by a combination of it’s <code class="docutils literal notranslate"><span class="pre">x</span></code> value and <code class="docutils literal notranslate"><span class="pre">y</span></code> value. For example the <code class="docutils literal notranslate"><span class="pre">(200,125)</span></code>.</p></li>
+<li><p>the centre of the screen is <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code></p></li>
+<li><p>moving up from the centre, <code class="docutils literal notranslate"><span class="pre">y</span></code> gets bigger (up to <code class="docutils literal notranslate"><span class="pre">250</span></code>)</p></li>
+<li><p>moving down from the centre, <code class="docutils literal notranslate"><span class="pre">y</span></code> gets smaller (down to <code class="docutils literal notranslate"><span class="pre">-250</span></code>)</p></li>
+<li><p>moving right from the centre, <code class="docutils literal notranslate"><span class="pre">x</span></code> gets bigger (up to <code class="docutils literal notranslate"><span class="pre">250</span></code>)</p></li>
+<li><p>moving left from the centre, <code class="docutils literal notranslate"><span class="pre">x</span></code> gets smaller (down to <code class="docutils literal notranslate"><span class="pre">-250</span></code>)</p></li>
+<li><p>every spot on the screen can be described using <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> coordinates, like <code class="docutils literal notranslate"><span class="pre">(200,</span> <span class="pre">125)</span></code></p></li>
 </ul>
-<p>In summary:</p>
+</section>
+<section id="in-summary">
+<h3>In summary:<a class="headerlink" href="#in-summary" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>↑ increases <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
 <li><p>↓ decreases <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
 <li><p>→ increases <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
 <li><p>← decreases <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
 </ul>
-<p>Now that we know coordinates we can tell our turtle to go to a specific coordinates.</p>
+<p>Now that we understand coordinates, we can tell the turtle to move to a specific position on the screen.</p>
 </section>
 <hr class="docutils" />
 <section id="using-goto-to-draw">
 <h3>Using <code class="docutils literal notranslate"><span class="pre">goto()</span></code> to draw<a class="headerlink" href="#using-goto-to-draw" title="Link to this heading">¶</a></h3>
-<p>Make the following adjustments in <strong>lesson_3_pt_2.py</strong>:</p>
+<p>Make these changes in <strong>lesson_3_pt_2.py</strong>:</p>
 <ul class="simple">
-<li><p>add <code class="docutils literal notranslate"><span class="pre">my_ttl.goto(0,125)</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">16</span></code></p></li>
-<li><p>put a <code class="docutils literal notranslate"><span class="pre">#</span></code> in front of <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">19</span></code> to <code class="docutils literal notranslate"><span class="pre">21</span></code></p></li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">my_ttl.goto(0,</span> <span class="pre">125)</span></code> on line 16</p></li>
+<li><p>add a <code class="docutils literal notranslate"><span class="pre">#</span></code> at the start of lines 19 to 21</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -709,19 +762,30 @@
 </span><span class="hll"><span class="linenos">21</span><span class="c1">#    my_ttl.left(360 / sides)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p>Try to guess what you think will happen.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p><strong>Run</strong> the code and check if your prediction was correct.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p><strong>Investigate</strong> what changed:</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen</p></li>
-<li><p><strong>Run</strong> the code. Did it do what you predicted?</p></li>
-<li><p><strong>Investigate</strong> the by unpacking the changes:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">16</span></code> <code class="docutils literal notranslate"><span class="pre">my_ttl.goto(0,125)</span></code> tells your turtle to move to the position of <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">125</span></code>.</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">#</span></code> at the beginning of <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">19</span></code> to <code class="docutils literal notranslate"><span class="pre">21</span></code> turns the code into comments, which means Python will ignore them. This practice is called <strong>commenting out</strong> code. It can be useful for debugging.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">16</span></code> <code class="docutils literal notranslate"><span class="pre">my_ttl.goto(0,</span> <span class="pre">125)</span></code> tells the turtle to move to the position <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">125</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">#</span></code> at the start of lines 19 to 21 turns those lines into comments, so Python ignores them. This is called <strong>commenting out</strong> code and is useful when testing or fixing your program</p></li>
 </ul>
-</li>
-<li><p><strong>Modify</strong> the code so that your turtle moves to all the points in the coordinates diagram above.</p></li>
-</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Modify</p>
+<p><strong>Change</strong> the code so your turtle moves to all the points shown in the coordinate diagram above.</p>
+</div>
+</section>
 <hr class="docutils" />
+<section id="draw-a-border">
+<h3>Draw a border<a class="headerlink" href="#draw-a-border" title="Link to this heading">¶</a></h3>
 <p>Change <strong>lesson_3_pt_2.py</strong> so that it looks like same as below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -752,19 +816,24 @@
 <span class="linenos">27</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
-<ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen, and then <strong>run</strong> the code. Did it do what you predicted?</p></li>
-<li><p><strong>Investigate</strong> the code by changing aspect of the code.</p></li>
-</ul>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
+<p>Try to guess what you think will happen, then <strong>run</strong> the code. Did it happen the way you expected?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p><strong>Investigate</strong> the code by changing parts of it and seeing what happens.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="using-penup-and-pendown">
 <h3>Using <code class="docutils literal notranslate"><span class="pre">penup</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown</span></code><a class="headerlink" href="#using-penup-and-pendown" title="Link to this heading">¶</a></h3>
-<p>Now we have a border around our drawing. There is an annoying line where the turtle moves from the centre of the window to the border. Luckily, we can get rid of it.</p>
+<p>Now we have a border around our drawing. There is an extra line where the turtle moves from the centre to the edge, which we don’t want.</p>
+<p>We can fix this.</p>
 <p><img alt="annoying line" src="_images/penup.png" /></p>
-<p>When we write, we do not leave trailing lines because we lift our pen up to move. We then put our pen back down to keep writing. Turtle can do the same this with its <code class="docutils literal notranslate"><span class="pre">penup</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown</span></code> functions.</p>
-<p>Change you code by adding the code below on <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">13</span></code>, <code class="docutils literal notranslate"><span class="pre">15</span></code>, <code class="docutils literal notranslate"><span class="pre">19</span></code>, and <code class="docutils literal notranslate"><span class="pre">21</span></code></p>
+<p>When we write on paper, we lift our pen to move without drawing a line. Then we put it back down to keep writing.</p>
+<p>The turtle can do the same thing using <code class="docutils literal notranslate"><span class="pre">penup()</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown()</span></code>.</p>
+<p>Change your code by adding the lines below to lines <code class="docutils literal notranslate"><span class="pre">13</span></code>, <code class="docutils literal notranslate"><span class="pre">15</span></code>, <code class="docutils literal notranslate"><span class="pre">19</span></code>, and <code class="docutils literal notranslate"><span class="pre">21</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1"># set up screen</span>
@@ -797,17 +866,22 @@
 <span class="linenos">30</span>    <span class="n">my_ttl</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="n">sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Predict</strong> what you think will happen, then <strong>run</strong> the code.</p>
-<p>Here is the flowchart to help with your prediction.</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
+<p>Try to guess what you think will happen, then <strong>run</strong> the code. Did it happen the way you expected?</p>
+<p>Here is a flowchart to help you predict what will happen.</p>
 <p><img alt="flowchart lesson 3 3" src="_images/flowchart_lesson_3_3.png" /></p>
-</section>
+</div>
 </section>
 <section id="part-2-exercise">
-<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Link to this heading">¶</a></h2>
-<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercise and make your own code.</p>
-<section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/5388c5044253d943ca70154b573cd163/lesson_3_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_4.py</span></code></a></strong> file and save it to your lesson folder. Below is its code.</p>
+<h3>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Link to this heading">¶</a></h3>
+<p>In this course, the exercises are the <strong>make</strong> part of the PRIMM model. Work through the exercise and write your own code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/5388c5044253d943ca70154b573cd163/lesson_3_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_3_ex_4.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Read the comments and use what you know about Turtle to draw a house.</p>
+<p>Try to keep your code <strong>DRY</strong>, which means <strong>Don’t Repeat Yourself</strong>. This means you should avoid writing the same code again and again when there is a simpler way.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1"># set up screen</span>
@@ -823,10 +897,10 @@
 </span><span class="hll"><span class="linenos">13</span><span class="c1">## Using the turtle commands you ##</span>
 </span><span class="hll"><span class="linenos">14</span><span class="c1">## have learnt, draw a house     ##</span>
 </span><span class="hll"><span class="linenos">15</span><span class="c1">## made up of several shapes.    ##</span>
-</span><span class="linenos">16</span><span class="c1">###################################</span>
-</pre></div>
+</span><span class="hll"><span class="linenos">16</span><span class="c1">###################################</span>
+</span></pre></div>
 </div>
-<p>Follow the instructions in the comments and use your turtle knowledge to draw a house. Remember to apply the DRY principle.</p>
+</div>
 </section>
 </section>
 </section>
@@ -897,25 +971,20 @@
 <li><a class="reference internal" href="#part-1-variables">Part 1: Variables</a><ul>
 <li><a class="reference internal" href="#conventional-range">Conventional range</a></li>
 <li><a class="reference internal" href="#replace-magic-numbers">Replace magic numbers</a></li>
+<li><a class="reference internal" href="#single-point-of-truth">Single point of truth</a></li>
 <li><a class="reference internal" href="#no-meat-space-calculations">No ‘meat space’ calculations</a></li>
 <li><a class="reference internal" href="#remove-unnecessary-variables">Remove unnecessary variables</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#part-1-exercises">Part 1 Exercises</a><ul>
-<li><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
-<li><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
-<li><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+<li><a class="reference internal" href="#part-1-exercises">Part 1 Exercises</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#part-2-coordinates">Part 2: Coordinates</a><ul>
 <li><a class="reference internal" href="#maintainability">Maintainability</a></li>
 <li><a class="reference internal" href="#how-turtle-coordinates-work">How Turtle coordinates work</a></li>
+<li><a class="reference internal" href="#in-summary">In summary:</a></li>
 <li><a class="reference internal" href="#using-goto-to-draw">Using <code class="docutils literal notranslate"><span class="pre">goto()</span></code> to draw</a></li>
+<li><a class="reference internal" href="#draw-a-border">Draw a border</a></li>
 <li><a class="reference internal" href="#using-penup-and-pendown">Using <code class="docutils literal notranslate"><span class="pre">penup</span></code> and <code class="docutils literal notranslate"><span class="pre">pendown</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#part-2-exercise">Part 2 Exercise</a><ul>
-<li><a class="reference internal" href="#exercise-4">Exercise 4</a></li>
+<li><a class="reference internal" href="#part-2-exercise">Part 2 Exercise</a></li>
 </ul>
 </li>
 </ul>

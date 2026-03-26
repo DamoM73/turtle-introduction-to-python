@@ -542,6 +542,8 @@ The starting code is shown below:
 ```
 ````
 
+---
+
 ````{question} Exercise 2
 
 Download the **{download}`lesson_1_ex_2.py<./python_files/lesson_1_ex_2.py>`** file and save it in your lesson folder.
@@ -555,6 +557,8 @@ The starting code is shown below:
 :emphasize-lines: 10
 ```
 ````
+
+---
 
 ````{question} Exercise 3
 
