@@ -8,7 +8,7 @@ Python is good at catching mistakes like syntax errors and run-time errors. Unfo
 
 For example, type the code below and save it has `buggy_code.py`.
 
-For this tutorial download {download}`buggy_code.py<./python_files/buggy_code.py>` file and save it to your lesson folder.
+For this tutorial download {download}`buggy_code.py<./python_files/buggy_code.py>` file and save it in your lesson folder.
 
 ```{literalinclude} ./python_files/buggy_code.py
 :linenos:

@@ -561,7 +561,6 @@ The starting code is shown below:
 ---
 
 ````{question} Exercise 3
-
 Download the **{download}`lesson_1_ex_3.py<./python_files/lesson_1_ex_3.py>`** file and save it in your lesson folder. 
 
 After `line 10` write code that will create a hexagon.

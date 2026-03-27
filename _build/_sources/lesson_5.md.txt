@@ -659,7 +659,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 1
 
-Download **{download}`lesson_5_ex_1.py<./python_files/lesson_5_ex_1.py>`** file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_1.py<./python_files/lesson_5_ex_1.py>`** file and save it in your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_1.py
 :linenos:
@@ -672,7 +672,7 @@ Follow the instructions in the comments and use your Python knowledge to create 
 
 ### Exercise 2
 
-Download **{download}`lesson_5_ex_2.py<./python_files/lesson_5_ex_2.py>`** file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_2.py<./python_files/lesson_5_ex_2.py>`** file and save it in your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_2.py
 :linenos:
@@ -685,7 +685,7 @@ Follow the instructions in the comments and use your Python knowledge to create 
 
 ### Exercise 3
 
-Download **{download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>`** file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>`** file and save it in your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_3.py
 :linenos:
@@ -732,7 +732,7 @@ To understand `while` loops, let's look at a number guessing game.
 
 ### Number guessing game
 
-Download the **{download}`lesson_5_pt_2.py<./python_files/lesson_5_pt_2.py>`** file and save it to your lesson folder. Below is its code.
+Download the **{download}`lesson_5_pt_2.py<./python_files/lesson_5_pt_2.py>`** file and save it in your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_pt_2.py
 :linenos:
@@ -1046,7 +1046,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ### Exercise 4
 
-Download **{download}`lesson_5_ex_4.py<./python_files/lesson_5_ex_4.py>`** file and save it to your lesson folder. Below is its code.
+Download **{download}`lesson_5_ex_4.py<./python_files/lesson_5_ex_4.py>`** file and save it in your lesson folder. Below is its code.
 
 ```{literalinclude} ./python_files/lesson_5_ex_4.py
 :linenos:

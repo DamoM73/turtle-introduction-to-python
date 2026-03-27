@@ -1,12 +1,11 @@
 # Python Turtle - Lesson 4
 
 ```{topic} In this lesson you will learn:
-
-- about coding modularisation
-- when and how to use functions in Python
-- how to accept user's input into your code
-- about data types
-- how to convert between data types
+* how to break your code into smaller, easier-to-manage parts
+* when and how to use functions in Python to organise your code
+* how to get input (answers) from a user in your program
+* what different data types are and how they store information
+* how to change one data type into another
 ```
 
 ## Part 1: Functions
@@ -17,58 +16,84 @@
 
 ### What are functions?
 
-**Functions** are blocks of code that we can run several times in our program. So far in our programming, all our blocks of code are only run once. Even loop blocks are only run once. They repeat the code inside the block, but once the program has passed the loop, it won't go back and run it gain.
+**Functions** are blocks of code that you can use again and again in your program.
 
-With functions, we move a block of code outside of the main program sequence, then give it a name. The program can use that block as many times. To use it, the program **calls** the function name from within the main program sequence.
+So far, your code has only run once from top to bottom. Even when you use a loop, the loop itself only runs once — it just repeats the code inside it before moving on.
 
-To understand this more clearly, we will start with my solution for **lesson_3_ex_4.py**.
+A function works differently.
+
+With a function:
+
+* you take a group of code and move it somewhere else
+* you give that group of code a name
+* you can then use (or **call**) that code whenever you need it
+
+This means you don’t have to write the same code over and over again.
+
+When your program **calls** a function, it jumps to that block of code, runs it, and then comes back to continue the program.
+
+To see how this works, we will start with a solution for **lesson_3_ex_4.py**.
 
 Here is the flowchart for the solution:
 
 ![flow chart lesson 4 1](assets/flowchart_lesson_4_1.png)
 
-Below is the code. You could type it into a new document, or you could just download the **{download}`lesson_4_pt_1.py<./python_files/lesson_4_pt_1.py>`** file.
+Here is the code. You can either type it into a new file, or download the **{download}`lesson_4_pt_1.py<./python_files/lesson_4_pt_1.py>`** file.
 
 ```{literalinclude} ./python_files/lesson_4_pt_1.py
 :linenos:
 ```
 
-PRIMM:
+```{note} Predict
+**Predict** what kind of house the code will draw
+```
 
-- **Predict** the type of house that the code will draw
-- **Run** the code and see if it resembles your prediction.
+```{note} Run
+**Run** the code and check if it matches what you predicted
+```
 
-Remember the DRY principle (**Don't Repeat Yourself**)? Look at the code. How well does it go in relation to DRY?
+Remember the DRY principle (**Don’t Repeat Yourself**). Look at the code and think about this:
 
-Can you identify any repetition?
+* Does the code repeat the same instructions?
+* Are there parts that look very similar?
 
-Look at the comments:
+**Hint:** Read the comments carefully — they can help you spot the repeated parts.
 
 ```{literalinclude} ./python_files/lesson_4_pt_1.py
 :linenos:
 :emphasize-lines: 17, 22, 27, 32, 37, 44, 49, 54, 59, 64, 69
 ```
 
-In summary we have two main types of repetition:
+In this code, there are two main things that repeat:
 
-- moving the pen
-- drawing the shape
+* moving the pen
+* drawing the shape
 
-When I wrote this code, I didn't type it straight out, I copied and pasted a lot of the code and changed the magic numbers' values. Copying and pasting is a clear indicator that you need to use a function. Why? Because functions are one of the main tools we can use to enforce the DRY Principle.
+When this code was written, parts were copied and pasted, then some numbers were changed.
+
+Copying and pasting is a strong sign that a **function** should be used.
+
+Why?
+
+Because functions help you follow the **DRY principle (Don’t Repeat Yourself)** by:
+
+* putting repeated code in one place
+* letting you reuse it instead of copying it again and again
 
 ---
 
 ### Creating functions
 
-Let's look at how this works.
+Let’s see how this works.
 
-1. Take all the **move pen code** and consolidate that in one spot.
-   - Below I have copied the first move pen action (`lines 17` to `20` in the previous code)
-   - I have pasted them up to the top (`lines 4` to `7`)
-   - I then turned them into a function
-2. Replace the original code with a **call** to the function (`line 24`).
+1. Take all the **move pen code** and put it together in one place.
 
-Adjust your code so that it looks the same as below:
+   * Below, the first set of move pen code (`lines 17 to 20` in the old code) has been copied
+   * It has been moved to the top (`lines 4 to 7`)
+   * Then it has been turned into a function
+2. Replace the original code with a **call** to the function (`line 24`)
+
+Change your code so it matches the example below:
 
 ```{code-block} python
 :linenos:
@@ -150,39 +175,60 @@ my_ttl.circle(5)
 my_ttl.hideturtle()
 ```
 
-PRIMM:
+```{note} Predict and Run
+**Predict** what you think will happen, then **run** the code and check your prediction
+```
 
-- **Predict** what you think will happen
-- **Run** the code and check you prediction
+```{note} Investigate
+Now let’s **investigate** the code step by step:
 
-Now lets **investigate** the code by unpacking it:
+* `Line 4`: `def move_pen():` creates the function
 
-- `Line 4`: `def move_pen():` create the function:
-  - In programming we call this **defining** a function.
-  - The program reads and bookmarks the code, but does not execute it.
-  - `def` is the key word for defining a function.
-  - `move_pen` is the name we are giving the function.
-    - This name is how the program calls the function. It follows the same rules as variable names.
-    - By using a descriptive name, we also remove the need for comments, as the code explains itself.
-  - `()` is where we can put values. We'll deal with this soon.
-  - `:` tells Python that an indented code block follows (the same as a `for` loop).
-- `Lines 5` to `7` are indented:
-  - This is the code that Python executes with a function call
-  - The indentation rules are the same as the `for` loop
-    - indentations can be many lines
-    - multi-line indented code is called a **block**
-    - indents should be four spaces
-- `Line 24`: `move_pen()` calls the function:
-  - At this point the program will go to `line 4` run the code in the function.
-  - When Python finishes the function code, it returns to `line 24` and continues with the rest of the code.
+  * This is called **defining** a function
+  * The program reads the code and remembers it, but does not run it yet
+  * `def` is the keyword used to create a function
+  * `move_pen` is the name of the function
+
+    * This is how the program knows what to run when you call it
+    * Good names make your code easier to understand without comments
+  * `()` is where you can pass values into the function (you’ll learn this soon)
+  * `:` tells Python that a block of code will follow
+
+* `Lines 5 to 7` are indented
+
+  * This is the code that will run when the function is called
+  * Indentation works the same as in a `for` loop
+
+    * you can have multiple lines
+    * this group of lines is called a **block**
+    * use four spaces for indentation
+
+* `Line 24`: `move_pen()` calls the function
+
+  * The program jumps to `line 4` and runs the function code
+  * When it finishes, it goes back to `line 24` and continues running the rest of the program
+```
 
 ---
 
 ### Passing arguments
 
-This works for our first pen movement. Since the coordinates are magic numbers, it won't work for the rest. I would have to create a function for each movement of the pen. This defeats the purpose of functions. What we need is a way to send the coordinates to the function when we call it. We can. Python uses **arguments** to pass values to a function.
+This works for the first pen movement, but it will not work for the others.
 
-Looking back at our `move_pen` function in the code, we need to get rid of those magic numbers.
+Why not?
+
+Because the coordinates are still fixed numbers, **magic numbers**. If you wanted the pen to move somewhere else, you would have to make a new function each time.
+
+That is not very useful.
+
+What we really need is a way to give the function different coordinates each time we use it.
+
+We can do that with **arguments**.
+
+**Arguments** are values that you send into a function when you call it. This lets one function do the same job in different places, instead of making lots of nearly identical functions.
+
+Looking at the `move_pen` function, the fixed numbers need to be removed.
+
 
 ```{code-block} python
 :linenos:
@@ -194,7 +240,11 @@ def move_pen():
     my_ttl.pendown()
 ```
 
-What do the two magic numbers in `my_ttl.goto(-100,0)` represent? The `x` and the `y` of the coordinates. So let's replace them with variables.
+What do the two numbers in `my_ttl.goto(-100, 0)` mean?
+
+They are the **x** and **y** positions on the screen.
+
+So instead of using fixed numbers, we can replace them with **variables**.
 
 ```{code-block} python
 :linenos:
@@ -206,23 +256,28 @@ def move_pen():
     my_ttl.pendown()
 ```
 
-But how do we assign values to `x` and `y`? We use **arguments.**
+How do we give values to `x` and `y`? We use **arguments**.
 
-1. Change the function definition to `def move_pen(x, y):` so it will **accept** two values.
-2. Change the function call in `line 24` to `move_pen(-100,0)` passing two values to the function.
+1. Change the function to `def move_pen(x, y):` so it can **accept** two values
+2. Change the function call to `move_pen(-100, 0)` to send two values into the function
 
-Let's unpack that:
+```{note} Investigate
+Let’s break that down:
 
-- `def move_pen(x, y):` says:
-  - When you call the `move_pen` function, you need to provide two values.
-  - First value is assigned to the variable `x`.
-  - Second value is assigned to the variable `y`.
-- `move_pen(-100,0)` says:
-  - Call the `move_pen` function.
-  - Use `-100` as the first value (the `x` value).
-  - Use `0` as the second value (the `y` value).
+* `def move_pen(x, y):` means:
 
-Your code should now look like the code below:
+  * The function needs two values when it is called
+  * The first value will be stored in `x`
+  * The second value will be stored in `y`
+
+* `move_pen(-100, 0)` means:
+
+  * Run the `move_pen` function
+  * Set `x` to `-100`
+  * Set `y` to `0`
+```
+
+Your code should now match the example below:
 
 ```{code-block} python
 :linenos:
@@ -304,25 +359,26 @@ my_ttl.circle(5)
 my_ttl.hideturtle()
 ```
 
-PRIMM
+```{note} Predict and Run
+**Predict** what the code will do now, then **run** it to see if you were correct
+```
 
-- **Predict** what this code will now do.
-- **Run** the code to check if your prediction was correct.
-- **Investigate** the code by using the debugger and stepping your way through the program.
+```{note} Investigate
+**Investigate** the code by using the debugger and stepping through the program one line at a time.
+```
 
 ```{admonition} Arguments vs Parameters
+In programming, people sometimes use **arguments** and **parameters** to mean the same thing. That’s usually okay, but they are slightly different:
 
-In programming discussions the terms **arguments** and **parameters** are often swapped around. It is safe to use either term, but they do have distinct meanings:
-
-- arguments are the values the main program passes to a function
-- parameters are the variables named in the function definition
+* **arguments** are the values you send into a function
+* **parameters** are the variable names in the function that receive those values
 ```
 
 ---
 
-Go through the code and replace the remaining `# move pen` blocks with a `move_pen()` call.
+Go through your code and replace the remaining `# move pen` sections with a `move_pen()` call.
 
-Your code should now look like this:
+Your code should now match the example below:
 
 ```{code-block} python
 :linenos:
@@ -392,34 +448,48 @@ my_ttl.circle(5)
 my_ttl.hideturtle()
 ```
 
-**Run** the code to make sure the house is still drawn.
+```{note} Run
+**Run** the code to make sure the house is still drawn correctly.
 
-Notice that our line count is down from the original `71` to `63`.
+Notice that the number of lines has gone down from `71` to `63`.
+```
 
 ```{hint} Testing tips
-- It is good to frequently test your code.
-- Each time you change your code, test it.
-- Try not to make too many changes between testing, it makes it harder to identify your errors.
-- If function passes its test, you don't have to testing it again, unless your change the function.
-- If your functions passed their tests, then you know the error is elsewhere in the code.
+* It is important to test your code often
+* Every time you make a change, test it
+* Don’t change too many things at once, or it will be harder to find mistakes
+* If a function works correctly, you don’t need to test it again unless you change it
+* If all your functions work, any problem must be somewhere else in your code
 ```
 
 ---
 
 ### Functions in Flowcharts
 
-Flowcharts don't represent whole programs, they represent algorithms. 
+Flowcharts don’t show a whole program. They show the steps of a solution (an algorithm).
 
 ```{admonition} What are algorithms?
+Algorithms are step-by-step instructions used to solve a problem.
 
-Algorithms are a set of rules to follow to solve a problem. A cake recipe is an algorithm to bake a cake. You follow an algorithm to perform long division in maths. In computers, you code instructions are the algorithms. 
+* A cake recipe is an algorithm for baking a cake
+* The steps for long division in maths are an algorithm
+* In programming, your code is the algorithm the computer follows
 ```
 
-When a program consists of smaller algorithms (eg. functions), create a flowchart for each algorithm. Then show where algorithms call other algorithms.
+When a program is made up of smaller parts (like functions), each part is its own algorithm.
 
-We show the name of the function in the terminator symbol. **Main** is the name of the starting algorithm.
+* Create a flowchart for each algorithm
+* Show where one algorithm calls another
 
-Here is the flowchart of the code with the `move_pen` function. The function calls use the procedure symbol (I have coloured them red to make them stand out).
+In a flowchart:
+
+* The **terminator shape** shows the name of the algorithm
+* **Main** is the starting point of the program
+
+When a function is called:
+
+* Use the **procedure symbol** to show the call
+* These are often highlighted (for example, in red) so they are easy to see
 
 ![flowchart lesson 4 2](assets/flowchart_lesson_4_2.png)
 
@@ -427,27 +497,25 @@ Here is the flowchart of the code with the `move_pen` function. The function cal
 
 ### Shape functions
 
-When we first looked for repetition, we also identified the drawing shapes repetition. Lets make a function to draw squares.
+Earlier, we noticed that drawing shapes also repeats. Now let’s make a function to draw squares.
 
-From the current code:
+From your current code:
 
-- copy one of the `# draw square` blocks to the top of the code
-- change it into a function that draws a square called `draw_square`
-- the function will need to accept a value for the `length` of the square's side
-- then replace all the `# draw square` blocks with an appropriate `draw_square` call
-
+* Copy one of the `# draw square` sections and move it to the top
+* Turn it into a function called `draw_square`
+* Make the function take a value for the side length of the square
+* Replace all the `# draw square` sections with calls to `draw_square`
 
 ```{admonition} Where should I place functions?
+Function definitions should be placed at the top of your code, just after the `import` statements.
 
-Function definitions are place at the top of the code, right after the `import` statements.
+There are two reasons for this:
 
-This has two reasons:
-
-- If the function is not defined before you call it, your code will generate a `NameError`.
-- Placing all your functions at the start improves makes them easier to find them. This improves your code's maintainability
+* If a function is not defined before you call it, your program will crash with a `NameError`
+* Keeping all your functions at the top makes them easier to find and understand, which makes your code easier to maintain
 ```
 
-Once you have made `draw_square` function changes, you code should look like:
+Once you have created the `draw_square` function and updated your code, it should look like this:
 
 ```{code-block} python
 :linenos:
@@ -509,20 +577,30 @@ my_ttl.circle(5)
 my_ttl.hideturtle()
 ```
 
-We are now down to 55 lines of code.
+Your code is now only 55 lines long.
 
 ---
 
-There is no more repetition in the main code, but there is still three code blocks remaining. Notice how the rest of the code is easier to read? Therefore, we will transform the `# draw triangle`, `# draw rectangle` and `# draw circle` code blocks into functions.
+There is no repeated code left in the main part of the program, but there are still three large code sections.
 
-This will provide two benefits:
+Notice that the rest of the code is now easier to read.
 
-- It will improve maintainability by making the code more readable.
-- If we want to extend the drawing we can easily add more rectangles, triangle and circles.
+Next, turn these code sections into functions:
 
-See if you can change all three blocks into functions. Remember to test each function when you create it.
+* `# draw triangle`
+* `# draw rectangle`
+* `# draw circle`
 
-When you finish your code should look like this:
+This gives you two benefits:
+
+* It makes the code easier to read and maintain
+* It makes it easier to add more rectangles, triangles, and circles later
+
+See if you can turn all three code sections into functions.
+
+Remember to test each function as you make it.
+
+When you finish, your code should look like this:
 
 ```{code-block} python
 :linenos:
@@ -588,43 +666,47 @@ draw_circle(5)
 my_ttl.hideturtle()
 ```
 
-That's our final code:
+That’s your final code:
 
-- Down from `71` lines to `59` lines.
-- Easier to read.
-- Easier to test and troubleshoot errors.
+* Reduced from `71` lines to `59` lines
+* Easier to read
+* Easier to test and fix errors
 
-Maybe the easiest way to see the improvement in our code is to look at the flowchart.
+One of the best ways to see the improvement is by looking at the flowchart.
 
 ![flowchart lesson 4 3](assets/flowchart_lesson_4_3.png)
 
-## Part 1 Exercises
+### Part 1 Exercises
 
-In this course, the exercises are the **make** component of the PRIMM model. So work through the following exercises and make your own code.
+In this course, the exercises are the **make** part of the PRIMM model. Work through the following exercises and create your own code.
 
-### Exercise 1
+````{question} Exercise 1
+Download **{download}`lesson_4_ex_1.py<./python_files/lesson_4_ex_1.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_4_ex_1.py<./python_files/lesson_4_ex_1.py>`** file and save it to your lesson folder. Below is its code.
+Follow the instructions in the comments and adapt the code so it uses functions.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_4_ex_1.py
 :linenos:
 :emphasize-lines: 12-14
 ```
-
-Follow the instructions in the comments and adapt the code so it uses functions.
+````
 
 ---
 
-### Exercise 2
+````{question} Exercise 2
+Download **{download}`lesson_4_ex_2.py<./python_files/lesson_4_ex_2.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_4_ex_2.py<./python_files/lesson_4_ex_2.py>`** file and save it to your lesson folder. Below is its code.
+Follow the instructions in the comments and write a program that draws a car.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_4_ex_2.py
 :linenos:
 :emphasize-lines: 12-16
 ```
-
-Follow the instructions in the comments and write a program that draws a car.
+````
 
 ## Part 2: User Input
 
@@ -634,34 +716,42 @@ Follow the instructions in the comments and write a program that draws a car.
 
 ### Introduction
 
-Download the **{download}`lesson_4_pt_2.py<./python_files/lesson_4_pt_2.py>`** file and save it to your lesson folder.
+Download the **{download}`lesson_4_pt_2.py<./python_files/lesson_4_pt_2.py>`** file and save it in your lesson folder.
 
 ```{literalinclude} ./python_files/lesson_4_pt_2.py
 :linenos:
 ```
 
-PRIMM
+```{note} Predict
+**Predict** what you think will happen
+```
 
-- **Predict** what you think will happen.
-- **Run** the code and see how close your prediction is.
-- **Modify** the code so the shape fits within the window.
+```{note} Run
+**Run** the code and compare it to your prediction
+```
 
-When we run the code, part of the shape is off the screen. This is not a big problem. Change the length from `100` to `80`. This is something quite simple for you because you have learnt how to code. What about people who haven't?
+```{note} Modify
+**Modify** the code so the shape fits inside the window
+```
 
-How do we make our programs interactive by getting input from users who cannot code?
+When you run the code, part of the shape goes off the screen. This is not a big problem. You can fix it by changing the length from `100` to `80`.
+
+That is easy for you because you know how to code. But what about someone who doesn’t?
+
+How can we make our program interactive so a user can choose things without changing the code?
 
 ---
 
 ### Making your program interactive
 
-The simplest way to make your program interactive is to use the `input` command. It will use the **Shell** to ask the user for their input.
+The easiest way to make your program interactive is to use the `input` command. It asks the user a question in the **Shell** and waits for an answer.
 
-To do this change:
+Make these changes:
 
-- `line 19` to `sides = input("How many sides?> ")`
-- `line 20` to `length = input("How long are the sides?> ")`
+* Change `line 19` to `sides = input("How many sides? > ")`
+* Change `line 20` to `length = input("How long are the sides? > ")`
 
-Your code should look like the following:
+Your code should now look like this:
 
 ```{code-block} python
 :linenos:
@@ -690,17 +780,23 @@ length = input("How long are the sides?> ")
 draw_poly(length, sides)
 ```
 
-PRIMM
+```{note} Predict
+**Predict** what you think will happen
+```
 
-- **Predict** what you think will happen.
-- **Run** the code. Did it do what you thought?
-  - Did you predict:
-    - a **prompt** appearing in the **Shell** like the image below?
-    - the program raising an error.
+```{note} Run
+* **Run** the code. Did it match your prediction?
+
+  * Did you expect:
+
+    * a **question (prompt)** to appear in the **Shell**?
+    * the program to show an **error**?
+```
+
 
 ![input image](./assets/input.png)
 
-```{code-block}
+```{code-block} error
 :linenos:
 Traceback (most recent call last):
   File "<string>", line 22, in <module>
@@ -708,42 +804,59 @@ Traceback (most recent call last):
 TypeError: 'str' object cannot be interpreted as an integer
 ```
 
-- Let's **investigate** by:
-  - unpacking the code we changed
-  - explaining the error
+```{note} Investigate
+Let’s **investigate** by:
 
-Unpacking `line 19` (note `line 20` is virtually the same):
+  * breaking down the code we changed
+  * explaining the error
 
-- `input`: is the keyword that tells Python to wait for an input from the user from the **Shell**.
-- `("How many sides?> ")` tells Python what **prompt** to write to the **Shell** before it waits for a response.
-- `sides =` takes whatever the user enters and assigns it to the variable `sides`
+Looking at `line 19` (line 20 works the same way):
 
-Now for the error. This is a `TypeError` and to understand it we need to learn about **data types**.
+* `input` tells Python to wait for the user to type something in the **Shell**
+* `("How many sides? > ")` is the **question (prompt)** shown to the user
+* `sides =` stores what the user types into the variable `sides`
+
+Now for the error. This is a `TypeError`.
+
+To understand why it happens, you need to learn about **data types**.
+```
 
 ---
 
 ### Data types
 
-Variables in Python can hold different types of data. The four types of data we will use are:
+Variables in Python can store different types of data. The four main types you will use are:
 
-- **integer numbers** (`int`)
-  - stores whole numbers
-  - identified by a whole number
-- **floating point numbers** (`float`)
-  - stores numbers that have a decimal points
-  - identified by having a decimal point with at least one number after it. For example, `1` is and integer, `1.0` is a float
-- **strings** (`str`)
-  - stores characters like letters, numbers and special characters
-  - start and end with `"` or `'` (just make sure they are the same the at beginning or end)
-  - numbers can be a string. For example, a phone number like `0432 789 367` is a string not and integer or float. It contains spaces and you would never do a calculation with it.
-- **Booleans** (`bool`)
-  - store either `True` or `False`
+* **integer numbers** (`int`)
 
-Using data types helps Python work out what kind of operations it can do with the variable. For example, it wouldn't make much sense to divide a string. Python also has special operations called **methods**. Each data type has its own collection of methods. You will learn more about data types throughout your programming journey.
+  * store whole numbers
+  * written without a decimal (e.g. `1`, `25`)
 
-Now, lets look at the error again:
+* **floating point numbers** (`float`)
 
-```{code-block}
+  * store numbers with decimals
+  * written with a decimal point (e.g. `1.0`, `3.5`)
+  * for example, `1` is an integer, but `1.0` is a float
+
+* **strings** (`str`)
+
+  * store text (letters, numbers, and symbols)
+  * must start and end with `" "` or `' '`
+  * numbers can be strings (e.g. a phone number like `0432 789 367`)
+  * strings are not used for maths
+
+* **Booleans** (`bool`)
+
+  * can only be `True` or `False`
+
+Data types help Python understand what it can do with a value.
+For example, you can do maths with numbers, but not with text.
+
+Each data type also has its own special tools called **methods**, which you will learn about later.
+
+Now, let’s look at the error again:
+
+```{code-block} error
 :linenos:
 Traceback (most recent call last):
   File "<string>", line 22, in <module>
@@ -751,46 +864,63 @@ Traceback (most recent call last):
 TypeError: 'str' object cannot be interpreted as an integer
 ```
 
-Breaking the error down:
+```{note} Investigate
+Breaking down the error:
 
-- Error `line 4`: `TypeError: 'str' object cannot be interpreted as an integer`:
-  - This tells us that this involves two data types (string and integer).
-  - It says we are trying to use a string when Python is expecting an integer.
-- `Traceback`:
-  - When looking at a `Traceback` always check the last line first
-  - Error `line 3` tells us that the error occurred at `line 5` in the code: `for index in range(sides):`
-    - Here we are trying to use the values in `sides` in a `range` function, but Python thinks it is a string.
-    - let's look at where we got the value for `sides`
-  - `Line 19`: `sides = input("How many sides?> ")`
-    - We took the value the user entered and assigned it to `sides`.
-    - I entered `3` which is an integer.
-    - Why does Python think it's a string?
+* Error on `line 4`: `TypeError: 'str' object cannot be interpreted as an integer`
 
-When Python accepts a value using the `input` function, it is always accepted it as a string. This is because strings can contain all characters.
+  * This means two data types are involved: **string** and **integer**
+  * Python expected a number, but got text instead
 
-How do we fix this? Luckily, we can convert a variable's data type.
+* `Traceback`:
+
+  * Always read the **last line first**
+  * It tells you where the error happened
+
+* Error on `line 3` points to this code on `line 5`:
+  `for index in range(sides):`
+
+  * The `range()` function needs a number
+  * But `sides` is being treated as a **string**
+
+* Where did `sides` come from?
+
+  * `line 19`: `sides = input("How many sides? > ")`
+  * The user typed `3`, which looks like a number
+```
+
+So why is it a string?
+
+Because **everything entered using `input()` is stored as a string**, even if it looks like a number.
+
+How do we fix this?
+
+We need to **convert the data type** from a string into a number.
 
 ---
 
 ### Converting data types
+There are built-in functions that let you change one data type into another (except for Booleans).
 
-There is a function to convert any data type into each other data type (other than Boolean).
+If you have a variable called `var`:
 
-If we had a variable called `var`:
+* change `var` → string using `str(var)`
+* change `var` → integer using `int(var)`
+* change `var` → float using `float(var)`
 
-- convert `var` &rarr; string, use `str(var)`
-- convert `var` &rarr; integer, use `int(var)`
-- convert `var` &rarr; a float, use `float(var)`
+There is more to learn about this later, but this is all you need for now.
 
-There is a great deal more to this, but at the moment this is all you need to know.
+Now update your code:
 
-Let's change our code. Take the strings returned by the `input` function and convert them into integers.
+* take the values from `input()` (which are strings)
+* convert them into integers using `int()`
 
-Here is the finished code as a flowchart. Note that we use the same symbol for input as we do for output, with different wording.
+Here is the final version shown as a flowchart.
+Notice that input and output use the same shape, but with different labels.
 
 ![flowchart lesson 4 4](assets/flowchart_lesson_4_4.png)
 
-Below is the finished code, with the changes on `lines 19` and `20`.
+Here is the finished code, with the changes made on `lines 19` and `20`:
 
 ```{code-block} python
 :linenos:
@@ -819,27 +949,35 @@ length = int(input("Length of sides?> "))
 draw_poly(length, sides)
 ```
 
-PRIMM
+```{note} Predict and Run
+**Predict** what you think will happen then **run** your code and check if your prediction was correct
+```
 
-- **Predict** what you think will happen
-- **Run** you code and see if your predictions were correct
-- **Investigate** by trying to enter different values for sides and length:
-  - draw different shapes
-  - what are the correct values to make your turtle draw a circle?
-  - what happens when you enter a float or a string?
-- **Modify** your code to use different prompts
+```{note} Investigate
+**Investigate** by trying different values for `sides` and `length`:
 
-## Part 2 Exercise
+* draw different shapes
+* what values make the turtle draw a circle?
+* what happens if you enter a decimal (float) or text (string)?
+```
+
+```{note} Modify
+**Modify** your code to use different questions (prompts)
+```
+
+### Part 2 Exercise
 
 In this course, the exercises are the **make** component of the PRIMM model. Work through the following exercises and make your own code.
 
-### Exercise 3
+````{question} Exercise 3
+Download **{download}`lesson_4_ex_3.py<./python_files/lesson_4_ex_3.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_4_ex_3.py<./python_files/lesson_4_ex_3.py>`** file and save it to your lesson folder. Below is its code.
+Follow the instructions in the comments and use your Python knowledge to create a count up app. Remember to apply the DRY principle
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_4_ex_3.py
 :linenos:
 :emphasize-lines: 1-4
 ```
-
-Follow the instructions in the comments and use your Python knowledge to create a count up app. Remember to apply the DRY principle
+````
