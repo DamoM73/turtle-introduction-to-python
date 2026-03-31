@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=27e667b7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=864cd1cb" />
     
     
 
@@ -259,108 +259,120 @@
         <article role="main" id="furo-main-content">
           <section id="flowcharts">
 <h1>Flowcharts<a class="headerlink" href="#flowcharts" title="Link to this heading">¶</a></h1>
-<p>A flowchart is a type of diagram that uses different types of boxes and arrows to show the steps in a process or how to solve a problem. In programming we use flowcharts to map out algorithms.</p>
+<p>A flowchart is a diagram that uses different shapes and arrows to show the steps in a process or how to solve a problem.</p>
+<p>In programming, we use flowcharts to plan out algorithms, which are step-by-step instructions for solving a problem.</p>
 <section id="symbols">
 <h2>Symbols<a class="headerlink" href="#symbols" title="Link to this heading">¶</a></h2>
-<p>The different boxes have meanings in a flowchart. Each represent different processes in our program.</p>
+<p>Different shapes in a flowchart each have a special meaning.</p>
+<p>Each shape shows a different type of step in a program.</p>
 <section id="flow-arrows">
 <h3>Flow arrows<a class="headerlink" href="#flow-arrows" title="Link to this heading">¶</a></h3>
 <p><img alt="Flow symbol" src="_images/flowchart_symbols_flow.png" /></p>
-<p>Flow arrows represent the path the program take through the flowchart. Flows only go in one direction, as indicated by the arrow head.</p>
+<p>Flow arrows show the path the program takes through the flowchart.</p>
+<p>They only go in one direction, which is shown by the arrowhead.</p>
 </section>
 <hr class="docutils" />
 <section id="process-blocks">
 <h3>Process blocks<a class="headerlink" href="#process-blocks" title="Link to this heading">¶</a></h3>
 <p><img alt="Process symbol" src="_images/flowchart_symbols_process.png" /></p>
-<p>Process blocks contain all the internal sequential commands of your code.</p>
+<p>Process blocks show the steps where your code does something in order.</p>
 <p>For example:</p>
 <ul class="simple">
-<li><p>assigning variables</p></li>
-<li><p>performing calculations</p></li>
-<li><p>calling functions</p></li>
+<li><p>setting values for variables</p></li>
+<li><p>doing calculations</p></li>
+<li><p>running functions</p></li>
 </ul>
-<p>They are represented using a rectangle with with the description inside.</p>
+<p>They are shown as a rectangle with a short description inside.</p>
 <p>Flows:</p>
 <ul class="simple">
-<li><p><strong>inflow arrows</strong> - must have at least one, but can have many.</p></li>
-<li><p><strong>outflow arrows</strong> - must have one and can only have one.</p></li>
+<li><p>inflow arrows – must have at least one, but can have more than one</p></li>
+<li><p>outflow arrows – must have one, and only one</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="terminal-blocks">
 <h3>Terminal blocks<a class="headerlink" href="#terminal-blocks" title="Link to this heading">¶</a></h3>
 <p><img alt="Terminal symbol" src="_images/flowchart_symbols_terminator.png" /></p>
-<p>Terminal blocks start and end a process.</p>
-<p>They are represented using a rounded rectangle. If starting or ending a main program, they contain the words “Start” or “End”. If starting or ending a function, they contain the name of the functions or the return value.</p>
+<p>Terminal blocks show where a process starts and ends.</p>
+<p>They are drawn as rounded rectangles.</p>
+<ul class="simple">
+<li><p>For a main program, they say <strong>“Start”</strong> or <strong>“End”</strong></p></li>
+<li><p>For a function, they show the function name or what value it returns</p></li>
+</ul>
 <p>Flows:</p>
 <ul class="simple">
-<li><p><strong>start terminal inflow arrows</strong> - can only have none</p></li>
-<li><p><strong>start terminal outflow arrows</strong> - must have one and can only have one</p></li>
-<li><p><strong>end terminal inflow arrows</strong> - must have one and can only have one</p></li>
-<li><p><strong>end terminal outflow arrows</strong> - can only have none</p></li>
+<li><p>start terminal inflow arrows – none</p></li>
+<li><p>start terminal outflow arrows – must have one, and only one</p></li>
+<li><p>end terminal inflow arrows – must have one, and only one</p></li>
+<li><p>end terminal outflow arrows – none</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="input-output-io-blocks">
 <h3>Input/Output (IO) blocks<a class="headerlink" href="#input-output-io-blocks" title="Link to this heading">¶</a></h3>
 <p><img alt="Input Output Symbol" src="_images/flowchart_symbols_input.png" /></p>
-<p>IO blocks involved the transfer of information between the real world and the program.</p>
-<p><strong>Input</strong> is when information is entered into the program and can involve:</p>
+<p>Input/Output (IO) blocks show when information moves between the real world and the program.</p>
+<p><strong>Input</strong> is when information goes into the program, such as:</p>
 <ul class="simple">
-<li><p>typing</p></li>
-<li><p>mouse actions</p></li>
-<li><p>gamepad or joystick actions</p></li>
-<li><p>camera recording</p></li>
-<li><p>microphones recording</p></li>
+<li><p>typing on a keyboard</p></li>
+<li><p>using a mouse</p></li>
+<li><p>using a gamepad or joystick</p></li>
+<li><p>recording with a camera</p></li>
+<li><p>recording with a microphone</p></li>
 </ul>
-<p><strong>Output</strong> is when the computer renders information for the outside world and can involved:</p>
+<p><strong>Output</strong> is when the computer sends information out, such as:</p>
 <ul class="simple">
-<li><p>displaying images and text on screen</p></li>
-<li><p>creating sound</p></li>
-<li><p>haptic vibrations</p></li>
+<li><p>showing text or images on a screen</p></li>
+<li><p>playing sound</p></li>
+<li><p>making vibrations</p></li>
 <li><p>printing on paper</p></li>
 </ul>
-<p>Input / output blocks are represented using parallelograms, with text explaining what is being inputted or outputted.</p>
+<p>IO blocks are drawn as parallelograms, with a short description of the input or output inside.</p>
 <p>Flows:</p>
 <ul class="simple">
-<li><p><strong>inflow arrows</strong> - must have at least one, but can have many.</p></li>
-<li><p><strong>outflow arrows</strong> - must have one and can only have one.</p></li>
+<li><p>inflow arrows – must have at least one, but can have more than one</p></li>
+<li><p>outflow arrows – must have one, and only one</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="decision-blocks">
 <h3>Decision blocks<a class="headerlink" href="#decision-blocks" title="Link to this heading">¶</a></h3>
 <p><img alt="Decision Symbol" src="_images/flowchart_symbols_decision.png" /></p>
-<p>Decision blocks ask a question and then split the flow according to the answer.</p>
-<p>They are represented with a diamond, with the question being tested.</p>
-<p>Decision blocks are the only block that can have multiple outflow arrows. Each outflow arrow should be labelled with the answer that will lead down it’s path.</p>
+<p>Decision blocks ask a question and then split the path based on the answer.</p>
+<p>They are drawn as a diamond, with the question written inside.</p>
+<p>Decision blocks are the only shape that can have more than one path coming out. Each arrow should be labelled with the answer (like “yes” or “no”) that follows that path.</p>
 <p>Flows:</p>
 <ul class="simple">
-<li><p><strong>inflows</strong> - must have one and can only have one</p></li>
-<li><p><strong>outflows</strong> - must have one, but can have many</p></li>
+<li><p>inflow arrows – must have one, and only one</p></li>
+<li><p>outflow arrows – must have at least one, but can have more than one</p></li>
 </ul>
 </section>
 </section>
+<hr class="docutils" />
 <section id="additional-symbols">
 <h2>Additional symbols<a class="headerlink" href="#additional-symbols" title="Link to this heading">¶</a></h2>
-<p>Throughout this course we have used two additional symbols to help visualise how the flowcharts run:</p>
+<p>In this course, we have also used two extra symbols to help show how flowcharts work:</p>
 <ul class="simple">
-<li><p>Loop indicator</p></li>
-<li><p>Function indicator</p></li>
+<li><p>loop indicator</p></li>
+<li><p>function indicator</p></li>
 </ul>
-<p>You are not expected to use these symbols, but you are welcomed to use them to make your flowcharts more readable.</p>
+<p>You do not have to use these symbols, but you can use them if they help make your flowcharts easier to understand.</p>
 <section id="loop-indicator">
 <h3>Loop indicator<a class="headerlink" href="#loop-indicator" title="Link to this heading">¶</a></h3>
 <p><img alt="loop symbol" src="_images/flowchart_symbols_loop.png" /></p>
-<p>The loop indicator is a grey box with dashed lines. It surrounds a loop, and will either start or end with the loop condition’s decision block.</p>
+<p>The loop indicator is a grey box with dashed lines.</p>
+<p>It goes around a loop and shows which steps are repeated. It starts or ends at the decision block that checks the loop condition.</p>
 </section>
 <hr class="docutils" />
 <section id="function-indicator">
 <h3>Function indicator<a class="headerlink" href="#function-indicator" title="Link to this heading">¶</a></h3>
 <p><img alt="function symbol" src="_images/flowchart_symbols_function.png" /></p>
-<p>The function indicator is a red box with dashed lines. It surrounds a function, with the functions starting terminal at the top and end terminal at the bottom. No flow arrows should enter or exit the function indicator.</p>
+<p>The function indicator is a red box with dashed lines.</p>
+<p>It goes around a function. The function’s <strong>start</strong> is at the top, and the <strong>end</strong> is at the bottom.</p>
+<p>No flow arrows should go into or out of the function indicator.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
 <p>Below is a flowchart for a number guessing game.</p>

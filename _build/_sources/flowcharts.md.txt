@@ -1,17 +1,22 @@
 # Flowcharts
 
-A flowchart is a type of diagram that uses different types of boxes and arrows to show the steps in a process or how to solve a problem. In programming we use flowcharts to map out algorithms.
+A flowchart is a diagram that uses different shapes and arrows to show the steps in a process or how to solve a problem.
+
+In programming, we use flowcharts to plan out algorithms, which are step-by-step instructions for solving a problem.
 
 ## Symbols
 
-The different boxes have meanings in a flowchart. Each represent different processes in our program.
+Different shapes in a flowchart each have a special meaning.
+
+Each shape shows a different type of step in a program.
 
 ### Flow arrows
 
 ![Flow symbol](./assets/flowchart_symbols_flow.png)
 
-Flow arrows represent the path the program take through the flowchart. Flows only go in one direction, as indicated by the arrow head.
+Flow arrows show the path the program takes through the flowchart.
 
+They only go in one direction, which is shown by the arrowhead.
 
 ---
 
@@ -19,20 +24,20 @@ Flow arrows represent the path the program take through the flowchart. Flows onl
 
 ![Process symbol](./assets/flowchart_symbols_process.png)
 
-Process blocks contain all the internal sequential commands of your code.
+Process blocks show the steps where your code does something in order.
 
 For example:
 
-- assigning variables
-- performing calculations
-- calling functions
+* setting values for variables
+* doing calculations
+* running functions
 
-They are represented using a rectangle with with the description inside.
+They are shown as a rectangle with a short description inside.
 
 Flows:
 
-- **inflow arrows** - must have at least one, but can have many.
-- **outflow arrows** - must have one and can only have one.
+* inflow arrows – must have at least one, but can have more than one
+* outflow arrows – must have one, and only one
 
 ---
 
@@ -40,16 +45,19 @@ Flows:
 
 ![Terminal symbol](./assets/flowchart_symbols_terminator.png)
 
-Terminal blocks start and end a process.
+Terminal blocks show where a process starts and ends.
 
-They are represented using a rounded rectangle. If starting or ending a main program, they contain the words "Start" or "End". If starting or ending a function, they contain the name of the functions or the return value.
+They are drawn as rounded rectangles.
+
+* For a main program, they say **“Start”** or **“End”**
+* For a function, they show the function name or what value it returns
 
 Flows:
 
-- **start terminal inflow arrows** - can only have none
-- **start terminal outflow arrows** - must have one and can only have one
-- **end terminal inflow arrows** - must have one and can only have one
-- **end terminal outflow arrows** - can only have none
+* start terminal inflow arrows – none
+* start terminal outflow arrows – must have one, and only one
+* end terminal inflow arrows – must have one, and only one
+* end terminal outflow arrows – none
 
 ---
 
@@ -57,29 +65,29 @@ Flows:
 
 ![Input Output Symbol](./assets/flowchart_symbols_input.png)
 
-IO blocks involved the transfer of information between the real world and the program.
+Input/Output (IO) blocks show when information moves between the real world and the program.
 
-**Input** is when information is entered into the program and can involve:
+**Input** is when information goes into the program, such as:
 
-- typing
-- mouse actions
-- gamepad or joystick actions
-- camera recording
-- microphones recording
+* typing on a keyboard
+* using a mouse
+* using a gamepad or joystick
+* recording with a camera
+* recording with a microphone
 
-**Output** is when the computer renders information for the outside world and can involved:
+**Output** is when the computer sends information out, such as:
 
-- displaying images and text on screen
-- creating sound
-- haptic vibrations
-- printing on paper
+* showing text or images on a screen
+* playing sound
+* making vibrations
+* printing on paper
 
-Input / output blocks are represented using parallelograms, with text explaining what is being inputted or outputted.
+IO blocks are drawn as parallelograms, with a short description of the input or output inside.
 
 Flows:
 
-- **inflow arrows** - must have at least one, but can have many.
-- **outflow arrows** - must have one and can only have one.
+* inflow arrows – must have at least one, but can have more than one
+* outflow arrows – must have one, and only one
 
 ---
 
@@ -87,31 +95,35 @@ Flows:
 
 ![Decision Symbol](./assets/flowchart_symbols_decision.png)
 
-Decision blocks ask a question and then split the flow according to the answer.
+Decision blocks ask a question and then split the path based on the answer.
 
-They are represented with a diamond, with the question being tested.
+They are drawn as a diamond, with the question written inside.
 
-Decision blocks are the only block that can have multiple outflow arrows. Each outflow arrow should be labelled with the answer that will lead down it's path.
+Decision blocks are the only shape that can have more than one path coming out. Each arrow should be labelled with the answer (like “yes” or “no”) that follows that path.
 
 Flows:
 
-- **inflows** - must have one and can only have one
-- **outflows** - must have one, but can have many
+* inflow arrows – must have one, and only one
+* outflow arrows – must have at least one, but can have more than one
+
+---
 
 ## Additional symbols
 
-Throughout this course we have used two additional symbols to help visualise how the flowcharts run:
+In this course, we have also used two extra symbols to help show how flowcharts work:
 
-- Loop indicator
-- Function indicator
+* loop indicator
+* function indicator
 
-You are not expected to use these symbols, but you are welcomed to use them to make your flowcharts more readable.
+You do not have to use these symbols, but you can use them if they help make your flowcharts easier to understand.
 
 ### Loop indicator
 
 ![loop symbol](./assets/flowchart_symbols_loop.png)
 
-The loop indicator is a grey box with dashed lines. It surrounds a loop, and will either start or end with the loop condition's decision block.
+The loop indicator is a grey box with dashed lines.
+
+It goes around a loop and shows which steps are repeated. It starts or ends at the decision block that checks the loop condition.
 
 ---
 
@@ -119,7 +131,13 @@ The loop indicator is a grey box with dashed lines. It surrounds a loop, and wil
 
 ![function symbol](./assets/flowchart_symbols_function.png)
 
-The function indicator is a red box with dashed lines. It surrounds a function, with the functions starting terminal at the top and end terminal at the bottom. No flow arrows should enter or exit the function indicator.
+The function indicator is a red box with dashed lines.
+
+It goes around a function. The function’s **start** is at the top, and the **end** is at the bottom.
+
+No flow arrows should go into or out of the function indicator.
+
+---
 
 ## Example
 
