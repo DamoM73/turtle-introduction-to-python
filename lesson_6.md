@@ -1,11 +1,10 @@
 # Python Turtle - Lesson 6
 
 ```{topic} In this lesson you will learn:
-
-- about Boolean logic and how it is used in Python
-- about Boolean comparisons and how to use then
-- about Boolean operators and how to use them
-- how to use Boolean comparison and operators to make complex conditional statements
+* what Boolean logic is and how Python uses it to make decisions
+* how to compare values in Python (like checking if two things are the same or different)
+* how to use Boolean operators like **and**, **or**, and **not** to join ideas together
+* how to combine comparisons and operators to build more complex **if statements** that control what your program does
 ```
 
 ## Part 1: Boolean logic
@@ -16,23 +15,29 @@
 
 ### Boolean Introduction
 
-In programming Boolean is all about `True` and `False` values:
+In programming, **Boolean** means working with two possible values: `True` and `False`.
 
-- Boolean variables only contain either `True` or `False`
-- Comparison operators (`==`, `!=`, `>`, `<` `>=` or `<=`) return either `True` or `False`
-- Boolean operators (we'll learn about these later) return either `True` or `False`
+* A Boolean variable can only store `True` or `False`
+* Comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) check something and give back either `True` or `False`
+* Boolean operators (you will learn these soon) also give back either `True` or `False`
 
-The values `True` and `False` are special values. If you type them into your IDE the syntax highlighting will indicate that they are special.
+The values `True` and `False` are special in Python.
+If you type them into your code editor, they will look different (highlighted) to show they are important.
 
-In Python testing if something is `True` or `False` is called testing the **turthiness**. When you compare two values, you are testing it's truthiness.
+In Python, checking if something is `True` or `False` is called testing its **truthiness**.
+When you compare two values, you are checking whether the statement is true or not.
 
 ---
 
 ### Comparison operators
 
-The conditions in our `if` and `while` statements test truthiness using comparison operators. Let's refresh those.
+The conditions in `if` and `while` statements check if something is **True** or **False**.
+They do this using **comparison operators**.
 
-There are six comparison operators you can use. Create a new file called `lesson_6_pt_1.py` and enter the code below.
+Let’s quickly review these.
+
+There are six comparison operators you can use.
+Create a new file called `lesson_6_pt_1.py` and type in the code below.
 
 ```{code-block} python
 :linenos:
@@ -44,12 +49,21 @@ print("a" < "q")  # less than
 print(-30 <= 3)  # less than or equal to
 ```
 
-PRIMM:
+```{note} Predict and Run
+* **Predict** what the six results will be (hint: each one will be either `True` or `False`)
+* **Run** your code and check if your predictions were correct
+```
 
-- **Predict** the six values the **Shell** will display (hint, they will be either `True` or `False`).
-- **Run** the code and see if your predictions are correct.
+```{note} Modify
+Try changing the values in each comparison to make the result switch.
 
-It doesn't matter if the values are literals (magic numbers) or if they are stores in a variable. Change your code to the code below.
+* If a line gives `True`, change the values so it gives `False`
+* If a line gives `False`, change the values so it gives `True`
+```
+
+It does not matter if the values are written directly (like numbers in the code) or stored in a variable — the result will still work the same way.
+
+Change your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -57,31 +71,37 @@ score = 10
 print(score > 5)
 ```
 
-PRIMM:
-
-- **Predict** if the code will print `True` or `False`
-- **Run** the code and see if your prediction was correct.
+```{note} Predict and Run
+* **Predict** whether the code will print `True` or `False`
+* **Run** the code and check if you were correct
+```
 
 ---
 
 ### Boolean Operations
 
-You can also complete operations on Boolean values using Boolean operators. Boolean operations are like preforming a calculation, but only with Boolean values (ie. `True` and `False`). Like all things Boolean, they return a single `True` or `False` value. They are useful for creating complex condition tests.
+You can also do operations using Boolean values by using **Boolean operators**.
+
+These work a bit like maths, but instead of numbers, they use `True` and `False`.
+The result will always be either `True` or `False`.
+
+They are useful when you want to check more than one condition at the same time.
 
 There are three Boolean operators:
 
-- `and`
-- `or`
-- `not`
+* `and`
+* `or`
+* `not`
 
 #### The `not` operator
 
-The simplest operator to understand is the `not` operator. It reverses the Boolean value:
+The easiest operator to understand is `not`.
+It simply flips the value:
 
-- `not True` returns `False`
-- `not False` returns `True`
+* `not True` becomes `False`
+* `not False` becomes `True`
 
-Change the code in your program to the code below:
+Change your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -89,18 +109,18 @@ print("not True is:", not True)
 print("not False:", not False)
 ```
 
-PRIMM:
-
-- **Predict** what you think will be written to the **Shell** when your run this code.
-- **Run** the code and check your predictions.
+```{note} Predict and Run
+* **Predict** what you think will be printed in the **Shell** when you run the code
+* **Run** the code and check if your prediction was correct
+```
 
 #### The `and` operator
 
-The `and` operator and the `or` operator are a little bit more complicated.
+The `and` and `or` operators are a bit more tricky.
 
-The `and` operators will return `True` if **all** the values in the operation are `True`.
+The `and` operator will only return `True` if **every** value is `True`.
 
-Again, change your code so it reflects the code below:
+Change your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -112,40 +132,56 @@ print("True and True and True is:", True and True and True)
 print("True and True and False is:", True and True and False)
 ```
 
-PRIMM:
+```{note} Predict and Run
+* **Predict** what you think will be printed in the **Shell** when you run the code
+* **Run** the code and check if your prediction was correct
+```
 
-- **Predict** what you think will be written to the **Shell** when your run this code.
-- **Run** the code and check your predictions.
-- Let's **Investigate** that code
+```{note} Investigate - Code breakdown
+* `Line 1`: `print("True and True is:", True and True)`
 
-Code breakdown:
+  * Both values are `True`
+  * `and` checks if **everything is True** → this is `True`
+  * It prints: `True and True is: True`
 
-- `Line 1`: `print("True and True is:", True and True)`
-  - `True and True` &rarr; all values are `True` &rarr; returns `True`
-  - `True and True is: True` is printed
-- `Line 2`: `print("True and False is:", True and False)`
-  - `True and False` &rarr; not all values are `True` &rarr; returns `False`
-  - `True and False is: False` is printed
-- `Line 3`: `print("False and True is:", True and False)`
-  - `False and True` &rarr; not all values are `True` &rarr; returns `False`
-  - `False and True is: False` is printed
-- `Line 4`: `print("False and False is:", True and False)`
-  - `False and False` &rarr; not all values are `True` &rarr; returns `False`
-  - `False and False is: False` is printed
-- `Line 5`: `print("True and True and True is:", True and True and True)`
-  - `True and True and True` &rarr; all values are `True` &rarr; returns `True`
-  - `True and True and True: True` is printed
-- `Line 6`: `print("True and True and False is:", True and True and False)`
-  - `True and True and False` &rarr; not all values are `True` &rarr; returns `False`
-  - `True and True and False is: False` is printed
+* `Line 2`: `print("True and False is:", True and False)`
+
+  * One value is `False`
+  * `and` needs everything to be `True`, so this is `False`
+  * It prints: `True and False is: False`
+
+* `Line 3`: `print("False and True is:", False and True)`
+
+  * One value is `False`
+  * Not everything is `True`, so this is `False`
+  * It prints: `False and True is: False`
+
+* `Line 4`: `print("False and False is:", False and False)`
+
+  * Both values are `False`
+  * Not everything is `True`, so this is `False`
+  * It prints: `False and False is: False`
+
+* `Line 5`: `print("True and True and True is:", True and True and True)`
+
+  * All values are `True`
+  * So the result is `True`
+  * It prints: `True and True and True is: True`
+
+* `Line 6`: `print("True and True and False is:", True and True and False)`
+
+  * One value is `False`
+  * Not everything is `True`, so this is `False`
+  * It prints: `True and True and False is: False`
+```
 
 #### The `or` operator
 
-The `or` operator is the inverse of the `and` operator.
+The `or` operator works in the opposite way to `and`.
 
-The `or` operator will return `True` if **any one** of the values in the operation is `True`.
+The `or` operator will return `True` if **at least one** value is `True`.
 
-Change your code so it reflects the code below:
+Change your code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -157,36 +193,58 @@ print("True or True or True is:", True or True or True)
 print("True or False or False is:", True or False or False)
 ```
 
-PRIMM:
+```{note} Predict and Run
+* **Predict** what you think will be printed in the **Shell** when you run the code
+* **Run** the code and check if your prediction was correct
+```
 
-- **Predict** what you think will be written to the **Shell** when your run this code.
-- **Run** the code and check your predictions.
-- Let's **Investigate** that code
+```{note} Investigate - Code breakdown
+* `Line 1`: `print("True or True is:", True or True)`
 
-Code breakdown:
+  * At least one value is `True` (both are!)
+  * `or` returns `True`
+  * It prints: `True or True is: True`
 
-- `Line 1`: `print("True or True is:", True or True)`
-  - `True or True` &rarr; at least one value is `True` &rarr; returns `True`
-  - `True or True is: True` is printed
-- `Line 2`: `print("True or False is:", True or False)`
-  - `True or False` &rarr; at least one value is `True` &rarr; returns `True`
-  - `True or False is: False` is printed
-- `Line 3`: `print("False or True is:", True or False)`
-  - `False or True` &rarr; at least one value is `True` &rarr; returns `True`
-  - `False or True is: False` is printed
-- `Line 4`: `print("False or False is:", True or False)`
-  - `False or False` &rarr; no values are `True` &rarr; returns `False`
-  - `False or False is: False` is printed
-- `Line 5`: `print("True or True or True is:", True or True or True)`
-  - `True or True or True` &rarr; at least one value is `True` &rarr; returns `True`
-  - `True or True or True: True` is printed
-- `Line 6`: `print("True or True or False is:", True or True or False)`
-  - `True or True or False` &rarr; at least one value is `True` &rarr; returns `True`
-  - `True or False or False is: True` is printed
+* `Line 2`: `print("True or False is:", True or False)`
+
+  * One value is `True`
+  * `or` returns `True`
+  * It prints: `True or False is: True`
+
+* `Line 3`: `print("False or True is:", False or True)`
+
+  * One value is `True`
+  * `or` returns `True`
+  * It prints: `False or True is: True`
+
+* `Line 4`: `print("False or False is:", False or False)`
+
+  * No values are `True`
+  * `or` returns `False`
+  * It prints: `False or False is: False`
+
+* `Line 5`: `print("True or True or True is:", True or True or True)`
+
+  * All values are `True`
+  * `or` returns `True`
+  * It prints: `True or True or True is: True`
+
+* `Line 6`: `print("True or True or False is:", True or True or False)`
+
+  * At least one value is `True`
+  * `or` returns `True`
+  * It prints: `True or True or False is: True`
+```
 
 #### Using Boolean operators
 
-So far, we have been returning `True` or `False` from other values of `True` and `False`. This isn't that useful but remember comparison operators return Boolean values. Boolean operators can create conditions with multiple comparison operators. This provides complex conditions for your `if` and `while` statements. 
+So far, we have only used `True` and `False` with other `True` and `False` values.
+That is not very useful on its own.
+
+But remember, **comparison operators** give us `True` or `False`.
+
+We can use **Boolean operators** to join multiple comparisons together.
+This lets us build more complex conditions for our `if` and `while` statements.
 
 Consider the following code:
 
@@ -195,14 +253,12 @@ Consider the following code:
 print(7 < 8 and "a" < "o")
 ```
 
-PRIMM:
+```{note} Predict and Run
+* **Predict** what you think will be printed in the **Shell** when you run the code
+* **Run** the code and check if your prediction was correct
+```
 
-- **Predict** what you think will be written to the **Shell** when your run this code.
-- **Run** the code and check your predictions.
-- Let's **Investigate** that code
-
-Code breakdown:
-
+```{note} Investigate - Code breakdown
 - `Line 1`: `print(7 < 8 and "a" < "o")`
   - first Python will complete the comparison operations from left to right
     - `7 < 8` returns `True`
@@ -210,19 +266,32 @@ Code breakdown:
   - the code is now: `print(True and True)`
     - `True and True` returns `True`
   - Python prints `True` to the **Shell**
+```
 
 ```{admonition} Combining multiple comparison operations
+When you use more than one comparison, you must have a comparison on **both sides** of the Boolean operator.
 
-Conditions with multiple comparisons need comparisons on both sides of the Boolean operator.
+* `10 > 5 and 10 > 13`
 
-`10 > 5 and 10 > 13` is **not** the same as `10 > 5 and 13`.
+  * Both sides are full comparisons
+  * This is correct
+
+* `10 > 5 and 13`
+
+  * The second part (`13`) is **not** a comparison
+  * This is not the same and will not work the way you expect
 ```
+
+---
 
 ## Part 2: Mouse input in Turtle
 
-To reinforce our understanding of Boolean logic, we are going to do something new with Turtle. So far, we have only accepted user input via the **Shell**, but Turtle can also use mouse input (and keys as well).
+To help you understand Boolean logic better, we are going to try something new with Turtle.
 
-We are going to use the code below for our Boolean exercise, but we will have to explore it first.
+So far, you have only typed input into the **Shell**.
+But Turtle can also take input from the mouse (and even the keyboard).
+
+We will use the code below for this activity, but first we need to explore how it works.
 
 Download **{download}`lesson_6_pt_2.py<./python_files/lesson_6_pt_2.py>`** file and save it in your lesson folder.
 
@@ -230,61 +299,73 @@ Download **{download}`lesson_6_pt_2.py<./python_files/lesson_6_pt_2.py>`** file 
 :linenos:
 ```
 
-- **Predict** what you think will be written to the **Shell** when your run this code.
-- **Run** the code and check your predictions.
-- Let's **Investigate** that code.
+``` {note} Predict and Run
+* **Predict** what you think will happen when you run the code (hint: you will need to click in the Turtle window)
+* **Run** the code and check if your prediction was correct
+```
 
-We'll do the code breakdown in three sections in the order they are executed:
+```{note} Investigate - Code breakdown
+We will look at this code in three parts, in the order Python uses them.
 
-- `Lines 29` to `31`: the main program
-  - `Line 29`: `my_ttl = turtle.Turtle()` &rarr; create a Turtle object and names it `my_ttl`
-  - `Line 30`: `set_scene()` calls the `set_scene()` function
-  - `Line 31`: `my_ttl.hideturtle()` make the turtle invisible
-- `Lines 4` to `16`: the `set_scene` function
-  - `Line 4`: `def set_scene()` &rarr; defines the `set_scene` function without any arguments
-  - `Line 5`: `turtle.setup(800, 600)` &rarr; creates a `800` x `600` window
-  - `Line 8`: `turtle.onscreenclick(draw_dot)` &rarr; this is **new**
-    - if a mouse click is detected:
-      - calls the `draw_dot` function
-      - passes to the `draw_dot` function the `x` and `y` coordinates of where the mouse clicked
-  - `Line 11`: `my_ttl.speed(0)` &rarr; a turtle speed of `0` means you don't see the turtle move
-  - `Lines 12` to `15`: draws four lines from `(0, 0)` making the four quadrants
-  - `Line 16`: `penup` prevents the turtle from drawing a line to the mouse click coordinates (try commenting it out and see what happens)
-- `Lines 20` to `25`: the `draw_dot` function
-  - `Line 20`: `def draw_dot(x, y):`
-    - defines the `draw_dot` function
-    - accepts the two arguments `x` and `y` which are passed from `line 8`
-    - `turtle.onscreenclick()` always passes the `x` and `y` coordinates as arguments
-  - `Line 21`: prints the `x` and `y` coordinates to the **Shell** (to help you plan your code)
-  - `Line 22`: assigns `"orange"` to the variable `color`
-  - `Line 23`: assigns `10` to the variable `size`
-  - `Line 24`: sends the turtle to the `x` and `y` coordinates
-  - `Line 25`: `my_ttl.dot(size, color)` draws a dot at the turtle position of size `size` and colour `color`
+1. `Lines 29` to `31`: the main part of the program
+
+  * `Line 29`: `my_ttl = turtle.Turtle()` → creates a Turtle object and names it `my_ttl`
+  * `Line 30`: `set_scene()` → runs the `set_scene()` function
+  * `Line 31`: `my_ttl.hideturtle()` → hides the turtle so you cannot see it
+
+2. `Lines 4` to `16`: the `set_scene()` function
+
+  * `Line 4`: `def set_scene():`
+
+    * creates a function called `set_scene`
+    * this function does not need any arguments
+  * `Line 5`: `turtle.setup(800, 600)` → makes a window that is `800` pixels wide and `600` pixels tall
+  * `Line 8`: `turtle.onscreenclick(draw_dot)` → this part is new
+
+    * when the mouse is clicked in the Turtle window:
+
+      * Python runs the `draw_dot` function
+      * Python also sends the `x` and `y` position of the mouse click to that function
+  * `Line 11`: `my_ttl.speed(0)` → a speed of `0` means the turtle moves instantly, so you do not see it moving
+  * `Lines 12` to `15`: draw four lines out from `(0, 0)` to make four sections on the screen
+  * `Line 16`: `penup()`
+
+    * this stops the turtle drawing a line when it moves to the mouse click position
+    * try commenting it out to see what changes
+
+3. `Lines 20` to `25`: the `draw_dot()` function
+
+  * `Line 20`: `def draw_dot(x, y):`
+
+    * creates a function called `draw_dot`
+    * it uses two arguments: `x` and `y`
+    * these are sent from `line 8` when the mouse is clicked
+    * `turtle.onscreenclick()` always sends the click position as `x` and `y`
+  * `Line 21`: prints the `x` and `y` position into the **Shell** so you can see where you clicked
+  * `Line 22`: stores `"orange"` in the variable `color`
+  * `Line 23`: stores `10` in the variable `size`
+  * `Line 24`: moves the turtle to the `x` and `y` position
+  * `Line 25`: `my_ttl.dot(size, color)` → draws a dot where the turtle is, using the size in `size` and the colour in `color`
+```
 
 ## Exercises
 
-In this course, the exercises are the **make** component of the PRIMM model. Work through the following exercises and make your own code.
+In this course, the exercises are the **make** part of the PRIMM model. Work through the following tasks and write your own code.
 
-So far, the dot colour is always orange. In these exercises the quadrant of the mouse click will determine the dot colour.
+Right now, every dot is orange. In these exercises, the part of the screen you click in will decide the dot’s colour.
 
-To do this your will need to use:
+To do this, you will need to use:
 
-- `if` ... `elif` ... `else` statements
-- Boolean comparisons
-- Boolean operations
+* `if`, `elif`, and `else` statements
+* Boolean comparisons
+* Boolean operators
 
-You will also need to remember how coordinates work in Turtle.
+You will also need to remember how Turtle coordinates work.
 
 ![coordinates](assets/coordinates.png)
 
-### Exercise 1
-
-Download **{download}`lesson_6_ex_1.py<./python_files/lesson_6_ex_1.py>`** file and save it in your lesson folder. The starting code is shown below:
-
-```{literalinclude} ./python_files/lesson_6_ex_1.py
-:linenos:
-:emphasize-lines: 24-42
-```
+````{question} Exercise 1
+Download **{download}`lesson_6_ex_1.py<./python_files/lesson_6_ex_1.py>`** file and save it in your lesson folder. 
 
 Follow the instructions in the comments from `line 24` to `line 42`.
 
@@ -292,28 +373,41 @@ To help, here is the flowchart for the `draw_dot` function:
 
 ![flowchart lesson 6 1](assets/flowchart_lesson_6_1.png)
 
+The starting code is shown below:
+
+```{literalinclude} ./python_files/lesson_6_ex_1.py
+:linenos:
+:emphasize-lines: 24-42
+```
+````
+
 ---
 
-### Exercise 2
+````{question} Exercise 2
+Download **{download}`lesson_6_ex_2.py<./python_files/lesson_6_ex_2.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_6_ex_2.py<./python_files/lesson_6_ex_2.py>`** file and save it in your lesson folder. The starting code is shown below:
+Follow the instructions in the comments from `line 24` to `line 35`.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_6_ex_2.py
 :linenos:
 :emphasize-lines: 24-35
 ```
-
-Follow the instructions in the comments from `line 24` to `line 35`.
+````
 
 ---
 
-### Exercise 3
+````{question} Exercise 3
 
-Download **{download}`lesson_6_ex_3.py<./python_files/lesson_6_ex_3.py>`** file and save it in your lesson folder. The starting code is shown below:
+Download **{download}`lesson_6_ex_3.py<./python_files/lesson_6_ex_3.py>`** file and save it in your lesson folder. 
+
+Follow the instructions in the comments from `line 24` to `line 36`.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_6_ex_3.py
 :linenos:
 :emphasize-lines: 24-36
 ```
-
-Follow the instructions in the comments from `line 24` to `line 36`.
+````

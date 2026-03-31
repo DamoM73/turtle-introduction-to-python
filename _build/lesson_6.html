@@ -262,10 +262,10 @@
 <aside class="topic">
 <p class="topic-title">In this lesson you will learn:</p>
 <ul class="simple">
-<li><p>about Boolean logic and how it is used in Python</p></li>
-<li><p>about Boolean comparisons and how to use then</p></li>
-<li><p>about Boolean operators and how to use them</p></li>
-<li><p>how to use Boolean comparison and operators to make complex conditional statements</p></li>
+<li><p>what Boolean logic is and how Python uses it to make decisions</p></li>
+<li><p>how to compare values in Python (like checking if two things are the same or different)</p></li>
+<li><p>how to use Boolean operators like <strong>and</strong>, <strong>or</strong>, and <strong>not</strong> to join ideas together</p></li>
+<li><p>how to combine comparisons and operators to build more complex <strong>if statements</strong> that control what your program does</p></li>
 </ul>
 </aside>
 <section id="part-1-boolean-logic">
@@ -274,20 +274,25 @@
 <p><a class="reference external" href="https://youtu.be/5GrokwhCXXM">Video link</a></p>
 <section id="boolean-introduction">
 <h3>Boolean Introduction<a class="headerlink" href="#boolean-introduction" title="Link to this heading">¶</a></h3>
-<p>In programming Boolean is all about <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values:</p>
+<p>In programming, <strong>Boolean</strong> means working with two possible values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <ul class="simple">
-<li><p>Boolean variables only contain either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p>Comparison operators (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>) return either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p>Boolean operators (we’ll learn about these later) return either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>A Boolean variable can only store <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Comparison operators (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>) check something and give back either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Boolean operators (you will learn these soon) also give back either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
-<p>The values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are special values. If you type them into your IDE the syntax highlighting will indicate that they are special.</p>
-<p>In Python testing if something is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> is called testing the <strong>turthiness</strong>. When you compare two values, you are testing it’s truthiness.</p>
+<p>The values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are special in Python.
+If you type them into your code editor, they will look different (highlighted) to show they are important.</p>
+<p>In Python, checking if something is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> is called testing its <strong>truthiness</strong>.
+When you compare two values, you are checking whether the statement is true or not.</p>
 </section>
 <hr class="docutils" />
 <section id="comparison-operators">
 <h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Link to this heading">¶</a></h3>
-<p>The conditions in our <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> statements test truthiness using comparison operators. Let’s refresh those.</p>
-<p>There are six comparison operators you can use. Create a new file called <code class="docutils literal notranslate"><span class="pre">lesson_6_pt_1.py</span></code> and enter the code below.</p>
+<p>The conditions in <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> statements check if something is <strong>True</strong> or <strong>False</strong>.
+They do this using <strong>comparison operators</strong>.</p>
+<p>Let’s quickly review these.</p>
+<p>There are six comparison operators you can use.
+Create a new file called <code class="docutils literal notranslate"><span class="pre">lesson_6_pt_1.py</span></code> and type in the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jeff&quot;</span> <span class="o">==</span> <span class="s2">&quot;jeff&quot;</span><span class="p">)</span>  <span class="c1"># equal to</span>
 <span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># not equal to</span>
 <span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="mi">500</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">)</span>  <span class="c1"># greater than</span>
@@ -296,26 +301,42 @@
 <span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># less than or equal to</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> the six values the <strong>Shell</strong> will display (hint, they will be either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
-<li><p><strong>Run</strong> the code and see if your predictions are correct.</p></li>
+<li><p><strong>Predict</strong> what the six results will be (hint: each one will be either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><strong>Run</strong> your code and check if your predictions were correct</p></li>
 </ul>
-<p>It doesn’t matter if the values are literals (magic numbers) or if they are stores in a variable. Change your code to the code below.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Modify</p>
+<p>Try changing the values in each comparison to make the result switch.</p>
+<ul class="simple">
+<li><p>If a line gives <code class="docutils literal notranslate"><span class="pre">True</span></code>, change the values so it gives <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>If a line gives <code class="docutils literal notranslate"><span class="pre">False</span></code>, change the values so it gives <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</div>
+<p>It does not matter if the values are written directly (like numbers in the code) or stored in a variable — the result will still work the same way.</p>
+<p>Change your code so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">score</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> if the code will print <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><strong>Run</strong> the code and see if your prediction was correct.</p></li>
+<li><p><strong>Predict</strong> whether the code will print <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>Run</strong> the code and check if you were correct</p></li>
 </ul>
+</div>
 </section>
 <hr class="docutils" />
 <section id="boolean-operations">
 <h3>Boolean Operations<a class="headerlink" href="#boolean-operations" title="Link to this heading">¶</a></h3>
-<p>You can also complete operations on Boolean values using Boolean operators. Boolean operations are like preforming a calculation, but only with Boolean values (ie. <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>). Like all things Boolean, they return a single <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> value. They are useful for creating complex condition tests.</p>
+<p>You can also do operations using Boolean values by using <strong>Boolean operators</strong>.</p>
+<p>These work a bit like maths, but instead of numbers, they use <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+The result will always be either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>They are useful when you want to check more than one condition at the same time.</p>
 <p>There are three Boolean operators:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
@@ -324,27 +345,30 @@
 </ul>
 <section id="the-not-operator">
 <h4>The <code class="docutils literal notranslate"><span class="pre">not</span></code> operator<a class="headerlink" href="#the-not-operator" title="Link to this heading">¶</a></h4>
-<p>The simplest operator to understand is the <code class="docutils literal notranslate"><span class="pre">not</span></code> operator. It reverses the Boolean value:</p>
+<p>The easiest operator to understand is <code class="docutils literal notranslate"><span class="pre">not</span></code>.
+It simply flips the value:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">False</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code> becomes <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">False</span></code> becomes <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
-<p>Change the code in your program to the code below:</p>
+<p>Change your code so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not True is:&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
 <span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not False:&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will be written to the <strong>Shell</strong> when your run this code.</p></li>
-<li><p><strong>Run</strong> the code and check your predictions.</p></li>
+<li><p><strong>Predict</strong> what you think will be printed in the <strong>Shell</strong> when you run the code</p></li>
+<li><p><strong>Run</strong> the code and check if your prediction was correct</p></li>
 </ul>
+</div>
 </section>
 <section id="the-and-operator">
 <h4>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator<a class="headerlink" href="#the-and-operator" title="Link to this heading">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator and the <code class="docutils literal notranslate"><span class="pre">or</span></code> operator are a little bit more complicated.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operators will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>all</strong> the values in the operation are <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<p>Again, change your code so it reflects the code below:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> operators are a bit more tricky.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator will only return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>every</strong> value is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Change your code so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True and True is:&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
 <span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True and False is:&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
 <span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;False and True is:&quot;</span><span class="p">,</span> <span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
@@ -353,57 +377,66 @@
 <span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True and True and False is:&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will be written to the <strong>Shell</strong> when your run this code.</p></li>
-<li><p><strong>Run</strong> the code and check your predictions.</p></li>
-<li><p>Let’s <strong>Investigate</strong> that code</p></li>
+<li><p><strong>Predict</strong> what you think will be printed in the <strong>Shell</strong> when you run the code</p></li>
+<li><p><strong>Run</strong> the code and check if your prediction was correct</p></li>
 </ul>
-<p>Code breakdown:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate - Code breakdown</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code> → all values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code> is printed</p></li>
+<li><p>Both values are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> checks if <strong>everything is True</strong> → this is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">2</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code> → not all values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>One value is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> needs everything to be <code class="docutils literal notranslate"><span class="pre">True</span></code>, so this is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False)</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">False</span> <span class="pre">and</span> <span class="pre">True)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">True</span></code> → not all values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>One value is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Not everything is <code class="docutils literal notranslate"><span class="pre">True</span></code>, so this is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">False</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False)</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">False</span> <span class="pre">and</span> <span class="pre">False)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">False</span></code> → not all values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>Both values are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Not everything is <code class="docutils literal notranslate"><span class="pre">True</span></code>, so this is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code> → all values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True:</span> <span class="pre">True</span></code> is printed</p></li>
+<li><p>All values are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>So the result is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code> → not all values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>One value is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Not everything is <code class="docutils literal notranslate"><span class="pre">True</span></code>, so this is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code></p></li>
 </ul>
 </li>
 </ul>
+</div>
 </section>
 <section id="the-or-operator">
 <h4>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator<a class="headerlink" href="#the-or-operator" title="Link to this heading">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator is the inverse of the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>any one</strong> of the values in the operation is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<p>Change your code so it reflects the code below:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator works in the opposite way to <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <strong>at least one</strong> value is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Change your code so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True or True is:&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
 <span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True or False is:&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
 <span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;False or True is:&quot;</span><span class="p">,</span> <span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
@@ -412,66 +445,81 @@
 <span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True or False or False is:&quot;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will be written to the <strong>Shell</strong> when your run this code.</p></li>
-<li><p><strong>Run</strong> the code and check your predictions.</p></li>
-<li><p>Let’s <strong>Investigate</strong> that code</p></li>
+<li><p><strong>Predict</strong> what you think will be printed in the <strong>Shell</strong> when you run the code</p></li>
+<li><p><strong>Run</strong> the code and check if your prediction was correct</p></li>
 </ul>
-<p>Code breakdown:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate - Code breakdown</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span></code> → at least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code> is printed</p></li>
+<li><p>At least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code> (both are!)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">2</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code> → at least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>One value is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False)</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">False</span> <span class="pre">or</span> <span class="pre">True)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">True</span></code> → at least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>One value is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False)</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;False</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">False</span> <span class="pre">or</span> <span class="pre">False)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span></code> → no values are <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code> is printed</p></li>
+<li><p>No values are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">False</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span></code> → at least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True:</span> <span class="pre">True</span></code> is printed</p></li>
+<li><p>All values are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:&quot;,</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code> → at least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code> → returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">True</span></code> is printed</p></li>
+<li><p>At least one value is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>It prints: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">is:</span> <span class="pre">True</span></code></p></li>
 </ul>
 </li>
 </ul>
+</div>
 </section>
 <section id="using-boolean-operators">
 <h4>Using Boolean operators<a class="headerlink" href="#using-boolean-operators" title="Link to this heading">¶</a></h4>
-<p>So far, we have been returning <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> from other values of <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>. This isn’t that useful but remember comparison operators return Boolean values. Boolean operators can create conditions with multiple comparison operators. This provides complex conditions for your <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> statements.</p>
+<p>So far, we have only used <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> with other <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values.
+That is not very useful on its own.</p>
+<p>But remember, <strong>comparison operators</strong> give us <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>We can use <strong>Boolean operators</strong> to join multiple comparisons together.
+This lets us build more complex conditions for our <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> statements.</p>
 <p>Consider the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">and</span> <span class="s2">&quot;a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will be written to the <strong>Shell</strong> when your run this code.</p></li>
-<li><p><strong>Run</strong> the code and check your predictions.</p></li>
-<li><p>Let’s <strong>Investigate</strong> that code</p></li>
+<li><p><strong>Predict</strong> what you think will be printed in the <strong>Shell</strong> when you run the code</p></li>
+<li><p><strong>Run</strong> the code and check if your prediction was correct</p></li>
 </ul>
-<p>Code breakdown:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate - Code breakdown</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">print(7</span> <span class="pre">&lt;</span> <span class="pre">8</span> <span class="pre">and</span> <span class="pre">&quot;a&quot;</span> <span class="pre">&lt;</span> <span class="pre">&quot;o&quot;)</span></code></p>
 <ul>
@@ -490,18 +538,35 @@
 </ul>
 </li>
 </ul>
+</div>
 <div class="admonition-combining-multiple-comparison-operations admonition">
 <p class="admonition-title">Combining multiple comparison operations</p>
-<p>Conditions with multiple comparisons need comparisons on both sides of the Boolean operator.</p>
-<p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">13</span></code> is <strong>not</strong> the same as <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">13</span></code>.</p>
+<p>When you use more than one comparison, you must have a comparison on <strong>both sides</strong> of the Boolean operator.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">13</span></code></p>
+<ul>
+<li><p>Both sides are full comparisons</p></li>
+<li><p>This is correct</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">13</span></code></p>
+<ul>
+<li><p>The second part (<code class="docutils literal notranslate"><span class="pre">13</span></code>) is <strong>not</strong> a comparison</p></li>
+<li><p>This is not the same and will not work the way you expect</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 </section>
 </section>
+<hr class="docutils" />
 <section id="part-2-mouse-input-in-turtle">
 <h2>Part 2: Mouse input in Turtle<a class="headerlink" href="#part-2-mouse-input-in-turtle" title="Link to this heading">¶</a></h2>
-<p>To reinforce our understanding of Boolean logic, we are going to do something new with Turtle. So far, we have only accepted user input via the <strong>Shell</strong>, but Turtle can also use mouse input (and keys as well).</p>
-<p>We are going to use the code below for our Boolean exercise, but we will have to explore it first.</p>
+<p>To help you understand Boolean logic better, we are going to try something new with Turtle.</p>
+<p>So far, you have only typed input into the <strong>Shell</strong>.
+But Turtle can also take input from the mouse (and even the keyboard).</p>
+<p>We will use the code below for this activity, but first we need to explore how it works.</p>
 <p>Download <strong><a class="reference download internal" download="" href="_downloads/9e62d7c7562f08bde005d9d9214e9ca5/lesson_6_pt_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_pt_2.py</span></code></a></strong> file and save it in your lesson folder.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
@@ -536,72 +601,93 @@
 <span class="linenos">31</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will be written to the <strong>Shell</strong> when your run this code.</p></li>
-<li><p><strong>Run</strong> the code and check your predictions.</p></li>
-<li><p>Let’s <strong>Investigate</strong> that code.</p></li>
+<li><p><strong>Predict</strong> what you think will happen when you run the code (hint: you will need to click in the Turtle window)</p></li>
+<li><p><strong>Run</strong> the code and check if your prediction was correct</p></li>
 </ul>
-<p>We’ll do the code breakdown in three sections in the order they are executed:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate - Code breakdown</p>
+<p>We will look at this code in three parts, in the order Python uses them.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">29</span></code> to <code class="docutils literal notranslate"><span class="pre">31</span></code>: the main part of the program</p></li>
+</ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">29</span></code> to <code class="docutils literal notranslate"><span class="pre">31</span></code>: the main program</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl</span> <span class="pre">=</span> <span class="pre">turtle.Turtle()</span></code> → creates a Turtle object and names it <code class="docutils literal notranslate"><span class="pre">my_ttl</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">set_scene()</span></code> → runs the <code class="docutils literal notranslate"><span class="pre">set_scene()</span></code> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl.hideturtle()</span></code> → hides the turtle so you cannot see it</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">16</span></code>: the <code class="docutils literal notranslate"><span class="pre">set_scene()</span></code> function</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">set_scene():</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl</span> <span class="pre">=</span> <span class="pre">turtle.Turtle()</span></code> → create a Turtle object and names it <code class="docutils literal notranslate"><span class="pre">my_ttl</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">set_scene()</span></code> calls the <code class="docutils literal notranslate"><span class="pre">set_scene()</span></code> function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl.hideturtle()</span></code> make the turtle invisible</p></li>
+<li><p>creates a function called <code class="docutils literal notranslate"><span class="pre">set_scene</span></code></p></li>
+<li><p>this function does not need any arguments</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">16</span></code>: the <code class="docutils literal notranslate"><span class="pre">set_scene</span></code> function</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code>: <code class="docutils literal notranslate"><span class="pre">turtle.setup(800,</span> <span class="pre">600)</span></code> → makes a window that is <code class="docutils literal notranslate"><span class="pre">800</span></code> pixels wide and <code class="docutils literal notranslate"><span class="pre">600</span></code> pixels tall</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">8</span></code>: <code class="docutils literal notranslate"><span class="pre">turtle.onscreenclick(draw_dot)</span></code> → this part is new</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">set_scene()</span></code> → defines the <code class="docutils literal notranslate"><span class="pre">set_scene</span></code> function without any arguments</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code>: <code class="docutils literal notranslate"><span class="pre">turtle.setup(800,</span> <span class="pre">600)</span></code> → creates a <code class="docutils literal notranslate"><span class="pre">800</span></code> x <code class="docutils literal notranslate"><span class="pre">600</span></code> window</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">8</span></code>: <code class="docutils literal notranslate"><span class="pre">turtle.onscreenclick(draw_dot)</span></code> → this is <strong>new</strong></p>
+<li><p>when the mouse is clicked in the Turtle window:</p>
 <ul>
-<li><p>if a mouse click is detected:</p>
-<ul>
-<li><p>calls the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function</p></li>
-<li><p>passes to the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates of where the mouse clicked</p></li>
+<li><p>Python runs the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function</p></li>
+<li><p>Python also sends the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> position of the mouse click to that function</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl.speed(0)</span></code> → a turtle speed of <code class="docutils literal notranslate"><span class="pre">0</span></code> means you don’t see the turtle move</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">12</span></code> to <code class="docutils literal notranslate"><span class="pre">15</span></code>: draws four lines from <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> making the four quadrants</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">16</span></code>: <code class="docutils literal notranslate"><span class="pre">penup</span></code> prevents the turtle from drawing a line to the mouse click coordinates (try commenting it out and see what happens)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl.speed(0)</span></code> → a speed of <code class="docutils literal notranslate"><span class="pre">0</span></code> means the turtle moves instantly, so you do not see it moving</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">12</span></code> to <code class="docutils literal notranslate"><span class="pre">15</span></code>: draw four lines out from <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> to make four sections on the screen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">16</span></code>: <code class="docutils literal notranslate"><span class="pre">penup()</span></code></p>
+<ul>
+<li><p>this stops the turtle drawing a line when it moves to the mouse click position</p></li>
+<li><p>try commenting it out to see what changes</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code>: the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function</p>
-<ul>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code>: the <code class="docutils literal notranslate"><span class="pre">draw_dot()</span></code> function</p></li>
+</ol>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">draw_dot(x,</span> <span class="pre">y):</span></code></p>
 <ul>
-<li><p>defines the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function</p></li>
-<li><p>accepts the two arguments <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> which are passed from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.onscreenclick()</span></code> always passes the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates as arguments</p></li>
+<li><p>creates a function called <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code></p></li>
+<li><p>it uses two arguments: <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
+<li><p>these are sent from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> when the mouse is clicked</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">turtle.onscreenclick()</span></code> always sends the click position as <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">21</span></code>: prints the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates to the <strong>Shell</strong> (to help you plan your code)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">22</span></code>: assigns <code class="docutils literal notranslate"><span class="pre">&quot;orange&quot;</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: assigns <code class="docutils literal notranslate"><span class="pre">10</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: sends the turtle to the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl.dot(size,</span> <span class="pre">color)</span></code> draws a dot at the turtle position of size <code class="docutils literal notranslate"><span class="pre">size</span></code> and colour <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">21</span></code>: prints the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> position into the <strong>Shell</strong> so you can see where you clicked</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">22</span></code>: stores <code class="docutils literal notranslate"><span class="pre">&quot;orange&quot;</span></code> in the variable <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: stores <code class="docutils literal notranslate"><span class="pre">10</span></code> in the variable <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: moves the turtle to the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> position</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">my_ttl.dot(size,</span> <span class="pre">color)</span></code> → draws a dot where the turtle is, using the size in <code class="docutils literal notranslate"><span class="pre">size</span></code> and the colour in <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
 </ul>
-</li>
-</ul>
+</div>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">¶</a></h2>
-<p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. Work through the following exercises and make your own code.</p>
-<p>So far, the dot colour is always orange. In these exercises the quadrant of the mouse click will determine the dot colour.</p>
-<p>To do this your will need to use:</p>
+<p>In this course, the exercises are the <strong>make</strong> part of the PRIMM model. Work through the following tasks and write your own code.</p>
+<p>Right now, every dot is orange. In these exercises, the part of the screen you click in will decide the dot’s colour.</p>
+<p>To do this, you will need to use:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements</p></li>
 <li><p>Boolean comparisons</p></li>
-<li><p>Boolean operations</p></li>
+<li><p>Boolean operators</p></li>
 </ul>
-<p>You will also need to remember how coordinates work in Turtle.</p>
+<p>You will also need to remember how Turtle coordinates work.</p>
 <p><img alt="coordinates" src="_images/coordinates.png" /></p>
-<section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/7be07164492e59f71b87d73d4d8671ca/lesson_6_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_ex_1.py</span></code></a></strong> file and save it in your lesson folder. The starting code is shown below:</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/7be07164492e59f71b87d73d4d8671ca/lesson_6_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_ex_1.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in the comments from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">42</span></code>.</p>
+<p>To help, here is the flowchart for the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function:</p>
+<p><img alt="flowchart lesson 6 1" src="_images/flowchart_lesson_6_1.png" /></p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1">## Prepare the windows and turtle ##</span>
@@ -655,14 +741,13 @@
 <span class="linenos">51</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">42</span></code>.</p>
-<p>To help, here is the flowchart for the <code class="docutils literal notranslate"><span class="pre">draw_dot</span></code> function:</p>
-<p><img alt="flowchart lesson 6 1" src="_images/flowchart_lesson_6_1.png" /></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/f718c4d9726468a2e8b83255e795e6b3/lesson_6_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_ex_2.py</span></code></a></strong> file and save it in your lesson folder. The starting code is shown below:</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/f718c4d9726468a2e8b83255e795e6b3/lesson_6_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_ex_2.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in the comments from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">35</span></code>.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1">## Prepare the windows and turtle ##</span>
@@ -709,12 +794,13 @@
 <span class="linenos">44</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">35</span></code>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/7e0aa3ad5caccdc05785b56bf2b87fed/lesson_6_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_ex_3.py</span></code></a></strong> file and save it in your lesson folder. The starting code is shown below:</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/7e0aa3ad5caccdc05785b56bf2b87fed/lesson_6_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_6_ex_3.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in the comments from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">36</span></code>.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1">## Prepare the windows and turtle ##</span>
@@ -762,8 +848,7 @@
 <span class="linenos">45</span><span class="n">my_ttl</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">36</span></code>.</p>
-</section>
+</div>
 </section>
 </section>
 
@@ -843,12 +928,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#part-2-mouse-input-in-turtle">Part 2: Mouse input in Turtle</a></li>
-<li><a class="reference internal" href="#exercises">Exercises</a><ul>
-<li><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
-<li><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
-<li><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
