@@ -262,12 +262,12 @@
 <aside class="topic">
 <p class="topic-title">In this lesson you will learn:</p>
 <ul class="simple">
-<li><p>how to capturing errors</p></li>
-<li><p>what are branching control structures (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)</p></li>
-<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> in Python</p></li>
-<li><p>the difference between definite and indefinite iteration</p></li>
-<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">where</span></code> loops in Python</p></li>
-<li><p>how to generate random numbers in Python</p></li>
+<li><p>how to find and understand errors in your code</p></li>
+<li><p>what decision-making code is (<code class="docutils literal notranslate"><span class="pre">if</span></code> statements)</p></li>
+<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> in Python</p></li>
+<li><p>the difference between loops that run a set number of times and loops that keep going until something happens</p></li>
+<li><p>how and when to use <code class="docutils literal notranslate"><span class="pre">while</span></code> loops in Python</p></li>
+<li><p>how to make Python pick random numbers</p></li>
 </ul>
 </aside>
 <section id="part-1-branching">
@@ -276,8 +276,13 @@
 <p><a class="reference external" href="https://youtu.be/fGEz4QNXpEE">Video link</a></p>
 <section id="branching-control-structure">
 <h3>Branching control structure<a class="headerlink" href="#branching-control-structure" title="Link to this heading">¶</a></h3>
-<p>The branching control structure allows the program’s flow it take alternative paths. Let’s use a practical example to better understand this.</p>
-<p>We’re going to use the <strong>lesson_4_pt_2.py</strong> file. You can either save it as <strong>lesson_5_pt_1a.py</strong> or download and use the <strong><a class="reference download internal" download="" href="_downloads/6129689decc0fe8446eafd62e71394aa/lesson_5_pt_1a.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_pt_1a.py</span></code></a></strong> file.</p>
+<p>Branching lets your program choose between different paths, depending on what is happening.</p>
+<p>To understand this, let’s look at a real example.</p>
+<p>We are going to use the file called <strong>lesson_4_pt_2.py</strong>. You can either:</p>
+<ul class="simple">
+<li><p>save your old file as a copy called <strong>lesson_5_pt_1a.py</strong>, or</p></li>
+<li><p>download the <strong><a class="reference download internal" download="" href="_downloads/6129689decc0fe8446eafd62e71394aa/lesson_5_pt_1a.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_pt_1a.py</span></code></a></strong> file instead.</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -302,77 +307,105 @@
 <span class="linenos">22</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Run the program, and at the prompt, instead of providing a number, provide a word, for example <code class="docutils literal notranslate"><span class="pre">dog</span></code>.</p>
-<p>This will raise the following error:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-<span class="linenos">2</span>  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">19</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="linenos">3</span><span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;dog&#39;</span>
+<p>Run the program.</p>
+<p>When it asks you to enter a number, type the word <code class="docutils literal notranslate"><span class="pre">dog</span></code>.</p>
+<p>This will cause an error below to happen.</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Traceback (most recent call last):
+<span class="linenos">2</span>  File &quot;&lt;string&gt;&quot;, line 19, in &lt;module&gt;
+<span class="linenos">3</span>ValueError: invalid literal for int() with base 10: &#39;dog&#39;
 </pre></div>
 </div>
-<p>This error occurs because in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> we are trying to convert the literal (string) <code class="docutils literal notranslate"><span class="pre">dog</span></code> into an integer. Since <code class="docutils literal notranslate"><span class="pre">dog</span></code> is not a whole number, it causes an error.</p>
-<p>What we need to do is check that user has entered a whole number before converting it into an integer.</p>
+<p>This error happens because on <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code>, the program is trying to turn the word <code class="docutils literal notranslate"><span class="pre">dog</span></code> into a number.</p>
+<p>But <code class="docutils literal notranslate"><span class="pre">dog</span></code> is not a number, so Python doesn’t know how to convert it, and the program crashes.</p>
+<p>To fix this, we need to check that the user has typed a whole number <strong>before</strong> we try to convert it into an integer.</p>
+</section>
 <hr class="docutils" />
-<p>Create a new file in, enter the code below then save it as <strong>lesson_5_pt_1b.py</strong>.</p>
+<section id="showing-variable-types">
+<h3>Showing variable types<a class="headerlink" href="#showing-variable-types" title="Link to this heading">¶</a></h3>
+<p>Create a new file.</p>
+<p>Type in the code shown below, then save the file as <strong>lesson_5_pt_1b.py</strong>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>PRIMM:</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p><strong>Predict</strong> what you think will happen when you run the code two times:</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code twice:</p>
-<ul>
-<li><p>first time enter the value <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
-<li><p>second time enter the value <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+<li><p>first time, type <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second time, type <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
 </ul>
-</li>
-<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
-<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p><strong>Run</strong> the code.</p>
+<p>Did it do what you thought it would do?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> the code.</p>
+<p>Remember, anything you type into Python using <code class="docutils literal notranslate"><span class="pre">input</span></code> is treated as text (a string).</p>
+<p>Strings have built-in tools called <strong>methods</strong> that help us work with them.</p>
+<p>One of these methods is called <code class="docutils literal notranslate"><span class="pre">isdigit</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> method checks if all the characters in a string are numbers.</p>
+<ul class="simple">
+<li><p>It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if they are all digits</p></li>
+<li><p>It returns <code class="docutils literal notranslate"><span class="pre">False</span></code> if they are not</p></li>
 </ul>
-<p>Remember that Python inputs are strings. Strings have special operations called <strong>methods</strong>. One of those is the <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> method. <code class="docutils literal notranslate"><span class="pre">isdigit</span></code> returns the Boolean value of <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters in a string are digits.</p>
+</div>
 <div class="hint admonition">
 <p class="admonition-title">String Methods</p>
 <p>Python has many useful string methods. If you want to explore them <a class="reference external" href="https://www.w3schools.com/python/python_ref_string.asp"><strong>W3Schools’ Python String Methods</strong></a> is a good place to start.</p>
 </div>
-<p>We can tell if the user’s input is a number or not. Now we need to tell the computer how to respond to this information.</p>
+<p>Now we can check if the user has typed a number or not.</p>
+<p>Next, we need to tell the computer what to do based on that result.</p>
 </section>
 <hr class="docutils" />
 <section id="the-if-statement">
 <h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#the-if-statement" title="Link to this heading">¶</a></h3>
-<p>Adjusts your  <strong>lesson_5_pt_1b.py</strong> code so it is the same as the code below.</p>
+<p>Change your <strong>lesson_5_pt_1b.py</strong> code so it matches the code below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
 <span class="linenos">2</span>
 <span class="hll"><span class="linenos">3</span><span class="k">if</span> <span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
 </span><span class="hll"><span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a number&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p><strong>Predict</strong> what you think will happen when you run the code two times:</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code twice:</p>
-<ul>
-<li><p>first time enter the value <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
-<li><p>second time enter the value <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+<li><p>first time, type <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second time, type <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
 </ul>
-</li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p><strong>Run</strong> the code.</p>
+<p>Did it do what you thought it would do?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<ul class="simple">
 <li><p>Let’s <strong>investigate</strong> that code.</p></li>
 </ul>
-<section id="flowcharts">
-<h4>Flowcharts<a class="headerlink" href="#flowcharts" title="Link to this heading">¶</a></h4>
-<p>Flowcharts are great at demonstrating how selection works. We have already used the condition symbol (diamond) in our <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. They are also used for the conditions in <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<p><strong>Flowcharts</strong></p>
+<p>Flowcharts are useful for showing how a program makes decisions.</p>
+<p>We have already used the diamond shape (called a condition) in our <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p>
+<p>The same diamond shape is also used to show the conditions in <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
 <p>Code flowchart:</p>
 <p><img alt="flowchart lesson 5 1" src="_images/flowchart_lesson_5_1.png" /></p>
-<p>Code breakdown:</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">3</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">user_value.isdigit():</span></code></p>
 <ul>
-<li><p>This defines the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> tells Python that this is an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
-<li><p>The next part is called a <strong>conditional</strong>.</p>
+<li><p>This is an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> tells Python to make a decision.</p></li>
+<li><p>The next part is called a <strong>condition</strong>.</p>
 <ul>
-<li><p>Conditionals are operations that return a Boolean value (<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
-<li><p>This specific <strong>conditional</strong> is <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code></p></li>
-<li><p>We already know the results from our previous work:</p>
+<li><p>A condition checks something and gives back either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>Here, the condition is <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code></p></li>
+<li><p>From earlier:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">10</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dog</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
@@ -380,32 +413,34 @@
 </li>
 </ul>
 </li>
-<li><p>Ends with <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
+<li><p>The line ends with <code class="docutils literal notranslate"><span class="pre">:</span></code></p>
 <ul>
-<li><p>This has the same use as <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and functions. It indicates that an indented code block follows.</p></li>
+<li><p>This tells Python that the next lines will be part of this <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
 </ul>
 </li>
-<li><p>The indented code block, will only run if the condition returns <code class="docutils literal notranslate"><span class="pre">True</span></code>. In our example:</p>
+<li><p>The indented code underneath will only run if the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code> → <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> → run indented code block</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dog</span></code> → <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code> → don’t run indented code block</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code> → run the indented code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dog</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code> → skip the indented code</p></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;That's</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code></p>
 <ul>
-<li><p>This is the indented code block that will run if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>This line is inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement (because it is indented).</p></li>
+<li><p>It only runs if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p>We can now respond to a digit being entered. But what if we want to provide a different response when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
-</section>
+</div>
+<p>Right now, the program only does something when the input <strong>is a number</strong>.</p>
+<p>But what about when the input is <strong>not a number</strong>?</p>
 </section>
 <hr class="docutils" />
 <section id="the-if-else-statement">
 <h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#the-if-else-statement" title="Link to this heading">¶</a></h3>
-<p>Adjust your <strong>lesson_5_pt_1b.py</strong> code by adding <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> in the code below.</p>
+<p>Change your <strong>lesson_5_pt_1b.py</strong> code by adding <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">)</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="k">if</span> <span class="n">user_value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
@@ -414,41 +449,53 @@
 </span><span class="hll"><span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s not a number&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p><strong>Predict</strong> what you think will happen when you run the code two times:</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code twice:</p>
-<ul>
-<li><p>first time enter the value <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
-<li><p>second time enter the value <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+<li><p>first time, type <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>second time, type <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
 </ul>
-</li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
-<li><p>Let’s <strong>investigate</strong> that code.</p></li>
-</ul>
-<p>Code flowchart:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p><strong>Run</strong> the code.</p>
+<p>Did it do what you thought it would do?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> the code.</p>
+<p>Here is the flowchart for the code:</p>
 <p><img alt="flowchart lesson 5 2" src="_images/flowchart_lesson_5_2.png" /></p>
-<p>Code breakdown:</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> operate the same as the previous code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> work the same as before.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code> - <code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
 <ul>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement uses the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement’s condition.</p></li>
-<li><p>In this case, it says: if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> then run the following indented code block.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">:</span></code> tells Python that an indented code block follows.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> is linked to the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+<li><p>It runs when the <code class="docutils literal notranslate"><span class="pre">if</span></code> condition is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>In this case, it means: if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, run the code below.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:</span></code> tells Python that an indented block of code is coming next.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code> - <code class="docutils literal notranslate"><span class="pre">print(&quot;That's</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">number&quot;)</span></code></p>
 <ul>
-<li><p>This is the indented code block that will run if <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>This line is inside the <code class="docutils literal notranslate"><span class="pre">else</span></code> block (because it is indented).</p></li>
+<li><p>It only runs when <code class="docutils literal notranslate"><span class="pre">user_value.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p>To check out what is happening in detail stepping through the code with the <strong>debugger</strong>. Use the inputs of <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">dog</span></code>.</p>
-</section>
+<p>To look at the code more closely, step through it using the <strong>debugger</strong>.</p>
+<p>Test it two times:</p>
+<ul class="simple">
+<li><p>first, enter <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p>then, enter <code class="docutils literal notranslate"><span class="pre">dog</span></code></p></li>
+</ul>
+<p>Watch what happens on each line as the program decides which path to follow.</p>
 <hr class="docutils" />
-<section id="using-if-else-to-capture-errors">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> to capture errors<a class="headerlink" href="#using-if-else-to-capture-errors" title="Link to this heading">¶</a></h3>
-<p>Go back to <strong>lesson_5_pt_1a.py</strong> and adjust the code by replacing <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> with the following code:</p>
+<p class="rubric" id="using-if-else-to-capture-errors">Using <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> to capture errors</p>
+<p>Go back to <strong>lesson_5_pt_1a.py</strong>.</p>
+<p>Change <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">19</span></code> so it matches the code shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># get user input</span>
 <span class="linenos">2</span><span class="n">num_sides</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
 <span class="linenos">3</span><span class="k">if</span> <span class="n">num_sides</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
@@ -458,7 +505,8 @@
 <span class="linenos">7</span>    <span class="n">quit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Your code should look like the code below:</p>
+</div>
+<p>Your code should now look like the example shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -490,8 +538,7 @@
 <span class="linenos">29</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<p>Then replace <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">27</span></code> with this code:</p>
+<p>Then change <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">27</span></code> so it matches the code shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
 <span class="linenos">2</span><span class="k">if</span> <span class="n">size</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
 <span class="linenos">3</span>    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -500,7 +547,7 @@
 <span class="linenos">6</span>    <span class="n">quit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Your code should look like the code below:</p>
+<p>Your code should now look like the example shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -537,20 +584,21 @@
 <span class="linenos">34</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let’s test this code to see if it works.</p>
-<p>PRIMM</p>
+<p>Let’s test the code and check if it works.</p>
+<div class="note admonition">
+<p class="admonition-title">Predict</p>
+<p><strong>Predict</strong> what you think will happen when you run the code in these situations:</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code in the following scenarios:</p>
-<ul>
 <li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
 <li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
 <li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
 <li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
 </ul>
-</li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
-<li><p>Let’s <strong>investigate</strong> that code.</p></li>
-</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Run</p>
+<p><strong>Run</strong> the code. Did it do what you expected?</p>
+</div>
 <div class="hint admonition">
 <p class="admonition-title">More testing tips</p>
 <ul class="simple">
@@ -559,68 +607,75 @@
 <li><p>This code had four possible branches so we needed to test all four of them</p></li>
 </ul>
 </div>
-<p>Code flowchart:</p>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> the code.</p>
+<p>Here is the flowchart for the code:</p>
 <p><img alt="flowchart lesson 5 3" src="_images/flowchart_lesson_5_3.png" /></p>
-<p>Code breakdown:</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> → a comment used to structure the code</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → accepts user input and assigns it to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">21</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num_sides.isdigit():</span></code> → tests if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> only contains numbers</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> → a comment to help organise the code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">input(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → asks the user for input and stores it in <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">21</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num_sides.isdigit():</span></code> → checks if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> is made up of only numbers</p>
 <ul>
-<li><p>if <code class="docutils literal notranslate"><span class="pre">num_sides.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then run the code block from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">20</span></code></p></li>
+<li><p>if this is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the next indented lines will run</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">22</span></code>: <code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">int(size)</span></code> takes the value assigned to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> converts it to an integer, then reassigns it to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> is not all numbers execute following code block (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">22</span></code> to <code class="docutils literal notranslate"><span class="pre">23</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user of their mistake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code>: <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">input(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → accepts user input and assigns it to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">28</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">size.isdigit():</span></code> → tests if <code class="docutils literal notranslate"><span class="pre">size</span></code> only contains numbers</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">22</span></code>: <code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">int(num_sides)</span></code> → changes <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> from text into a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → runs if <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> is <strong>not</strong> a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → tells the user something went wrong</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">quit()</span></code> → stops the program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code>: <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">input(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → asks the user for another input and stores it in <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">28</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">size.isdigit():</span></code> → checks if <code class="docutils literal notranslate"><span class="pre">size</span></code> is made up of only numbers</p>
 <ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">size.isdigit()</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then run the code block from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">27</span></code></p></li>
+<li><p>if this is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the next indented lines will run</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">int(size)</span></code> takes the value assigned to <code class="docutils literal notranslate"><span class="pre">size</span></code> converts it to an integer, then reassigns it to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">size</span></code> is not all numbers execute following code block (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">29</span></code> to <code class="docutils literal notranslate"><span class="pre">30</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user of their mistake</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">32</span></code>: <code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">int(size)</span></code> → changes <code class="docutils literal notranslate"><span class="pre">size</span></code> from text into a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → runs if <code class="docutils literal notranslate"><span class="pre">size</span></code> is <strong>not</strong> a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code>: <code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → tells the user something went wrong</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">32</span></code>: <code class="docutils literal notranslate"><span class="pre">quit()</span></code> → stops the program</p></li>
 </ul>
+</div>
 </section>
 <hr class="docutils" />
 <section id="refactor-code-dry">
 <h3>Refactor Code - DRY<a class="headerlink" href="#refactor-code-dry" title="Link to this heading">¶</a></h3>
-<p>Looking at our code, does it pass the DRY test?</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> section from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">30</span></code> definitely has repetition in it. Twice the code:</p>
+<p>When we look at our code, it does <strong>not</strong> pass the DRY test.</p>
+<p>DRY means <strong>Don’t Repeat Yourself</strong>.
+Our <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> section from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">30</span></code> repeats the same pattern twice.</p>
+<p>Both parts of the code:</p>
 <ol class="arabic simple">
-<li><p>asks the user for input</p></li>
-<li><p>checks if that input is all numbers</p></li>
-<li><p>either converts or quits the program depending on the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+<li><p>ask the user for input</p></li>
+<li><p>check if the input is only numbers</p></li>
+<li><p>either change it into an integer or stop the program</p></li>
 </ol>
-<p>During all this, the only parts of the code that differs are:</p>
+<p>The only things that change are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code> and <code class="docutils literal notranslate"><span class="pre">27</span></code> the <code class="docutils literal notranslate"><span class="pre">input</span></code> prompt is different:</p>
+<li><p>the message shown to the user</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">20</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code></p></li>
 </ul>
 </li>
-<li><p>in their respective sections different variable names are used:</p>
+<li><p>the variable name being used</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code> → <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">27</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code> → <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p>This looks like a prefect opportunity to <strong>refactor</strong> the code using a function.</p>
+<p>This makes it a good chance to <strong>refactor</strong> the code by using a function.</p>
 <div class="admonition-what-is-refactoring admonition">
 <p class="admonition-title">What is refactoring?</p>
-<p>Refactoring is changing your code <strong>without changing the way it works</strong>. This is normally done to make code more efficient or more maintainable.</p>
+<p>Refactoring means changing your code <strong>without changing what it does</strong>.</p>
+<p>We do this to make the code better.</p>
 <ul class="simple">
-<li><p>Efficient code uses less computing resources (processing power, storage, internet bandwidth etc.).</p></li>
-<li><p>Maintainable code is easier for programmers to understand, fix, update and enhance.</p></li>
+<li><p><strong>Efficient code</strong> uses fewer resources (like processing power, storage, or internet).</p></li>
+<li><p><strong>Maintainable code</strong> is easier to read, understand, fix, and improve later.</p></li>
 </ul>
 </div>
-<p>To refactor our code we need to add the following function at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code> of your code:</p>
+<p>To refactor our code, add the function shown below at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">10</span></code> in your code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
     <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">num</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
@@ -630,13 +685,14 @@
         <span class="n">quit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Then remove the code under <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> from <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">19</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code>, and replace it with two calls to the function:</p>
+<p>Then delete the code under <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">get</span> <span class="pre">user</span> <span class="pre">input</span></code> from <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">19</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code>.</p>
+<p>Replace it with two calls to the function instead.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get user input</span>
 <span class="n">num_sides</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;How many sides?&gt; &quot;</span><span class="p">)</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Length of sides?&gt; &quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In the end your code should look like the code below:</p>
+<p>At the end, your code should look like the example shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -671,72 +727,81 @@
 <span class="linenos">32</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When you refactor code, it is important to ensure the code still works the same. So <strong>run</strong> the code to ensure that it still works the same way.</p>
-<p>Remember to test all 4 possible branches:</p>
-<ul class="simple">
-<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
-<li><p>valid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
-<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and valid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
-<li><p>invalid <code class="docutils literal notranslate"><span class="pre">sides</span></code> value and invalid <code class="docutils literal notranslate"><span class="pre">size</span></code> value</p></li>
-</ul>
-<p>If your code still works the same, let’s <strong>investigate</strong> the code we added.</p>
-<p>Code flowchart:</p>
+<div class="highlight-Run notranslate"><div class="highlight"><pre><span></span>When you refactor code, it is important to ensure the code still works the same. So **run** the code to ensure that it still works the same way. 
+
+Remember to test all 4 possible branches:
+
+- valid `sides` value and valid `size` value
+- valid `sides` value and invalid `size` value
+- invalid `sides` value and valid `size` value
+- invalid `sides` value and invalid `size` value
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>If your code still works the same, let’s <strong>investigate</strong> the new code you added.</p>
+<p>Here is the flowchart for that code:</p>
 <p><img alt="flowchart lesson 5 4" src="_images/flowchart_lesson_5_4.png" /></p>
-<p>Code breakdown:</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">get_number(prompt):</span></code> → defines our new function with one argument <code class="docutils literal notranslate"><span class="pre">prompt</span></code>:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">get_number(prompt):</span></code> → creates a new function with one input called <code class="docutils literal notranslate"><span class="pre">prompt</span></code></p>
 <ul>
-<li><p>we observed that the prompt was one of the differences between our two blocks of similar code</p></li>
-<li><p>using this argument means we can provide a different prompt each time we call the function</p></li>
+<li><p>we saw earlier that the prompt text was different in each part of the code</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">prompt</span></code> means we can change the message each time we use the function</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">input(prompt)</span></code> → uses the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> argument and assigns the user input to <code class="docutils literal notranslate"><span class="pre">num</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num.isdigit():</span></code> → checks if <code class="docutils literal notranslate"><span class="pre">num</span></code> only contains numbers</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">int(num)</span></code> → converts the value assigned to <code class="docutils literal notranslate"><span class="pre">num</span></code> then sends it to the main program:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">input(prompt)</span></code> → shows the prompt to the user and stores what they type in <code class="docutils literal notranslate"><span class="pre">num</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">num.isdigit():</span></code> → checks if <code class="docutils literal notranslate"><span class="pre">num</span></code> is made up of only numbers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">int(num)</span></code> → changes <code class="docutils literal notranslate"><span class="pre">num</span></code> into a number and sends it back to the main program</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> is new</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> sends a value back to the main program and then ends the function.</p></li>
+<li><p>it sends a value back and then stops the function</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code> → if <code class="docutils literal notranslate"><span class="pre">num</span></code> does not contain only numbers, run the following code block</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → informs the user their input is not correct</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">quit()</span></code> → exits the program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span></code> → runs if <code class="docutils literal notranslate"><span class="pre">num</span></code> is <strong>not</strong> a number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Invalid</span> <span class="pre">input&quot;)</span></code> → tells the user their input is wrong</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quit()</span></code> → stops the program</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">get_number(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">get_number(&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → uses the function</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → calls the function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → provides the prompt string to the function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span></code> takes the value returned by the function and assigns it to <code class="docutils literal notranslate"><span class="pre">num_sides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → runs the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;How</span> <span class="pre">many</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → is the message shown to the user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span></code> → stores the value returned from the function</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;)</span></code> → uses the function again</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → calls the function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → provides the prompt string to the function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span></code> takes the value returned by the function and assigns it to <code class="docutils literal notranslate"><span class="pre">size</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_number()</span></code> → runs the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Length</span> <span class="pre">of</span> <span class="pre">sides?&gt;</span> <span class="pre">&quot;</span></code> → is the message shown to the user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span></code> → stores the value returned from the function</p></li>
 </ul>
 </li>
 </ul>
+</div>
 </section>
 <hr class="docutils" />
 <section id="playing-with-colour">
 <h3>Playing with colour<a class="headerlink" href="#playing-with-colour" title="Link to this heading">¶</a></h3>
-<p>Let’s keep adding features to our program. Turtle allows you to also change the colour of your shapes and lines using the method <code class="docutils literal notranslate"><span class="pre">color</span></code>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">color</span></code> accepts two arguments:</p>
+<p>Let’s add a new feature to our program.</p>
+<p>With Turtle, you can change the colour of your shapes and lines using the <code class="docutils literal notranslate"><span class="pre">color</span></code> method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">color</span></code> method takes two inputs:</p>
 <ul class="simple">
-<li><p>first argument → line colour</p></li>
-<li><p>second argument → fill colour</p></li>
+<li><p>first input → the colour of the line</p></li>
+<li><p>second input → the colour used to fill the shape</p></li>
 </ul>
 <div class="hint admonition">
 <p class="admonition-title">Spelling colour / color</p>
-<p>Like most programming languages, Python uses US spelling. Using Australian spelling (eg. colour) will generate an error.</p>
-<p>It up to the programmer to decide what spelling to follow in their naming of variables and functions. I choose to use the US spelling. The consistent spelling reduces the likelihood of errors.</p>
+<p>Python uses US spelling for its built-in functions.</p>
+<p>If you use Australian spelling (like <code class="docutils literal notranslate"><span class="pre">colour</span></code>), your program will cause an error.</p>
+<p>When naming your own variables and functions, you can choose either spelling.</p>
+<p>However, it is best to stay consistent.
+Using the same spelling every time helps prevent mistakes.</p>
 </div>
-<p>Now let’s change the colour of our shape.</p>
-<p>Make the changes in code the code below to:</p>
+<p>Now let’s change the colour of the shape.</p>
+<p>Update your code by making changes to:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">6</span></code></p></li>
@@ -779,38 +844,65 @@
 <span class="hll"><span class="linenos">35</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
+<p><strong>Predict</strong> what you think will happen when you run the code</p>
+<p>Then <strong>run</strong> the code</p>
+<p>Did it do what you thought it would do?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> the code.</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
-<li><p>Let’s <strong>investigate</strong> that code.</p></li>
-</ul>
-<p>Code breakdown:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">draw_poly(length,</span> <span class="pre">sides,</span> <span class="pre">color):</span></code> → accepts a third argument <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.color(&quot;black&quot;,color)</span></code> → sets the turtle colour</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">draw_poly(length,</span> <span class="pre">sides,</span> <span class="pre">color):</span></code> → the function now takes three inputs, including <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_ttl.color(&quot;black&quot;,</span> <span class="pre">color)</span></code> → sets the turtle’s colours</p>
 <ul>
 <li><p>line colour → <code class="docutils literal notranslate"><span class="pre">&quot;black&quot;</span></code></p></li>
-<li><p>fill colour → the value in the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument</p></li>
+<li><p>fill colour → the value stored in <code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
 </ul>
 </li>
 </ul>
+</div>
 <div class="hint admonition">
 <p class="admonition-title">Turtle colours</p>
-<p>Turtle allows the use of named colours. It also allows RBG and Hexadecimal colours, but named colours are enough for our needs.</p>
+<p>Turtle lets you use colour names to change how things look.</p>
+<p>You can also use RGB and Hex colours, but you don’t need those yet.</p>
+<p>Using simple colour names is enough for now.</p>
 <p><strong><a class="reference external" href="https://cs111.wellesley.edu/labs/lab02/colors">Here is a list of all the named colours</a></strong>.</p>
 </div>
-<p>Now that we can change colour, can we let the user choose between <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code> for the fill colour?</p>
-<p>We will need to capture the error when the user enters anything other than <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code>. That means using an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, but the <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement only allows two branches. We need to have four.</p>
-<p>To choose between three or more branches we need to learn about the last part of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement: <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+<p>Now that we can change the colour, we can let the user choose a fill colour.</p>
+<p>We want them to choose from:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">red</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">green</span></code></p></li>
+</ul>
+<p>We also need to handle mistakes.
+If the user types something else, we need to catch that error.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code> only gives us two choices:</p>
+<ul class="simple">
+<li><p>one for <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>one for <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>But here we need more than two choices.</p>
+<p>To handle this, we use <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> lets us check multiple conditions, one after another.</p>
 </section>
 <hr class="docutils" />
 <section id="the-if-elif-else-statement">
 <h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement<a class="headerlink" href="#the-if-elif-else-statement" title="Link to this heading">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is effectively a <code class="docutils literal notranslate"><span class="pre">else</span></code> + <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It allows branching between multiple blocks of code. The best way to explore this is by using it in our code.</p>
-<p>Create a function so the user can choose between <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code> for the fill colour.</p>
-<p>Adjust your code so it is the same as the code below.</p>
-<p>Changes are in:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is like combining <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<p>It lets your program choose between many different options, not just two.</p>
+<p>The best way to understand it is to use it in your code.</p>
+<p>Create a function that lets the user choose a fill colour:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">red</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">green</span></code></p></li>
+</ul>
+<p>Update your code so it matches the example below.</p>
+<p>Make changes to:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">22</span></code> to <code class="docutils literal notranslate"><span class="pre">32</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">47</span></code></p></li>
@@ -867,98 +959,118 @@
 <span class="hll"><span class="linenos">49</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
+<p><strong>Predict</strong> what you think will happen when you run the code.</p>
+<p>Then <strong>run</strong> the code.</p>
+<p>Did it do what you thought it would do?</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
-<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+<li><p>Let’s <strong>investigate</strong> the code.</p></li>
 </ul>
-<p>There are a few new concepts for us to breakdown:</p>
+<p>There are some new ideas to understand:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> <span class="pre">input(&quot;Fill</span> <span class="pre">colour</span> <span class="pre">(red,</span> <span class="pre">blue,</span> <span class="pre">green)?&gt;</span> <span class="pre">&quot;).lower()</span></code> → <code class="docutils literal notranslate"><span class="pre">lower()</span></code> is new</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">23</span></code>: <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> <span class="pre">input(&quot;Fill</span> <span class="pre">colour</span> <span class="pre">(red,</span> <span class="pre">blue,</span> <span class="pre">green)?&gt;</span> <span class="pre">&quot;).lower()</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code> is another string method</p></li>
-<li><p>it converts all the letters in a string to their lowercase version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code> is new</p></li>
+<li><p>it is a string method</p></li>
+<li><p>it changes all letters to lowercase</p></li>
+<li><p>this means <code class="docutils literal notranslate"><span class="pre">Red</span></code>, <code class="docutils literal notranslate"><span class="pre">RED</span></code>, or <code class="docutils literal notranslate"><span class="pre">rEd</span></code> will all become <code class="docutils literal notranslate"><span class="pre">red</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;:</span></code> → tests if the user inputted <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">24</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;red&quot;:</span></code></p>
+<ul>
+<li><p>checks if the user typed <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code></p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">25</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">color</span></code></p>
 <ul>
-<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (in this case <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code> back to the main program)</p></li>
-<li><p>ends the function</p></li>
+<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (here it would be <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code>) back to the main program</p></li>
+<li><p>then stops the function</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">26</span></code>: <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;blue&quot;:</span></code></p>
 <ul>
-<li><p>is only executed when the condition in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">21</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p>checks if the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code></p></li>
+<li><p>runs only if the first <code class="docutils literal notranslate"><span class="pre">if</span></code> was <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>checks if the user typed <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">27</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">color</span></code></p>
 <ul>
-<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (in this case <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code> back to the main program)</p></li>
-<li><p>ends the function</p></li>
+<li><p>sends <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code> back to the main program</p></li>
+<li><p>then stops the function</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">28</span></code>: <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">color</span> <span class="pre">==</span> <span class="pre">&quot;green&quot;:</span></code></p>
 <ul>
-<li><p>is only executed if the conditions in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">21</span></code> and <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> are both <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p>checks if the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code></p></li>
+<li><p>runs only if the first two checks were <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>checks if the user typed <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">29</span></code>: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">color</span></code></p>
 <ul>
-<li><p>sends the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> (in this case <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code> back to the main program)</p></li>
-<li><p>ends the function</p></li>
+<li><p>sends <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code> back to the main program</p></li>
+<li><p>then stops the function</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">30</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
 <ul>
-<li><p>is only executed if the conditions in <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">21</span></code>, <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> and <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">24</span></code> are all <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>runs if none of the options (<code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">blue</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>) were correct</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code> and <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">32</span></code> are the same as the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">31</span></code> and <code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">32</span></code></p>
+<ul>
+<li><p>work the same as before</p></li>
+<li><p>show an error message and stop the program</p></li>
 </ul>
-<p>Code flowchart:</p>
+</li>
+</ul>
+<p><strong>Code flowchart:</strong></p>
 <p><img alt="flowchart lesson5 5" src="_images/flowchart_lesson_5_5.png" /></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is very useful and flexible. You will use it in various configurations, so let look at it’s rules.</p>
-<div class="admonition-if-elif-else-structure admonition">
-<p class="admonition-title">if…elif…else structure</p>
-<p>The structure of a full <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is:</p>
-<ul class="simple">
-<li><p>the <code class="docutils literal notranslate"><span class="pre">if</span></code> component</p>
-<ul>
-<li><p>always at the beginning of an <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
-<li><p>the only compulsory component</p></li>
-<li><p>there can only be one <code class="docutils literal notranslate"><span class="pre">if</span></code> per <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
-</ul>
-</li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">elif</span></code> component</p>
-<ul>
-<li><p>must come after the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and before the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
-<li><p>is optional</p></li>
-<li><p>there can be as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> components as needed</p></li>
-<li><p>it is only used when all the conditions before it are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-</ul>
-</li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">else</span></code> component</p>
-<ul>
-<li><p>must be at the end of an an <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
-<li><p>it is optional</p></li>
-<li><p>there can only be one per <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</p></li>
-<li><p>it is only used when all the conditions before it are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-</ul>
-</li>
-</ul>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is very useful and flexible.</p>
+<p>You will use it in many different ways, so let’s look at the rules for how it works.</p>
+<section id="if-elif-else-structure">
+<h4>if…elif…else structure<a class="headerlink" href="#if-elif-else-structure" title="Link to this heading">¶</a></h4>
+<p>The full structure of an <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement works like this:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">if</span></code> part</p>
+<ul>
+<li><p>always comes first</p></li>
+<li><p>is required (you must have it)</p></li>
+<li><p>there can only be one <code class="docutils literal notranslate"><span class="pre">if</span></code></p></li>
+<li><p>it checks the first condition</p></li>
+</ul>
+</li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">elif</span></code> part</p>
+<ul>
+<li><p>comes after the <code class="docutils literal notranslate"><span class="pre">if</span></code> and before the <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p>is optional (you don’t have to use it)</p></li>
+<li><p>you can have as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> parts as you need</p></li>
+<li><p>it only runs if all the earlier conditions are <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">else</span></code> part</p>
+<ul>
+<li><p>always comes last</p></li>
+<li><p>is optional</p></li>
+<li><p>there can only be one <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p>it runs if none of the other conditions were <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 <section id="part-1-exercises">
-<h2>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Link to this heading">¶</a></h2>
+<h3>Part 1 Exercises<a class="headerlink" href="#part-1-exercises" title="Link to this heading">¶</a></h3>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercises and make your own code.</p>
-<section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/7c0e4f487820551b8eef8d66be6133fa/lesson_5_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_1.py</span></code></a></strong> file and save it in your lesson folder. Below is its code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/7c0e4f487820551b8eef8d66be6133fa/lesson_5_ex_1.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_1.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in the comments and use your Python knowledge to create a password checker. Remember to apply the DRY principle</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Amy&#39;s security guard program</span>
 <span class="linenos">2</span>
 <span class="hll"><span class="linenos">3</span><span class="c1">######################################################</span>
@@ -968,12 +1080,13 @@
 </span><span class="hll"><span class="linenos">7</span><span class="c1">######################################################</span>
 </span></pre></div>
 </div>
-<p>Follow the instructions in the comments and use your Python knowledge to create a password checker. Remember to apply the DRY principle</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/31a6ef53ac0d32cdaaff2686c30998b4/lesson_5_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_2.py</span></code></a></strong> file and save it in your lesson folder. Below is its code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/31a6ef53ac0d32cdaaff2686c30998b4/lesson_5_ex_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_2.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in the comments and use your Python knowledge to create an enhanced password checker. Remember to apply the DRY principle</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Amy&#39;s security guard program</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="n">friends</span> <span class="o">=</span> <span class="s2">&quot;Bruce&quot;</span>
@@ -986,12 +1099,13 @@
 </span><span class="hll"><span class="linenos">10</span><span class="c1">######################################################</span>
 </span></pre></div>
 </div>
-<p>Follow the instructions in the comments and use your Python knowledge to create an enhanced password checker. Remember to apply the DRY principle</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/ffa7c2e617b5d1711711cd7e0e2bec69/lesson_5_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_3.py</span></code></a></strong> file and save it in your lesson folder. Below is its code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/ffa7c2e617b5d1711711cd7e0e2bec69/lesson_5_ex_3.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_3.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in the comments (check <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">41</span></code>) and use your Python knowledge to enhance our shape drawing code. Remember to apply the DRY principle.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1">#####################################################</span>
@@ -1052,56 +1166,57 @@
 <span class="linenos">58</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Follow the instructions in the comments (check <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">41</span></code>) and use your Python knowledge to enhance our shape drawing code. Remember to apply the DRY principle.</p>
+</div>
 </section>
 </section>
 <section id="part-2-while-loop">
 <h2>Part 2: While Loop<a class="headerlink" href="#part-2-while-loop" title="Link to this heading">¶</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A9j7N6kLL1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><a class="reference external" href="https://youtu.be/A9j7N6kLL1U">Video link</a></p>
-<p>In Python we have two forms of iteration. We have already looked at the for loop. In the section we will look at the other iteration control structure, the while loop.</p>
-<p>The two types of loops map to two different types of iteration:</p>
+<p>In Python, there are two types of loops.
+We have already used the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Now we will learn about the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<p>These two loops match two different ways of repeating code:</p>
 <ul class="simple">
 <li><p><strong>definite iteration</strong></p>
 <ul>
-<li><p>Is used when you <strong>do know</strong> how many times the loop will need to run.</p></li>
-<li><p>definite iteration uses <code class="docutils literal notranslate"><span class="pre">for</span></code> loops since they loop for a set number of times.</p></li>
+<li><p>used when you <strong>know</strong> how many times the loop will run</p></li>
+<li><p>uses a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop because it runs a set number of times</p></li>
 </ul>
 </li>
 <li><p><strong>indefinite iteration</strong></p>
 <ul>
-<li><p>Is used when you <strong>don’t know</strong> how many times the loop will need to run.</p></li>
-<li><p>indefinite iteration uses <code class="docutils literal notranslate"><span class="pre">while</span></code> loops since they will loop as long as the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>used when you <strong>don’t know</strong> how many times the loop will run</p></li>
+<li><p>uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop because it keeps going while something is <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p>Card dealing is a good analogy of the definite and indefinite loops distinction:</p>
+<p><strong>Example using card games:</strong></p>
 <ul class="simple">
-<li><p>Dealing for Uno:</p>
+<li><p>Dealing cards in Uno:</p>
 <ul>
-<li><p>How many cards does each player get?</p></li>
-<li><p>The rules say seven.</p></li>
-<li><p>So, we need to deal around the players seven times.</p></li>
-<li><p>This is <strong>definite</strong> iteration as you know how many times you have to go around the group.</p></li>
+<li><p>each player gets 7 cards</p></li>
+<li><p>you deal cards 7 times</p></li>
+<li><p>this is <strong>definite</strong> iteration</p></li>
 </ul>
 </li>
-<li><p>Dealing for Snap:</p>
+<li><p>Dealing cards in Snap:</p>
 <ul>
-<li><p>How many cards does each player get?</p></li>
-<li><p>Depends on how many players, you need to keep going until you have dealt the whole deck.</p></li>
-<li><p>This <strong>indefinite</strong> iteration as you will need to go around the group While there are still cards left in the deck.</p></li>
+<li><p>you don’t know how many cards each player will get</p></li>
+<li><p>you keep dealing until the deck is empty</p></li>
+<li><p>this is <strong>indefinite</strong> iteration</p></li>
 </ul>
 </li>
 </ul>
-<p>In summary:</p>
+<p><strong>Summary:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop is count controlled → we know how many times to run it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop is condition controlled → we don’t know how many times to run it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop → runs a set number of times (count controlled)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop → runs until a condition changes (condition controlled)</p></li>
 </ul>
 <p>To understand <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, let’s look at a number guessing game.</p>
 <section id="number-guessing-game">
 <h3>Number guessing game<a class="headerlink" href="#number-guessing-game" title="Link to this heading">¶</a></h3>
-<p>Download the <strong><a class="reference download internal" download="" href="_downloads/65125b7873bd896113b2ee33849a46f7/lesson_5_pt_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_pt_2.py</span></code></a></strong> file and save it in your lesson folder. Below is its code.</p>
+<p>Download the <strong><a class="reference download internal" download="" href="_downloads/65125b7873bd896113b2ee33849a46f7/lesson_5_pt_2.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_pt_2.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -1124,55 +1239,76 @@
 <span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect. The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
-<li><p>Let’s <strong>investigate</strong> that code.</p></li>
+<li><p><strong>Predict</strong> what you think will happen when you run the code</p></li>
+<li><p><strong>Run</strong> the code</p></li>
+<li><p>Did it do what you thought it would do?</p></li>
 </ul>
+</div>
 <div class="admonition-what-is-the-random-module admonition">
 <p class="admonition-title">What is the random module?</p>
-<p>The <strong>random</strong> module gives us access to a range of functions that produce random results.</p>
-<p>To see all the commands, you can go the <a class="reference external" href="https://www.w3schools.com/python/module_random.asp"><strong>W3Schools Python Random Module page</strong></a>.</p>
+<p>The <strong>random</strong> module lets Python create random results.</p>
+<p>It includes different tools (functions) you can use to get random values.</p>
+<p>To see all the available functions, visit the <a class="reference external" href="https://www.w3schools.com/python/module_random.asp"><strong>W3Schools Python Random Module page</strong></a>.</p>
 </div>
-<p>Code breakdown:</p>
+<div class="note admonition">
+<p class="admonition-title">Investigate - Code breakdown</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code></p>
 <ul>
-<li><p>We will be using the random function called <code class="docutils literal notranslate"><span class="pre">randint</span></code>, so we need to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>.</p></li>
+<li><p>we need this so we can use random number tools</p></li>
+<li><p>we will use a function called <code class="docutils literal notranslate"><span class="pre">randint</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code> are the same <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function we have used previously.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code></p>
+<ul>
+<li><p>this is the same <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function you used before</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">13</span></code>: <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">random.randint(1,100)</span></code></p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">random.randint(1,100)</span></code></p>
 <ul>
-<li><p>use the <code class="docutils literal notranslate"><span class="pre">randint</span></code> function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module</p></li>
-<li><p>generate a random integer between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code> (inclusive)</p></li>
+<li><p>picks a random whole number between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+<li><p>both <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code> are included</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span></code> → assign the returned integer to the variable <code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span></code></p>
+<ul>
+<li><p>stores that random number in the variable <code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">15</span></code>: <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">get_number(&quot;Guess</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">between</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">100&gt;</span> <span class="pre">&quot;)</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_number(&quot;Guess</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">between</span> <span class="pre">1</span> <span class="pre">and</span> <span class="pre">100&gt;</span> <span class="pre">&quot;)</span></code> → calls the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function to ask the user for a number</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span></code> → assigns the returned integer to the variable <code class="docutils literal notranslate"><span class="pre">guess</span></code></p></li>
+<li><p>asks the user to guess a number</p></li>
+<li><p>uses the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function to make sure it is valid</p></li>
+<li><p>stores the result in <code class="docutils literal notranslate"><span class="pre">guess</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">17</span></code>: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">guess</span> <span class="pre">==</span> <span class="pre">number:</span></code></p>
 <ul>
-<li><p>checks if the user’s guess and the random number are the same</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">==</span></code> symbol is a <strong>comparison operator</strong> (see below). It checks if two values are the same</p></li>
-<li><p>if the two values are the same → run the code block on <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">16</span></code></p></li>
+<li><p>checks if the guess is the same as the random number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> means “is equal to”</p></li>
+<li><p>this is a <strong>comparison operator</strong></p></li>
+<li><p>if they are the same, the code inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> will run</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code> → if the user’s guess and the random number are not the same → run the code block on <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">18</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">19</span></code>: <code class="docutils literal notranslate"><span class="pre">else:</span></code></p>
+<ul>
+<li><p>runs if the guess is <strong>not</strong> the same as the random number</p></li>
+<li><p>the code inside <code class="docutils literal notranslate"><span class="pre">else</span></code> will run instead</p></li>
 </ul>
+</li>
+</ul>
+</div>
 <div class="admonition-comparison-operators admonition">
 <p class="admonition-title">Comparison operators</p>
-<p>A <strong>comparison operator</strong> compares two values and returns either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>Python’s condition testing uses many comparison operators:</p>
+<p>A <strong>comparison operator</strong> compares two values and gives back either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Python uses these comparison operators:</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1182,10 +1318,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
-<td><p>checks if two values are the same (equal to)</p></td>
+<td><p>checks if two values are the same</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
-<td><p>checks if two values are not the same (not equal to)</p></td>
+<td><p>checks if two values are different</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
 <td><p>checks if the left value is greater than the right value</p></td>
@@ -1203,16 +1339,20 @@
 </table>
 </div>
 </div>
+</section>
 <hr class="docutils" />
-<p>So, we’ve made a simple game, but it is not a good one. A one-in-one-hundred chance of guessing a number is not going to keep the user entertained for too long. How about we adjust the code to allow the user to have ten guesses?</p>
-<p>Now that sounds like iteration, but what kind? Since we know how many times this will need to loop (10), it’s definite iteration. Definite iteration requires a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
-<p>Change your code so it looks like the code below. Specifically:</p>
+<section id="better-game">
+<h3>Better game<a class="headerlink" href="#better-game" title="Link to this heading">¶</a></h3>
+<p>Right now, the game only gives you one guess, so it’s not very fun.</p>
+<p>Let’s improve it by giving the player <strong>10 guesses</strong>.</p>
+<p>This means the code needs to repeat something. That is called <strong>iteration</strong>.</p>
+<p>Which type of iteration is it?</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">15</span></code> → provide user instructions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">23</span></code> → place the guessing process within a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> → make sure you remove the number reveal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">25</span></code> → reveal the number after all 10 guesses have finished</p></li>
+<li><p>we <strong>know</strong> how many times it will run (10 times)</p></li>
+<li><p>so this is <strong>definite iteration</strong></p></li>
+<li><p>definite iteration uses a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></li>
 </ul>
+<p>Update your code so it matches the example below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -1240,15 +1380,36 @@
 <span class="hll"><span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your prediction?</p></li>
-<li><p>We won’t worry about <strong>investigating</strong> as there is nothing new in this code.</p></li>
+<li><p><strong>Predict</strong> what you think will happen when you run the code</p></li>
+<li><p><strong>Run</strong> the code</p></li>
+<li><p>Did it do what you thought it would do?</p></li>
 </ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate - Code breakdown</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">15</span></code> → add instructions to tell the user they have 10 guesses</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">17</span></code> to <code class="docutils literal notranslate"><span class="pre">23</span></code> → put the guessing code inside a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop so it runs 10 times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">23</span></code> → remove the part that shows the number too early</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">25</span></code> → show the number <strong>after</strong> all 10 guesses are finished</p></li>
+</ul>
+</div>
+</section>
 <hr class="docutils" />
-<p>This is better, but still isn’t great. There is a one-in-ten chance of getting the right number. Each guess is a stab in the dark with no knowledge gained from the previous guesses. How about we give the user hints and let them know that their guess is too high or too low?</p>
-<p>Change the <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement into the <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement on <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code> in the code below:</p>
+<section id="even-better-game">
+<h3>Even Better Game<a class="headerlink" href="#even-better-game" title="Link to this heading">¶</a></h3>
+<p>This version is better, but it is still not very fun.</p>
+<p>Each guess is random, and the player doesn’t learn anything from previous guesses.</p>
+<p>Let’s improve it by giving hints:</p>
+<ul class="simple">
+<li><p>tell the user if their guess is <strong>too high</strong></p></li>
+<li><p>or <strong>too low</strong></p></li>
+</ul>
+<p>To do this, change the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code> into an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">elif</span> <span class="pre">...</span> <span class="pre">else</span></code> on <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">20</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code>.</p>
+<p>This will let the program give different feedback depending on the guess.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -1278,30 +1439,54 @@
 <span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We’ve done a fair bit of coding without any serious testing. So this time lets keep running our code until we cover all four branches:</p>
+<p>We’ve written a lot of code, so now we need to test it properly.</p>
+<p>Run your program multiple times until you see all four outcomes:</p>
 <ol class="arabic simple">
-<li><p>guess is too high</p></li>
-<li><p>guess is too low</p></li>
-<li><p>guess is correct</p></li>
-<li><p>all 10 guess used up without guessing the number</p></li>
+<li><p>the guess is too high</p></li>
+<li><p>the guess is too low</p></li>
+<li><p>the guess is correct</p></li>
+<li><p>all 10 guesses are used and the number is still not found</p></li>
 </ol>
-<p>This might be easier to do if we know the random number. Feel free to add a line that prints the random number, but make sure you comment it out after testing.</p>
-<p>PRIMM</p>
+<p>To make testing easier, you can temporarily show the random number:</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
-<li><p>We won’t worry about <strong>investigating</strong> as there is nothing new in this code.</p></li>
+<li><p>add a line to print the number</p></li>
+<li><p>once you finish testing, comment that line out so it doesn’t show during normal use</p></li>
 </ul>
-<p>Did you identify a problem when the user guesses the number before using all ten guesses? The game prints <code class="docutils literal notranslate"><span class="pre">Correct!</span></code> but then continues to ask them to guess numbers. This is because we created a definite iteration using <code class="docutils literal notranslate"><span class="pre">for</span></code> which is set to always give ten guesses.</p>
-<p>What we want is an indefinite iteration that loops until the user guesses the number. To do this we will use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
+<ul class="simple">
+<li><p><strong>Predict</strong> what you think will happen when:</p>
+<ol class="arabic simple">
+<li><p>the guess is too high</p></li>
+<li><p>the guess is too low</p></li>
+<li><p>the guess is correct</p></li>
+<li><p>all 10 guesses are used and the number is still not found</p></li>
+</ol>
+</li>
+<li><p>Then <strong>run</strong> the code</p></li>
+<li><p>Did it do what you thought it would do?</p></li>
+</ul>
+</div>
+<p>Did you notice the problem?</p>
+<p>When the user guesses the correct number, the game says <code class="docutils literal notranslate"><span class="pre">Correct!</span></code>…
+but it keeps asking for more guesses.</p>
+<p>This happens because we used a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.
+A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop will always run a set number of times (in this case, 10), no matter what.</p>
+<p>What we actually want is for the game to <strong>stop as soon as the correct number is guessed</strong>.</p>
+<p>This means we need a different type of loop:</p>
+<ul class="simple">
+<li><p>one that keeps going <strong>until something happens</strong></p></li>
+</ul>
+<p>This is called <strong>indefinite iteration</strong>, and we use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop for this.</p>
 </section>
 <hr class="docutils" />
 <section id="using-a-while-loop">
 <h3>Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#using-a-while-loop" title="Link to this heading">¶</a></h3>
-<p>Change your code so it is the same as the code below. Specifically:</p>
+<p>Update your code so it matches the example below.</p>
+<p>Make these changes:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">15</span></code> → add <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">17</span></code> → change the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement to <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number:</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">17</span></code> → change the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number:</span></code></p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="linenos"> 2</span>
@@ -1332,55 +1517,70 @@
 <span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Again you want to run this code enough time that you have covered all four possible branches:</p>
-<ol class="arabic simple">
-<li><p>guess is too high</p></li>
-<li><p>guess is too low</p></li>
-<li><p>guess is correct</p></li>
-<li><p>all 10 guess used up without guessing the number</p></li>
-</ol>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
-<li><p>Let’s <strong>investigating</strong> the new code to see how a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works.</p></li>
+<li><p><strong>Predict</strong> what you think will happen when:</p>
+<ol class="arabic simple">
+<li><p>the guess is too high</p></li>
+<li><p>the guess is too low</p></li>
+<li><p>the guess is correct</p></li>
+<li><p>all 10 guesses are used and the number is still not found</p></li>
+</ol>
+</li>
+<li><p>Then <strong>run</strong> the code</p></li>
+<li><p>Did it do what you thought it would do?</p></li>
 </ul>
-<p>Code breakdown:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> the new code to understand how a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works.</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">17</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number:</span></code></p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> → this is the loop condition</p></li>
-<li><p>It tests if <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> are the same:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> → this is the <strong>condition</strong> for the loop</p></li>
+<li><p>it checks if the guess is different from the number</p>
 <ul>
-<li><p>It will return <code class="docutils literal notranslate"><span class="pre">True</span></code> when <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> are <strong>not</strong> the same.</p></li>
-<li><p>It will return <code class="docutils literal notranslate"><span class="pre">False</span></code> when <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code> are the same.</p></li>
+<li><p>returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when they are <strong>not the same</strong></p></li>
+<li><p>returns <code class="docutils literal notranslate"><span class="pre">False</span></code> when they are the same</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> tells Python to loop the following code block if the loop condition returns <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> tells Python to keep repeating the code below <strong>while the condition is True</strong></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">15</span></code>: <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
 <ul>
-<li><p>In our <code class="docutils literal notranslate"><span class="pre">while</span></code> statement we use the variable <code class="docutils literal notranslate"><span class="pre">guess</span></code> before getting an input from the user → this will raise an error.</p></li>
-<li><p>We need to assign value to <code class="docutils literal notranslate"><span class="pre">guess</span></code> before the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement</p>
+<li><p>the variable <code class="docutils literal notranslate"><span class="pre">guess</span></code> is used in the <code class="docutils literal notranslate"><span class="pre">while</span></code> condition before the user enters anything</p></li>
+<li><p>if we don’t give it a value first, the program will crash</p></li>
+<li><p>we need to give <code class="docutils literal notranslate"><span class="pre">guess</span></code> a starting value before the loop</p></li>
+<li><p>this starting value must <strong>not</strong> be the same as the random number</p>
 <ul>
-<li><p>The problem is the value we assign to <code class="docutils literal notranslate"><span class="pre">guess</span></code> cannot be the same as the value assigned to <code class="docutils literal notranslate"><span class="pre">number</span></code>. If it is, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will not run at all, and the user will not provide input.</p></li>
-<li><p>To solve this, we assign <code class="docutils literal notranslate"><span class="pre">0</span></code> because it is outside the range of <code class="docutils literal notranslate"><span class="pre">random.randint</span></code> (1-100).</p></li>
-<li><p>This way, <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> will always return <code class="docutils literal notranslate"><span class="pre">True</span></code> the first time the condition is tested.</p></li>
+<li><p>if it is the same, the loop will not run at all</p></li>
+</ul>
+</li>
+<li><p>we use <code class="docutils literal notranslate"><span class="pre">0</span></code> because the random number is between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">100</span></code></p>
+<ul>
+<li><p>this guarantees <code class="docutils literal notranslate"><span class="pre">guess</span> <span class="pre">!=</span> <span class="pre">number</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> the first time</p></li>
+<li><p>so the loop will run and ask the user for input</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>Code flowchart:</p>
+<p><strong>Code flowchart:</strong></p>
 <p><img alt="flowchart lesson 5 6" src="_images/flowchart_lesson_5_6.png" /></p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="using-while-to-enhance-our-error-capture">
 <h3>Using <code class="docutils literal notranslate"><span class="pre">while</span></code> to enhance our error capture<a class="headerlink" href="#using-while-to-enhance-our-error-capture" title="Link to this heading">¶</a></h3>
-<p>We now have a somewhat fun game where the user has a good chance of guessing the number. We can also use <code class="docutils literal notranslate"><span class="pre">while</span></code> to improve our error capture in the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function.</p>
-<p>At the moment, if the user provides an input which isn’t an integer, the game ends. This is a bit harsh, especially if they have already made three or four guesses.</p>
-<p>Adjust your <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function so that it is the same as in the code below.</p>
+<p>The game is better now, but there is still a problem.</p>
+<p>If the user types something that is not a number, the game ends straight away.
+This is not very user-friendly, especially if they have already made a few guesses.</p>
+<p>We can fix this by using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop inside the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function.</p>
+<p>This will keep asking the user for input <strong>until they enter a valid number</strong>.</p>
+<p>Update your <code class="docutils literal notranslate"><span class="pre">get_number</span></code> function so it matches the code shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -1410,49 +1610,72 @@
 <span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Again you want to run this code enough time that you have covered all four possible branches:</p>
-<ol class="arabic simple">
-<li><p>guess is too high</p></li>
-<li><p>guess is too low</p></li>
-<li><p>guess is correct</p></li>
-<li><p>all 10 guess used up without guessing the number</p></li>
-</ol>
-<p>PRIMM</p>
+<div class="note admonition">
+<p class="admonition-title">Predict and Run</p>
 <ul class="simple">
-<li><p><strong>Predict</strong> what you think will happen when you run the code:</p></li>
-<li><p><strong>Run</strong> the code. Did it follow your predictions?</p></li>
-<li><p>Let’s <strong>investigating</strong> the new code to see how this use of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works</p></li>
+<li><p><strong>Predict</strong> what you think will happen when:</p>
+<ol class="arabic simple">
+<li><p>the guess is too high</p></li>
+<li><p>the guess is too low</p></li>
+<li><p>the guess is correct</p></li>
+<li><p>you eneter a non-number value</p></li>
+</ol>
+</li>
+<li><p>Then <strong>run</strong> the code</p></li>
+<li><p>Did it do what you thought it would do?</p></li>
 </ul>
-<p>Code breakdown:</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Investigate</p>
+<p>Let’s <strong>investigate</strong> the new code to understand how this <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works.</p>
+<p><strong>Code breakdown:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">5</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code></p>
 <ul>
-<li><p>This is called an <strong>infinite loop</strong>, since the condition will always be <code class="docutils literal notranslate"><span class="pre">True</span></code>, the loop will always run.</p></li>
-<li><p>Infinite loops are frequently cause by errors, although not in this case.</p></li>
-<li><p>Infinite loops can be ‘broken out’ of by using the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement.</p></li>
-<li><p>If the Infinite loop is in a function, it can also be ‘broken out’ of by using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">6</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code> are the same as before, except they form a code block inside of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p></li>
-<li><p>It is worth noting the importance of <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code>.</p>
+<li><p>this is called an <strong>infinite loop</strong> because the condition is always <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>this means the loop will keep running forever</p></li>
+<li><p>usually this is a mistake, but here we are using it on purpose</p></li>
+<li><p>we can stop the loop by using:</p>
 <ul>
-<li><p>Since the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is infinite, the program will keep asking for input until it executes <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> the value assigned to <code class="docutils literal notranslate"><span class="pre">num</span></code> is converted into an integer and then returned to the main program</p></li>
-<li><p>In this situation the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement ends the function. In ending the function, it also exits the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code> → exits the loop</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> → exits the function (which also stops the loop)</p></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lines</span> <span class="pre">6</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code></p>
+<ul>
+<li><p>these lines are the same as before</p></li>
+<li><p>they now sit inside the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, so they repeat</p></li>
+</ul>
+</li>
+<li><p>Important part (<code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">8</span></code>):</p>
+<ul>
+<li><p>the loop will keep asking for input again and again</p></li>
+<li><p>it only stops when the user enters a valid number</p></li>
+<li><p>when the input is valid:</p>
+<ul>
+<li><p>the value is turned into an integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> sends it back to the main program</p></li>
+<li><p>the function ends, which also stops the loop</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This means the program will <strong>keep asking until the user gets it right</strong>, instead of crashing.</p>
 <p>Code flowchart:</p>
 <p><img alt="flowchart lesson 5 7" src="_images/flowchart_lesson_5_7.png" /></p>
-<p>The end effect of these changes is the program that will ask the user for a number until the user enters an integer.</p>
-</section>
+</div>
 </section>
 <section id="part-2-exercise">
-<h2>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Link to this heading">¶</a></h2>
+<h3>Part 2 Exercise<a class="headerlink" href="#part-2-exercise" title="Link to this heading">¶</a></h3>
 <p>In this course, the exercises are the <strong>make</strong> component of the PRIMM model. So work through the following exercises and make your own code.</p>
-<section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">¶</a></h3>
-<p>Download <strong><a class="reference download internal" download="" href="_downloads/81947805ed120eb1aa3acb4f391158c2/lesson_5_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_4.py</span></code></a></strong> file and save it in your lesson folder. Below is its code.</p>
+<div class="question admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Download <strong><a class="reference download internal" download="" href="_downloads/81947805ed120eb1aa3acb4f391158c2/lesson_5_ex_4.py"><code class="xref download docutils literal notranslate"><span class="pre">lesson_5_ex_4.py</span></code></a></strong> file and save it in your lesson folder.</p>
+<p>Follow the instructions in comments and make changes to the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> and <code class="docutils literal notranslate"><span class="pre">get_colour</span></code> functions so they capture user input errors.</p>
+<p>The starting code is shown below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>
@@ -1525,7 +1748,7 @@
 <span class="linenos">70</span><span class="n">draw_poly</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Follow the instructions in comments and make changes to the <code class="docutils literal notranslate"><span class="pre">get_number</span></code> and <code class="docutils literal notranslate"><span class="pre">get_colour</span></code> functions so they capture user input errors.</p>
+</div>
 </section>
 </section>
 </section>
@@ -1595,31 +1818,25 @@
 <li><a class="reference internal" href="#">Python Turtle - Lesson 5</a><ul>
 <li><a class="reference internal" href="#part-1-branching">Part 1: Branching</a><ul>
 <li><a class="reference internal" href="#branching-control-structure">Branching control structure</a></li>
-<li><a class="reference internal" href="#the-if-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a><ul>
-<li><a class="reference internal" href="#flowcharts">Flowcharts</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#showing-variable-types">Showing variable types</a></li>
+<li><a class="reference internal" href="#the-if-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
 <li><a class="reference internal" href="#the-if-else-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</a></li>
-<li><a class="reference internal" href="#using-if-else-to-capture-errors">Using <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> to capture errors</a></li>
 <li><a class="reference internal" href="#refactor-code-dry">Refactor Code - DRY</a></li>
 <li><a class="reference internal" href="#playing-with-colour">Playing with colour</a></li>
-<li><a class="reference internal" href="#the-if-elif-else-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</a></li>
+<li><a class="reference internal" href="#the-if-elif-else-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> statement</a><ul>
+<li><a class="reference internal" href="#if-elif-else-structure">if…elif…else structure</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#part-1-exercises">Part 1 Exercises</a><ul>
-<li><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
-<li><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
-<li><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+<li><a class="reference internal" href="#part-1-exercises">Part 1 Exercises</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#part-2-while-loop">Part 2: While Loop</a><ul>
 <li><a class="reference internal" href="#number-guessing-game">Number guessing game</a></li>
+<li><a class="reference internal" href="#better-game">Better game</a></li>
+<li><a class="reference internal" href="#even-better-game">Even Better Game</a></li>
 <li><a class="reference internal" href="#using-a-while-loop">Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 <li><a class="reference internal" href="#using-while-to-enhance-our-error-capture">Using <code class="docutils literal notranslate"><span class="pre">while</span></code> to enhance our error capture</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#part-2-exercise">Part 2 Exercise</a><ul>
-<li><a class="reference internal" href="#exercise-4">Exercise 4</a></li>
+<li><a class="reference internal" href="#part-2-exercise">Part 2 Exercise</a></li>
 </ul>
 </li>
 </ul>

@@ -4,7 +4,7 @@
 
 sphinx-autobuild .  _build/html
 
-Download {download}`lesson_6_ex_3.py<./python_files/lesson_6_ex_3.py>` file and save it in your lesson folder. Below is its code.
+Download {download}`lesson_6_ex_3.py<./python_files/lesson_6_ex_3.py>` file and save it in your lesson folder. The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_6_ex_3.py
 :linenos:

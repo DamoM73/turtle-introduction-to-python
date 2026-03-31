@@ -482,7 +482,7 @@ In this course, the exercises are the **make** component of the PRIMM model. So 
 
 ````{question} Exercise 1
 
-Download **{download}`lesson_2_ex_1.py<./python_files/lesson_2_ex_1.py>`** file and save it in your lesson folder. Below is its code.
+Download **{download}`lesson_2_ex_1.py<./python_files/lesson_2_ex_1.py>`** file and save it in your lesson folder. The starting code is shown below:
 
 After `line 9`, follow the comment and write code to draw a square, but only use **3 lines**.
 

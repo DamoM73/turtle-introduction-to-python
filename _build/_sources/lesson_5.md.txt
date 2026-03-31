@@ -1,13 +1,12 @@
 # Python Turtle - Lesson 5
 
 ```{topic} In this lesson you will learn:
-
-- how to capturing errors
-- what are branching control structures (`if` statements)
-- how and when to use `if` ... `elif` ... `else` in Python
-- the difference between definite and indefinite iteration
-- how and when to use `where` loops in Python
-- how to generate random numbers in Python
+* how to find and understand errors in your code
+* what decision-making code is (`if` statements)
+* how and when to use `if`, `elif`, and `else` in Python
+* the difference between loops that run a set number of times and loops that keep going until something happens
+* how and when to use `while` loops in Python
+* how to make Python pick random numbers
 ```
 
 ## Part 1: Branching
@@ -18,32 +17,47 @@
 
 ### Branching control structure
 
-The branching control structure allows the program's flow it take alternative paths. Let's use a practical example to better understand this. 
+Branching lets your program choose between different paths, depending on what is happening.
 
-We're going to use the **lesson_4_pt_2.py** file. You can either save it as **lesson_5_pt_1a.py** or download and use the **{download}`lesson_5_pt_1a.py<./python_files/lesson_5_pt_1a.py>`** file.
+To understand this, let’s look at a real example.
+
+We are going to use the file called **lesson_4_pt_2.py**. You can either:
+
+* save your old file as a copy called **lesson_5_pt_1a.py**, or
+* download the **{download}`lesson_5_pt_1a.py<./python_files/lesson_5_pt_1a.py>`** file instead.
 
 ```{literalinclude} ./python_files/lesson_5_pt_1a.py
 :linenos:
 ```
 
-Run the program, and at the prompt, instead of providing a number, provide a word, for example `dog`.
+Run the program.
 
-This will raise the following error:
+When it asks you to enter a number, type the word `dog`.
 
-```{code-block}
+This will cause an error below to happen.
+
+
+```{code-block} error
 :linenos:
 Traceback (most recent call last):
   File "<string>", line 19, in <module>
 ValueError: invalid literal for int() with base 10: 'dog'
 ```
 
-This error occurs because in `line 19` we are trying to convert the literal (string) `dog` into an integer. Since `dog` is not a whole number, it causes an error.
+This error happens because on `line 19`, the program is trying to turn the word `dog` into a number.
 
-What we need to do is check that user has entered a whole number before converting it into an integer.
+But `dog` is not a number, so Python doesn’t know how to convert it, and the program crashes.
+
+To fix this, we need to check that the user has typed a whole number **before** we try to convert it into an integer.
 
 ---
 
-Create a new file in, enter the code below then save it as **lesson_5_pt_1b.py**.
+### Showing variable types
+
+Create a new file.
+
+Type in the code shown below, then save the file as **lesson_5_pt_1b.py**.
+
 
 ```{code-block} python
 :linenos:
@@ -52,27 +66,47 @@ user_value = input("Enter a number: ")
 print(user_value.isdigit())
 ```
 
-PRIMM:
+```{note} Predict
+**Predict** what you think will happen when you run the code two times:
 
-- **Predict** what you think will happen when you run the code twice:
-  - first time enter the value `10`
-  - second time enter the value `dog`
-- **Run** the code. Did it follow your predictions?
-- Let's **investigate** that code.
+* first time, type `10`
+* second time, type `dog`
+```
 
-Remember that Python inputs are strings. Strings have special operations called **methods**. One of those is the `isdigit` method. `isdigit` returns the Boolean value of `True` if all the characters in a string are digits.
+```{note} Run
+**Run** the code.
+
+Did it do what you thought it would do?
+```
+
+```{note} Investigate
+Let’s **investigate** the code.
+
+Remember, anything you type into Python using `input` is treated as text (a string).
+
+Strings have built-in tools called **methods** that help us work with them.
+
+One of these methods is called `isdigit`.
+
+The `isdigit` method checks if all the characters in a string are numbers.
+
+* It returns `True` if they are all digits
+* It returns `False` if they are not
+```
 
 ```{hint} String Methods
 Python has many useful string methods. If you want to explore them [**W3Schools' Python String Methods**](https://www.w3schools.com/python/python_ref_string.asp) is a good place to start.
 ```
 
-We can tell if the user's input is a number or not. Now we need to tell the computer how to respond to this information.
+Now we can check if the user has typed a number or not.
+
+Next, we need to tell the computer what to do based on that result.
 
 ---
 
 ### The `if` statement
 
-Adjusts your  **lesson_5_pt_1b.py** code so it is the same as the code below.
+Change your **lesson_5_pt_1b.py** code so it matches the code below.
 
 ```{code-block} python
 :linenos:
@@ -83,48 +117,71 @@ if user_value.isdigit():
     print("That's a number")
 ```
 
-PRIMM
+```{note} Predict
+**Predict** what you think will happen when you run the code two times:
 
-- **Predict** what you think will happen when you run the code twice:
-  - first time enter the value `10`
-  - second time enter the value `dog`
-- **Run** the code. Did it follow your prediction?
+* first time, type `10`
+* second time, type `dog`
+```
+
+```{note} Run
+**Run** the code.
+
+Did it do what you thought it would do?
+```
+
+```{note} Investigate
 - Let's **investigate** that code.
 
-#### Flowcharts
+**Flowcharts**
 
-Flowcharts are great at demonstrating how selection works. We have already used the condition symbol (diamond) in our `for` loops. They are also used for the conditions in `if` statements.
+Flowcharts are useful for showing how a program makes decisions.
+
+We have already used the diamond shape (called a condition) in our `for` loops.
+
+The same diamond shape is also used to show the conditions in `if` statements.
 
 Code flowchart:
 
 ![flowchart lesson 5 1](assets/flowchart_lesson_5_1.png)
 
-Code breakdown:
+**Code breakdown:**
 
-- `Line 3`: `if user_value.isdigit():`
-  - This defines the `if` statement.
-  - The `if` tells Python that this is an `if` statement.
-  - The next part is called a **conditional**.
-    - Conditionals are operations that return a Boolean value (`True` or `False`).
-    - This specific **conditional** is `user_value.isdigit()`
-    - We already know the results from our previous work:
-      - `10` &rarr; `True`
-      - `dog` &rarr; `False`
-  - Ends with `:`
-    - This has the same use as `for` loops and functions. It indicates that an indented code block follows.
-  - The indented code block, will only run if the condition returns `True`. In our example:
-    - `10` &rarr; `user_value.isdigit()` returns `True` &rarr; run indented code block
-    - `dog` &rarr; `user_value.isdigit()` returns `False` &rarr; don't run indented code block
-- `Line 4`: `print("That's a number")`
-  - This is the indented code block that will run if `user_value.isdigit()` is `True`
+* `Line 3`: `if user_value.isdigit():`
 
-We can now respond to a digit being entered. But what if we want to provide a different response when `user_value.isdigit()` is `False`?
+  * This is an `if` statement.
+  * `if` tells Python to make a decision.
+  * The next part is called a **condition**.
+
+    * A condition checks something and gives back either `True` or `False`.
+    * Here, the condition is `user_value.isdigit()`
+    * From earlier:
+
+      * `10` → `True`
+      * `dog` → `False`
+  * The line ends with `:`
+
+    * This tells Python that the next lines will be part of this `if` statement.
+  * The indented code underneath will only run if the condition is `True`:
+
+    * `10` → `True` → run the indented code
+    * `dog` → `False` → skip the indented code
+
+* `Line 4`: `print("That's a number")`
+
+  * This line is inside the `if` statement (because it is indented).
+  * It only runs if `user_value.isdigit()` is `True`
+```
+
+Right now, the program only does something when the input **is a number**.
+
+But what about when the input is **not a number**?
 
 ---
 
 ### The `if` ... `else` statement
 
-Adjust your **lesson_5_pt_1b.py** code by adding `lines 5` and `6` in the code below.
+Change your **lesson_5_pt_1b.py** code by adding `lines 5` and `6` shown below.
 
 ```{code-block} python
 :linenos:
@@ -137,35 +194,58 @@ else:
     print("That's not a number")
 ```
 
-PRIMM
+```{note} Predict
+**Predict** what you think will happen when you run the code two times:
 
-- **Predict** what you think will happen when you run the code twice:
-  - first time enter the value `10`
-  - second time enter the value `dog`
-- **Run** the code. Did it follow your prediction?
-- Let's **investigate** that code.
+* first time, type `10`
+* second time, type `dog`
+```
 
-Code flowchart:
+```{note} Run
+**Run** the code.
+
+Did it do what you thought it would do?
+```
+
+```{note} Investigate
+Let’s **investigate** the code.
+
+Here is the flowchart for the code:
 
 ![flowchart lesson 5 2](assets/flowchart_lesson_5_2.png)
 
-Code breakdown:
+**Code breakdown:**
 
-- `Lines 3` and `4` operate the same as the previous code.
-- `Line 5` - `else:`
-  - The `else` statement uses the `if` statement's condition.
-  - In this case, it says: if `user_value.isdigit()` is `False` then run the following indented code block.
-  - The `:` tells Python that an indented code block follows.
-- `Line 6` - `print("That's not a number")`
-  - This is the indented code block that will run if `user_value.isdigit()` is `False`
+* `Lines 3` and `4` work the same as before.
 
-To check out what is happening in detail stepping through the code with the **debugger**. Use the inputs of `10` and `dog`.
+* `Line 5` - `else:`
+
+  * The `else` is linked to the `if` statement.
+  * It runs when the `if` condition is `False`.
+  * In this case, it means: if `user_value.isdigit()` is `False`, run the code below.
+  * The `:` tells Python that an indented block of code is coming next.
+
+* `Line 6` - `print("That's not a number")`
+
+  * This line is inside the `else` block (because it is indented).
+  * It only runs when `user_value.isdigit()` is `False`
+
+To look at the code more closely, step through it using the **debugger**.
+
+Test it two times:
+
+* first, enter `10`
+* then, enter `dog`
+
+Watch what happens on each line as the program decides which path to follow.
 
 ---
 
 ### Using `if` ... `else` to capture errors
 
-Go back to **lesson_5_pt_1a.py** and adjust the code by replacing `line 19` with the following code:
+Go back to **lesson_5_pt_1a.py**.
+
+Change `line 19` so it matches the code shown below.
 
 ```{code-block} python
 :linenos:
@@ -178,7 +258,7 @@ else:
     quit()
 ```
 
-Your code should look like the code below:
+Your code should now look like the example shown below.
 
 ```{code-block} python
 :linenos:
@@ -214,9 +294,7 @@ size = input("Length of sides?> ")
 draw_poly(size, num_sides)
 ```
 
----
-
-Then replace `line 27` with this code:
+Then change `line 27` so it matches the code shown below.
 
 ```{code-block} python
 :linenos:
@@ -228,7 +306,7 @@ else:
     quit()
 ```
 
-Your code should look like the code below:
+Your code should now look like the example shown below.
 
 ```{code-block} python
 :linenos:
@@ -269,17 +347,20 @@ else:
 draw_poly(size, num_sides)
 ```
 
-Let's test this code to see if it works.
+Let’s test the code and check if it works.
 
-PRIMM
+```{note} Predict
+**Predict** what you think will happen when you run the code in these situations:
 
-- **Predict** what you think will happen when you run the code in the following scenarios:
-  - valid `sides` value and valid `size` value
-  - valid `sides` value and invalid `size` value
-  - invalid `sides` value and valid `size` value
-  - invalid `sides` value and invalid `size` value
-- **Run** the code. Did it follow your prediction?
-- Let's **investigate** that code.
+* valid `sides` value and valid `size` value
+* valid `sides` value and invalid `size` value
+* invalid `sides` value and valid `size` value
+* invalid `sides` value and invalid `size` value
+```
+
+```{note} Run
+**Run** the code. Did it do what you expected?
+```
 
 ```{hint} More testing tips
 - When testing branching code you need to test all possible paths.
@@ -287,60 +368,70 @@ PRIMM
 - This code had four possible branches so we needed to test all four of them
 ```
 
-Code flowchart:
+```{note} Investigate
+Let’s **investigate** the code.
+
+Here is the flowchart for the code:
 
 ![flowchart lesson 5 3](assets/flowchart_lesson_5_3.png)
 
-Code breakdown:
+**Code breakdown:**
 
-- `Line 19`: `# get user input` &rarr; a comment used to structure the code
-- `Line 20`: `num_sides = input("How many sides?> ")` &rarr; accepts user input and assigns it to `num_sides`
-- `Line 21`: `if num_sides.isdigit():` &rarr; tests if `num_sides` only contains numbers
-  - if `num_sides.isdigit()` is `True` then run the code block from `line 20`
-- `Line 22`: `num_sides = int(size)` takes the value assigned to `num_sides` converts it to an integer, then reassigns it to `num_sides`
-- `Line 23`: `else:` &rarr; if `num_sides` is not all numbers execute following code block (`lines 22` to `23`)
-- `Line 24`: `print("Invalid input")` &rarr; informs the user of their mistake
-- `Line 25`: `quit()` &rarr; exits the program
-- `Line 27`: `size = input("Length of sides?> ")` &rarr; accepts user input and assigns it to `size`
-- `Line 28`: `if size.isdigit():` &rarr; tests if `size` only contains numbers
-  - If `size.isdigit()` is `True` then run the code block from `line 27`
-- `Line 29`: `size = int(size)` takes the value assigned to `size` converts it to an integer, then reassigns it to `size`
-- `Line 30`: `else:` &rarr; if `size` is not all numbers execute following code block (`lines 29` to `30`)
-- `Line 31`: `print("Invalid input")` &rarr; informs the user of their mistake
-- `Line 32`: `quit()` &rarr; exits the program
+* `Line 19`: `# get user input` → a comment to help organise the code
+* `Line 20`: `num_sides = input("How many sides?> ")` → asks the user for input and stores it in `num_sides`
+* `Line 21`: `if num_sides.isdigit():` → checks if `num_sides` is made up of only numbers
+  * if this is `True`, the next indented lines will run
+* `Line 22`: `num_sides = int(num_sides)` → changes `num_sides` from text into a number
+* `Line 23`: `else:` → runs if `num_sides` is **not** a number
+* `Line 24`: `print("Invalid input")` → tells the user something went wrong
+* `Line 25`: `quit()` → stops the program
+* `Line 27`: `size = input("Length of sides?> ")` → asks the user for another input and stores it in `size`
+* `Line 28`: `if size.isdigit():` → checks if `size` is made up of only numbers
+  * if this is `True`, the next indented lines will run
+* `Line 29`: `size = int(size)` → changes `size` from text into a number
+* `Line 30`: `else:` → runs if `size` is **not** a number
+* `Line 31`: `print("Invalid input")` → tells the user something went wrong
+* `Line 32`: `quit()` → stops the program
+```
 
 ---
 
 ### Refactor Code - DRY
 
-Looking at our code, does it pass the DRY test?
+When we look at our code, it does **not** pass the DRY test.
 
-The `# get user input` section from `line 17` to `30` definitely has repetition in it. Twice the code:
+DRY means **Don’t Repeat Yourself**.
+Our `# get user input` section from `line 17` to `30` repeats the same pattern twice.
 
-1. asks the user for input
-2. checks if that input is all numbers
-3. either converts or quits the program depending on the `if` statement.
+Both parts of the code:
 
-During all this, the only parts of the code that differs are:
+1. ask the user for input
+2. check if the input is only numbers
+3. either change it into an integer or stop the program
 
-- `Line 20` and `27` the `input` prompt is different:
-  - `Line 20` &rarr; `"How many sides?> "`
-  - `Line 27` &rarr; `"Length of sides?> "`
-- in their respective sections different variable names are used:
-  - `Lines 20` to `25` &rarr; `num_sides`
-  - `Lines 27` to `32` &rarr; `size`
+The only things that change are:
 
-This looks like a prefect opportunity to **refactor** the code using a function.
+* the message shown to the user
+
+  * `Line 20` → `"How many sides?> "`
+  * `Line 27` → `"Length of sides?> "`
+* the variable name being used
+
+  * `Lines 20` to `25` → `num_sides`
+  * `Lines 27` to `32` → `size`
+
+This makes it a good chance to **refactor** the code by using a function.
 
 ```{admonition} What is refactoring?
+Refactoring means changing your code **without changing what it does**.
 
-Refactoring is changing your code **without changing the way it works**. This is normally done to make code more efficient or more maintainable.
+We do this to make the code better.
 
-- Efficient code uses less computing resources (processing power, storage, internet bandwidth etc.).
-- Maintainable code is easier for programmers to understand, fix, update and enhance.
+* **Efficient code** uses fewer resources (like processing power, storage, or internet).
+* **Maintainable code** is easier to read, understand, fix, and improve later.
 ```
 
-To refactor our code we need to add the following function at `line 10` of your code:
+To refactor our code, add the function shown below at `line 10` in your code.
 
 ```{code-block} python
 def get_number(prompt):
@@ -352,7 +443,9 @@ def get_number(prompt):
         quit()
 ```
 
-Then remove the code under `# get user input` from `lines 19` to `32`, and replace it with two calls to the function:
+Then delete the code under `# get user input` from `lines 19` to `32`.
+
+Replace it with two calls to the function instead.
 
 ```{code-block} python
 # get user input
@@ -360,7 +453,7 @@ num_sides = get_number("How many sides?> ")
 size = get_number("Length of sides?> ")
 ```
 
-In the end your code should look like the code below:
+At the end, your code should look like the example shown below.
 
 ```{code-block} python
 :linenos:
@@ -399,6 +492,7 @@ size = get_number("Length of sides?> ")
 draw_poly(size, num_sides)
 ```
 
+```{code} Run
 When you refactor code, it is important to ensure the code still works the same. So **run** the code to ensure that it still works the same way. 
 
 Remember to test all 4 possible branches:
@@ -407,60 +501,83 @@ Remember to test all 4 possible branches:
 - valid `sides` value and invalid `size` value
 - invalid `sides` value and valid `size` value
 - invalid `sides` value and invalid `size` value
+```
 
-If your code still works the same, let's **investigate** the code we added.
+```{note} Investigate
+If your code still works the same, let’s **investigate** the new code you added.
 
-Code flowchart:
+Here is the flowchart for that code:
 
 ![flowchart lesson 5 4](assets/flowchart_lesson_5_4.png)
 
-Code breakdown:
+**Code breakdown:**
 
-- The `get_number` function:
-  - `def get_number(prompt):` &rarr; defines our new function with one argument `prompt`:
-    - we observed that the prompt was one of the differences between our two blocks of similar code
-    - using this argument means we can provide a different prompt each time we call the function
-  - `num = input(prompt)` &rarr; uses the `prompt` argument and assigns the user input to `num`
-  - `if num.isdigit():` &rarr; checks if `num` only contains numbers
-  - `return int(num)` &rarr; converts the value assigned to `num` then sends it to the main program:
-    - `return` is new
-    - `return` sends a value back to the main program and then ends the function.
-  - `else:` &rarr; if `num` does not contain only numbers, run the following code block
-  - `print("Invalid input")` &rarr; informs the user their input is not correct
-  - `quit()` &rarr; exits the program
-- `num_sides = get_number("How many sides?> ")` &rarr; calls the `get_number` function
-  - `get_number()` &rarr; calls the function
-  - `"How many sides?> "` &rarr; provides the prompt string to the function
-  - `num_sides =` takes the value returned by the function and assigns it to `num_sides`
-- `size = get_number("Length of sides?> ")` &rarr; calls the `get_number` function
-  - `get_number()` &rarr; calls the function
-  - `"Length of sides?> "` &rarr; provides the prompt string to the function
-  - `size =` takes the value returned by the function and assigns it to `size`
+* The `get_number` function:
+
+  * `def get_number(prompt):` → creates a new function with one input called `prompt`
+
+    * we saw earlier that the prompt text was different in each part of the code
+    * using `prompt` means we can change the message each time we use the function
+
+  * `num = input(prompt)` → shows the prompt to the user and stores what they type in `num`
+
+  * `if num.isdigit():` → checks if `num` is made up of only numbers
+
+  * `return int(num)` → changes `num` into a number and sends it back to the main program
+
+    * `return` is new
+    * it sends a value back and then stops the function
+
+  * `else:` → runs if `num` is **not** a number
+
+  * `print("Invalid input")` → tells the user their input is wrong
+
+  * `quit()` → stops the program
+
+* `num_sides = get_number("How many sides?> ")` → uses the function
+
+  * `get_number()` → runs the function
+  * `"How many sides?> "` → is the message shown to the user
+  * `num_sides =` → stores the value returned from the function
+
+* `size = get_number("Length of sides?> ")` → uses the function again
+
+  * `get_number()` → runs the function
+  * `"Length of sides?> "` → is the message shown to the user
+  * `size =` → stores the value returned from the function
+```
 
 ---
 
 ### Playing with colour
 
-Let's keep adding features to our program. Turtle allows you to also change the colour of your shapes and lines using the method `color`:
+Let’s add a new feature to our program.
 
-`color` accepts two arguments:
+With Turtle, you can change the colour of your shapes and lines using the `color` method.
 
-- first argument &rarr; line colour
-- second argument &rarr; fill colour
+The `color` method takes two inputs:
+
+* first input → the colour of the line
+* second input → the colour used to fill the shape
 
 ```{hint} Spelling colour / color
-Like most programming languages, Python uses US spelling. Using Australian spelling (eg. colour) will generate an error.
+Python uses US spelling for its built-in functions.
 
-It up to the programmer to decide what spelling to follow in their naming of variables and functions. I choose to use the US spelling. The consistent spelling reduces the likelihood of errors.
+If you use Australian spelling (like `colour`), your program will cause an error.
+
+When naming your own variables and functions, you can choose either spelling.
+
+However, it is best to stay consistent.
+Using the same spelling every time helps prevent mistakes.
 ```
 
-Now let's change the colour of our shape.
+Now let’s change the colour of the shape.
 
-Make the changes in code the code below to:
+Update your code by making changes to:
 
-- `Line 5`
-- `Line 6`
-- `Line 35`
+* `Line 5`
+* `Line 6`
+* `Line 35`
 
 ```{code-block} python
 :linenos:
@@ -502,46 +619,83 @@ size = get_number("Length of sides?> ")
 draw_poly(size, num_sides, "red")
 ```
 
-PRIMM
+```{note} Predict and Run
+**Predict** what you think will happen when you run the code
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your prediction?
-- Let's **investigate** that code.
+Then **run** the code
 
-Code breakdown:
+Did it do what you thought it would do?
+```
 
-- `def draw_poly(length, sides, color):` &rarr; accepts a third argument `color`
-- `my_ttl.color("black",color)` &rarr; sets the turtle colour
-  - line colour &rarr; `"black"`
-  - fill colour &rarr; the value in the `color` argument
+```{note} Investigate
+Let’s **investigate** the code.
+
+**Code breakdown:**
+
+* `def draw_poly(length, sides, color):` → the function now takes three inputs, including `color`
+
+* `my_ttl.color("black", color)` → sets the turtle’s colours
+
+  * line colour → `"black"`
+  * fill colour → the value stored in `color`
+```
 
 ```{hint} Turtle colours
-Turtle allows the use of named colours. It also allows RBG and Hexadecimal colours, but named colours are enough for our needs.
+Turtle lets you use colour names to change how things look.
+
+You can also use RGB and Hex colours, but you don’t need those yet.
+
+Using simple colour names is enough for now.
+
 
 **[Here is a list of all the named colours](https://cs111.wellesley.edu/labs/lab02/colors)**.
 ```
 
-Now that we can change colour, can we let the user choose between `red`, `blue` and `green` for the fill colour?
+Now that we can change the colour, we can let the user choose a fill colour.
 
-We will need to capture the error when the user enters anything other than `"red"`, `"blue"` or `"green"`. That means using an `if` statement, but the `if` ... `else` statement only allows two branches. We need to have four.
+We want them to choose from:
 
-To choose between three or more branches we need to learn about the last part of the `if` statement: `elif`.
+* `red`
+* `blue`
+* `green`
+
+We also need to handle mistakes.
+If the user types something else, we need to catch that error.
+
+An `if ... else` only gives us two choices:
+
+* one for `True`
+* one for `False`
+
+But here we need more than two choices.
+
+To handle this, we use `elif`.
+
+`elif` lets us check multiple conditions, one after another.
 
 ---
 
 ### The `if` ... `elif` ... `else` statement
 
-The `elif` statement is effectively a `else` + `if` statement. It allows branching between multiple blocks of code. The best way to explore this is by using it in our code.
+The `elif` statement is like combining `else` and `if`.
 
-Create a function so the user can choose between `red`, `blue` and `green` for the fill colour.
+It lets your program choose between many different options, not just two.
 
-Adjust your code so it is the same as the code below. 
+The best way to understand it is to use it in your code.
 
-Changes are in:
+Create a function that lets the user choose a fill colour:
 
-- `Lines 22` to `32`
-- `Line 47`
-- `Line 49`
+* `red`
+* `blue`
+* `green`
+
+Update your code so it matches the example below.
+
+Make changes to:
+
+* `Lines 22` to `32`
+* `Line 47`
+* `Line 49`
 
 ```{code-block} python
 :linenos:
@@ -597,102 +751,143 @@ fill = get_color()
 draw_poly(size, num_sides, fill)
 ```
 
-PRIMM
+```{note} Predict and Run
+**Predict** what you think will happen when you run the code.
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your prediction?
-- Let's **investigate** that code.
+Then **run** the code.
 
-There are a few new concepts for us to breakdown:
-
-- `Line 23`: `color = input("Fill colour (red, blue, green)?> ").lower()` &rarr; `lower()` is new
-  - `lower()` is another string method
-  - it converts all the letters in a string to their lowercase version
-- `Line 24`: `if color == "red":` &rarr; tests if the user inputted `"red"`
-- `Line 25`: `return color`
-  - sends the value of `color` (in this case `"red"` back to the main program)
-  - ends the function
-- `Line 26`: `elif color == "blue":`
-  - is only executed when the condition in `line 21` is `False`
-  - checks if the value of `color` is `"blue"`
-- `Line 27`: `return color`
-  - sends the value of `color` (in this case `"blue"` back to the main program)
-  - ends the function
-- `Line 28`: `elif color == "green":`
-  - is only executed if the conditions in `line 21` and `line 23` are both `False`
-  - checks if the value of `color` is `"green"`
-- `Line 29`: `return color`
-  - sends the value of `color` (in this case `"green"` back to the main program)
-  - ends the function
-- `Line 30`: `else:`
-  - is only executed if the conditions in `line 21`, `line 23` and `line 24` are all `False`
-- `Line 31` and `line 32` are the same as the `get_number` function
-
-Code flowchart:
-
-![flowchart lesson5 5](assets/flowchart_lesson_5_5.png)
-
-The `if` ... `elif` ... `else` statement is very useful and flexible. You will use it in various configurations, so let look at it's rules.
-
-```{admonition} if...elif...else structure
-The structure of a full `if` ... `elif` ... `else` statement is:
-
-- the `if` component
-  - always at the beginning of an `if` ... `elif` ... `else` statement
-  - the only compulsory component
-  - there can only be one `if` per `if` ... `elif` ... `else` statement
-- the `elif` component
-  - must come after the `if` statement and before the `else` statement
-  - is optional
-  - there can be as many `elif` components as needed
-  - it is only used when all the conditions before it are `False`
-- the `else` component
-  - must be at the end of an an `if` ... `elif` ... `else` statement
-  - it is optional
-  - there can only be one per `if` ... `elif` ... `else` statement
-  - it is only used when all the conditions before it are `False`
+Did it do what you thought it would do?
 ```
 
-## Part 1 Exercises
+```{note} Investigate
+* Let’s **investigate** the code.
+
+There are some new ideas to understand:
+
+* `Line 23`: `color = input("Fill colour (red, blue, green)?> ").lower()`
+
+  * `lower()` is new
+  * it is a string method
+  * it changes all letters to lowercase
+  * this means `Red`, `RED`, or `rEd` will all become `red`
+
+* `Line 24`: `if color == "red":`
+
+  * checks if the user typed `"red"`
+
+* `Line 25`: `return color`
+
+  * sends the value of `color` (here it would be `"red"`) back to the main program
+  * then stops the function
+
+* `Line 26`: `elif color == "blue":`
+
+  * runs only if the first `if` was `False`
+  * checks if the user typed `"blue"`
+
+* `Line 27`: `return color`
+
+  * sends `"blue"` back to the main program
+  * then stops the function
+
+* `Line 28`: `elif color == "green":`
+
+  * runs only if the first two checks were `False`
+  * checks if the user typed `"green"`
+
+* `Line 29`: `return color`
+
+  * sends `"green"` back to the main program
+  * then stops the function
+
+* `Line 30`: `else:`
+
+  * runs if none of the options (`red`, `blue`, `green`) were correct
+
+* `Line 31` and `Line 32`
+
+  * work the same as before
+  * show an error message and stop the program
+
+**Code flowchart:**
+
+![flowchart lesson5 5](assets/flowchart_lesson_5_5.png)
+```
+
+The `if` ... `elif` ... `else` statement is very useful and flexible.
+
+You will use it in many different ways, so let’s look at the rules for how it works.
+
+#### if...elif...else structure
+The full structure of an `if` ... `elif` ... `else` statement works like this:
+
+* the `if` part
+
+  * always comes first
+  * is required (you must have it)
+  * there can only be one `if`
+  * it checks the first condition
+
+* the `elif` part
+
+  * comes after the `if` and before the `else`
+  * is optional (you don’t have to use it)
+  * you can have as many `elif` parts as you need
+  * it only runs if all the earlier conditions are `False`
+
+* the `else` part
+
+  * always comes last
+  * is optional
+  * there can only be one `else`
+  * it runs if none of the other conditions were `True`
+
+### Part 1 Exercises
 
 In this course, the exercises are the **make** component of the PRIMM model. So work through the following exercises and make your own code.
 
-### Exercise 1
+````{question} Exercise 1
+Download **{download}`lesson_5_ex_1.py<./python_files/lesson_5_ex_1.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_5_ex_1.py<./python_files/lesson_5_ex_1.py>`** file and save it in your lesson folder. Below is its code.
+Follow the instructions in the comments and use your Python knowledge to create a password checker. Remember to apply the DRY principle
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_5_ex_1.py
 :linenos:
 :emphasize-lines: 3-7
 ```
-
-Follow the instructions in the comments and use your Python knowledge to create a password checker. Remember to apply the DRY principle
+````
 
 ---
 
-### Exercise 2
+````{question} Exercise 2
+Download **{download}`lesson_5_ex_2.py<./python_files/lesson_5_ex_2.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_5_ex_2.py<./python_files/lesson_5_ex_2.py>`** file and save it in your lesson folder. Below is its code.
+Follow the instructions in the comments and use your Python knowledge to create an enhanced password checker. Remember to apply the DRY principle
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_5_ex_2.py
 :linenos:
 :emphasize-lines: 5-10
 ```
-
-Follow the instructions in the comments and use your Python knowledge to create an enhanced password checker. Remember to apply the DRY principle
+````
 
 ---
 
-### Exercise 3
+````{question} Exercise 3
+Download **{download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_5_ex_3.py<./python_files/lesson_5_ex_3.py>`** file and save it in your lesson folder. Below is its code.
+Follow the instructions in the comments (check `line 41`) and use your Python knowledge to enhance our shape drawing code. Remember to apply the DRY principle.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_5_ex_3.py
 :linenos:
 :emphasize-lines: 41
 ```
-
-Follow the instructions in the comments (check `line 41`) and use your Python knowledge to enhance our shape drawing code. Remember to apply the DRY principle.
+````
 
 ## Part 2: While Loop
 
@@ -700,105 +895,140 @@ Follow the instructions in the comments (check `line 41`) and use your Python kn
 
 [Video link](https://youtu.be/A9j7N6kLL1U)
 
-In Python we have two forms of iteration. We have already looked at the for loop. In the section we will look at the other iteration control structure, the while loop.
+In Python, there are two types of loops.
+We have already used the `for` loop. Now we will learn about the `while` loop.
 
-The two types of loops map to two different types of iteration:
+These two loops match two different ways of repeating code:
 
-- **definite iteration**
-  - Is used when you **do know** how many times the loop will need to run.
-  - definite iteration uses `for` loops since they loop for a set number of times.
-- **indefinite iteration**
-  - Is used when you **don't know** how many times the loop will need to run.
-  - indefinite iteration uses `while` loops since they will loop as long as the condition is `True`
+* **definite iteration**
 
-Card dealing is a good analogy of the definite and indefinite loops distinction:
+  * used when you **know** how many times the loop will run
+  * uses a `for` loop because it runs a set number of times
 
-- Dealing for Uno:
-  - How many cards does each player get?
-  - The rules say seven.
-  - So, we need to deal around the players seven times.
-  - This is **definite** iteration as you know how many times you have to go around the group.
-- Dealing for Snap:
-  - How many cards does each player get?
-  - Depends on how many players, you need to keep going until you have dealt the whole deck.
-  - This **indefinite** iteration as you will need to go around the group While there are still cards left in the deck.
+* **indefinite iteration**
 
-In summary:
+  * used when you **don’t know** how many times the loop will run
+  * uses a `while` loop because it keeps going while something is `True`
 
-- `for` loop is count controlled &rarr; we know how many times to run it.
-- `while` loop is condition controlled &rarr; we don't know how many times to run it.
+**Example using card games:**
 
-To understand `while` loops, let's look at a number guessing game.
+* Dealing cards in Uno:
+
+  * each player gets 7 cards
+  * you deal cards 7 times
+  * this is **definite** iteration
+
+* Dealing cards in Snap:
+
+  * you don’t know how many cards each player will get
+  * you keep dealing until the deck is empty
+  * this is **indefinite** iteration
+
+**Summary:**
+
+* `for` loop → runs a set number of times (count controlled)
+* `while` loop → runs until a condition changes (condition controlled)
+
+To understand `while` loops, let’s look at a number guessing game.
 
 ### Number guessing game
 
-Download the **{download}`lesson_5_pt_2.py<./python_files/lesson_5_pt_2.py>`** file and save it in your lesson folder. Below is its code.
+Download the **{download}`lesson_5_pt_2.py<./python_files/lesson_5_pt_2.py>`** file and save it in your lesson folder.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_5_pt_2.py
 :linenos:
 
 ```
 
-PRIMM
+```{note} Predict and Run
+* **Predict** what you think will happen when you run the code
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your prediction?
-- Let's **investigate** that code.
+* **Run** the code
 
-```{admonition} What is the random module?
-
-The **random** module gives us access to a range of functions that produce random results.
-
-To see all the commands, you can go the [**W3Schools Python Random Module page**](https://www.w3schools.com/python/module_random.asp).
+* Did it do what you thought it would do?
 ```
 
-Code breakdown:
+```{admonition} What is the random module?
+The **random** module lets Python create random results.
 
-- `Line 1`: `import random`:
-  - We will be using the random function called `randint`, so we need to `import random`.
-- `Lines 4` to `10` are the same `get_number` function we have used previously.
-- `Line 13`: `number = random.randint(1,100)`
-  - `random.randint(1,100)`
-    - use the `randint` function from the `random` module
-    - generate a random integer between `1` and `100` (inclusive)
-  - `number =` &rarr; assign the returned integer to the variable `number`
-- `Line 15`: `guess = get_number("Guess a number between 1 and 100> ")`
-  - `get_number("Guess a number between 1 and 100> ")` &rarr; calls the `get_number` function to ask the user for a number
-  - `guess =` &rarr; assigns the returned integer to the variable `guess`
-- `Line 17`: `if guess == number:`
-  - checks if the user's guess and the random number are the same
-  - the `==` symbol is a **comparison operator** (see below). It checks if two values are the same
-  - if the two values are the same &rarr; run the code block on `line 16`
-- `Line 19`: `else:` &rarr; if the user's guess and the random number are not the same &rarr; run the code block on `line 18`.
+It includes different tools (functions) you can use to get random values.
+
+To see all the available functions, visit the [**W3Schools Python Random Module page**](https://www.w3schools.com/python/module_random.asp).
+```
+
+```{note} Investigate - Code breakdown
+* `Line 1`: `import random`
+
+  * we need this so we can use random number tools
+  * we will use a function called `randint`
+
+* `Lines 4` to `10`
+
+  * this is the same `get_number` function you used before
+
+* `Line 13`: `number = random.randint(1,100)`
+
+  * `random.randint(1,100)`
+
+    * picks a random whole number between `1` and `100`
+    * both `1` and `100` are included
+  * `number =`
+
+    * stores that random number in the variable `number`
+
+* `Line 15`: `guess = get_number("Guess a number between 1 and 100> ")`
+
+  * asks the user to guess a number
+  * uses the `get_number` function to make sure it is valid
+  * stores the result in `guess`
+
+* `Line 17`: `if guess == number:`
+
+  * checks if the guess is the same as the random number
+  * `==` means “is equal to”
+  * this is a **comparison operator**
+  * if they are the same, the code inside the `if` will run
+
+* `Line 19`: `else:`
+
+  * runs if the guess is **not** the same as the random number
+  * the code inside `else` will run instead
+```
 
 ```{admonition} Comparison operators
+A **comparison operator** compares two values and gives back either `True` or `False`.
 
-A **comparison operator** compares two values and returns either `True` or `False`.
+Python uses these comparison operators:
 
-Python's condition testing uses many comparison operators:
-
-| Operator | Meaning |
-| :--: | --|
-| `==` | checks if two values are the same (equal to) |
-| `!=` | checks if two values are not the same (not equal to) |
-| `>` | checks if the left value is greater than the right value |
-| `<` | checks if the left value is less than the right value |
-| `>=` | checks if the left value is greater than or equal to the right value |
-| `<=` | checks if the left value is less than or equal to the right value |
+| Operator | Meaning                                                              |
+| :------: | -------------------------------------------------------------------- |
+|   `==`   | checks if two values are the same                                    |
+|   `!=`   | checks if two values are different                                   |
+|    `>`   | checks if the left value is greater than the right value             |
+|    `<`   | checks if the left value is less than the right value                |
+|   `>=`   | checks if the left value is greater than or equal to the right value |
+|   `<=`   | checks if the left value is less than or equal to the right value    |
 ```
 
 ---
 
-So, we've made a simple game, but it is not a good one. A one-in-one-hundred chance of guessing a number is not going to keep the user entertained for too long. How about we adjust the code to allow the user to have ten guesses?
+### Better game
 
-Now that sounds like iteration, but what kind? Since we know how many times this will need to loop (10), it's definite iteration. Definite iteration requires a `for` loop.
+Right now, the game only gives you one guess, so it’s not very fun.
 
-Change your code so it looks like the code below. Specifically:
+Let’s improve it by giving the player **10 guesses**.
 
-- `line 15` &rarr; provide user instructions
-- `lines 17` to `23` &rarr; place the guessing process within a `for` loop
-- `line 23` &rarr; make sure you remove the number reveal
-- `line 25` &rarr; reveal the number after all 10 guesses have finished
+This means the code needs to repeat something. That is called **iteration**.
+
+Which type of iteration is it?
+
+* we **know** how many times it will run (10 times)
+* so this is **definite iteration**
+* definite iteration uses a `for` loop
+
+Update your code so it matches the example below.
 
 ```{code-block} python
 :linenos:
@@ -830,17 +1060,36 @@ for turn in range(10):
 print("The number was", number)
 ```
 
-PRIMM
+```{note} Predict and Run
+* **Predict** what you think will happen when you run the code
+* **Run** the code
+* Did it do what you thought it would do?
+```
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your prediction?
-- We won't worry about **investigating** as there is nothing new in this code.
+```{note} Investigate - Code breakdown
+* `line 15` → add instructions to tell the user they have 10 guesses
+* `lines 17` to `23` → put the guessing code inside a `for` loop so it runs 10 times
+* `line 23` → remove the part that shows the number too early
+* `line 25` → show the number **after** all 10 guesses are finished
+```
 
 ---
 
-This is better, but still isn't great. There is a one-in-ten chance of getting the right number. Each guess is a stab in the dark with no knowledge gained from the previous guesses. How about we give the user hints and let them know that their guess is too high or too low?
+### Even Better Game
 
-Change the `if` ... `else` statement into the `if` ... `elif` ... `else` statement on `lines 20` to `25` in the code below:
+This version is better, but it is still not very fun.
+
+Each guess is random, and the player doesn’t learn anything from previous guesses.
+
+Let’s improve it by giving hints:
+
+* tell the user if their guess is **too high**
+* or **too low**
+
+To do this, change the `if ... else` into an `if ... elif ... else` on `lines 20` to `25`.
+
+This will let the program give different feedback depending on the guess.
+
 
 ```{code-block} python
 :linenos:
@@ -874,33 +1123,58 @@ for turn in range(10):
 print("The number was", number)
 ```
 
-We've done a fair bit of coding without any serious testing. So this time lets keep running our code until we cover all four branches:
+We’ve written a lot of code, so now we need to test it properly.
 
-1. guess is too high
-2. guess is too low
-3. guess is correct
-4. all 10 guess used up without guessing the number
+Run your program multiple times until you see all four outcomes:
 
-This might be easier to do if we know the random number. Feel free to add a line that prints the random number, but make sure you comment it out after testing.
+1. the guess is too high
+2. the guess is too low
+3. the guess is correct
+4. all 10 guesses are used and the number is still not found
 
-PRIMM
+To make testing easier, you can temporarily show the random number:
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your predictions?
-- We won't worry about **investigating** as there is nothing new in this code.
+* add a line to print the number
+* once you finish testing, comment that line out so it doesn’t show during normal use
 
-Did you identify a problem when the user guesses the number before using all ten guesses? The game prints `Correct!` but then continues to ask them to guess numbers. This is because we created a definite iteration using `for` which is set to always give ten guesses.
+```{note} Predict and Run
+* **Predict** what you think will happen when:
 
-What we want is an indefinite iteration that loops until the user guesses the number. To do this we will use a `while` loop.
+  1. the guess is too high
+  2. the guess is too low
+  3. the guess is correct
+  4. all 10 guesses are used and the number is still not found
+
+* Then **run** the code
+
+* Did it do what you thought it would do?
+```
+
+Did you notice the problem?
+
+When the user guesses the correct number, the game says `Correct!`…
+but it keeps asking for more guesses.
+
+This happens because we used a `for` loop.
+A `for` loop will always run a set number of times (in this case, 10), no matter what.
+
+What we actually want is for the game to **stop as soon as the correct number is guessed**.
+
+This means we need a different type of loop:
+
+* one that keeps going **until something happens**
+
+This is called **indefinite iteration**, and we use a `while` loop for this.
 
 ---
 
 ### Using a `while` loop
+Update your code so it matches the example below.
 
-Change your code so it is the same as the code below. Specifically:
+Make these changes:
 
-- `line 15` &rarr; add `guess = 0`
-- `line 17` &rarr; change the `for` statement to `while guess != number:`
+* `line 15` → add `guess = 0`
+* `line 17` → change the `for` loop to `while guess != number:`
 
 ```{code-block} python
 :linenos:
@@ -934,47 +1208,68 @@ while guess != number:
 print("The number was", number)
 ```
 
-Again you want to run this code enough time that you have covered all four possible branches:
+```{note} Predict and Run
+* **Predict** what you think will happen when:
 
-1. guess is too high
-2. guess is too low
-3. guess is correct
-4. all 10 guess used up without guessing the number
+  1. the guess is too high
+  2. the guess is too low
+  3. the guess is correct
+  4. all 10 guesses are used and the number is still not found
 
-PRIMM
+* Then **run** the code
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your predictions?
-- Let's **investigating** the new code to see how a `while` loop works.
+* Did it do what you thought it would do?
+```
 
-Code breakdown:
+```{note} Investigate
+Let’s **investigate** the new code to understand how a `while` loop works.
 
-- `Line 17`: `while guess != number:`
-  - `guess != number` &rarr; this is the loop condition
-  - It tests if `guess` and `number` are the same:
-    - It will return `True` when `guess` and `number` are **not** the same.
-    - It will return `False` when `guess` and `number` are the same.
-  - `while` tells Python to loop the following code block if the loop condition returns `True`
-- `Line 15`: `guess = 0`
-  - In our `while` statement we use the variable `guess` before getting an input from the user &rarr; this will raise an error.
-  - We need to assign value to `guess` before the `while` statement
-    - The problem is the value we assign to `guess` cannot be the same as the value assigned to `number`. If it is, the `while` loop will not run at all, and the user will not provide input.
-    - To solve this, we assign `0` because it is outside the range of `random.randint` (1-100).
-    - This way, `guess != number` will always return `True` the first time the condition is tested.
+**Code breakdown:**
 
-Code flowchart:
+* `Line 17`: `while guess != number:`
+
+  * `guess != number` → this is the **condition** for the loop
+  * it checks if the guess is different from the number
+
+    * returns `True` when they are **not the same**
+    * returns `False` when they are the same
+  * `while` tells Python to keep repeating the code below **while the condition is True**
+
+* `Line 15`: `guess = 0`
+
+  * the variable `guess` is used in the `while` condition before the user enters anything
+
+  * if we don’t give it a value first, the program will crash
+
+  * we need to give `guess` a starting value before the loop
+
+  * this starting value must **not** be the same as the random number
+
+    * if it is the same, the loop will not run at all
+
+  * we use `0` because the random number is between `1` and `100`
+
+    * this guarantees `guess != number` is `True` the first time
+    * so the loop will run and ask the user for input
+
+**Code flowchart:**
 
 ![flowchart lesson 5 6](assets/flowchart_lesson_5_6.png)
-
+```
 ---
 
 ### Using `while` to enhance our error capture
 
-We now have a somewhat fun game where the user has a good chance of guessing the number. We can also use `while` to improve our error capture in the `get_number` function.
+The game is better now, but there is still a problem.
 
-At the moment, if the user provides an input which isn't an integer, the game ends. This is a bit harsh, especially if they have already made three or four guesses.
+If the user types something that is not a number, the game ends straight away.
+This is not very user-friendly, especially if they have already made a few guesses.
 
-Adjust your `get_number` function so that it is the same as in the code below.
+We can fix this by using a `while` loop inside the `get_number` function.
+
+This will keep asking the user for input **until they enter a valid number**.
+
+Update your `get_number` function so it matches the code shown below.
 
 ```{code-block} python
 :linenos:
@@ -1008,49 +1303,71 @@ while guess != number:
 print("The number was", number)
 ```
 
-Again you want to run this code enough time that you have covered all four possible branches:
+```{note} Predict and Run
+* **Predict** what you think will happen when:
 
-1. guess is too high
-2. guess is too low
-3. guess is correct
-4. all 10 guess used up without guessing the number
+  1. the guess is too high
+  2. the guess is too low
+  3. the guess is correct
+  4. you eneter a non-number value
 
-PRIMM
+* Then **run** the code
 
-- **Predict** what you think will happen when you run the code:
-- **Run** the code. Did it follow your predictions?
-- Let's **investigating** the new code to see how this use of a `while` loop works
+* Did it do what you thought it would do?
+```
 
-Code breakdown:
+```{note} Investigate
+Let’s **investigate** the new code to understand how this `while` loop works.
 
-- `Line 5`: `while True:`
-  - This is called an **infinite loop**, since the condition will always be `True`, the loop will always run.
-  - Infinite loops are frequently cause by errors, although not in this case.
-  - Infinite loops can be 'broken out' of by using the `break` statement.
-  - If the Infinite loop is in a function, it can also be 'broken out' of by using the `return` statement.
-- `Lines 6` to `10` are the same as before, except they form a code block inside of the `while` loop.
-- It is worth noting the importance of `line 8`.
-  - Since the `while` loop is infinite, the program will keep asking for input until it executes `line 8`.
-  - In `line 8` the value assigned to `num` is converted into an integer and then returned to the main program
-  - In this situation the `return` statement ends the function. In ending the function, it also exits the `while` loop.
+**Code breakdown:**
+
+* `Line 5`: `while True:`
+
+  * this is called an **infinite loop** because the condition is always `True`
+  * this means the loop will keep running forever
+  * usually this is a mistake, but here we are using it on purpose
+  * we can stop the loop by using:
+
+    * `break` → exits the loop
+    * `return` → exits the function (which also stops the loop)
+
+* `Lines 6` to `10`
+
+  * these lines are the same as before
+  * they now sit inside the `while` loop, so they repeat
+
+* Important part (`Line 8`):
+
+  * the loop will keep asking for input again and again
+
+  * it only stops when the user enters a valid number
+
+  * when the input is valid:
+
+    * the value is turned into an integer
+    * `return` sends it back to the main program
+    * the function ends, which also stops the loop
+
+This means the program will **keep asking until the user gets it right**, instead of crashing.
 
 Code flowchart:
 
 ![flowchart lesson 5 7](assets/flowchart_lesson_5_7.png)
+```
 
-The end effect of these changes is the program that will ask the user for a number until the user enters an integer. 
-
-## Part 2 Exercise
+### Part 2 Exercise
 
 In this course, the exercises are the **make** component of the PRIMM model. So work through the following exercises and make your own code.
 
-### Exercise 4
+````{question} Exercise 4
+Download **{download}`lesson_5_ex_4.py<./python_files/lesson_5_ex_4.py>`** file and save it in your lesson folder. 
 
-Download **{download}`lesson_5_ex_4.py<./python_files/lesson_5_ex_4.py>`** file and save it in your lesson folder. Below is its code.
+Follow the instructions in comments and make changes to the `get_number` and `get_colour` functions so they capture user input errors.
+
+The starting code is shown below:
 
 ```{literalinclude} ./python_files/lesson_5_ex_4.py
 :linenos:
 :emphasize-lines: 13-16, 28-31
 ```
-
-Follow the instructions in comments and make changes to the `get_number` and `get_colour` functions so they capture user input errors.
+````
