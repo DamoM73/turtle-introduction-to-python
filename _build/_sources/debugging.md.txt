@@ -2,41 +2,50 @@
 
 ## Programming mistakes
 
-Everyone makes mistakes—even seasoned professional developers!
+Everyone makes mistakes—even experienced programmers.
 
-Python is good at catching mistakes like syntax errors and run-time errors. Unfortunately, there is a third type of error that you may have already experienced. **Logic errors** occur when a valid program doesn’t do what the programmer intended.
+Python is good at finding some mistakes, like syntax errors (when the code is written wrong) and run-time errors (when something goes wrong while the program is running).
 
-For example, type the code below and save it has `buggy_code.py`.
+There is another type of mistake called a **logic error**. This happens when your code runs without crashing, but it does not do what you expected.
 
-For this tutorial download {download}`buggy_code.py<./python_files/buggy_code.py>` file and save it in your lesson folder.
+For example, type the code below and save it as `buggy_code.py` or download {download}`buggy_code.py<./python_files/buggy_code.py>` file and save it in your lesson folder.
 
 ```{literalinclude} ./python_files/buggy_code.py
 :linenos:
 ```
+The expected output is `_h_e_l_l_o_`. When you run the program, it actually shows `o_`.
 
-The expected output is `_h_e_l_l_o_`. Run it and you will see it actually outputs `o_`.
+This means there is a logic error.
 
-Logic errors cause unexpected behaviours called **bugs**. Debugging is process of removing bugs. A **debugger** is a tool that helps the programmer hunt down bugs and understand what's happening.
+Logic errors cause unexpected results called **bugs**. **Debugging** is the process of finding and fixing these bugs.
 
-Knowing how to find and fix bugs in your code is a skill that you will use for your entire coding career!
+A **debugger** is a tool that helps you track down bugs and see what your program is doing step by step.
+
+Learning how to find and fix bugs is an important skill you will use whenever you write code.
+
+---
 
 ## Using Thonny's Debugger
+To debug `buggy_code.py`, you need to learn how to use debugging tools.
 
-To debug `buggy_code.py` we need to understand the debugging tools we have at our disposal. Thonny has a debugger built-in, but before we explore it, we need to make sure you have the correct setup.
+Thonny has a built-in debugger, but first you need to set it up correctly.
 
-Open the **View** menu and ensure there is a tick beside both **Stack** and **Variables**.
+Open the **View** menu and make sure there is a tick next to:
+
+* **Stack**
+* **Variables**
 
 ![image](./assets/debugging_1.png)
 
-To enter into Thonny's Debugger click on the **Debug** button.
+To start using Thonny’s debugger, click the **Debug** button.
 
 ![image](./assets/debugging_2.png)
 
 ### Controlling the debugger
 
-To see how the debugger works, let’s start by writing a simple program without any bugs.
+To understand how the debugger works, start by writing a simple program with no bugs.
 
-Type the following into Thonny and save it as `debug_a.py`:
+Type the code below into Thonny and save it as `debug_a.py`:
 
 ```{code-block} python
 :linenos:
@@ -47,28 +56,30 @@ for name in names:
     print(f"Hello {name} how are you this morning")
 ```
 
-Now start Thonny's debugger.
+Now start the debugger in Thonny.
 
-Your Thonny should now look like the image below:
+Your Thonny window should now look like the image below:
 
 ![image](./assets/debugging_3.png)
 
-- **Code Panel:** Thonny has paused the execution of the code. The yellow highlight shows the code that Python will execute next.
-- **Variables Panel:** Since the program hasn't assigned any values, it shows no variables.
-- **Shell Panel:** %Debug launches is the command that launches the program (debug_a.py).
-- **Stack Panel:** Shows the current function and module that is running.
+* **Code Panel:** Thonny has paused the program. The yellow line shows the next line of code that will run.
+* **Variables Panel:** No variables are shown yet because nothing has been saved to memory.
+* **Shell Panel:** `%Debug` is the command used to start the program (`debug_a.py`).
+* **Stack Panel:** Shows which part of the program is currently running.
 
-Something else has happened, other debugging buttons are now available.
+You will also notice that new debugging buttons are now available.
 
 ![image](./assets/debugging_4.png)
 
 Lets see how they work.
 
----
-
 ### Step into button
 
-Click the **Step into** button. Thonny will now execute the previous highlighted code block. The new highlighted code indicates the part of the code to Python will execute next.  In this case it is the list `["michelle", "nicole", "simone", "emma"]`.
+Click the **Step into** button.
+
+Thonny will run the line of code that was highlighted. The new highlighted line shows what Python will run next.
+
+In this case, it is the list `["michelle", "nicole", "simone", "emma"]`.
 
 ![image](./assets/debugging_5.png)
 
@@ -76,115 +87,135 @@ Clicking **Step into** again highlights `"michelle"`. This shows that Python wil
 
 ---
 
-Continuing and the `"michelle"` turns blue indicating that Python has read it.
+Keep stepping through the code.
+
+The word `"michelle"` will turn blue. This shows that Python has read that value.
 
 ![image](./assets/debugging_6.png)
 
 ---
 
-Four more **Step into** clicks (or pressing **F7** on your keyboard), and Python has read all the strings.
+After four more clicks on **Step into** (or by pressing **F7**), Python will have read all of the strings.
 
 ![image](./assets/debugging_7.png)
 
 ---
 
-The next **Step into** shows that Python is now ready to write the list into the variable `names`.
+The next time you click **Step into**, Python is ready to store the list in the variable `names`.
 
 ![image](./assets/debugging_8.png)
 
 ---
 
-The next **Step into** highlights the next block of code Python will process. The **Variables panel** shows that `names` now stores `["michelle", "nicole", "simone", "emma"]`.  
+The next time you click **Step into**, a new line of code is highlighted. This shows what Python will run next.
+
+The **Variables panel** now shows that `names` stores `["michelle", "nicole", "simone", "emma"]`.
 
 ![image](./assets/debugging_9.png)
 
-Notice that the highlight covers more than one line. Thonny is highlighting all the code that is part of the `for` loop. We'll now step through it.
+Notice that the highlight covers more than one line. This is because Thonny is showing all the code that belongs to the `for` loop.
+
+Now you can step through the loop one part at a time.
 
 ---
 
-Click **Step into** and it shows that the next executed code is `names`. This is the first element of the `for` statement.
+Click **Step into**. Thonny will show that the next part of the code to run is `names`. This is the first part of the `for` loop statement.
 
 ![image](./assets/debugging_10.png)
 
 ---
 
-A further **Step into** replaces `names` with the list stored in `names`.
+Click **Step into** again.
+
+Thonny will replace `names` with the list that is stored inside the `names` variable.
 
 ![image](./assets/debugging_11.png)
 
 ---
 
-Since this is a for loop, the next **Step into** reads the first element of the list ('michelle').
+Because this is a `for` loop, the next **Step into** reads the first item in the list (`"michelle"`).
 
 ![image](./assets/debugging_12.png)
 
 ---
 
-Clicking **Step into** highlights `line 4`. `michelle` is now stored in the `name` variable as displayed in the **Variables panel**.
+Click **Step into** again.
+
+Line 4 will be highlighted. The value `"michelle"` is now stored in the variable `name`, which you can see in the **Variables panel**.
 
 ```{warning} Note
-Do not confuse `name` with `names`. They're very close, but Python is very precise.
+Do not mix up `name` and `names`. They look similar, but Python treats them as different.
+
+* `name` is the variable used inside the `for` loop
+* `names` is the list that the loop goes through
 ```
 
 ![image](./assets/debugging_13.png)
 
 ---
 
-The next three **Step into** clicks:
+The next three times you click **Step into**:
 
-1. highlights the `name.capitalize()`
-2. highlights `name`
-3. replaces `name` with `'michelle'`
+1. it highlights `name.capitalize()`
+2. it highlights `name`
+3. it replaces `name` with `"michelle"`
 
 ![image](./assets/debugging_14.png)
 
 ---
 
-The next three **Step into** clicks:
+The next three times you click **Step into**:
 
-1. applies the `capitalize()` method to `'michelle'`
-2. changes `'michelle'` to `'Michelle'`
-3. overwrites the value in `name` with `'Michelle'`
+1. it applies the `capitalize()` method to `"michelle"`
+2. it changes `"michelle"` to `"Michelle"`
+3. it updates the variable `name` to store `"Michelle"`
 
-`Line 4` is now complete, so `line 5` is now highlighted.
+Line 4 is now finished, so line 5 will be highlighted next.
 
 ![image](./assets/debugging_15.png)
 
 ---
 
-The next five **Step into** clicks show how Python processes an f-string and prints it to the terminal. It also shows that a call to the `print()` function returns a `None` value.
+The next five times you click Step into show how Python builds an f-string and prints it to the screen.
+
+You will also see that when the print() function runs, it returns a value called None.
 
 ![image](./assets/debugging_16.png)
 
 ---
 
-One more click on **Step into** returns to `line 3`. The `for` statement, has taken the next element from the names list (`'Nicole'`).
+One more click on **Step into** takes you back to line 3.
+
+The `for` loop now moves to the next item in the list, which is `"Nicole"`.
 
 ![image](./assets/debugging_17.png)
 
 ---
 
-Click **Step into** one more time and Python stores `'Nicole'` in `name`.
+Click **Step into** one more time and Python stores `"Nicole"` in `name`.
 
-We will use the next iteration of the `for` loop investigate how **Step over** works.
+We will use the next time through the `for` loop to explore how **Step over** works.
 
 ---
 
 ### Step over button
 
-The **Step over** function processes the highlighted code without going into the details. The next click of **Step over:**
+The **Step over** button runs the highlighted code without showing all the small steps.
 
-1. takes the value stored in name ('nicole')
+When you click **Step over**:
 
-2. capitalizes it to 'Nicole'
+1. it takes the value in `name` (`"nicole"`)
+2. it changes it to `"Nicole"`
+3. it stores the new value back in `name`
 
-3. writes it back to name.  
 
 ![image](./assets/debugging_18.png)
 
 ---
 
-Click the **Step over** button and you will see the results below. Notice the value stored in `name`.
+Click the **Step over** button and look at the result.
+
+Notice that the value stored in `name` has been updated.
 
 ![image](./assets/debugging_19.png)
 
@@ -192,12 +223,15 @@ Click the **Step over** button and you will see the results below. Notice the va
 
 Clicking **Step over** again executes `line 5`. The highlight then returns to the `line 3` for statement.
 
-```{admonition} When to use Step over
+```{hint} When to use Step over
+Use **Step over** when you are confident the highlighted code is working properly.
 
-Use **Step over** when you know that the highlighted code is bug free. Executing working code helps find the bug location quicker.
+Running code this way can help you find the bug faster because you skip over parts that are not causing problems.
 ```
 
-Click **Step over** and then **Step into** to move your code to the position below, so we can now look at the **Step out**.
+Click **Step over** and then **Step into** until your code matches the position shown below.
+
+Now we can look at how **Step out** works.
 
 ![image](./assets/debugging_20.png)
 
@@ -205,33 +239,54 @@ Click **Step over** and then **Step into** to move your code to the position bel
 
 ### Step out button
 
-The **Step out** completes the rest of the currently highlighted code. Look back at the last example, and notice the grey box around `line 4`? This box indicates that we have stepped into `line 4` and are processing it. Click **Step out** and Thonny will move back up a level to highlight all `line 4`.
+The **Step out** button finishes the rest of the current code block.
+
+In the last example, the grey box around line 4 shows that you are inside that line of code.
+
+Click **Step out**, and Thonny will jump back out and highlight all of line 4 again.
 
 ![image](./assets/debugging_21.png)
 
-Clicking **Step out** again will move back up one level. The debugger is now to outside the for loop and the program will finish.
+Click **Step out** again to move up one more level.
+
+The debugger is now outside the `for` loop, and the program will finish running.
 
 ---
 
 ### Resume button and breakpoints
 
-The last button we need to look at is the **Resume** button. This works in conjunction with **breakpoints**. The **Resume** button will execute the code until it finds a **breakpoint**, then it will pause**.**
+The last button is the **Resume** button. This works with **breakpoints**.
 
-To add a **breakpoint** to your code, click on the line number that you wish to pause the program on.
+The **Resume** button runs the program until it reaches a breakpoint, then it pauses.
 
-Let's try this out. Click on the line number 4. A red dot should appear between the number and the code panel (as below):
+A **breakpoint** is a place where you tell the program to stop.
+
+To add a breakpoint:
+
+* click on the line number where you want the program to pause
+
+Try this now:
+
+* click on line number 4
+* a red dot should appear next to the line number
 
 ![image](./assets/debugging_22.png)
 
 Now click **Debug**.
 
-Notice that the program runs and then pauses at the **breakpoint**. At this point, you can check the current values of the variables.
+The program will run and then stop at the **breakpoint**.
+
+At this point, you can look at the **Variables panel** to see the current values.
 
 ![image](./assets/debugging_23.png)
 
 ---
 
-The next **Resume** click will restart the program. The debugger will pause at the next **breakpoint.** This is also `line 4` on the second iteration of the for loop.
+Click Resume again.
+
+The program will keep running and then pause at the next breakpoint.
+
+This will be line 4 again, but now on the second time through the for loop.
 
 ![image](./assets/debugging_24.png)
 
@@ -239,11 +294,11 @@ The next **Resume** click will restart the program. The debugger will pause at t
 Notice the changed values in the variables panel.
 ```
 
-Now that we know how to control Thonny's debugger, let's go back and debug `buggy_code.py`.
+Now that you know how to use Thonny’s debugger, go back and debug `buggy_code.py`.
 
 ## Debugging a Logic Error
 
-First let's look closely at `buggy_code.py`:
+First, let’s look closely at `buggy_code.py`:
 
 ```{code-block} python
 :linenos:
@@ -258,21 +313,23 @@ phrase = "hello"
 print(add_underscores(phrase))
 ```
 
-### Guess the bug is location
+### Guess where the bug is located
 
-The first step is to identify the section of code that is likely to contain the bug. You may not be able to identify exactly where the bug. So, make a reasonable guess about which section of your code has an error.
+The first step is to find the part of the code that might have the bug.
 
-Notice that there are two distinct sections of the program:
+You might not know the exact line, so make a good guess about which section could be wrong.
 
-- a function definition &rarr; `lines 1` to `5`
+This program has two main parts:
 
-- main code block
+* a function (`lines 1` to `5`)
+* the main code
 
-  - `line 7` &rarr; defines a variable `phrase` with the value `"hello"`
+Main code:
 
-  - `line 8` &rarr; then prints the result of calling `add_underscores(phrase)`
+* line 7 → creates a variable called `phrase` with the value `"hello"`
+* line 8 → prints the result of `add_underscores(phrase)`
 
-Look at the main section:
+Start by looking at the main code section.
 
 ```{code-block} python
 :linenos:
@@ -281,7 +338,9 @@ phrase = "hello"
 print(add_underscores(phrase))
 ```
 
-Do you think the problem could be here? It doesn’t look like it, right? Everything about those two lines of code looks good. So, the problem must be in the function definition:
+Do you think the problem is here? It doesn’t look like it. These two lines seem correct.
+
+So, the bug is probably in the function.
 
 ```{code-block} python
 :linenos:
@@ -292,120 +351,159 @@ def add_underscores(word):
     return new_word
 ```
 
-The first line of code inside the function creates a variable `new_word` with the value `"_"`. You’re all good there, so you can conclude that the problem is somewhere in the body of the `for` loop.
+The first line in the function creates a variable called `new_word` with the value `"_"`. That part looks correct.
+
+So, the bug is likely somewhere inside the `for` loop.
 
 ---
 
 ### Set a breakpoint to inspect code
 
-Now that we’ve identified where the bug must be, set a breakpoint at the start of the for loop. This way we can trace out exactly what’s happening inside the loop with the debugging tool:
+Now that you know where the bug is likely to be, add a breakpoint at the start of the `for` loop.
+
+This will let you step through the loop and see exactly what is happening using the debugger.
 
 ![image](./assets/debugging_25.png)
 
-Click the **Debug** button to launch Thonny's debugger. Thonny will run the code until it hits the breakpoint. Your IDE should look like the image below. There are some new features we haven't seen before.
+Click the **Debug** button to start the debugger.
+
+Thonny will run the program until it reaches the breakpoint.
+
+Your screen should now look like the image below. You will also notice some new features that you haven’t seen before.
 
 ![image](./assets/debugging_26.png)
 
-- **additional** **debugging window:**
-  - notice that Thonny has launched a new debugging window for `add_underscores('hello')` function.
-  - Whenever a Python enters a new scope Thonny will launch a debugging window for that scope.
-  - The values stored in the **local variables** are at the bottom of the new window.
-  - **Local variables** are variables that only the current function can see.
+* **extra debugging window:**
 
-- **multiple** **stack values:**
-  - in the stack panel you will now see two values.
-    - first value <module> refers to the main section
-    - second value refers to the add_underscores function section
+  * Thonny opens a new window for the function `add_underscores("hello")`
+  * This happens whenever Python starts working inside a function
+  * You can see the **local variables** at the bottom of this window
+  * **Local variables** are variables that only exist inside that function
 
-  - This shows us that the program is at:
-    - `line 8` in the main program
-    - `line 3` of the add_underscores function section.
+* **multiple stack values:**
+
+  * the **Stack panel** now shows two entries
+
+    * `<module>` → the main program
+    * `add_underscores` → the function
+
+  * this tells you the program is currently at:
+
+    * line 8 in the main program
+    * line 3 inside the `add_underscores` function
 
 ```{admonition} Stack timeline
-
-1. `line 8` in the main module called the `add_underscores` function
-2. Python pauses the main section at `line 8` at wait for the `add_underscores` function to finish
-3. When the function finishes, the main section will continue from `line 8` onwards. 
+1. Line 8 in the main program calls the `add_underscores` function
+2. Python pauses the main program at line 8 and waits for the function to finish
+3. When the function finishes, the main program continues from line 8
 ```
 
-Back to debugging. Notice the `add_underscores` window displays the word and new_word variables. Currently, `word` has the value `'hello'` and `new_word` has the value `'_'`, as expected.
+Back to debugging.
 
-Let's look further.
+Look at the `add_underscores` window. It shows two variables:
+
+* `word` has the value `"hello"`
+* `new_word` has the value `"_"`
+
+These are correct so far.
+
+Now, keep stepping through the code.
 
 ![image](./assets/debugging_26a.png)
 
 Click:
 
-- **Step into** once
-- **Step over** twice
+* **Step into** once
+* **Step over** twice
 
-You should end up with `new_word = word[index] + "_"` highlighted and ready to process (like below).
+You should now have `new_word = word[index] + "_"` highlighted and ready to run, like in the image below.
 
 ![image](./assets/debugging_27.png)
 
-Notice the local variable index is storing 0. This is correct for the first iteration of the loop.
+Notice that the local variable `index` is storing `0`.
 
-```{hint} Hint
-If you can't see the index variable, you may need to resize the **Local variables** panel.
+This is correct for the first time through the loop.
+
+```{hint} Can't see the index variable?
+If you cannot see the `index` variable, resize the **Local variables** panel so it is bigger.
 ```
 
-Now click **Step over** to execute `new_word = word[index] + "_"` and have a look at the results.
+Now click **Step over** to run `new_word = word[index] + "_"` and look at what happens.
 
 ![image](./assets/debugging_28.png)
 
-Notice that new_word is now storing `'h_'`, whereas we want it to be storing `'_h_'`. What happened there? **We have found our error location.**
+Notice that `new_word` now stores `"h_"`, but we wanted it to store `"_h_"`.
 
-Now that we know the error is in the new_word = word[index] + "_" code. Let's investigate that code and see exactly what happened.
+That means part of the value was replaced instead of added to.
 
-First click **Stop** and then **Debug** again.
+**This is the exact place where the bug happens.**
 
-Click:
+### Investigate the error
 
-- **Step into** once
-- **Step over** twice
+Now that you know the bug is in this line:
 
-You should now have the problem code highlighted (like below).
+`new_word = word[index] + "_"`
+
+look at that line more closely to see what Python is doing.
+
+First:
+
+* click **Stop**
+* then click **Debug** again
+
+Next, click:
+
+* **Step into** once
+* **Step over** twice
+
+You should now have the problem line highlighted and ready to run, like in the image below.
 
 ![image](./assets/debugging_27.png)
 
-This time we will step into the code and see what happens.
+This time, step into the code so you can see each small part of what Python is doing.
 
-First **Step into** and everything looks good.
+Click **Step into** once. So far, everything still looks correct.
 
 ![image](./assets/debugging_29.png)
 
-Second **Step into** everything is still fine.
+Click **Step into** again. Everything still looks correct.
 
 ![image](./assets/debugging_30.png)
 
-Third **Step into**, all good.
+Click **Step into** a third time. Everything still looks correct.
 
 ![image](./assets/debugging_31.png)
 
-Keep click **Step into** and follow what is happening in the Local variables. Stop when your `add_underscores('hello')` is in the state below:
+Keep clicking **Step into** and watch what happens in the **Local variables** panel.
+
+Stop when your `add_underscores("hello")` looks like the one below.
 
 ![image](./assets/debugging_32.png)
 
-Looking closely at the debugging code. You will notice:
+Look closely at the debugging window. You should notice:
 
-- Python is about to assign the value of `'h_'` to  `new_word`
-- This is not right!
-- We want it to assign `'_h_'` to `new_word`  
+* Python is about to store `"h_"` in `new_word`
+* this is wrong
+* we want it to store `"_h_"` instead
 
-Now we know **exactly** where the problem is, we need to work out why this is a problem.
+Now you know **exactly** where the bug is, you need to work out why it is happening.
 
-`add_underscores()` is supposed to insert a `_` between each letter. It does this by repetitively concatenating the next letter and `_` to the value stored in new_word.
+### Fix the error
 
-But our code is overwriting `new_word`. We are loosing all the previously processed letters.
+The `add_underscores()` function is meant to put a `_` between each letter. It should do this by repeatedly adding the next letter and `_` to the value already stored in `new_word`.
 
-What we need to do is concatenate the current value of `new_word` in front of the processed letter and _.
+But the code is replacing `new_word` each time. This means it loses all the letters that were added before.
 
-The line should read `new_word = new_word + word[index] + "_"`
+To fix this, the current value of `new_word` needs to be added at the front:
 
-Stop the debugging, make the change to the code below.
+`new_word = new_word + word[index] + "_"`
+
+Stop debugging and change the code to this line.
 
 ![image](./assets/debugging_33.png)
 
-Run the program normally. Is the output `_h_e_l_l_o_`?
+Run the program normally. Does it show `_h_e_l_l_o_`?
 
-Problem solved. You have now successfully debugged faulty code.
+If it does, the problem is fixed.
+
+You have successfully found and fixed a bug in your code.

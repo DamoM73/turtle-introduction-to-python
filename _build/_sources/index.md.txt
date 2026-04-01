@@ -17,5 +17,4 @@ extention
 flowcharts
 debugging
 licencing
-admonitions
 ```

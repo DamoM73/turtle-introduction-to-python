@@ -261,10 +261,10 @@
 <h1>Debugging with Thonny<a class="headerlink" href="#debugging-with-thonny" title="Link to this heading">¶</a></h1>
 <section id="programming-mistakes">
 <h2>Programming mistakes<a class="headerlink" href="#programming-mistakes" title="Link to this heading">¶</a></h2>
-<p>Everyone makes mistakes—even seasoned professional developers!</p>
-<p>Python is good at catching mistakes like syntax errors and run-time errors. Unfortunately, there is a third type of error that you may have already experienced. <strong>Logic errors</strong> occur when a valid program doesn’t do what the programmer intended.</p>
-<p>For example, type the code below and save it has <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>.</p>
-<p>For this tutorial download <a class="reference download internal" download="" href="_downloads/f3924eb4631f500ccb9650a05e39cfca/buggy_code.py"><code class="xref download docutils literal notranslate"><span class="pre">buggy_code.py</span></code></a> file and save it in your lesson folder.</p>
+<p>Everyone makes mistakes—even experienced programmers.</p>
+<p>Python is good at finding some mistakes, like syntax errors (when the code is written wrong) and run-time errors (when something goes wrong while the program is running).</p>
+<p>There is another type of mistake called a <strong>logic error</strong>. This happens when your code runs without crashing, but it does not do what you expected.</p>
+<p>For example, type the code below and save it as <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code> or download <a class="reference download internal" download="" href="_downloads/f3924eb4631f500ccb9650a05e39cfca/buggy_code.py"><code class="xref download docutils literal notranslate"><span class="pre">buggy_code.py</span></code></a> file and save it in your lesson folder.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span><span class="w"> </span><span class="nf">add_underscores</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
 <span class="linenos">2</span>    <span class="n">new_word</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
 <span class="linenos">3</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
@@ -275,21 +275,29 @@
 <span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">add_underscores</span><span class="p">(</span><span class="n">phrase</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The expected output is <code class="docutils literal notranslate"><span class="pre">_h_e_l_l_o_</span></code>. Run it and you will see it actually outputs <code class="docutils literal notranslate"><span class="pre">o_</span></code>.</p>
-<p>Logic errors cause unexpected behaviours called <strong>bugs</strong>. Debugging is process of removing bugs. A <strong>debugger</strong> is a tool that helps the programmer hunt down bugs and understand what’s happening.</p>
-<p>Knowing how to find and fix bugs in your code is a skill that you will use for your entire coding career!</p>
+<p>The expected output is <code class="docutils literal notranslate"><span class="pre">_h_e_l_l_o_</span></code>. When you run the program, it actually shows <code class="docutils literal notranslate"><span class="pre">o_</span></code>.</p>
+<p>This means there is a logic error.</p>
+<p>Logic errors cause unexpected results called <strong>bugs</strong>. <strong>Debugging</strong> is the process of finding and fixing these bugs.</p>
+<p>A <strong>debugger</strong> is a tool that helps you track down bugs and see what your program is doing step by step.</p>
+<p>Learning how to find and fix bugs is an important skill you will use whenever you write code.</p>
 </section>
+<hr class="docutils" />
 <section id="using-thonny-s-debugger">
 <h2>Using Thonny’s Debugger<a class="headerlink" href="#using-thonny-s-debugger" title="Link to this heading">¶</a></h2>
-<p>To debug <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code> we need to understand the debugging tools we have at our disposal. Thonny has a debugger built-in, but before we explore it, we need to make sure you have the correct setup.</p>
-<p>Open the <strong>View</strong> menu and ensure there is a tick beside both <strong>Stack</strong> and <strong>Variables</strong>.</p>
+<p>To debug <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>, you need to learn how to use debugging tools.</p>
+<p>Thonny has a built-in debugger, but first you need to set it up correctly.</p>
+<p>Open the <strong>View</strong> menu and make sure there is a tick next to:</p>
+<ul class="simple">
+<li><p><strong>Stack</strong></p></li>
+<li><p><strong>Variables</strong></p></li>
+</ul>
 <p><img alt="image" src="_images/debugging_1.png" /></p>
-<p>To enter into Thonny’s Debugger click on the <strong>Debug</strong> button.</p>
+<p>To start using Thonny’s debugger, click the <strong>Debug</strong> button.</p>
 <p><img alt="image" src="_images/debugging_2.png" /></p>
 <section id="controlling-the-debugger">
 <h3>Controlling the debugger<a class="headerlink" href="#controlling-the-debugger" title="Link to this heading">¶</a></h3>
-<p>To see how the debugger works, let’s start by writing a simple program without any bugs.</p>
-<p>Type the following into Thonny and save it as <code class="docutils literal notranslate"><span class="pre">debug_a.py</span></code>:</p>
+<p>To understand how the debugger works, start by writing a simple program with no bugs.</p>
+<p>Type the code below into Thonny and save it as <code class="docutils literal notranslate"><span class="pre">debug_a.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;michelle&quot;</span><span class="p">,</span> <span class="s2">&quot;nicole&quot;</span><span class="p">,</span> <span class="s2">&quot;simone&quot;</span><span class="p">,</span> <span class="s2">&quot;emma&quot;</span><span class="p">]</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
@@ -297,133 +305,164 @@
 <span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> how are you this morning&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now start Thonny’s debugger.</p>
-<p>Your Thonny should now look like the image below:</p>
+<p>Now start the debugger in Thonny.</p>
+<p>Your Thonny window should now look like the image below:</p>
 <p><img alt="image" src="_images/debugging_3.png" /></p>
 <ul class="simple">
-<li><p><strong>Code Panel:</strong> Thonny has paused the execution of the code. The yellow highlight shows the code that Python will execute next.</p></li>
-<li><p><strong>Variables Panel:</strong> Since the program hasn’t assigned any values, it shows no variables.</p></li>
-<li><p><strong>Shell Panel:</strong> %Debug launches is the command that launches the program (debug_a.py).</p></li>
-<li><p><strong>Stack Panel:</strong> Shows the current function and module that is running.</p></li>
+<li><p><strong>Code Panel:</strong> Thonny has paused the program. The yellow line shows the next line of code that will run.</p></li>
+<li><p><strong>Variables Panel:</strong> No variables are shown yet because nothing has been saved to memory.</p></li>
+<li><p><strong>Shell Panel:</strong> <code class="docutils literal notranslate"><span class="pre">%Debug</span></code> is the command used to start the program (<code class="docutils literal notranslate"><span class="pre">debug_a.py</span></code>).</p></li>
+<li><p><strong>Stack Panel:</strong> Shows which part of the program is currently running.</p></li>
 </ul>
-<p>Something else has happened, other debugging buttons are now available.</p>
+<p>You will also notice that new debugging buttons are now available.</p>
 <p><img alt="image" src="_images/debugging_4.png" /></p>
 <p>Lets see how they work.</p>
 </section>
-<hr class="docutils" />
 <section id="step-into-button">
 <h3>Step into button<a class="headerlink" href="#step-into-button" title="Link to this heading">¶</a></h3>
-<p>Click the <strong>Step into</strong> button. Thonny will now execute the previous highlighted code block. The new highlighted code indicates the part of the code to Python will execute next.  In this case it is the list <code class="docutils literal notranslate"><span class="pre">[&quot;michelle&quot;,</span> <span class="pre">&quot;nicole&quot;,</span> <span class="pre">&quot;simone&quot;,</span> <span class="pre">&quot;emma&quot;]</span></code>.</p>
+<p>Click the <strong>Step into</strong> button.</p>
+<p>Thonny will run the line of code that was highlighted. The new highlighted line shows what Python will run next.</p>
+<p>In this case, it is the list <code class="docutils literal notranslate"><span class="pre">[&quot;michelle&quot;,</span> <span class="pre">&quot;nicole&quot;,</span> <span class="pre">&quot;simone&quot;,</span> <span class="pre">&quot;emma&quot;]</span></code>.</p>
 <p><img alt="image" src="_images/debugging_5.png" /></p>
 <p>Clicking <strong>Step into</strong> again highlights <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code>. This shows that Python will now evaluating this item.</p>
 <hr class="docutils" />
-<p>Continuing and the <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code> turns blue indicating that Python has read it.</p>
+<p>Keep stepping through the code.</p>
+<p>The word <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code> will turn blue. This shows that Python has read that value.</p>
 <p><img alt="image" src="_images/debugging_6.png" /></p>
 <hr class="docutils" />
-<p>Four more <strong>Step into</strong> clicks (or pressing <strong>F7</strong> on your keyboard), and Python has read all the strings.</p>
+<p>After four more clicks on <strong>Step into</strong> (or by pressing <strong>F7</strong>), Python will have read all of the strings.</p>
 <p><img alt="image" src="_images/debugging_7.png" /></p>
 <hr class="docutils" />
-<p>The next <strong>Step into</strong> shows that Python is now ready to write the list into the variable <code class="docutils literal notranslate"><span class="pre">names</span></code>.</p>
+<p>The next time you click <strong>Step into</strong>, Python is ready to store the list in the variable <code class="docutils literal notranslate"><span class="pre">names</span></code>.</p>
 <p><img alt="image" src="_images/debugging_8.png" /></p>
 <hr class="docutils" />
-<p>The next <strong>Step into</strong> highlights the next block of code Python will process. The <strong>Variables panel</strong> shows that <code class="docutils literal notranslate"><span class="pre">names</span></code> now stores <code class="docutils literal notranslate"><span class="pre">[&quot;michelle&quot;,</span> <span class="pre">&quot;nicole&quot;,</span> <span class="pre">&quot;simone&quot;,</span> <span class="pre">&quot;emma&quot;]</span></code>.</p>
+<p>The next time you click <strong>Step into</strong>, a new line of code is highlighted. This shows what Python will run next.</p>
+<p>The <strong>Variables panel</strong> now shows that <code class="docutils literal notranslate"><span class="pre">names</span></code> stores <code class="docutils literal notranslate"><span class="pre">[&quot;michelle&quot;,</span> <span class="pre">&quot;nicole&quot;,</span> <span class="pre">&quot;simone&quot;,</span> <span class="pre">&quot;emma&quot;]</span></code>.</p>
 <p><img alt="image" src="_images/debugging_9.png" /></p>
-<p>Notice that the highlight covers more than one line. Thonny is highlighting all the code that is part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. We’ll now step through it.</p>
+<p>Notice that the highlight covers more than one line. This is because Thonny is showing all the code that belongs to the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>Now you can step through the loop one part at a time.</p>
 <hr class="docutils" />
-<p>Click <strong>Step into</strong> and it shows that the next executed code is <code class="docutils literal notranslate"><span class="pre">names</span></code>. This is the first element of the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
+<p>Click <strong>Step into</strong>. Thonny will show that the next part of the code to run is <code class="docutils literal notranslate"><span class="pre">names</span></code>. This is the first part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop statement.</p>
 <p><img alt="image" src="_images/debugging_10.png" /></p>
 <hr class="docutils" />
-<p>A further <strong>Step into</strong> replaces <code class="docutils literal notranslate"><span class="pre">names</span></code> with the list stored in <code class="docutils literal notranslate"><span class="pre">names</span></code>.</p>
+<p>Click <strong>Step into</strong> again.</p>
+<p>Thonny will replace <code class="docutils literal notranslate"><span class="pre">names</span></code> with the list that is stored inside the <code class="docutils literal notranslate"><span class="pre">names</span></code> variable.</p>
 <p><img alt="image" src="_images/debugging_11.png" /></p>
 <hr class="docutils" />
-<p>Since this is a for loop, the next <strong>Step into</strong> reads the first element of the list (‘michelle’).</p>
+<p>Because this is a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, the next <strong>Step into</strong> reads the first item in the list (<code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code>).</p>
 <p><img alt="image" src="_images/debugging_12.png" /></p>
 <hr class="docutils" />
-<p>Clicking <strong>Step into</strong> highlights <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code>. <code class="docutils literal notranslate"><span class="pre">michelle</span></code> is now stored in the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable as displayed in the <strong>Variables panel</strong>.</p>
+<p>Click <strong>Step into</strong> again.</p>
+<p>Line 4 will be highlighted. The value <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code> is now stored in the variable <code class="docutils literal notranslate"><span class="pre">name</span></code>, which you can see in the <strong>Variables panel</strong>.</p>
 <div class="warning admonition">
 <p class="admonition-title">Note</p>
-<p>Do not confuse <code class="docutils literal notranslate"><span class="pre">name</span></code> with <code class="docutils literal notranslate"><span class="pre">names</span></code>. They’re very close, but Python is very precise.</p>
+<p>Do not mix up <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">names</span></code>. They look similar, but Python treats them as different.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is the variable used inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">names</span></code> is the list that the loop goes through</p></li>
+</ul>
 </div>
 <p><img alt="image" src="_images/debugging_13.png" /></p>
 <hr class="docutils" />
-<p>The next three <strong>Step into</strong> clicks:</p>
+<p>The next three times you click <strong>Step into</strong>:</p>
 <ol class="arabic simple">
-<li><p>highlights the <code class="docutils literal notranslate"><span class="pre">name.capitalize()</span></code></p></li>
-<li><p>highlights <code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
-<li><p>replaces <code class="docutils literal notranslate"><span class="pre">name</span></code> with <code class="docutils literal notranslate"><span class="pre">'michelle'</span></code></p></li>
+<li><p>it highlights <code class="docutils literal notranslate"><span class="pre">name.capitalize()</span></code></p></li>
+<li><p>it highlights <code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
+<li><p>it replaces <code class="docutils literal notranslate"><span class="pre">name</span></code> with <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code></p></li>
 </ol>
 <p><img alt="image" src="_images/debugging_14.png" /></p>
 <hr class="docutils" />
-<p>The next three <strong>Step into</strong> clicks:</p>
+<p>The next three times you click <strong>Step into</strong>:</p>
 <ol class="arabic simple">
-<li><p>applies the <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> method to <code class="docutils literal notranslate"><span class="pre">'michelle'</span></code></p></li>
-<li><p>changes <code class="docutils literal notranslate"><span class="pre">'michelle'</span></code> to <code class="docutils literal notranslate"><span class="pre">'Michelle'</span></code></p></li>
-<li><p>overwrites the value in <code class="docutils literal notranslate"><span class="pre">name</span></code> with <code class="docutils literal notranslate"><span class="pre">'Michelle'</span></code></p></li>
+<li><p>it applies the <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> method to <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code></p></li>
+<li><p>it changes <code class="docutils literal notranslate"><span class="pre">&quot;michelle&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;Michelle&quot;</span></code></p></li>
+<li><p>it updates the variable <code class="docutils literal notranslate"><span class="pre">name</span></code> to store <code class="docutils literal notranslate"><span class="pre">&quot;Michelle&quot;</span></code></p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">4</span></code> is now complete, so <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code> is now highlighted.</p>
+<p>Line 4 is now finished, so line 5 will be highlighted next.</p>
 <p><img alt="image" src="_images/debugging_15.png" /></p>
 <hr class="docutils" />
-<p>The next five <strong>Step into</strong> clicks show how Python processes an f-string and prints it to the terminal. It also shows that a call to the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function returns a <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
+<p>The next five times you click Step into show how Python builds an f-string and prints it to the screen.</p>
+<p>You will also see that when the print() function runs, it returns a value called None.</p>
 <p><img alt="image" src="_images/debugging_16.png" /></p>
 <hr class="docutils" />
-<p>One more click on <strong>Step into</strong> returns to <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">3</span></code>. The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement, has taken the next element from the names list (<code class="docutils literal notranslate"><span class="pre">'Nicole'</span></code>).</p>
+<p>One more click on <strong>Step into</strong> takes you back to line 3.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop now moves to the next item in the list, which is <code class="docutils literal notranslate"><span class="pre">&quot;Nicole&quot;</span></code>.</p>
 <p><img alt="image" src="_images/debugging_17.png" /></p>
 <hr class="docutils" />
-<p>Click <strong>Step into</strong> one more time and Python stores <code class="docutils literal notranslate"><span class="pre">'Nicole'</span></code> in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>We will use the next iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop investigate how <strong>Step over</strong> works.</p>
+<p>Click <strong>Step into</strong> one more time and Python stores <code class="docutils literal notranslate"><span class="pre">&quot;Nicole&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>We will use the next time through the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to explore how <strong>Step over</strong> works.</p>
 </section>
 <hr class="docutils" />
 <section id="step-over-button">
 <h3>Step over button<a class="headerlink" href="#step-over-button" title="Link to this heading">¶</a></h3>
-<p>The <strong>Step over</strong> function processes the highlighted code without going into the details. The next click of <strong>Step over:</strong></p>
+<p>The <strong>Step over</strong> button runs the highlighted code without showing all the small steps.</p>
+<p>When you click <strong>Step over</strong>:</p>
 <ol class="arabic simple">
-<li><p>takes the value stored in name (‘nicole’)</p></li>
-<li><p>capitalizes it to ‘Nicole’</p></li>
-<li><p>writes it back to name.</p></li>
+<li><p>it takes the value in <code class="docutils literal notranslate"><span class="pre">name</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;nicole&quot;</span></code>)</p></li>
+<li><p>it changes it to <code class="docutils literal notranslate"><span class="pre">&quot;Nicole&quot;</span></code></p></li>
+<li><p>it stores the new value back in <code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
 </ol>
 <p><img alt="image" src="_images/debugging_18.png" /></p>
 <hr class="docutils" />
-<p>Click the <strong>Step over</strong> button and you will see the results below. Notice the value stored in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>Click the <strong>Step over</strong> button and look at the result.</p>
+<p>Notice that the value stored in <code class="docutils literal notranslate"><span class="pre">name</span></code> has been updated.</p>
 <p><img alt="image" src="_images/debugging_19.png" /></p>
 <hr class="docutils" />
 <p>Clicking <strong>Step over</strong> again executes <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">5</span></code>. The highlight then returns to the <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">3</span></code> for statement.</p>
-<div class="admonition-when-to-use-step-over admonition">
+<div class="hint admonition">
 <p class="admonition-title">When to use Step over</p>
-<p>Use <strong>Step over</strong> when you know that the highlighted code is bug free. Executing working code helps find the bug location quicker.</p>
+<p>Use <strong>Step over</strong> when you are confident the highlighted code is working properly.</p>
+<p>Running code this way can help you find the bug faster because you skip over parts that are not causing problems.</p>
 </div>
-<p>Click <strong>Step over</strong> and then <strong>Step into</strong> to move your code to the position below, so we can now look at the <strong>Step out</strong>.</p>
+<p>Click <strong>Step over</strong> and then <strong>Step into</strong> until your code matches the position shown below.</p>
+<p>Now we can look at how <strong>Step out</strong> works.</p>
 <p><img alt="image" src="_images/debugging_20.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="step-out-button">
 <h3>Step out button<a class="headerlink" href="#step-out-button" title="Link to this heading">¶</a></h3>
-<p>The <strong>Step out</strong> completes the rest of the currently highlighted code. Look back at the last example, and notice the grey box around <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code>? This box indicates that we have stepped into <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code> and are processing it. Click <strong>Step out</strong> and Thonny will move back up a level to highlight all <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code>.</p>
+<p>The <strong>Step out</strong> button finishes the rest of the current code block.</p>
+<p>In the last example, the grey box around line 4 shows that you are inside that line of code.</p>
+<p>Click <strong>Step out</strong>, and Thonny will jump back out and highlight all of line 4 again.</p>
 <p><img alt="image" src="_images/debugging_21.png" /></p>
-<p>Clicking <strong>Step out</strong> again will move back up one level. The debugger is now to outside the for loop and the program will finish.</p>
+<p>Click <strong>Step out</strong> again to move up one more level.</p>
+<p>The debugger is now outside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, and the program will finish running.</p>
 </section>
 <hr class="docutils" />
 <section id="resume-button-and-breakpoints">
 <h3>Resume button and breakpoints<a class="headerlink" href="#resume-button-and-breakpoints" title="Link to this heading">¶</a></h3>
-<p>The last button we need to look at is the <strong>Resume</strong> button. This works in conjunction with <strong>breakpoints</strong>. The <strong>Resume</strong> button will execute the code until it finds a <strong>breakpoint</strong>, then it will pause**.**</p>
-<p>To add a <strong>breakpoint</strong> to your code, click on the line number that you wish to pause the program on.</p>
-<p>Let’s try this out. Click on the line number 4. A red dot should appear between the number and the code panel (as below):</p>
+<p>The last button is the <strong>Resume</strong> button. This works with <strong>breakpoints</strong>.</p>
+<p>The <strong>Resume</strong> button runs the program until it reaches a breakpoint, then it pauses.</p>
+<p>A <strong>breakpoint</strong> is a place where you tell the program to stop.</p>
+<p>To add a breakpoint:</p>
+<ul class="simple">
+<li><p>click on the line number where you want the program to pause</p></li>
+</ul>
+<p>Try this now:</p>
+<ul class="simple">
+<li><p>click on line number 4</p></li>
+<li><p>a red dot should appear next to the line number</p></li>
+</ul>
 <p><img alt="image" src="_images/debugging_22.png" /></p>
 <p>Now click <strong>Debug</strong>.</p>
-<p>Notice that the program runs and then pauses at the <strong>breakpoint</strong>. At this point, you can check the current values of the variables.</p>
+<p>The program will run and then stop at the <strong>breakpoint</strong>.</p>
+<p>At this point, you can look at the <strong>Variables panel</strong> to see the current values.</p>
 <p><img alt="image" src="_images/debugging_23.png" /></p>
 <hr class="docutils" />
-<p>The next <strong>Resume</strong> click will restart the program. The debugger will pause at the next <strong>breakpoint.</strong> This is also <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">4</span></code> on the second iteration of the for loop.</p>
+<p>Click Resume again.</p>
+<p>The program will keep running and then pause at the next breakpoint.</p>
+<p>This will be line 4 again, but now on the second time through the for loop.</p>
 <p><img alt="image" src="_images/debugging_24.png" /></p>
 <div class="hint admonition">
 <p class="admonition-title">Hint</p>
 <p>Notice the changed values in the variables panel.</p>
 </div>
-<p>Now that we know how to control Thonny’s debugger, let’s go back and debug <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>.</p>
+<p>Now that you know how to use Thonny’s debugger, go back and debug <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>.</p>
 </section>
 </section>
 <section id="debugging-a-logic-error">
 <h2>Debugging a Logic Error<a class="headerlink" href="#debugging-a-logic-error" title="Link to this heading">¶</a></h2>
-<p>First let’s look closely at <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>:</p>
+<p>First, let’s look closely at <code class="docutils literal notranslate"><span class="pre">buggy_code.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">def</span><span class="w"> </span><span class="nf">add_underscores</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
 </span><span class="hll"><span class="linenos">2</span>    <span class="n">new_word</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
 </span><span class="hll"><span class="linenos">3</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
@@ -434,25 +473,27 @@
 </span><span class="hll"><span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">add_underscores</span><span class="p">(</span><span class="n">phrase</span><span class="p">))</span>
 </span></pre></div>
 </div>
-<section id="guess-the-bug-is-location">
-<h3>Guess the bug is location<a class="headerlink" href="#guess-the-bug-is-location" title="Link to this heading">¶</a></h3>
-<p>The first step is to identify the section of code that is likely to contain the bug. You may not be able to identify exactly where the bug. So, make a reasonable guess about which section of your code has an error.</p>
-<p>Notice that there are two distinct sections of the program:</p>
+<section id="guess-where-the-bug-is-located">
+<h3>Guess where the bug is located<a class="headerlink" href="#guess-where-the-bug-is-located" title="Link to this heading">¶</a></h3>
+<p>The first step is to find the part of the code that might have the bug.</p>
+<p>You might not know the exact line, so make a good guess about which section could be wrong.</p>
+<p>This program has two main parts:</p>
 <ul class="simple">
-<li><p>a function definition → <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
-<li><p>main code block</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">7</span></code> → defines a variable <code class="docutils literal notranslate"><span class="pre">phrase</span></code> with the value <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> → then prints the result of calling <code class="docutils literal notranslate"><span class="pre">add_underscores(phrase)</span></code></p></li>
+<li><p>a function (<code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code>)</p></li>
+<li><p>the main code</p></li>
 </ul>
-</li>
+<p>Main code:</p>
+<ul class="simple">
+<li><p>line 7 → creates a variable called <code class="docutils literal notranslate"><span class="pre">phrase</span></code> with the value <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code></p></li>
+<li><p>line 8 → prints the result of <code class="docutils literal notranslate"><span class="pre">add_underscores(phrase)</span></code></p></li>
 </ul>
-<p>Look at the main section:</p>
+<p>Start by looking at the main code section.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">7</span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
 <span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">add_underscores</span><span class="p">(</span><span class="n">phrase</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Do you think the problem could be here? It doesn’t look like it, right? Everything about those two lines of code looks good. So, the problem must be in the function definition:</p>
+<p>Do you think the problem is here? It doesn’t look like it. These two lines seem correct.</p>
+<p>So, the bug is probably in the function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span><span class="w"> </span><span class="nf">add_underscores</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
 <span class="linenos">2</span>    <span class="n">new_word</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
 <span class="linenos">3</span>    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
@@ -460,36 +501,40 @@
 <span class="linenos">5</span>    <span class="k">return</span> <span class="n">new_word</span>
 </pre></div>
 </div>
-<p>The first line of code inside the function creates a variable <code class="docutils literal notranslate"><span class="pre">new_word</span></code> with the value <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code>. You’re all good there, so you can conclude that the problem is somewhere in the body of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>The first line in the function creates a variable called <code class="docutils literal notranslate"><span class="pre">new_word</span></code> with the value <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code>. That part looks correct.</p>
+<p>So, the bug is likely somewhere inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </section>
 <hr class="docutils" />
 <section id="set-a-breakpoint-to-inspect-code">
 <h3>Set a breakpoint to inspect code<a class="headerlink" href="#set-a-breakpoint-to-inspect-code" title="Link to this heading">¶</a></h3>
-<p>Now that we’ve identified where the bug must be, set a breakpoint at the start of the for loop. This way we can trace out exactly what’s happening inside the loop with the debugging tool:</p>
+<p>Now that you know where the bug is likely to be, add a breakpoint at the start of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>This will let you step through the loop and see exactly what is happening using the debugger.</p>
 <p><img alt="image" src="_images/debugging_25.png" /></p>
-<p>Click the <strong>Debug</strong> button to launch Thonny’s debugger. Thonny will run the code until it hits the breakpoint. Your IDE should look like the image below. There are some new features we haven’t seen before.</p>
+<p>Click the <strong>Debug</strong> button to start the debugger.</p>
+<p>Thonny will run the program until it reaches the breakpoint.</p>
+<p>Your screen should now look like the image below. You will also notice some new features that you haven’t seen before.</p>
 <p><img alt="image" src="_images/debugging_26.png" /></p>
 <ul class="simple">
-<li><p><strong>additional</strong> <strong>debugging window:</strong></p>
+<li><p><strong>extra debugging window:</strong></p>
 <ul>
-<li><p>notice that Thonny has launched a new debugging window for <code class="docutils literal notranslate"><span class="pre">add_underscores('hello')</span></code> function.</p></li>
-<li><p>Whenever a Python enters a new scope Thonny will launch a debugging window for that scope.</p></li>
-<li><p>The values stored in the <strong>local variables</strong> are at the bottom of the new window.</p></li>
-<li><p><strong>Local variables</strong> are variables that only the current function can see.</p></li>
+<li><p>Thonny opens a new window for the function <code class="docutils literal notranslate"><span class="pre">add_underscores(&quot;hello&quot;)</span></code></p></li>
+<li><p>This happens whenever Python starts working inside a function</p></li>
+<li><p>You can see the <strong>local variables</strong> at the bottom of this window</p></li>
+<li><p><strong>Local variables</strong> are variables that only exist inside that function</p></li>
 </ul>
 </li>
-<li><p><strong>multiple</strong> <strong>stack values:</strong></p>
+<li><p><strong>multiple stack values:</strong></p>
 <ul>
-<li><p>in the stack panel you will now see two values.</p>
+<li><p>the <strong>Stack panel</strong> now shows two entries</p>
 <ul>
-<li><p>first value <module> refers to the main section</p></li>
-<li><p>second value refers to the add_underscores function section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;module&gt;</span></code> → the main program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> → the function</p></li>
 </ul>
 </li>
-<li><p>This shows us that the program is at:</p>
+<li><p>this tells you the program is currently at:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> in the main program</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">3</span></code> of the add_underscores function section.</p></li>
+<li><p>line 8 in the main program</p></li>
+<li><p>line 3 inside the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> function</p></li>
 </ul>
 </li>
 </ul>
@@ -498,62 +543,85 @@
 <div class="admonition-stack-timeline admonition">
 <p class="admonition-title">Stack timeline</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> in the main module called the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> function</p></li>
-<li><p>Python pauses the main section at <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> at wait for the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> function to finish</p></li>
-<li><p>When the function finishes, the main section will continue from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">8</span></code> onwards.</p></li>
+<li><p>Line 8 in the main program calls the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> function</p></li>
+<li><p>Python pauses the main program at line 8 and waits for the function to finish</p></li>
+<li><p>When the function finishes, the main program continues from line 8</p></li>
 </ol>
 </div>
-<p>Back to debugging. Notice the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> window displays the word and new_word variables. Currently, <code class="docutils literal notranslate"><span class="pre">word</span></code> has the value <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> and <code class="docutils literal notranslate"><span class="pre">new_word</span></code> has the value <code class="docutils literal notranslate"><span class="pre">'_'</span></code>, as expected.</p>
-<p>Let’s look further.</p>
+<p>Back to debugging.</p>
+<p>Look at the <code class="docutils literal notranslate"><span class="pre">add_underscores</span></code> window. It shows two variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">word</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new_word</span></code> has the value <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code></p></li>
+</ul>
+<p>These are correct so far.</p>
+<p>Now, keep stepping through the code.</p>
 <p><img alt="image" src="_images/debugging_26a.png" /></p>
 <p>Click:</p>
 <ul class="simple">
 <li><p><strong>Step into</strong> once</p></li>
 <li><p><strong>Step over</strong> twice</p></li>
 </ul>
-<p>You should end up with <code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code> highlighted and ready to process (like below).</p>
+<p>You should now have <code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code> highlighted and ready to run, like in the image below.</p>
 <p><img alt="image" src="_images/debugging_27.png" /></p>
-<p>Notice the local variable index is storing 0. This is correct for the first iteration of the loop.</p>
+<p>Notice that the local variable <code class="docutils literal notranslate"><span class="pre">index</span></code> is storing <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>This is correct for the first time through the loop.</p>
 <div class="hint admonition">
-<p class="admonition-title">Hint</p>
-<p>If you can’t see the index variable, you may need to resize the <strong>Local variables</strong> panel.</p>
+<p class="admonition-title">Can’t see the index variable?</p>
+<p>If you cannot see the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable, resize the <strong>Local variables</strong> panel so it is bigger.</p>
 </div>
-<p>Now click <strong>Step over</strong> to execute <code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code> and have a look at the results.</p>
+<p>Now click <strong>Step over</strong> to run <code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code> and look at what happens.</p>
 <p><img alt="image" src="_images/debugging_28.png" /></p>
-<p>Notice that new_word is now storing <code class="docutils literal notranslate"><span class="pre">'h_'</span></code>, whereas we want it to be storing <code class="docutils literal notranslate"><span class="pre">'_h_'</span></code>. What happened there? <strong>We have found our error location.</strong></p>
-<p>Now that we know the error is in the new_word = word[index] + “_” code. Let’s investigate that code and see exactly what happened.</p>
-<p>First click <strong>Stop</strong> and then <strong>Debug</strong> again.</p>
-<p>Click:</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">new_word</span></code> now stores <code class="docutils literal notranslate"><span class="pre">&quot;h_&quot;</span></code>, but we wanted it to store <code class="docutils literal notranslate"><span class="pre">&quot;_h_&quot;</span></code>.</p>
+<p>That means part of the value was replaced instead of added to.</p>
+<p><strong>This is the exact place where the bug happens.</strong></p>
+</section>
+<section id="investigate-the-error">
+<h3>Investigate the error<a class="headerlink" href="#investigate-the-error" title="Link to this heading">¶</a></h3>
+<p>Now that you know the bug is in this line:</p>
+<p><code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code></p>
+<p>look at that line more closely to see what Python is doing.</p>
+<p>First:</p>
+<ul class="simple">
+<li><p>click <strong>Stop</strong></p></li>
+<li><p>then click <strong>Debug</strong> again</p></li>
+</ul>
+<p>Next, click:</p>
 <ul class="simple">
 <li><p><strong>Step into</strong> once</p></li>
 <li><p><strong>Step over</strong> twice</p></li>
 </ul>
-<p>You should now have the problem code highlighted (like below).</p>
+<p>You should now have the problem line highlighted and ready to run, like in the image below.</p>
 <p><img alt="image" src="_images/debugging_27.png" /></p>
-<p>This time we will step into the code and see what happens.</p>
-<p>First <strong>Step into</strong> and everything looks good.</p>
+<p>This time, step into the code so you can see each small part of what Python is doing.</p>
+<p>Click <strong>Step into</strong> once. So far, everything still looks correct.</p>
 <p><img alt="image" src="_images/debugging_29.png" /></p>
-<p>Second <strong>Step into</strong> everything is still fine.</p>
+<p>Click <strong>Step into</strong> again. Everything still looks correct.</p>
 <p><img alt="image" src="_images/debugging_30.png" /></p>
-<p>Third <strong>Step into</strong>, all good.</p>
+<p>Click <strong>Step into</strong> a third time. Everything still looks correct.</p>
 <p><img alt="image" src="_images/debugging_31.png" /></p>
-<p>Keep click <strong>Step into</strong> and follow what is happening in the Local variables. Stop when your <code class="docutils literal notranslate"><span class="pre">add_underscores('hello')</span></code> is in the state below:</p>
+<p>Keep clicking <strong>Step into</strong> and watch what happens in the <strong>Local variables</strong> panel.</p>
+<p>Stop when your <code class="docutils literal notranslate"><span class="pre">add_underscores(&quot;hello&quot;)</span></code> looks like the one below.</p>
 <p><img alt="image" src="_images/debugging_32.png" /></p>
-<p>Looking closely at the debugging code. You will notice:</p>
+<p>Look closely at the debugging window. You should notice:</p>
 <ul class="simple">
-<li><p>Python is about to assign the value of <code class="docutils literal notranslate"><span class="pre">'h_'</span></code> to  <code class="docutils literal notranslate"><span class="pre">new_word</span></code></p></li>
-<li><p>This is not right!</p></li>
-<li><p>We want it to assign <code class="docutils literal notranslate"><span class="pre">'_h_'</span></code> to <code class="docutils literal notranslate"><span class="pre">new_word</span></code></p></li>
+<li><p>Python is about to store <code class="docutils literal notranslate"><span class="pre">&quot;h_&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">new_word</span></code></p></li>
+<li><p>this is wrong</p></li>
+<li><p>we want it to store <code class="docutils literal notranslate"><span class="pre">&quot;_h_&quot;</span></code> instead</p></li>
 </ul>
-<p>Now we know <strong>exactly</strong> where the problem is, we need to work out why this is a problem.</p>
-<p><code class="docutils literal notranslate"><span class="pre">add_underscores()</span></code> is supposed to insert a <code class="docutils literal notranslate"><span class="pre">_</span></code> between each letter. It does this by repetitively concatenating the next letter and <code class="docutils literal notranslate"><span class="pre">_</span></code> to the value stored in new_word.</p>
-<p>But our code is overwriting <code class="docutils literal notranslate"><span class="pre">new_word</span></code>. We are loosing all the previously processed letters.</p>
-<p>What we need to do is concatenate the current value of <code class="docutils literal notranslate"><span class="pre">new_word</span></code> in front of the processed letter and _.</p>
-<p>The line should read <code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">new_word</span> <span class="pre">+</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code></p>
-<p>Stop the debugging, make the change to the code below.</p>
+<p>Now you know <strong>exactly</strong> where the bug is, you need to work out why it is happening.</p>
+</section>
+<section id="fix-the-error">
+<h3>Fix the error<a class="headerlink" href="#fix-the-error" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">add_underscores()</span></code> function is meant to put a <code class="docutils literal notranslate"><span class="pre">_</span></code> between each letter. It should do this by repeatedly adding the next letter and <code class="docutils literal notranslate"><span class="pre">_</span></code> to the value already stored in <code class="docutils literal notranslate"><span class="pre">new_word</span></code>.</p>
+<p>But the code is replacing <code class="docutils literal notranslate"><span class="pre">new_word</span></code> each time. This means it loses all the letters that were added before.</p>
+<p>To fix this, the current value of <code class="docutils literal notranslate"><span class="pre">new_word</span></code> needs to be added at the front:</p>
+<p><code class="docutils literal notranslate"><span class="pre">new_word</span> <span class="pre">=</span> <span class="pre">new_word</span> <span class="pre">+</span> <span class="pre">word[index]</span> <span class="pre">+</span> <span class="pre">&quot;_&quot;</span></code></p>
+<p>Stop debugging and change the code to this line.</p>
 <p><img alt="image" src="_images/debugging_33.png" /></p>
-<p>Run the program normally. Is the output <code class="docutils literal notranslate"><span class="pre">_h_e_l_l_o_</span></code>?</p>
-<p>Problem solved. You have now successfully debugged faulty code.</p>
+<p>Run the program normally. Does it show <code class="docutils literal notranslate"><span class="pre">_h_e_l_l_o_</span></code>?</p>
+<p>If it does, the problem is fixed.</p>
+<p>You have successfully found and fixed a bug in your code.</p>
 </section>
 </section>
 </section>
@@ -631,8 +699,10 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#debugging-a-logic-error">Debugging a Logic Error</a><ul>
-<li><a class="reference internal" href="#guess-the-bug-is-location">Guess the bug is location</a></li>
+<li><a class="reference internal" href="#guess-where-the-bug-is-located">Guess where the bug is located</a></li>
 <li><a class="reference internal" href="#set-a-breakpoint-to-inspect-code">Set a breakpoint to inspect code</a></li>
+<li><a class="reference internal" href="#investigate-the-error">Investigate the error</a></li>
+<li><a class="reference internal" href="#fix-the-error">Fix the error</a></li>
 </ul>
 </li>
 </ul>
