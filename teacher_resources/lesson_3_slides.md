@@ -10,11 +10,11 @@ Lesson 3
 
 Topics
 
-- storing values in variables
-- when and how to use variables
-- screen coordinates
-- how to use coordinates to move the turtle
-- how to move the turtle without drawing a line
+* storing values in variables
+* when and how to use variables
+* screen coordinates
+* how to use coordinates to move the turtle
+* how to move the turtle without drawing a line
 
 ---
 
@@ -128,9 +128,9 @@ for index in range(3):
 
 What do the changed numbers represent?
 
-- `4` &rarr; `3` representing the number sides.
-- `100` &rarr; `200` representing the length of the sides.
-- `90` &rarr; `120` representing the degrees the Turtle has to turn.
+* `4` &rarr; `3` representing the number sides.
+* `100` &rarr; `200` representing the length of the sides.
+* `90` &rarr; `120` representing the degrees the Turtle has to turn.
 
 To draw a hexagon &rarr; same three numbers change
 
@@ -142,8 +142,8 @@ A magic number &rarr; **hard coded** value in the program
 
 Magic numbers &rarr; not good
 
-- No explicit meaning &rarr; what do `3`, `200` and `120` mean? 
-- Changing 1000 squares into triangles &rarr; 3000 edits.
+* No explicit meaning &rarr; what do `3`, `200` and `120` mean? 
+* Changing 1000 squares into triangles &rarr; 3000 edits.
 
 ---
 
@@ -165,8 +165,8 @@ for index in range(sides):
     my_ttl.left(degrees)
 ```
 
-- **Predict** and **run** the code
-- `sides`, `length` and `degrees` are all **variables** &rarr; let's **investigate**
+* **Predict** and **run** the code
+* `sides`, `length` and `degrees` are all **variables** &rarr; let's **investigate**
 
 ---
 
@@ -174,12 +174,12 @@ for index in range(sides):
 
 ---
 
-- `sides = 3` creates variable `sides` &rarr; assigns `3` to it
-- `length = 200` creates variable `length` &rarr; assigns `200` to it
-- `degress = 120` creates the variable `degrees` &rarr; assigns `120` to it
-- `for i in range(sides):` substitutes `sides` with `3` &rarr; `for index in range(3)`
-- `my_ttl.forward(length)` substitutes `length` with `200` &rarr; `my_ttl.forward(200)`
-- `my_ttl.left(degrees)` substitutes `degrees` with `120` &rarr; `my_ttl.left(120)`
+* `sides = 3` creates variable `sides` &rarr; assigns `3` to it
+* `length = 200` creates variable `length` &rarr; assigns `200` to it
+* `degress = 120` creates the variable `degrees` &rarr; assigns `120` to it
+* `for i in range(sides):` substitutes `sides` with `3` &rarr; `for index in range(3)`
+* `my_ttl.forward(length)` substitutes `length` with `200` &rarr; `my_ttl.forward(200)`
+* `my_ttl.left(degrees)` substitutes `degrees` with `120` &rarr; `my_ttl.left(120)`
 
 ---
 
@@ -187,10 +187,10 @@ for index in range(sides):
 
 Very specific rules variable names:
 
-- can only contain letters, numbers and the `_` character
-- cannot contain spaces
-- cannot start with a number
-- are case sensitive (eg. `age` is not the same as `Age`)
+* can only contain letters, numbers and the `_` character
+* cannot contain spaces
+* cannot start with a number
+* are case sensitive (eg. `age` is not the same as `Age`)
 
 ---
 
@@ -234,8 +234,8 @@ Worked it out in your head or used a calculator?
 
 Flaws on both:
 
-- head calculations can be incorrect
-- getting a calculator is a waste of time
+* head calculations can be incorrect
+* getting a calculator is a waste of time
 
 Use Python to do the calculations.
 
@@ -329,16 +329,16 @@ Python's naming conventions &rarr; capitalise constants.
 
 Naming conventions &rarr; make code easier to understand.
 
-- Use descriptive names that explains the value stored in them
-  - `d = 30` &rarr; bad
-  - `degrees = 30` &rarr; better
-  - `degrees_celsius = 30` &rarr; best
-- Use snake case for multiple word names:
-  - replace the spaces with the `_` character
-  - only use lower case letters
-  - `this_is_snake_case`
-- CAPTIALIZE names of constants (variables whose value will not change)
-- Do not use the names of keywords (eg. `print`, `for`, etc)
+* Use descriptive names that explains the value stored in them
+  * `d = 30` &rarr; bad
+  * `degrees = 30` &rarr; better
+  * `degrees_celsius = 30` &rarr; best
+* Use snake case for multiple word names:
+  * replace the spaces with the `_` character
+  * only use lower case letters
+  * `this_is_snake_case`
+* CAPTIALIZE names of constants (variables whose value will not change)
+* Do not use the names of keywords (eg. `print`, `for`, etc)
 
 ---
 
@@ -370,8 +370,8 @@ Complete exercises 1 to 3
 
 To improve maintainability &rarr; structure code
 
-- group code under their functionality (what they do)
-- use comments to signpost this functionality
+* group code under their functionality (what they do)
+* use comments to signpost this functionality
 
 ---
 
@@ -402,10 +402,10 @@ for index in range(sides):
 
 People reading the program will know the code that:
 
-- sets up the screen
-- creates the turtle instance
-- defines the shape parameters
-- draws the shape
+* sets up the screen
+* creates the turtle instance
+* defines the shape parameters
+* draws the shape
 
 Save the file as **lesson_3_pt_2.py** (**File** &rarr; **Save as...**).
 
@@ -419,14 +419,14 @@ Like piece of graph paper measured in pixels 500px wide and 500px high
 
 ---
 
-- the centre of the screen &rarr; origin of `(0,0)`
-- moving up from centre &rarr; `y` value increases to max `250`
-- moving down from centre &rarr; `y` value decreases to min `-250`
-- moving left from centre &rarr; `x` increases to max `250`
-- moving right starting from centre &rarr; `x` decreases to min `-250`
-- coordinate &rarr; `x` and `y` value for a pixel
-  - coordinates represented as a tuple of `(x, y)`
-  - For example `(200,125)`
+* the centre of the screen &rarr; origin of `(0,0)`
+* moving up from centre &rarr; `y` value increases to max `250`
+* moving down from centre &rarr; `y` value decreases to min `-250`
+* moving left from centre &rarr; `x` increases to max `250`
+* moving right starting from centre &rarr; `x` decreases to min `-250`
+* coordinate &rarr; `x` and `y` value for a pixel
+  * coordinates represented as a tuple of `(x, y)`
+  * For example `(200,125)`
 
 ---
 
@@ -438,9 +438,9 @@ Like a list but can't change the values &rarr; **immutable**
 
 Tuples:
 
-- start with `(`
-- end with `)`
-- `,` separates the elements
+* start with `(`
+* end with `)`
+* `,` separates the elements
 
 ---
 
@@ -474,10 +474,10 @@ my_ttl.goto(0, 125)
 
 ### Investigate
 
-- `my_ttl.goto(0,125)` &rarr; turtle move to position `x = 0` and `y = 125`.
+* `my_ttl.goto(0,125)` &rarr; turtle move to position `x = 0` and `y = 125`.
   
-- `#` &rarr; turns the code into comments
-  - called **commenting out** code &rarr; useful for debugging
+* `#` &rarr; turns the code into comments
+  * called **commenting out** code &rarr; useful for debugging
   
 **Modify** the code &rarr; moves to all points in coordinates diagram
 
@@ -517,9 +517,9 @@ for index in range(sides):
     my_ttl.left(360 / sides)
 ```
 
-- **Predict** then **run** the code
-  - Did it do what you predicted?
-- **Investigate** the code by changing it
+* **Predict** then **run** the code
+  * Did it do what you predicted?
+* **Investigate** the code by changing it
 
 ---
 

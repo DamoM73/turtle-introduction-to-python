@@ -367,7 +367,7 @@ my_ttl.hideturtle()
 **Investigate** the code by using the debugger and stepping through the program one line at a time.
 ```
 
-```{admonition} Arguments vs Parameters
+```{hint} Arguments vs Parameters
 In programming, people sometimes use **arguments** and **parameters** to mean the same thing. That’s usually okay, but they are slightly different:
 
 * **arguments** are the values you send into a function
@@ -468,7 +468,7 @@ Notice that the number of lines has gone down from `71` to `63`.
 
 Flowcharts don’t show a whole program. They show the steps of a solution (an algorithm).
 
-```{admonition} What are algorithms?
+```{hint} What are algorithms?
 Algorithms are step-by-step instructions used to solve a problem.
 
 * A cake recipe is an algorithm for baking a cake
@@ -506,7 +506,7 @@ From your current code:
 * Make the function take a value for the side length of the square
 * Replace all the `# draw square` sections with calls to `draw_square`
 
-```{admonition} Where should I place functions?
+```{hint} Where should I place functions?
 Function definitions should be placed at the top of your code, just after the `import` statements.
 
 There are two reasons for this:

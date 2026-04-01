@@ -32,7 +32,7 @@ for index in range(1, 5):
 
 When you run the code, this is what you will see.
 
-```{code-block}
+```{code-block} bash
 1
 2
 3

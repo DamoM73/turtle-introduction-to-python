@@ -1,12 +1,12 @@
 # Python Turtle - Lesson 1
 
 ```{topic} In this lesson you will learn:
-- how to set up your coding workspace
-- how to run your first program
-- how to write comments in Python
-- how to understand and fix error messages
-- how to use modules in your code
-- how to make a simple turtle program
+* how to set up your coding workspace
+* how to run your first program
+* how to write comments in Python
+* how to understand and fix error messages
+* how to use modules in your code
+* how to make a simple turtle program
 ```
 
 ## Part 1: Thonny Introduction

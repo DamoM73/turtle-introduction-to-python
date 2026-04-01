@@ -1,4 +1,4 @@
 # TODO
 
-- Solutions page
-- References page
+* Solutions page
+* References page

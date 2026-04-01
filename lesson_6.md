@@ -259,16 +259,16 @@ print(7 < 8 and "a" < "o")
 ```
 
 ```{note} Investigate - Code breakdown
-- `Line 1`: `print(7 < 8 and "a" < "o")`
-  - first Python will complete the comparison operations from left to right
-    - `7 < 8` returns `True`
-    - `"a" < "o"` returns `True`
-  - the code is now: `print(True and True)`
-    - `True and True` returns `True`
-  - Python prints `True` to the **Shell**
+* `Line 1`: `print(7 < 8 and "a" < "o")`
+  * first Python will complete the comparison operations from left to right
+    * `7 < 8` returns `True`
+    * `"a" < "o"` returns `True`
+  * the code is now: `print(True and True)`
+    * `True and True` returns `True`
+  * Python prints `True` to the **Shell**
 ```
 
-```{admonition} Combining multiple comparison operations
+```{hint} Combining multiple comparison operations
 When you use more than one comparison, you must have a comparison on **both sides** of the Boolean operator.
 
 * `10 > 5 and 10 > 13`

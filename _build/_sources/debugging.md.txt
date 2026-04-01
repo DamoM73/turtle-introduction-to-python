@@ -392,7 +392,7 @@ Your screen should now look like the image below. You will also notice some new 
     * line 8 in the main program
     * line 3 inside the `add_underscores` function
 
-```{admonition} Stack timeline
+```{hint} Stack timeline
 1. Line 8 in the main program calls the `add_underscores` function
 2. Python pauses the main program at line 8 and waits for the function to finish
 3. When the function finishes, the main program continues from line 8

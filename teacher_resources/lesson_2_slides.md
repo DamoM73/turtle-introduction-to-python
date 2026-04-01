@@ -10,11 +10,11 @@ Lesson 2
 
 ## Topics
 
-- iteration and how to it to reduce your code length
-- flowcharts and how to use them to represent program algorithms
-- how to write Python programs using `for` loops
-- how to use a Thonny's debugger to trace `for` loops
-- how to use the `range` function to generate lists of numbers
+* iteration and how to it to reduce your code length
+* flowcharts and how to use them to represent program algorithms
+* how to write Python programs using `for` loops
+* how to use a Thonny's debugger to trace `for` loops
+* how to use the `range` function to generate lists of numbers
 
 ---
 
@@ -40,8 +40,8 @@ Movement of program &rarr; **the flow** of the program
 
 They show:
 
-- each process in the program
-- the program moving from one process to the next
+* each process in the program
+* the program moving from one process to the next
 
 ![Flowchart symbols 1](../assets/flow_chart_symbol_1.png)
 
@@ -119,8 +119,8 @@ Hello Adam
 
 Sequential becomes a problem with bigger programs
 
-- say hello to 500 people, or 1,000 people or more!
-- decided to say `"good morning"` rather than `"hello"`
+* say hello to 500 people, or 1,000 people or more!
+* decided to say `"good morning"` rather than `"hello"`
 
 Ok for a small program, but becomes a problem
 
@@ -184,34 +184,34 @@ for name in names:
 
 **Investigate** by unpacking the code:
 
-- `names = ["Hunter", "Jordi", "Adam", "Jesse", "Bryce", "Ben"]` &rarr; list
-  - just like a real world list
-  - `[` indicates the beginning and `]` indicates the end
-  - `"Hunter"`, `"Jordi"`, `"Adam"`, `"Jesse"`, `"Bryce"`, `"Ben"` 
-    - items in the list
-    - called **elements**
-  - elements separated by commas (`,`)
-  - `names =` gives the list a name
-    - this list is called `names`
+* `names = ["Hunter", "Jordi", "Adam", "Jesse", "Bryce", "Ben"]` &rarr; list
+  * just like a real world list
+  * `[` indicates the beginning and `]` indicates the end
+  * `"Hunter"`, `"Jordi"`, `"Adam"`, `"Jesse"`, `"Bryce"`, `"Ben"` 
+    * items in the list
+    * called **elements**
+  * elements separated by commas (`,`)
+  * `names =` gives the list a name
+    * this list is called `names`
 
 ---
 
-- `for name in names:` &rarr; how we create a `for` loop
-  - `for` &rarr; keyword identifying the beginning of `for` loop
-  - `in names` &rarr; repeat the code below using each element of the `names` list
-  - `name` &rarr; the current `names` element in use
-  - `:` rarr; indented code block follows
+* `for name in names:` &rarr; how we create a `for` loop
+  * `for` &rarr; keyword identifying the beginning of `for` loop
+  * `in names` &rarr; repeat the code below using each element of the `names` list
+  * `name` &rarr; the current `names` element in use
+  * `:` rarr; indented code block follows
 
 ---
 
-- `print("Hello", name)` &rarr; indented.
-  - indentation &rarr; the code to be repeated
-    - can be many lines.
-    - multi-line indented code &rarr; **code block**.
-    - should be four spaces
-  - `print("Hello", name)`
-    - print `Hello` to the **Shell** 
-    - print the current `names` element in use
+* `print("Hello", name)` &rarr; indented.
+  * indentation &rarr; the code to be repeated
+    * can be many lines.
+    * multi-line indented code &rarr; **code block**.
+    * should be four spaces
+  * `print("Hello", name)`
+    * print `Hello` to the **Shell** 
+    * print the current `names` element in use
 
 ---
 
@@ -282,8 +282,8 @@ How are you?
 
 **All** the code block is repeated:
 
-- all code at the same indentation level is repeated
-- important to ensure the whole code block uses the same number of spaces
+* all code at the same indentation level is repeated
+* important to ensure the whole code block uses the same number of spaces
 
 ---
 
@@ -373,17 +373,17 @@ for number in number_list:
 
 PRIMM
 
-- **Predict** what you think will happen
-- **Run** the code an see how close your prediction was
-- Let's **investigate** the code.
+* **Predict** what you think will happen
+* **Run** the code an see how close your prediction was
+* Let's **investigate** the code.
 
 ---
 
 `number_list = range(1, 101)`
 
-- `range` &rarr; create a list of numbers
-- `1` &rarr; first number in the list
-- `101` &rarr; first number **not** in the list
+* `range` &rarr; create a list of numbers
+* `1` &rarr; first number in the list
+* `101` &rarr; first number **not** in the list
 
 Make the code shorter &rarr; use `range` inside the `for` statement
 
@@ -418,9 +418,9 @@ for number in range(1, 101):
 
 PRIMM:
 
-- **Predict** what you think will happen, and then **run** the code. Did it do what you predicted?
-- **Investigate** the code by changing aspect of the code.
-- **Modify** the code so that is makes a complete circle.
+* **Predict** what you think will happen, and then **run** the code. Did it do what you predicted?
+* **Investigate** the code by changing aspect of the code.
+* **Modify** the code so that is makes a complete circle.
 
 ---
 

@@ -11,12 +11,12 @@ Lesson 5
 
 Topics
 
-- how to capturing errors
-- what are branching control structures (`if` statements)
-- how and when to use `if` ... `elif` ... `else` in Python
-- the difference between definite and indefinite iteration
-- how and when to use `where` loops in Python
-- how to generate random numbers in Python
+* how to capturing errors
+* what are branching control structures (`if` statements)
+* how and when to use `if` ... `elif` ... `else` in Python
+* the difference between definite and indefinite iteration
+* how and when to use `where` loops in Python
+* how to generate random numbers in Python
 
 ---
 
@@ -71,8 +71,8 @@ ValueError: invalid literal for int() with base 10: 'dog'
 
 `num_sides = int(input("How many sides?> "))`
 
-- trying to convert `dog` in integer
-- `dog` is not a whole number &rarr; error
+* trying to convert `dog` in integer
+* `dog` is not a whole number &rarr; error
 
 Need to checkuser has entered a whole number
 
@@ -86,10 +86,10 @@ user_value = input("Enter a number: ")
 print(user_value.isdigit())
 ```
 
-- **Predict** for two runs of the code:
-  - first &rarr; enter `10`
-  - second &rarr; enter `dog`
-- **Run** the code. Did it follow your predictions?
+* **Predict** for two runs of the code:
+  * first &rarr; enter `10`
+  * second &rarr; enter `dog`
+* **Run** the code. Did it follow your predictions?
 
 ---
 
@@ -118,10 +118,10 @@ if user_value.isdigit():
     print("That's a number")
 ```
 
-- **Predict** for two runs of the code:
-  - first &rarr; enter `10`
-  - second &rarr; enter `dog`
-- **Run** the code. Did it follow your predictions?
+* **Predict** for two runs of the code:
+  * first &rarr; enter `10`
+  * second &rarr; enter `dog`
+* **Run** the code. Did it follow your predictions?
 
 ---
 
@@ -135,14 +135,14 @@ Condition symbol (diamond) also used for `if` statements
 
 ### Investigate code - Breakdown
 
-- `if user_value.isdigit():` &rarr; defines the `if` statement
-  - `if` &rarr; keyword
-  - `user_value.isdigit()` &rarr; **conditional**
-    - return `True` or `False`
-  - `:` &rarr; indented code block coming
-  - indented code block &rarr; only run when conditional returns `True`
-- `print("That's a number")`
-  - will run when `user_value.isdigit()` is `True`
+* `if user_value.isdigit():` &rarr; defines the `if` statement
+  * `if` &rarr; keyword
+  * `user_value.isdigit()` &rarr; **conditional**
+    * return `True` or `False`
+  * `:` &rarr; indented code block coming
+  * indented code block &rarr; only run when conditional returns `True`
+* `print("That's a number")`
+  * will run when `user_value.isdigit()` is `True`
 
 ---
 
@@ -161,10 +161,10 @@ else:
     print("That's not a number")
 ```
 
-- **Predict** for two runs of the code:
-  - first &rarr; enter `10`
-  - second &rarr; enter `dog`
-- **Run** the code. Did it follow your predictions?
+* **Predict** for two runs of the code:
+  * first &rarr; enter `10`
+  * second &rarr; enter `dog`
+* **Run** the code. Did it follow your predictions?
 
 ---
 
@@ -176,12 +176,12 @@ else:
 
 ### Investigate code - Breakdown
 
-- `else:`
-  - uses `if` statement condition
-  - when `user_value.isdigit()` is `False` &rarr; run indented code block
-  - `:` &rarr; indented code block coming
-- `print("That's not a number")`
-  - will run when `user_value.isdigit()` returns `False`
+* `else:`
+  * uses `if` statement condition
+  * when `user_value.isdigit()` is `False` &rarr; run indented code block
+  * `:` &rarr; indented code block coming
+* `print("That's not a number")`
+  * will run when `user_value.isdigit()` returns `False`
 
 Use the **debugger** with inputs of `10` and `dog`
 
@@ -249,17 +249,17 @@ draw_poly(size, num_sides)
 
 ---
 
-- **Predict** for these scenarios:
-  - valid `sides` value and valid `size` value
-  - valid `sides` value and invalid `size` value
-  - invalid `sides` value and valid `size` value
-  - invalid `sides` value and invalid `size` value
-- **Run** the code. Did it follow your prediction?
+* **Predict** for these scenarios:
+  * valid `sides` value and valid `size` value
+  * valid `sides` value and invalid `size` value
+  * invalid `sides` value and valid `size` value
+  * invalid `sides` value and invalid `size` value
+* **Run** the code. Did it follow your prediction?
 
 More testing tips
 
-- Testing branching code &rarr; test all possible paths
-- Test `if` statements for `True` and `False` conditions
+* Testing branching code &rarr; test all possible paths
+* Test `if` statements for `True` and `False` conditions
 
 ---
 
@@ -271,15 +271,15 @@ More testing tips
 
 ### Investigate code - Breakdown
 
-- `# get user input` &rarr; code structure comment
-- `num_sides = input("How many sides?> ")` &rarr; user input assigned to `num_sides`
-- `if num_sides.isdigit():` &rarr; if `num_sides` only contains numbers execute:
-  - `num_sides = int(size)`:
-    - converts `num_sides` value to integer
-    - reassigns integer to `num_sides`
-- `else:` &rarr; if `num_sides.isdigit()` returns `false` execute:
-  - `print("Invalid input")` &rarr; informs the user of mistake
-  - `quit()` &rarr; exits the program
+* `# get user input` &rarr; code structure comment
+* `num_sides = input("How many sides?> ")` &rarr; user input assigned to `num_sides`
+* `if num_sides.isdigit():` &rarr; if `num_sides` only contains numbers execute:
+  * `num_sides = int(size)`:
+    * converts `num_sides` value to integer
+    * reassigns integer to `num_sides`
+* `else:` &rarr; if `num_sides.isdigit()` returns `false` execute:
+  * `print("Invalid input")` &rarr; informs the user of mistake
+  * `quit()` &rarr; exits the program
 
 ---
 
@@ -297,8 +297,8 @@ Prefect opportunity to **refactor** code with a function.
 
 Refactoring &rarr; changing code **without changing the way it works**
 
-- efficiency &rarr; uses less computing resources
-- maintainability &rarr; easier to understand, fix, update and enhance
+* efficiency &rarr; uses less computing resources
+* maintainability &rarr; easier to understand, fix, update and enhance
 
 ---
 
@@ -365,10 +365,10 @@ Refactoring code &rarr; test that code still works the same
 
 **Run** code &rarr; test all possible branches:
 
-- valid `sides` value and valid `size` value
-- valid `sides` value and invalid `size` value
-- invalid `sides` value and valid `size` value
-- invalid `sides` value and invalid `size` value
+* valid `sides` value and valid `size` value
+* valid `sides` value and invalid `size` value
+* invalid `sides` value and valid `size` value
+* invalid `sides` value and invalid `size` value
 
 ---
 
@@ -380,32 +380,32 @@ Refactoring code &rarr; test that code still works the same
 
 ### Investigate code - Breakdown
 
-- `get_number` function
-  - `def get_number(prompt):` &rarr; defines function with argument `prompt`:
-  - `num = input(prompt)`
-    - displays `prompt` 
-    - assigns user input to `num`
-  - `if num.isdigit():` &rarr; when `num` only contains numbers execute
-    - `return int(num)`
-      - converts `num` value to integer
-      - sends value to main program
-      - ends the function
-  - `else:` &rarr; if `num` does not contain only numbers execute:
-    - `print("Invalid input")` &rarr; informs user of error
-    - `quit()` &rarr; exit program
+* `get_number` function
+  * `def get_number(prompt):` &rarr; defines function with argument `prompt`:
+  * `num = input(prompt)`
+    * displays `prompt` 
+    * assigns user input to `num`
+  * `if num.isdigit():` &rarr; when `num` only contains numbers execute
+    * `return int(num)`
+      * converts `num` value to integer
+      * sends value to main program
+      * ends the function
+  * `else:` &rarr; if `num` does not contain only numbers execute:
+    * `print("Invalid input")` &rarr; informs user of error
+    * `quit()` &rarr; exit program
 
 ---
 
 ### Investigate code - Breakdown (cont.)
 
-- `num_sides = get_number("How many sides?> ")` &rarr; calls `get_number` function
-  - `get_number()` &rarr; calls function
-  - `"How many sides?> "` &rarr; provides prompt string
-  - `num_sides =` assigns returned value to `num_sides`
-- `size = get_number("Length of sides?> ")` &rarr; calls the `get_number` function
-  - `get_number()` &rarr; calls the function
-  - `"Length of sides?> "` &rarr; provides prompt string
-  - `size =` assigns returned value to `size`
+* `num_sides = get_number("How many sides?> ")` &rarr; calls `get_number` function
+  * `get_number()` &rarr; calls function
+  * `"How many sides?> "` &rarr; provides prompt string
+  * `num_sides =` assigns returned value to `num_sides`
+* `size = get_number("Length of sides?> ")` &rarr; calls the `get_number` function
+  * `get_number()` &rarr; calls the function
+  * `"Length of sides?> "` &rarr; provides prompt string
+  * `size =` assigns returned value to `size`
 
 ---
 
@@ -415,8 +415,8 @@ Refactoring code &rarr; test that code still works the same
 
 `color` accepts two arguments:
 
-- first argument &rarr; line colour
-- second argument &rarr; fill colour
+* first argument &rarr; line colour
+* second argument &rarr; fill colour
 
 ---
 
@@ -434,17 +434,17 @@ def draw_poly(length, sides, color):
 draw_poly(size, num_sides, "red")
 ```
 
-- **Predict** and **run** the code
+* **Predict** and **run** the code
 
 ---
 
 ### Investigate code - breakdown
 
-- `def draw_poly(length, sides, color):` &rarr; accept third argument `color`
-- `my_ttl.color("black",color)` &rarr; sets the turtle colour
-  - line colour &rarr; `"black"`
-  - fill colour &rarr; the value in the `color` argument
-- `draw_poly(size, num_sides, "red")` &rarr; provide fill colour
+* `def draw_poly(length, sides, color):` &rarr; accept third argument `color`
+* `my_ttl.color("black",color)` &rarr; sets the turtle colour
+  * line colour &rarr; `"black"`
+  * fill colour &rarr; the value in the `color` argument
+* `draw_poly(size, num_sides, "red")` &rarr; provide fill colour
 
 Turtle colours &rarr; named, RBG and Hexadecimal colours
 
@@ -540,23 +540,23 @@ fill = get_color()
 draw_poly(size, num_sides, fill)
 ```
 
-- **Predict** what will happen then **run** code
+* **Predict** what will happen then **run** code
 
 ---
 
 ### Investigate code
 
-- `color = input("Fill colour (red, blue, green)?> ").lower()`
-  - `lower()` &rarr; string method &rarr; converts all letters to lowercase
-- `if color == "red":` &rarr; tests if user input `"red"`
-- `elif color == "blue":`
-  - executed when `color == "red"` returns `False`
-  - then checks if user input `"blue"`
-- `Line 28`: `elif color == "green":`
-  - executed when `color == "red"` and `color == "blue"` both return `False`
-  - checks if the value of `color` is `"green"`
-- `else:`
-  - executed when `color == "red"`, `color == "blue"` and `color == "green"` all return `False`
+* `color = input("Fill colour (red, blue, green)?> ").lower()`
+  * `lower()` &rarr; string method &rarr; converts all letters to lowercase
+* `if color == "red":` &rarr; tests if user input `"red"`
+* `elif color == "blue":`
+  * executed when `color == "red"` returns `False`
+  * then checks if user input `"blue"`
+* `Line 28`: `elif color == "green":`
+  * executed when `color == "red"` and `color == "blue"` both return `False`
+  * checks if the value of `color` is `"green"`
+* `else:`
+  * executed when `color == "red"`, `color == "blue"` and `color == "green"` all return `False`
 
 ---
 
@@ -566,25 +566,25 @@ draw_poly(size, num_sides, fill)
 
 ### if...elif...else structure
 
-- `if` component
-  - always at **beginning**
-  - only **compulsory** component
-  - **only be one** `if`
-- `elif` component
-  - after `if` statement and before `else` statement
-  - is **optional**
-  - as many `elif` components as needed
-  - executed when **all** the prior conditions are `False`
+* `if` component
+  * always at **beginning**
+  * only **compulsory** component
+  * **only be one** `if`
+* `elif` component
+  * after `if` statement and before `else` statement
+  * is **optional**
+  * as many `elif` components as needed
+  * executed when **all** the prior conditions are `False`
 
 ---
 
 ### if...elif...else structure (cont.)
 
-- `else` component
-  - always at **the end**
-  - is **optional**
-  - **only be one** `else`
-  - executed when **all** the prior conditions are `False`
+* `else` component
+  * always at **the end**
+  * is **optional**
+  * **only be one** `else`
+  * executed when **all** the prior conditions are `False`
 
 ---
 
@@ -604,17 +604,17 @@ Complete exercises 1 to 3
 
 Two types of loops &rarr; different types of iteration
 
-- **definite iteration** &rarr; count controlled
-  - **do know** how many times it will loop
-  - uses `for` loops
-- **indefinite iteration** &rarr; condition controlled
-  - **don't know** how many it will loop
-  - uses `while` loops
+* **definite iteration** &rarr; count controlled
+  * **do know** how many times it will loop
+  * uses `for` loops
+* **indefinite iteration** &rarr; condition controlled
+  * **don't know** how many it will loop
+  * uses `while` loops
 
 Card dealing analogy:
 
-- Dealing for Uno &rarr; **definite** iteration
-- Dealing for Snap &rarr; **indefinite** iteration
+* Dealing for Uno &rarr; **definite** iteration
+* Dealing for Snap &rarr; **indefinite** iteration
 
 ---
 
@@ -643,7 +643,7 @@ else:
     print("Incorrect. The number was", number)
 ```
 
-- **Predict** and **run** the code
+* **Predict** and **run** the code
 
 ---
 
@@ -658,14 +658,14 @@ else:
 
 ### Investigate code - Breakdown
 
-- `import random` &rarr; needed to access `random` functions
-- `get_number` function &rarr; same as previous
-- `number = random.randint(1,100)`
-  - `random.randint(1,100)` &rarr; random integer between `1` and `100`
-  - `number =` &rarr; assign random integer to `number`
-- `guess = get_number("Guess a number between 1 and 100> ")` &rarr; same as previous
-- `Line 17`: `if guess == number:`
-  - `==` symbol &rarr; **comparison operator** &rarr; checks if values the same
+* `import random` &rarr; needed to access `random` functions
+* `get_number` function &rarr; same as previous
+* `number = random.randint(1,100)`
+  * `random.randint(1,100)` &rarr; random integer between `1` and `100`
+  * `number =` &rarr; assign random integer to `number`
+* `guess = get_number("Guess a number between 1 and 100> ")` &rarr; same as previous
+* `Line 17`: `if guess == number:`
+  * `==` symbol &rarr; **comparison operator** &rarr; checks if values the same
 
 ---
 
@@ -759,14 +759,14 @@ Ensure testing cover all branches
 3. guess is correct
 4. all 10 guess used up without guessing the number
 
-- **Predict** and **run** for all four branches
+* **Predict** and **run** for all four branches
 
 ---
 
 Problem when correct before ten guesses?
 
-- prints `Correct!` 
-- continues to ask for guesses
+* prints `Correct!` 
+* continues to ask for guesses
 
 **Definite** iteration &rarr; has to run ten times
 
@@ -804,14 +804,14 @@ print("The number was", number)
 
 ---
 
-- `while guess != number:` &rarr; create `while` loop
-  - `guess != number` &rarr; loop condition
-    - when `guess` and `number` **not** the same &rarr; return `True`
-- `guess = 0`
-  - `while` statement uses `guess` before user input &rarr; error
-  - need to assign `guess` a value before `while` statement
+* `while guess != number:` &rarr; create `while` loop
+  * `guess != number` &rarr; loop condition
+    * when `guess` and `number` **not** the same &rarr; return `True`
+* `guess = 0`
+  * `while` statement uses `guess` before user input &rarr; error
+  * need to assign `guess` a value before `while` statement
     condition is tested
-  - why `0`?
+  * why `0`?
 
 ---
 
@@ -880,13 +880,13 @@ print("The number was", number)
 
 ---
 
-- `while True:` &rarr; **infinite loop**
-  - can be cause by errors
-  - can be 'broken out' of &rarr; `break` or `return` statement
-- `return int(num)`
-- `while` loop infinite & within a function
-  - keep asking for input until it executes `return`.
-  - `return` ends the function &rarr; exits `while` loop
+* `while True:` &rarr; **infinite loop**
+  * can be cause by errors
+  * can be 'broken out' of &rarr; `break` or `return` statement
+* `return int(num)`
+* `while` loop infinite & within a function
+  * keep asking for input until it executes `return`.
+  * `return` ends the function &rarr; exits `while` loop
 
 ---
 

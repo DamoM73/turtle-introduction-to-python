@@ -11,11 +11,11 @@ Lesson 4
 
 Topics
 
-- about coding modularisation
-- when and how to use functions in Python
-- how to accept user's input into your code
-- about data types
-- how to convert between data types
+* about coding modularisation
+* when and how to use functions in Python
+* how to accept user's input into your code
+* about data types
+* how to convert between data types
 
 ---
 
@@ -33,8 +33,8 @@ So far &rarr; code are only run once
 
 Functions:
 
-- named code block outside of the main program
-- main program uses function by **calling** the name
+* named code block outside of the main program
+* main program uses function by **calling** the name
 
 Explore functions using **a** solution for **lesson_3_ex_4.py**
 
@@ -136,8 +136,8 @@ Look at comments
 
 Two types of repetition:
 
-- moving the pen
-- drawing the shape
+* moving the pen
+* drawing the shape
 
 Writing code &rarr; copied and pasted code &rarr; changed magic numbers
 
@@ -180,13 +180,13 @@ move_pen()
 
 ### Investigate the code
 
-- `def move_pen():` &rarr; **defines** the function
-  - `def` &rarr; key word
-  - `move_pen` &rarr; the name
-  - `()` &rarr; deal with soon
-  - `:` &rarr; indented code block follows
-- function code block indented
-- `move_pen()` &rarr; calls function
+* `def move_pen():` &rarr; **defines** the function
+  * `def` &rarr; key word
+  * `move_pen` &rarr; the name
+  * `()` &rarr; deal with soon
+  * `:` &rarr; indented code block follows
+* function code block indented
+* `move_pen()` &rarr; calls function
 
 ---
 
@@ -246,17 +246,17 @@ move_pen(-100, 0)
 
 ### Investigate the code
 
-- `def move_pen(x, y):`
-  - `move_pen` function call &rarr; two values
-  - first value &rarr; `x`
-  - second value &rarr; `y`
-- `move_pen(-100,0)`:
-  - call `move_pen` function
-  - `-100` &rarr; first value (`x`)
-  - `0` &rarr; second value (`y`)
+* `def move_pen(x, y):`
+  * `move_pen` function call &rarr; two values
+  * first value &rarr; `x`
+  * second value &rarr; `y`
+* `move_pen(-100,0)`:
+  * call `move_pen` function
+  * `-100` &rarr; first value (`x`)
+  * `0` &rarr; second value (`y`)
 
-- **Predict** and **run** the code
-- **Investigate** using the debugger
+* **Predict** and **run** the code
+* **Investigate** using the debugger
 
 ---
 
@@ -268,8 +268,8 @@ Safe to use either term
 
 Do have distinct meanings:
 
-- arguments &rarr; the values passed to function
-- parameters &rarr; the variables named in function definition
+* arguments &rarr; the values passed to function
+* parameters &rarr; the variables named in function definition
 
 ---
 
@@ -357,12 +357,12 @@ Line count: 71 &rarr; 63
 
 ### Testing tips
 
-- Good to test frequently
-- Change code &rarr; test it
-  - Too many changes between testing &rarr; harder to debug
-- Function passes test
-  - don't need have to testing again (unless changed)
-  - error elsewhere in code
+* Good to test frequently
+* Change code &rarr; test it
+  * Too many changes between testing &rarr; harder to debug
+* Function passes test
+  * don't need have to testing again (unless changed)
+  * error elsewhere in code
 
 ---
 
@@ -376,10 +376,10 @@ Each function is an algorithm
 
 Representing functions in flowcharts:
 
-- create flowchart for each function
-- show where main calls functions
-- show function name terminator symbol
-  - **main** &rarr; name of main program
+* create flowchart for each function
+* show where main calls functions
+* show function name terminator symbol
+  * **main** &rarr; name of main program
 
 ---
 
@@ -404,13 +404,13 @@ Make function to draw squares:
 
 Place function definitions:
 
-- the top of the code
-- right after `import` statements
+* the top of the code
+* right after `import` statements
 
 Reasons:
 
-- function not defined before call &rarr; generates `NameError`
-- easier to find &rarr; improves maintainability
+* function not defined before call &rarr; generates `NameError`
+* easier to find &rarr; improves maintainability
 
 ---
 
@@ -484,8 +484,8 @@ There is no more repetition in the main code, but there is still three code bloc
 
 This will provide two benefits:
 
-- It will improve maintainability by making the code more readable.
-- If we want to extend the drawing we can easily add more rectangles, triangle and circles.
+* It will improve maintainability by making the code more readable.
+* If we want to extend the drawing we can easily add more rectangles, triangle and circles.
 
 See if you can change all three blocks into functions. Remember to test each function when you create it.
 
@@ -556,8 +556,8 @@ draw_circle(5)
 my_ttl.hideturtle()
 ```
 
-- Line count: 71 &rarr; 59
-- Easier to read, test and debug
+* Line count: 71 &rarr; 59
+* Easier to read, test and debug
 
 ---
 
@@ -611,14 +611,14 @@ draw_poly(length, sides)
 
 PRIMM
 
-- **Predict** &rarr; what will happen
-- **Run** &rarr; how close is your prediction
-- **Modify** &rarr; shape fits within the window
+* **Predict** &rarr; what will happen
+* **Run** &rarr; how close is your prediction
+* **Modify** &rarr; shape fits within the window
 
 Part of shape &rarr; off the screen
 
-- change length `100` &rarr; `80`
-- how could non programmer do this
+* change length `100` &rarr; `80`
+* how could non programmer do this
 
 **How do we make our programs interactive?**
 
@@ -630,8 +630,8 @@ Use `input` command &rarr; **Shell** asks for user input
 
 To do this change:
 
-- `sides = 9` &rarr; `sides = input("How many sides?> ")`
-- `length = 100` &rarr; `length = input("How long are the sides?> ")`
+* `sides = 9` &rarr; `sides = input("How many sides?> ")`
+* `length = 100` &rarr; `length = input("How long are the sides?> ")`
 
 ---
 
@@ -660,7 +660,7 @@ length = input("How long are the sides?> ")
 draw_poly(length, sides)
 ```
 
-- **Predict** and **run** code
+* **Predict** and **run** code
 
 ---
 
@@ -679,14 +679,14 @@ TypeError: 'str' object cannot be interpreted as an integer
 
 Unpacking the changed code 
 
-- `sides = input("How many sides?> ")`
-  - `input` &rarr; wait and get input user via the **Shell**
-  - `("How many sides?> ")` &rarr; what to write before waiting for input
-  - `sides =` user input &rarr; assign to `sides`
+* `sides = input("How many sides?> ")`
+  * `input` &rarr; wait and get input user via the **Shell**
+  * `("How many sides?> ")` &rarr; what to write before waiting for input
+  * `sides =` user input &rarr; assign to `sides`
 
 Explaining the error
 
-- `TypeError` &rarr; need to understand **data types**
+* `TypeError` &rarr; need to understand **data types**
 
 ---
 
@@ -696,15 +696,15 @@ Variables can hold different types of data
 
 The four data types we will use:
 
-- integer numbers (`int`)
-- floating point numbers (`float`)
-- strings (`str`)
-- Booleans (`bool`)
+* integer numbers (`int`)
+* floating point numbers (`float`)
+* strings (`str`)
+* Booleans (`bool`)
 
 Data types used for:
 
-- what operations can be done the variable
-- which special operations (**methods**) can be used
+* what operations can be done the variable
+* which special operations (**methods**) can be used
 
 ---
 
@@ -715,14 +715,14 @@ Traceback (most recent call last):
 TypeError: 'str' object cannot be interpreted as an integer
 ```
 
-- `TypeError: 'str' object cannot be interpreted as an integer`:
-  - trying to use string when integer is expecting
-- `Traceback`:
-  - error occurred `line 5` &rarr;  `for index in range(sides):`
-    - using `sides` in a `range` function &rarr; but `sides` is a string
-  - `Line 19` &rarr; `sides = input("How many sides?> ")`
-    - assigned used input (`3`) to `sides`
-    - `3` is integer but Python think it's a string
+* `TypeError: 'str' object cannot be interpreted as an integer`:
+  * trying to use string when integer is expecting
+* `Traceback`:
+  * error occurred `line 5` &rarr;  `for index in range(sides):`
+    * using `sides` in a `range` function &rarr; but `sides` is a string
+  * `Line 19` &rarr; `sides = input("How many sides?> ")`
+    * assigned used input (`3`) to `sides`
+    * `3` is integer but Python think it's a string
 
 `input` function always accepted the input as a string
 
@@ -732,9 +732,9 @@ TypeError: 'str' object cannot be interpreted as an integer
 
 Variable called `var`:
 
-- convert `var` &rarr; string, use `str(var)`
-- convert `var` &rarr; integer, use `int(var)`
-- convert `var` &rarr; a float, use `float(var)`
+* convert `var` &rarr; string, use `str(var)`
+* convert `var` &rarr; integer, use `int(var)`
+* convert `var` &rarr; a float, use `float(var)`
 
 ---
 
@@ -772,12 +772,12 @@ draw_poly(length, sides)
 
 PRIMM
 
-- **Predict** and **run** the code
-- **Investigate**
-  - draw different shapes
-  - draw a circle
-  - enter a float or a string?
-- **Modify** &rarr; use different prompts
+* **Predict** and **run** the code
+* **Investigate**
+  * draw different shapes
+  * draw a circle
+  * enter a float or a string?
+* **Modify** &rarr; use different prompts
 
 ---
 

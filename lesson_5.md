@@ -131,7 +131,7 @@ Did it do what you thought it would do?
 ```
 
 ```{note} Investigate
-- Let's **investigate** that code.
+* Let's **investigate** that code.
 
 **Flowcharts**
 
@@ -363,9 +363,9 @@ Let’s test the code and check if it works.
 ```
 
 ```{hint} More testing tips
-- When testing branching code you need to test all possible paths.
-- Test `if` statements for both `True` conditions and `False` conditions.
-- This code had four possible branches so we needed to test all four of them
+* When testing branching code you need to test all possible paths.
+* Test `if` statements for both `True` conditions and `False` conditions.
+* This code had four possible branches so we needed to test all four of them
 ```
 
 ```{note} Investigate
@@ -422,7 +422,7 @@ The only things that change are:
 
 This makes it a good chance to **refactor** the code by using a function.
 
-```{admonition} What is refactoring?
+```{hint} What is refactoring?
 Refactoring means changing your code **without changing what it does**.
 
 We do this to make the code better.
@@ -492,15 +492,15 @@ size = get_number("Length of sides?> ")
 draw_poly(size, num_sides)
 ```
 
-```{code} Run
+```{note} Run
 When you refactor code, it is important to ensure the code still works the same. So **run** the code to ensure that it still works the same way. 
 
 Remember to test all 4 possible branches:
 
-- valid `sides` value and valid `size` value
-- valid `sides` value and invalid `size` value
-- invalid `sides` value and valid `size` value
-- invalid `sides` value and invalid `size` value
+* valid `sides` value and valid `size` value
+* valid `sides` value and invalid `size` value
+* invalid `sides` value and valid `size` value
+* invalid `sides` value and invalid `size` value
 ```
 
 ```{note} Investigate
@@ -950,7 +950,7 @@ The starting code is shown below:
 * Did it do what you thought it would do?
 ```
 
-```{admonition} What is the random module?
+```{hint} What is the random module?
 The **random** module lets Python create random results.
 
 It includes different tools (functions) you can use to get random values.
@@ -997,7 +997,7 @@ To see all the available functions, visit the [**W3Schools Python Random Module 
   * the code inside `else` will run instead
 ```
 
-```{admonition} Comparison operators
+```{hint} Comparison operators
 A **comparison operator** compares two values and gives back either `True` or `False`.
 
 Python uses these comparison operators:

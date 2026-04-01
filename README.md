@@ -4,10 +4,10 @@ This repository provides a beginner-friendly tutorial website introducing studen
 
 ## Features
 
-- **Interactive lessons** covering core Python concepts.
-- **Flowchart and debugging** guides.
-- **Extension activities** for further learning.
-- Built using **Sphinx** and **MyST** for a seamless learning experience.
+* **Interactive lessons** covering core Python concepts.
+* **Flowchart and debugging** guides.
+* **Extension activities** for further learning.
+* Built using **Sphinx** and **MyST** for a seamless learning experience.
 
 ## Website
 

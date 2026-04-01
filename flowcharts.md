@@ -145,12 +145,12 @@ Below is a flowchart for a number guessing game.
 
 The game requirements are:
 
-- Generate a random number between 1 and 100
-- Ask the user to guess the number
-- If the number is incorrect, it tells the user if they guessed too high or two low
-- If the number is correct, it tells the user how many guesses they had.
-- Validate user input to ensure incorrect types cannot be entered
-- Only accept numbers between 1 and 100
-- Ask the user to play again
+* Generate a random number between 1 and 100
+* Ask the user to guess the number
+* If the number is incorrect, it tells the user if they guessed too high or two low
+* If the number is correct, it tells the user how many guesses they had.
+* Validate user input to ensure incorrect types cannot be entered
+* Only accept numbers between 1 and 100
+* Ask the user to play again
 
 ![flowchart example](./assets/flowchart_example.png)
