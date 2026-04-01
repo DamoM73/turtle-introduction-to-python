@@ -299,7 +299,7 @@ Download **{download}`lesson_6_pt_2.py<./python_files/lesson_6_pt_2.py>`** file 
 :linenos:
 ```
 
-``` {note} Predict and Run
+```{note} Predict and Run
 * **Predict** what you think will happen when you run the code (hint: you will need to click in the Turtle window)
 * **Run** the code and check if your prediction was correct
 ```

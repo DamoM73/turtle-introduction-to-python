@@ -25,7 +25,7 @@ If you find any errors in this work, please **[raise an issue](https://github.co
 
 ## Teacher Resources
 
-The source code for this site can be found on [Github](https://github.com/DamoM73/turtle-introduction-to-python) where it is published under a [GNU GPLv3 license](https://choosealicense.com/licenses/gpl-3.0/). You are free to download and reuse for your own purposes within the licensing requirements.
+The source code for this site can be found on [Github](https://github.com/DamoM73/turtle-introduction-to-python) where it is published under a [GNU GPLv3 licence](https://choosealicense.com/licenses/gpl-3.0/). You are free to download and reuse for your own purposes within the licensing requirements.
 
 To use these resources without using the website:
 

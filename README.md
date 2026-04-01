@@ -13,6 +13,6 @@ This repository provides a beginner-friendly tutorial website introducing studen
 
 Access the tutorial: [Turtle Introduction to Python](https://damom73.github.io/turtle-introduction-to-python/)
 
-## License
+## Licence
 
-This project is licensed under the GPL-3.0 License.
+This project is licensed under the GPL-3.0 licence.
