@@ -66,11 +66,14 @@ html_theme_options = {
         "font-stack": "Verdana, sans-serif",
         "font-stack--monospace": "'Courier New', monospace",
         "code-font-size": "100%",
+        "color-sidebar-background": "#FFADE1",
     },
     "dark_css_variables": {
         "font-stack": "Verdana, sans-serif",
         "font-stack--monospace": "'Courier New', monospace",
         "code-font-size": "100%",
+        "color-sidebar-background": "#FFADE1",
+        "color-sidebar-brand-text": "#000000",
     },
 }
 
