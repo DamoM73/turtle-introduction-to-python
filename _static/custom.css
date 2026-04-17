@@ -1,0 +1,164 @@
+code.literal,
+.sig-inline {
+  font-size: 100%;
+}
+
+/* Keep documentation headings consistent across pages and theme modes. */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.article-container h1,
+.article-container h2,
+.article-container h3,
+.article-container h4,
+.article-container h5,
+.article-container h6 {
+  color: #ff00a1;
+}
+
+div.highlight-error,
+div.highlight-error .highlight,
+.highlight-error .highlighttable td.linenos,
+.highlight-error .highlighttable .linenodiv,
+.highlight-error .code-block-caption {
+  border: 1px solid #FF0000;
+  border-color: #FF0000;
+  border-radius: 0.2rem;
+}
+
+div.highlight-error pre,
+.highlight-error .highlighttable,
+.highlight-error .highlighttable pre,
+.highlight-error .highlighttable .linenodiv,
+.highlight-error .highlighttable td.linenos {
+  color: #FF0000;
+}
+
+.highlight-error .gp,
+.highlight-error .go,
+.highlight-error .w,
+.highlight-error span {
+  color: #FF0000 !important;
+}
+
+.highlight-error button.copybtn,
+.highlight-error:hover button.copybtn {
+  display: none;
+}
+
+.admonition.question,
+div.question,
+.question > .admonition-title {
+  --color-admonition-title--question: #90FE00;
+  --color-admonition-title-background--question: rgba(144, 254, 0, 0.2);
+  --icon-admonition-default: var(--icon-question);
+}
+
+.admonition.question > .admonition-title,
+div.question > .admonition-title {
+  background-color: var(--color-admonition-title-background--question);
+}
+
+.admonition.question,
+div.question {
+  border-left: 0.2rem solid #90FE00;
+}
+
+.admonition.question > .admonition-title::before,
+div.question > .admonition-title::before {
+  -webkit-mask-image: var(--icon-question);
+  mask-image: var(--icon-question);
+  background-color: #90FE00;
+}
+
+.admonition:not(.warning):not(.note):not(.hint):not(.question),
+div.admonition:not(.warning):not(.note):not(.hint):not(.question),
+.admonition:not(.warning):not(.note):not(.hint):not(.question) > .admonition-title {
+  --color-admonition-title: #8400FF;
+  --color-admonition-title-background: rgba(132, 0, 255, 0.2);
+  --icon-admonition-default: var(--icon-flame);
+}
+
+.admonition:not(.warning):not(.note):not(.hint):not(.question) > .admonition-title,
+div.admonition:not(.warning):not(.note):not(.hint):not(.question) > .admonition-title {
+  background-color: var(--color-admonition-title-background);
+}
+
+.admonition.warning,
+div.warning,
+.warning > .admonition-title {
+  --color-admonition-title--warning: #FF00A1;
+  --color-admonition-title-background--warning: rgba(255, 0, 161, 0.2);
+}
+
+.admonition.warning > .admonition-title,
+div.warning > .admonition-title {
+  background-color: var(--color-admonition-title-background--warning);
+}
+
+.admonition.note,
+div.note,
+.note > .admonition-title {
+  --color-admonition-title--note: #0015FF;
+  --color-admonition-title-background--note: rgba(0, 21, 255, 0.2);
+  --icon-admonition-default: var(--icon-info);
+}
+
+.admonition.note > .admonition-title,
+div.note > .admonition-title {
+  background-color: var(--color-admonition-title-background--note);
+}
+
+.admonition.note > .admonition-title::before,
+div.note > .admonition-title::before {
+  -webkit-mask-image: var(--icon-info);
+  mask-image: var(--icon-info);
+}
+
+.admonition.hint,
+div.hint,
+.hint > .admonition-title {
+  --color-admonition-title--hint: #FF7300;
+  --color-admonition-title-background--hint: rgba(255, 115, 0, 0.2);
+  --icon-admonition-default: var(--icon-pencil);
+}
+
+.admonition.hint > .admonition-title,
+div.hint > .admonition-title {
+  background-color: var(--color-admonition-title-background--hint);
+}
+
+.admonition.hint > .admonition-title::before,
+div.hint > .admonition-title::before {
+  -webkit-mask-image: var(--icon-pencil);
+  mask-image: var(--icon-pencil);
+}
+
+aside.topic,
+aside.topic > .topic-title {
+  --color-topic-title: #00FFF7;
+  --color-topic-title-background: rgba(0, 255, 247, 0.2);
+  --icon-topic-default: var(--icon-abstract);
+}
+
+aside.topic {
+  border-left: 0.2rem solid #00FFF7;
+}
+
+aside.topic > .topic-title {
+  background-color: var(--color-topic-title-background);
+}
+
+.admonition,
+aside.topic,
+aside.topic > .topic-title {
+  font-size: 100%;
+}
+
+.admonition > .admonition-title,
+aside.topic > .topic-title {
+  font-size: 100% !important;
+}
