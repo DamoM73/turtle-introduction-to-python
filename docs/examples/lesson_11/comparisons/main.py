@@ -1,0 +1,6 @@
+print("jeff" == "jeff")
+print(1 != 1)
+print(500 > 300)
+print(100 >= 250)
+print("a" < "q")
+print(-30 <= 3)

@@ -1,0 +1,5 @@
+print(1 != 2)
+print(300 >= 250)
+print(10 > 5 and 5 > 4)
+print(6 > 5 or 1 == 2)
+print(not False)

@@ -1,0 +1,93 @@
+[project]
+site_name = "A Turtle Introduction to Python"
+site_description = "A simple introduction to Python for Year 7 students, using the turtle module and Thonny."
+site_author = "Damien Murtagh"
+site_url = "https://damom73.github.io/turtle-introduction-to-python/"
+repo_url = "https://github.com/DamoM73/turtle-introduction-to-python"
+repo_name = "DamoM73/turtle-introduction-to-python"
+copyright = "Content licensed under CC BY-NC-SA 4.0. Code licensed under GPLv3."
+docs_dir = "docs"
+extra_css = ["stylesheets/extra.css"]
+
+nav = [
+  { "Home" = "index.md" },
+  { "Lessons" = [
+    { "Lesson 1: Thonny Introduction" = "lessons/lesson_01.md" },
+    { "Lesson 2: Introducing Turtle" = "lessons/lesson_02.md" },
+    { "Lesson 3: Iteration" = "lessons/lesson_03.md" },
+    { "Lesson 4: Range" = "lessons/lesson_04.md" },
+    { "Lesson 5: Variables" = "lessons/lesson_05.md" },
+    { "Lesson 6: Coordinates" = "lessons/lesson_06.md" },
+    { "Lesson 7: Functions" = "lessons/lesson_07.md" },
+    { "Lesson 8: User Input" = "lessons/lesson_08.md" },
+    { "Lesson 9: Branching" = "lessons/lesson_09.md" },
+    { "Lesson 10: While Loops" = "lessons/lesson_10.md" },
+    { "Lesson 11: Boolean Logic" = "lessons/lesson_11.md" },
+    { "Lesson 12: Mouse Input" = "lessons/lesson_12.md" },
+  ] },
+  { "Guides" = [
+    { "Flowcharts" = "guides/flowcharts.md" },
+    { "Debugging with Thonny" = "guides/debugging.md" },
+  ] },
+  { "Extension Activities" = "extension.md" },
+  { "Reference" = [
+    { "Exercise Solutions" = "reference/solutions.md" },
+    { "Licencing" = "reference/licencing.md" },
+  ] },
+  { "Teachers" = "teachers.md" },
+]
+
+[project.theme]
+language = "en"
+logo = "assets/logo_header.png"
+favicon = "assets/favicon.ico"
+features = [
+  "content.code.copy",
+  "content.code.select",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+md_in_html = {}
+tables = {}
+toc.permalink = true
+pymdownx.details = {}
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.snippets.base_path = ["docs"]
+pymdownx.snippets.check_paths = true
+pymdownx.superfences = {}
