@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\"--- tracked status of targets ---\"; git ls-files -- \"%GIT%turtle-introduction-to-python\" _build .tmp_doctrees .tmp_html \"Claude outputs\" working_files .cache site | ForEach-Object { \\($_ -split '/'\\)[0] } | Group-Object | Select-Object Name, Count | Format-Table -AutoSize; \"--- .gitignore ---\"; Get-Content .gitignore; \"--- stray folder ---\"; Get-ChildItem -Force -Recurse \"%GIT%turtle-introduction-to-python\" | Select-Object FullName, Length | Format-Table -AutoSize; \"--- notes/todo ---\"; Get-Content notes.md; Get-Content todo.md)",
+      "PowerShell(foreach \\($a in @\\('actions/configure-pages v6','actions/checkout v7','actions/setup-python v6','actions/upload-pages-artifact v5','actions/deploy-pages v5'\\)\\) { $r,$t = $a -split ' '; $out = gh api \"repos/$r/git/ref/tags/$t\" --jq '.ref' 2>&1; \"$r@$t -> $out\" }; Get-ChildItem .github -Recurse -File | Select-Object FullName)",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe -c \"import yaml,sys; yaml.safe_load\\(open\\('.github/workflows/write_to_gh_pages.yml'\\)\\); print\\('YAML OK'\\)\")",
+      "PowerShell($py = \".venv\\\\Scripts\\\\python.exe\"; \"=== make_zip ===\"; & $py scripts/make_zip.py; \"=== check_explanations ===\"; & $py scripts/check_explanations.py | Select-Object -Last 5; \"=== build ===\"; & .venv\\\\Scripts\\\\zensical.exe build --clean)",
+      "PowerShell(.venv\\\\Scripts\\\\python.exe \"C:\\\\Users\\\\DamoM\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--GIT-turtle-introduction-to-python\\\\7a7c0da7-3208-4799-8c7b-6a3702834c79\\\\scratchpad\\\\check_links.py\")",
+      "PowerShell(git add -A; git status --short | Where-Object { $_ -notmatch '^D ' }; \"deleted: \" + \\(git status --short | Where-Object { $_ -match '^D ' } | Measure-Object\\).Count; git diff --cached --stat -- docs/downloads | Select-Object -Last 1)",
+      "PowerShell(git reset -q -- .claude/settings.json)",
+      "PowerShell(git push -u origin zensical)",
+      "PowerShell(git fetch origin --tags)",
+      "PowerShell(git ls-remote --tags origin v1-sphinx)",
+      "PowerShell(git tag -a v1-sphinx 743cfa5 -m \"Last version of the Sphinx site\")",
+      "PowerShell(git push origin v1-sphinx)",
+      "PowerShell(git checkout -q main)",
+      "PowerShell(git merge --ff-only zensical)",
+      "PowerShell(git push origin main)",
+      "PowerShell(git checkout -q zensical)",
+      "PowerShell(gh api repos/DamoM73/turtle-introduction-to-python/pages --jq '{build_type, source, status, html_url}')",
+      "PowerShell(gh api -X PUT repos/DamoM73/turtle-introduction-to-python/pages -f build_type=workflow)",
+      "PowerShell(gh run list --repo DamoM73/turtle-introduction-to-python --limit 3)",
+      "PowerShell(gh run watch 36711544946 --repo DamoM73/turtle-introduction-to-python --exit-status --interval 10)"
+    ]
+  }
+}
