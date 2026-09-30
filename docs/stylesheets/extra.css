@@ -1,9 +1,10 @@
 /* A Turtle Introduction to Python: colour theme */
 
 :root {
-  --deep-pink: #B0006E;
-  --hot-pink: #FF00A1;
-  --light-pink: #FFADE1;
+  --deep-teal: #00696B;
+  --teal: #00897B;
+  --light-teal: #9FF0E6;
+  --pale-teal: #80D8D0;
   --purple: #8400FF;
   --turtle-green: #4D8A00;
   --light-blue: #8AB4F8;
@@ -12,26 +13,26 @@
 
 /* Light mode */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: var(--deep-pink);
-  --md-primary-fg-color--light: var(--hot-pink);
-  --md-primary-fg-color--dark: var(--deep-pink);
+  --md-primary-fg-color: var(--deep-teal);
+  --md-primary-fg-color--light: var(--teal);
+  --md-primary-fg-color--dark: var(--deep-teal);
   --md-primary-bg-color: #FFFFFF;
-  --md-accent-fg-color: var(--deep-pink);
-  --md-accent-fg-color--transparent: rgba(176, 0, 110, 0.1);
-  --md-typeset-a-color: var(--deep-pink);
-  --heading-colour: var(--deep-pink);
+  --md-accent-fg-color: var(--deep-teal);
+  --md-accent-fg-color--transparent: rgba(0, 105, 107, 0.1);
+  --md-typeset-a-color: var(--deep-teal);
+  --heading-colour: var(--deep-teal);
 }
 
 /* Dark mode */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: var(--deep-pink);
-  --md-primary-fg-color--light: var(--hot-pink);
-  --md-primary-fg-color--dark: var(--deep-pink);
+  --md-primary-fg-color: var(--deep-teal);
+  --md-primary-fg-color--light: var(--teal);
+  --md-primary-fg-color--dark: var(--deep-teal);
   --md-primary-bg-color: #FFFFFF;
-  --md-accent-fg-color: var(--light-pink);
-  --md-accent-fg-color--transparent: rgba(255, 173, 225, 0.1);
+  --md-accent-fg-color: var(--pale-teal);
+  --md-accent-fg-color--transparent: rgba(128, 216, 208, 0.1);
   --md-typeset-a-color: var(--light-blue);
-  --heading-colour: var(--light-pink);
+  --heading-colour: var(--pale-teal);
 }
 
 /* Headings */
@@ -51,7 +52,7 @@
 /* Header and tabs */
 .md-header,
 .md-tabs {
-  background-color: var(--deep-pink);
+  background-color: var(--deep-teal);
   color: #FFFFFF;
 }
 
@@ -67,8 +68,8 @@
 .md-tabs__item--active,
 .md-tabs__link:hover,
 .md-tabs__link:focus {
-  color: var(--light-pink);
-  border-bottom-color: var(--light-pink);
+  color: var(--light-teal);
+  border-bottom-color: var(--light-teal);
 }
 
 /* Side navigation */
