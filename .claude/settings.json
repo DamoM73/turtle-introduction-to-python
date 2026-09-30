@@ -23,7 +23,10 @@
       "PowerShell(gh run watch 36711544946 --repo DamoM73/turtle-introduction-to-python --exit-status --interval 10)",
       "PowerShell(gh api repos/DamoM73/turtle-introduction-to-python/pages --jq '.build_type')",
       "PowerShell(git ls-remote --heads origin gh-pages)",
-      "PowerShell(git push origin --delete gh-pages; git fetch --prune origin; git ls-remote --heads origin; \"--- live site ---\"; curl.exe -s -o NUL -w \"%{http_code}`n\" \"https://damom73.github.io/turtle-introduction-to-python/?nc=$\\(Get-Random\\)\")"
+      "PowerShell(git push origin --delete gh-pages; git fetch --prune origin; git ls-remote --heads origin; \"--- live site ---\"; curl.exe -s -o NUL -w \"%{http_code}`n\" \"https://damom73.github.io/turtle-introduction-to-python/?nc=$\\(Get-Random\\)\")",
+      "PowerShell(git fetch --prune origin)",
+      "PowerShell(git rev-list --left-right --count origin/main...origin/zensical 2>$null)",
+      "PowerShell(gh run list --repo DamoM73/turtle-introduction-to-python --workflow \"Deploy site\" --limit 2)"
     ]
   }
 }

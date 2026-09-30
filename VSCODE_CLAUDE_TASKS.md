@@ -15,7 +15,7 @@ Work on the `zensical` branch. Do the tasks in order and check with Damien befor
 - **Student zip:** `python scripts/make_zip.py` builds `docs/downloads/turtle_tutorials.zip` with the layout `turtle_tutorials/lesson_NN/<name>.py` (93 files).
 - **Checks:** `python scripts/check_explanations.py` confirms every Code explanation line number matches its example (expect `0 issue(s) found`).
 - **Exercise starters:** each starter begins with a comment block holding the exercise wording. If an exercise's wording changes, run `python scripts/sync_starters.py` to update the starters, then rebuild the zip. Solution files have no instruction comment.
-- **Colour scheme:** deep pink `#B0006E` (header, tabs, links and headings in light mode), hot pink `#FF00A1`, light pink `#FFADE1` (dark-mode headings), light blue `#8AB4F8` (dark-mode links). Set in `docs/stylesheets/extra.css`.
+- **Colour scheme:** deep teal `#00696B` (header, tabs, links and headings in light mode), teal `#00897B`, light teal `#9FF0E6` (active and hovered tab), pale teal `#80D8D0` (dark-mode headings), light blue `#8AB4F8` (dark-mode links). Set in `docs/stylesheets/extra.css`. Teal was chosen so the banner is clearly different from the Lego Spike (magenta) and micro:bit (navy) sites.
 - **Callouts:** five types, the same on all of Damien's tutorial sites:
     - `!!! learn "In this lesson we will learn"`: amber, target icon, directly under the title and above the video
     - `!!! primm "PRIMM"`: green, flask icon, after every example
