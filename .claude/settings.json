@@ -20,7 +20,10 @@
       "PowerShell(gh api repos/DamoM73/turtle-introduction-to-python/pages --jq '{build_type, source, status, html_url}')",
       "PowerShell(gh api -X PUT repos/DamoM73/turtle-introduction-to-python/pages -f build_type=workflow)",
       "PowerShell(gh run list --repo DamoM73/turtle-introduction-to-python --limit 3)",
-      "PowerShell(gh run watch 36711544946 --repo DamoM73/turtle-introduction-to-python --exit-status --interval 10)"
+      "PowerShell(gh run watch 36711544946 --repo DamoM73/turtle-introduction-to-python --exit-status --interval 10)",
+      "PowerShell(gh api repos/DamoM73/turtle-introduction-to-python/pages --jq '.build_type')",
+      "PowerShell(git ls-remote --heads origin gh-pages)",
+      "PowerShell(git push origin --delete gh-pages; git fetch --prune origin; git ls-remote --heads origin; \"--- live site ---\"; curl.exe -s -o NUL -w \"%{http_code}`n\" \"https://damom73.github.io/turtle-introduction-to-python/?nc=$\\(Get-Random\\)\")"
     ]
   }
 }
