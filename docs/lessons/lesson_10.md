@@ -7,6 +7,16 @@
     - how to use a `while` loop to repeat until something happens
     - how to keep asking the user until they give a valid answer
 
+!!! terms "Terminology"
+    - **while loop** – a loop that keeps repeating its code while its condition is `True`.
+    - **definite iteration** – a loop where we know how many times it will run, usually written as a `for` loop.
+    - **indefinite iteration** – a loop where we don't know how many times it will run, usually written as a `while` loop.
+    - **count-controlled loop** – a loop that runs a set number of times, like a `for` loop.
+    - **condition-controlled loop** – a loop that runs until a condition changes, like a `while` loop.
+    - **comparison operator** – a symbol such as `==`, `!=`, `>` or `<` that compares two values and gives back `True` or `False`.
+    - **infinite loop** – a loop whose condition is always `True`, so it never stops on its own.
+    - **break** – a command that exits a loop straight away.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A9j7N6kLL1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/A9j7N6kLL1U)

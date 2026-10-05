@@ -7,6 +7,22 @@
     - how lists and code blocks work
     - how to step through a loop with Thonny's debugger
 
+!!! terms "Terminology"
+    - **sequence** – code running one line after the other, from the top of the program to the bottom.
+    - **flowchart** – a diagram that uses shapes and arrows to show each step in a program and how it moves from one step to the next.
+    - **input** – information that goes into a program, such as the user typing on a keyboard or clicking a mouse.
+    - **output** – information that a program sends out, such as text shown on the screen.
+    - **scalable** – describes code that still works well as the program gets bigger.
+    - **DRY** – short for Don't Repeat Yourself, the principle that we shouldn't write the same code over and over again.
+    - **iteration** – repeating the same code again and again, often with a small change each time, also called looping.
+    - **for loop** – a loop that repeats its code once for each item in a list or sequence.
+    - **control structure** – code that changes the flow of a program, instead of just running from top to bottom.
+    - **list** – a collection of items stored in a set order inside `[` and `]`, with commas between them.
+    - **element** – one item in a list.
+    - **indentation** – spaces at the start of a line (four in Python) that show which code belongs to a loop or other block.
+    - **debugger** – a tool that runs our code one step at a time so we can see what it is doing and find mistakes.
+    - **code block** – a group of lines indented by the same amount that belong together and run together.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_qZzz4lSckk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/_qZzz4lSckk)

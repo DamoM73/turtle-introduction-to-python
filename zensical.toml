@@ -32,6 +32,7 @@ nav = [
   { "Extension Activities" = "extension.md" },
   { "Reference" = [
     { "Exercise Solutions" = "reference/solutions.md" },
+    { "Glossary" = "reference/glossary.md" },
     { "Licencing" = "reference/licencing.md" },
   ] },
   { "Teachers" = "teachers.md" },

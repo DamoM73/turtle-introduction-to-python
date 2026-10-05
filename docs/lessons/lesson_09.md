@@ -6,6 +6,16 @@
     - how to refactor repeated code into a function that returns a value
     - how to fill shapes with colour
 
+!!! terms "Terminology"
+    - **branching** – letting a program choose between different paths depending on what is happening.
+    - **method** – a built-in tool that belongs to a value, such as a string, and helps us work with it.
+    - **if statement** – code that makes a decision by running its indented block only when its condition is `True`.
+    - **condition** – a check that gives back either `True` or `False`.
+    - **else** – the part of an `if` statement that runs when none of the conditions are `True`.
+    - **refactoring** – changing our code to make it better without changing what it does.
+    - **return** – to send a value back from a function to the code that called it, which also ends the function.
+    - **elif** – short for else if, a part of an `if` statement that checks another condition when the conditions before it were `False`.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fGEz4QNXpEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/fGEz4QNXpEE)

@@ -6,6 +6,19 @@
     - what comments are and why we use them
     - how to read error messages and use them to fix our code
 
+!!! terms "Terminology"
+    - **Python** – the programming language we use in this course to write instructions for the computer.
+    - **Thonny** – a program for writing, running and debugging Python code that is designed for beginners.
+    - **script** – a Python program saved as a text file.
+    - **user interface** – the screen of a program that we see and use, often shortened to UI.
+    - **Shell** – the panel in Thonny that shows what our program prints and any error messages.
+    - **comment** – a line starting with `#` that Python ignores, written to help humans understand the code.
+    - **built-in function** – a command that Python already knows, such as `print`, which Thonny colours purple.
+    - **syntax error** – an error that happens when our code doesn't follow Python's rules.
+    - **syntax highlighting** – colouring different parts of our code based on what they do, so it's easier to read and write correctly.
+    - **string** – a group of characters, like letters, numbers or symbols, inside quotation marks.
+    - **parentheses** – the round brackets `(` and `)`, which must always come in matching pairs.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/90T-NE_a50E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/90T-NE_a50E)

@@ -6,6 +6,14 @@
     - how to pass arguments into a function
     - how to show functions in a flowchart
 
+!!! terms "Terminology"
+    - **function** – a named block of code that we can run again and again whenever we need it.
+    - **call** – to run a function by using its name, after which the program comes back to where it was.
+    - **define** – to create a function with `def`, giving it a name and a code block that Python remembers but doesn't run yet.
+    - **argument** – a value we send into a function when we call it.
+    - **parameter** – a variable name in a function definition that receives a value sent into the function.
+    - **algorithm** – step-by-step instructions for solving a problem, like a recipe.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZQNU29m5pHY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/ZQNU29m5pHY)

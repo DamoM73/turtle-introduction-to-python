@@ -7,6 +7,16 @@
     - how to let Python do calculations for us
     - how to name variables and constants
 
+!!! terms "Terminology"
+    - **loop variable** – the variable in a `for` loop that stores the item or number the loop is currently using.
+    - **magic number** – a number written straight into our code with no name to explain what it means.
+    - **variable** – a named place, like a labelled box, that stores a value our program can use and change.
+    - **case sensitive** – treating capital and lowercase letters as different, so `age` and `Age` are two different names.
+    - **single point of truth** – keeping each value in one place, so changing it there changes it everywhere it is used.
+    - **constant** – a variable whose value never changes while the program runs, written in capital letters in Python.
+    - **naming convention** – an agreed habit for naming things that makes code easier to read, but doesn't cause an error if we break it.
+    - **snake case** – writing names in lowercase letters with `_` instead of spaces, like `side_length`.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mG1O_JamxjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/mG1O_JamxjQ)

@@ -6,6 +6,12 @@
     - how to use the Boolean operators `not`, `and` and `or`
     - how to join comparisons to build more powerful conditions
 
+!!! terms "Terminology"
+    - **Boolean operator** – an operator that works with `True` and `False` values and always gives back `True` or `False`.
+    - **not operator** – a Boolean operator that flips a value, so `not True` is `False` and `not False` is `True`.
+    - **and operator** – a Boolean operator that gives back `True` only if every value is `True`.
+    - **or operator** – a Boolean operator that gives back `True` if at least one value is `True`.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5GrokwhCXXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/5GrokwhCXXM)

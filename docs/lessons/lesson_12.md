@@ -5,6 +5,10 @@
     - how to use `if`, `elif` and `else` with Boolean operators to decide what happens
     - how to use coordinates to work out where the user clicked
 
+!!! terms "Terminology"
+    - **mouse input** – information a program gets from the mouse, such as where the user clicked.
+    - **quadrant** – one of the four sections a window is split into by lines through its centre.
+
 There is no video for this lesson.
 
 ## Mouse input in turtle

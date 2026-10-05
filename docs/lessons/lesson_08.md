@@ -5,6 +5,13 @@
     - what data types are and why they matter
     - how to change a value from one data type into another
 
+!!! terms "Terminology"
+    - **interactive** – describes a program that lets the user give it information while it runs, instead of changing the code.
+    - **data type** – the kind of value something is, such as a number or text, which tells Python what it can do with that value.
+    - **integer** – a whole number written without a decimal point, like `1` or `25`, called `int` in Python.
+    - **floating point number** – a number with a decimal point, like `1.0` or `3.5`, called `float` in Python.
+    - **Boolean** – a data type that can only be `True` or `False`, called `bool` in Python.
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HUEgYhYAuB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Video link](https://youtu.be/HUEgYhYAuB0)

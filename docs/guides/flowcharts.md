@@ -1,5 +1,14 @@
 # Flowcharts
 
+!!! terms "Terminology"
+    - **flow arrow** – an arrow in a flowchart that shows the path the program takes, in one direction only.
+    - **process block** – a rectangle in a flowchart that shows a step where the code does something, like setting a variable or doing a calculation.
+    - **terminal block** – a rounded rectangle in a flowchart that shows where a program or function starts and ends.
+    - **input/output block** – a parallelogram in a flowchart, also called an IO block, that shows information moving between the real world and the program.
+    - **decision block** – a diamond in a flowchart that asks a question and splits the path based on the answer.
+    - **loop indicator** – a grey dashed box drawn around the steps in a flowchart that repeat in a loop.
+    - **function indicator** – a red dashed box drawn around the steps of a function in a flowchart.
+
 A **flowchart** is a diagram that uses different shapes and arrows to show the steps in a process or how to solve a problem.
 
 In programming, we use flowcharts to plan **algorithms**: step-by-step instructions for solving a problem.

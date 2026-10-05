@@ -1,5 +1,17 @@
 # Debugging with Thonny
 
+!!! terms "Terminology"
+    - **run-time error** – an error that happens while the program is running, which makes it crash.
+    - **logic error** – a mistake where the code runs without crashing but doesn't do what we expected.
+    - **bug** – a mistake in a program that causes unexpected results.
+    - **debugging** – the process of finding and fixing bugs in a program.
+    - **step into** – a debugger control that runs the next small piece of code and shows every step Python takes.
+    - **step over** – a debugger control that runs the highlighted code in one go without showing all the small steps.
+    - **step out** – a debugger control that finishes the rest of the current piece of code and moves back out a level.
+    - **breakpoint** – a place we mark in our code where the debugger pauses the program.
+    - **local variable** – a variable that only exists inside the function that created it.
+    - **stack** – the list Thonny shows of which parts of the program are currently running, such as the main program and any function it has called.
+
 Everyone makes mistakes, even experienced programmers. In this guide we will learn how to use Thonny's **debugger** to find and fix mistakes in our code.
 
 ## Programming mistakes
