@@ -10,7 +10,7 @@
     - **function** – a named block of code that we can run again and again whenever we need it.
     - **call** – to run a function by using its name, after which the program comes back to where it was.
     - **define** – to create a function with `def`, giving it a name and a code block that Python remembers but doesn't run yet.
-    - **argument** – a value we send into a function when we call it.
+    - **argument** – a value we send into a function or method when we call it.
     - **parameter** – a variable name in a function definition that receives a value sent into the function.
     - **algorithm** – step-by-step instructions for solving a problem, like a recipe.
 

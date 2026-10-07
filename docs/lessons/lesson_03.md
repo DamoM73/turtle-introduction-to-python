@@ -10,8 +10,8 @@
 !!! terms "Terminology"
     - **sequence** – code running one line after the other, from the top of the program to the bottom.
     - **flowchart** – a diagram that uses shapes and arrows to show each step in a program and how it moves from one step to the next.
-    - **input** – information that goes into a program, such as the user typing on a keyboard or clicking a mouse.
-    - **output** – information that a program sends out, such as text shown on the screen.
+    - **input** – information that goes into a program, such as a key press, a mouse click or a sensor reading.
+    - **output** – information or actions that a program sends out, such as text on the screen, a sound or a motor moving.
     - **scalable** – describes code that still works well as the program gets bigger.
     - **DRY** – short for Don't Repeat Yourself, the principle that we shouldn't write the same code over and over again.
     - **iteration** – repeating the same code again and again, often with a small change each time, also called looping.

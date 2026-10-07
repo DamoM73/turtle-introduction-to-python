@@ -1,6 +1,6 @@
 # Glossary
 
-This glossary lists every technical term introduced on this site, in alphabetical order. Each term links to the page where it is first explained, and each page lists its new terms in a Terminology callout at the top.
+This glossary lists every technical term used on this site, in alphabetical order. Each term links to the page where it is first explained. Each page lists its new terms in a Terminology callout at the top. Terms already introduced in an earlier tutorial site aren't repeated in those callouts, but they are all listed here.
 
 [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [I](#i) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [Q](#q) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v) · [W](#w)
 
@@ -8,7 +8,7 @@ This glossary lists every technical term introduced on this site, in alphabetica
 
 - **algorithm** – step-by-step instructions for solving a problem, like a recipe. ([Lesson 7: Functions](../lessons/lesson_07.md))
 - **and operator** – a Boolean operator that gives back `True` only if every value is `True`. ([Lesson 11: Boolean Logic](../lessons/lesson_11.md))
-- **argument** – a value we send into a function when we call it. ([Lesson 7: Functions](../lessons/lesson_07.md))
+- **argument** – a value we send into a function or method when we call it. ([Lesson 7: Functions](../lessons/lesson_07.md))
 
 ## B
 
@@ -32,7 +32,7 @@ This glossary lists every technical term introduced on this site, in alphabetica
 - **condition-controlled loop** – a loop that runs until a condition changes, like a `while` loop. ([Lesson 10: While Loops](../lessons/lesson_10.md))
 - **constant** – a variable whose value never changes while the program runs, written in capital letters in Python. ([Lesson 5: Variables](../lessons/lesson_05.md))
 - **control structure** – code that changes the flow of a program, instead of just running from top to bottom. ([Lesson 3: Iteration](../lessons/lesson_03.md))
-- **coordinates** – a pair of numbers written as `(x, y)` that describe a position, with `(0, 0)` at the centre of the turtle window. ([Lesson 6: Coordinates](../lessons/lesson_06.md))
+- **coordinates** – a pair of numbers, such as `(x, y)`, that gives a position on a screen or display. ([Lesson 6: Coordinates](../lessons/lesson_06.md))
 - **count-controlled loop** – a loop that runs a set number of times, like a `for` loop. ([Lesson 10: While Loops](../lessons/lesson_10.md))
 
 ## D
@@ -68,7 +68,7 @@ This glossary lists every technical term introduced on this site, in alphabetica
 - **indefinite iteration** – a loop where we don't know how many times it will run, usually written as a `while` loop. ([Lesson 10: While Loops](../lessons/lesson_10.md))
 - **indentation** – spaces at the start of a line (four in Python) that show which code belongs to a loop or other block. ([Lesson 3: Iteration](../lessons/lesson_03.md))
 - **infinite loop** – a loop whose condition is always `True`, so it never stops on its own. ([Lesson 10: While Loops](../lessons/lesson_10.md))
-- **input** – information that goes into a program, such as the user typing on a keyboard or clicking a mouse. ([Lesson 3: Iteration](../lessons/lesson_03.md))
+- **input** – information that goes into a program, such as a key press, a mouse click or a sensor reading. ([Lesson 3: Iteration](../lessons/lesson_03.md))
 - **input/output block** – a parallelogram in a flowchart, also called an IO block, that shows information moving between the real world and the program. ([Flowcharts](../guides/flowcharts.md))
 - **integer** – a whole number written without a decimal point, like `1` or `25`, called `int` in Python. ([Lesson 8: User Input](../lessons/lesson_08.md))
 - **interactive** – describes a program that lets the user give it information while it runs, instead of changing the code. ([Lesson 8: User Input](../lessons/lesson_08.md))
@@ -86,8 +86,8 @@ This glossary lists every technical term introduced on this site, in alphabetica
 
 - **magic number** – a number written straight into our code with no name to explain what it means. ([Lesson 5: Variables](../lessons/lesson_05.md))
 - **maintainability** – how easy our code is for other people, or our future selves, to read, understand and change. ([Lesson 6: Coordinates](../lessons/lesson_06.md))
-- **method** – a built-in tool that belongs to a value, such as a string, and helps us work with it. ([Lesson 9: Branching](../lessons/lesson_09.md))
-- **module** – an extra group of commands that we can add to our program. ([Lesson 2: Introducing Turtle](../lessons/lesson_02.md))
+- **method** – a function that belongs to an object or value, written after a dot, such as `name.upper()`. ([Lesson 9: Branching](../lessons/lesson_09.md))
+- **module** – a file of ready-made code that we can import into our program to use its commands. ([Lesson 2: Introducing Turtle](../lessons/lesson_02.md))
 - **mouse input** – information a program gets from the mouse, such as where the user clicked. ([Lesson 12: Mouse Input](../lessons/lesson_12.md))
 
 ## N
@@ -98,15 +98,15 @@ This glossary lists every technical term introduced on this site, in alphabetica
 ## O
 
 - **or operator** – a Boolean operator that gives back `True` if at least one value is `True`. ([Lesson 11: Boolean Logic](../lessons/lesson_11.md))
-- **output** – information that a program sends out, such as text shown on the screen. ([Lesson 3: Iteration](../lessons/lesson_03.md))
+- **output** – information or actions that a program sends out, such as text on the screen, a sound or a motor moving. ([Lesson 3: Iteration](../lessons/lesson_03.md))
 
 ## P
 
 - **parameter** – a variable name in a function definition that receives a value sent into the function. ([Lesson 7: Functions](../lessons/lesson_07.md))
 - **parentheses** – the round brackets `(` and `)`, which must always come in matching pairs. ([Lesson 1: Thonny Introduction](../lessons/lesson_01.md))
-- **pixel** – one of the tiny dots that make up a screen, also used to measure how far the turtle moves. ([Lesson 2: Introducing Turtle](../lessons/lesson_02.md))
+- **pixel** – one of the tiny dots of light that make up a screen or display. ([Lesson 2: Introducing Turtle](../lessons/lesson_02.md))
 - **process block** – a rectangle in a flowchart that shows a step where the code does something, like setting a variable or doing a calculation. ([Flowcharts](../guides/flowcharts.md))
-- **Python** – the programming language we use in this course to write instructions for the computer. ([Lesson 1: Thonny Introduction](../lessons/lesson_01.md))
+- **Python** – the text-based programming language we use to write our programs. ([Lesson 1: Thonny Introduction](../lessons/lesson_01.md))
 
 ## Q
 
@@ -127,7 +127,7 @@ This glossary lists every technical term introduced on this site, in alphabetica
 - **Shell** – the panel in Thonny that shows what our program prints and any error messages. ([Lesson 1: Thonny Introduction](../lessons/lesson_01.md))
 - **single point of truth** – keeping each value in one place, so changing it there changes it everywhere it is used. ([Lesson 5: Variables](../lessons/lesson_05.md))
 - **snake case** – writing names in lowercase letters with `_` instead of spaces, like `side_length`. ([Lesson 5: Variables](../lessons/lesson_05.md))
-- **stack** – the list Thonny shows of which parts of the program are currently running, such as the main program and any function it has called. ([Debugging with Thonny](../guides/debugging.md))
+- **stack** – the list of parts of the program that are currently running, such as the main program and any function it has called, which the debugger shows. ([Debugging with Thonny](../guides/debugging.md))
 - **step into** – a debugger control that runs the next small piece of code and shows every step Python takes. ([Debugging with Thonny](../guides/debugging.md))
 - **step out** – a debugger control that finishes the rest of the current piece of code and moves back out a level. ([Debugging with Thonny](../guides/debugging.md))
 - **step over** – a debugger control that runs the highlighted code in one go without showing all the small steps. ([Debugging with Thonny](../guides/debugging.md))

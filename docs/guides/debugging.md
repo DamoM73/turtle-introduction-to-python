@@ -10,7 +10,7 @@
     - **step out** – a debugger control that finishes the rest of the current piece of code and moves back out a level.
     - **breakpoint** – a place we mark in our code where the debugger pauses the program.
     - **local variable** – a variable that only exists inside the function that created it.
-    - **stack** – the list Thonny shows of which parts of the program are currently running, such as the main program and any function it has called.
+    - **stack** – the list of parts of the program that are currently running, such as the main program and any function it has called, which the debugger shows.
 
 Everyone makes mistakes, even experienced programmers. In this guide we will learn how to use Thonny's **debugger** to find and fix mistakes in our code.
 

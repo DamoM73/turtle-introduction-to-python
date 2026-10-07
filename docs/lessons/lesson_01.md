@@ -7,7 +7,7 @@
     - how to read error messages and use them to fix our code
 
 !!! terms "Terminology"
-    - **Python** – the programming language we use in this course to write instructions for the computer.
+    - **Python** – the text-based programming language we use to write our programs.
     - **Thonny** – a program for writing, running and debugging Python code that is designed for beginners.
     - **script** – a Python program saved as a text file.
     - **user interface** – the screen of a program that we see and use, often shortened to UI.

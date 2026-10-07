@@ -8,7 +8,7 @@
 
 !!! terms "Terminology"
     - **maintainability** – how easy our code is for other people, or our future selves, to read, understand and change.
-    - **coordinates** – a pair of numbers written as `(x, y)` that describe a position, with `(0, 0)` at the centre of the turtle window.
+    - **coordinates** – a pair of numbers, such as `(x, y)`, that gives a position on a screen or display.
     - **tuple** – a group of values written in round brackets that works like a list but can't be changed.
     - **immutable** – describes something that can't be changed once it has been created.
     - **commenting out** – adding `#` to the start of lines of code so Python ignores them, without deleting them.

@@ -7,11 +7,11 @@
     - how to draw simple shapes like squares and triangles
 
 !!! terms "Terminology"
-    - **module** – an extra group of commands that we can add to our program.
+    - **module** – a file of ready-made code that we can import into our program to use its commands.
     - **import** – the command that tells Python to load a module so our program can use its commands.
     - **turtle** – a small arrow on the screen that we can control and move around to draw.
     - **screen** – the window that the turtle draws in.
-    - **pixel** – one of the tiny dots that make up a screen, also used to measure how far the turtle moves.
+    - **pixel** – one of the tiny dots of light that make up a screen or display.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CBrm4-ECyMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

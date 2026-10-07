@@ -8,7 +8,7 @@
 
 !!! terms "Terminology"
     - **branching** – letting a program choose between different paths depending on what is happening.
-    - **method** – a built-in tool that belongs to a value, such as a string, and helps us work with it.
+    - **method** – a function that belongs to an object or value, written after a dot, such as `name.upper()`.
     - **if statement** – code that makes a decision by running its indented block only when its condition is `True`.
     - **condition** – a check that gives back either `True` or `False`.
     - **else** – the part of an `if` statement that runs when none of the conditions are `True`.
