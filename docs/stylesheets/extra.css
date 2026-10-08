@@ -217,3 +217,24 @@
 .md-typeset div.error button {
   display: none;
 }
+
+/* Tables: full width, with every cell left aligned */
+.md-typeset .md-typeset__scrollwrap {
+  margin: 1em 0;
+}
+
+.md-typeset .md-typeset__table {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.md-typeset .md-typeset__table table:not([class]),
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) :is(th, td) {
+  text-align: left !important;
+}
